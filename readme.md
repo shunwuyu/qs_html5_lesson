@@ -7,4 +7,4 @@
 #### 流程图
 graph Td
     A[Christmas] -->B(Go shopping)
-    
+* this is my note
