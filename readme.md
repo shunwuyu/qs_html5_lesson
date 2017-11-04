@@ -4,3 +4,7 @@
 - 飞机
 - 坦克
 - 士兵
+#### 流程图
+graph Td
+    A[Christmas] -->B(Go shopping)
+    
