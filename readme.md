@@ -8,3 +8,7 @@
 graph Td
     A[Christmas] -->B(Go shopping)
 * this is my note
+### 表格
+| Item    |   value | Qty |
+| :------ | ------- | :-: |
+| Computer| 1600 USD|  5  |
