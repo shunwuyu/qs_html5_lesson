@@ -4,9 +4,149 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>万圣节 canvas 基本绘图技巧</title>
+  <style>
+  html,
+  body,
+  canvas {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .switch {
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    outline: none; /*轮廓*/
+    cursor: pointer;
+    /* 动作导演  */
+    /* animation 为页面带来css动画,性能很好！
+    animation-name 动画名字
+    animation-direction 动画方向 开始-> 结束
+    运动完后， 会回到最初的起点
+    alternate 开始 结束互换
+    执行多少次
+    animation-iteration-count: 1|infinite;
+    animation-duration: 1s 运动一次需要的
+    时间 */
+    animation:switch-animate alternate infinite ease 1s;
+  }
+  /* 编排动作 */
+  /* 关键桢 */
+  @keyframes switch-animate {
+    from {
+      /* 盒子阴影 */
+      box-shadow: 0 0 30px #ece9c5; 
+    }
+    to {
+      box-shadow: 0 0 100px #eae5a7;
+    }
+  }
+  </style>
 </head>
 <body>
+  <!-- emmet 提速 使用css选择器来代替html输入
+  canvas#canvas
+  button#btn.switch
+  ul>(li>a)*5 -->
+  <canvas id="canvas"></canvas>
+  <button id="btn" class="switch">click
+  </button>
+  <script>
+    // es6 面向对象
+  class Halloween {
+    // 构造函数
+    // 初始化 canvas ctx w h data 对象的属性
+    // 流程式的代码组织起来，模块化
+    constructor (id) {
+      // this会指向实例化后的对象
+      this.canvas = document.getElementById(id);
+      this.ctx = this.canvas.getContext('2d');
+      this.w = this.canvas.width;
+      this.h = this.canvas.height;
+      this.data = [];
+    }
+
+    initDraw (img) {
+      // canvas 绘制区域大小是可设置的， 不是页面px 
+      // canvas 绘制区域将与图片一样大， 100%显示图片
+      this.w = this.canvas.width = img.width;
+      this.h = this.canvas.height = img.height;
+      this.ctx.drawImage(img, 0, 0);
+    }
+ 
+    
+    thunder () {
+      // alert('打雷');
+      // 字
+      this.drawText();
+      // 闪电
+      this.lighting();
+     
+      // 一个函数代码超过10行， 封装
+      setTimeout(function() {
+        this.ctx.clearRect( 0, 0, this.w, this.h);   
+      },500)
+
+    }
+
+    
+    // 闪电API绘制
+    lighting () {
+      let ctx = this.ctx;
+      // 绘线 stroke
+      ctx.strokeStyle = '#fff';
+      // 粗线
+      ctx.lineWidth = 2;
+      // 开始新绘制
+      ctx.beginPath();
+      ctx.moveTo(800, 10);
+      ctx.lineTo(600, 100);
+      ctx.lineTo(500, 200);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(600, 100);
+      ctx.lineTo(650, 170);
+      ctx.stroke();
+    }
+
+    drawText () {
+      this.ctx.font = '60px Verdana';
+      this.ctx.fillStyle = '#ffffff';
+      this.ctx.fillText('万圣节快乐', 350, 280);
+    }
+  }
+
   
+  let halloween = new Halloween('canvas');
+  // canvas html5赋给我们的绘图功能`
+  let canvas = document.getElementById('canvas');
+  // canvas绘图API 都在context上下文环境变量
+  let context = canvas.getContext('2d');
+  let btn = document.getElementById('btn');
+  // 给按钮加点击事件
+  btn.addEventListener('click', function() {
+    halloween.thunder();
+  }, false);
+  // 将图片添加到canvas里
+  // 首先要加载图片
+  // img DOM 对象 js 对象表达html
+  // Document Object Model
+  let img = new Image();
+  img.src = './images/halloween.png';
+  // 加载成功后 图片，资源，加载资源需要些时间
+  // onload 事件监听， 当加载完成时会被触发
+  // js 是事件驱动语言 
+  img.onload = function() {
+    // 绘图API
+    // halloween 待开发的万圣节对象
+    // 封装一些属性和方法， 
+    halloween.initDraw(img);
+    // context.drawImage(img, 0, 0);
+  }
+  </script>
 </body>
 </html>
