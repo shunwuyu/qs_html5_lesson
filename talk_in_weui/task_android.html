@@ -22,11 +22,13 @@
   body {
     line-height: 1.6;
     font-family: -apple-system-font, "Helvetica Neue", sans-serif;
-    background-color: #fbf9fe;
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#ebebf3), to(#aac1ce));
   }
 
   .center {
     text-align: center;
+    font-size: 70px;
+    margin-top: 55px;
   }
 
   .logo {
@@ -35,22 +37,88 @@
   }
 
   .vue-version {
-    font-size: 12px;
-    color: #cccccc;
+    font-size: 13px;
+    color: #999595;
   }
   /* 空格后代选择 
   >子元素选择器 */
+  .weui-cells{
+    background-color: rgba(0,0,0,0);
+  }
   .weui-cell__hd>img {
     display: block;
     margin-right: 5px;
-    width: 20px;
+    width: 25px;
+  }
+  .weui-tabbar img{
+    position: absolute;
+    top: -70px;
+    right: 21px;
+    width: 45px;
+    height: 45px;
   }
   
   </style>
 </head>
-<body ontouchstart>
+<body ontouchstart>
   <!-- 单页应用 -->
   <div style="height:100%">
+    <div class="center"><p style="color:#999595;">16:10</p>
+      <p class="vue-version">11月6日 &nbsp;星期一</p>
+    </div> 
+    <br/>
+    
+    <div class="weui-cells">
+      <a href="" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+        <img src="./images/今日头条.png"  alt="">
+      </div>
+        <div class="weui-cell__bd">
+        <p style="font-size:16px;margin-left:8px; color:#5a5858;">中国火箭发射成本一公斤一万美...</p>
+        <p style="font-size:13px;color:#5a5858;margin-left:10px;">为何却敢报价5000美元</p>
+      </div>
+        <div class="weui-cell__ft">
+        <p style="font-size:12px;">15:42</p>
+      </div>
+      </a>
+      <a href="" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+        <img src="./images/微信.png" alt=""></div>
+        <div class="weui-cell__bd">
+          <p style="font-size:16px;margin-left:8px;color:#5a5858;">前端招聘+求职【不骚扰】</p>
+          <p style="font-size:13px;color:#5a5858;margin-left:10px;">招人-三橋sankyu:要是base HK就不错呀</p>
+        </div>
+          <div class="weui-cell__ft">
+          <p style="font-size:12px;">15:36</p>
+        </div>
+      </a>
+      <a href="" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+        <img src="./images/支付宝.png" alt=""></div>
+        <div class="weui-cell__bd">
+        <p style="font-size:16px;margin-left:8px;color:#5a5858;">交易提醒</p>
+        <p style="font-size:13px;color:#5a5858;margin-left:10px;">您有一笔16元的支出，点此查看详情。</p></div>
+        <div class="weui-cell__ft">
+          <p style="font-size:12px;">11:50</p></div>
+      </a>
+      <a href="" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+        <img src="./images/腾讯新闻.png" alt=""></div>
+        <div class="weui-cell__bd">
+          <p style="font-size:16px;margin-left:8px;color:#5a5858;">为了它，近百名飞行员集结西部</p>
+          <p style="font-size:13px;color:#5a5858;margin-left:10px;">目前近百名飞行员正集结我国西部，现役..</p></div>
+        <div class="weui-cell__ft">
+          <p style="font-size:12px;">16:08</p></div>
+      </a>
+    </div>
+    <div class="weui-tabbar">
+      <a href="" class="weui-tabbar__item">
+        <img src="./images/相机.png" alt="" class="weui-tabbar__icon">
+        
+      </a>
+      </div>
+    
+
 	</div>
 </body>
 </html>
