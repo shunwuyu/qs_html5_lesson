@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>talk in weui</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="./css/weui.min.css">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(#636564, #0C335E);
+  }
+
+  body {
+    line-height: 1.6;
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+    background-color: #fbf9fe;
+  }
+
+  .center {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+  #center_pst {
+    font-size: 50px;
+    color: white;
+  }
+  #center_pnd{
+    color: white;
+    font-size: 10px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .vue-version {
+    font-size: 12px;
+    color: #cccccc;
+  }
+  /* 空格后代选择 
+  >子元素选择器 */
+  .weui-cell__hd>img {
+    display: block;
+    margin-top: -10px;
+    margin-right: 15px;
+    width: 25px;
+    
+  }
+  .weui-cell__bd p{
+    /* 文字超出部分显示省略号 */
+    display:block;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+  }
+  .weui-cell__bd>p:first-child{
+    color: white;
+    font-size: 16px;
+  }
+  .weui-cell__bd>p:nth-child(2){
+    color: #839295;
+    font-size: 14px;
+  }
+  .weui-cell__ft{
+    font-size: 14px;
+  }
+  .weui-cells{
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: none;
+    border-bottom: none;
+    background-color: rgba(86, 98, 96, 0);
+  }
+  .weui-cells:before{
+    border-top: none;
+  }
+  .weui-cells:after{
+    border-bottom: none;
+  }
+  .weui-cell{
+    color: white;
+  }
+  .weui-tabbar img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+  }
+  
+  </style>
+</head>
+<body ontouchstart>
+  <!-- 单页应用 -->
+  <div style="height:100%">
+    <div class="center">
+      <p id="center_pst">16:10</p>
+      <p id="center_pnd">11月6日&nbsp;&nbsp;星期一</p>
+    </div>
+    <div class="weui-cells">
+      <a href="" class="weui-cell">
+        <span class="weui-cell__hd">
+          <img src="./photos/今日头条.png" alt="">
+        </span>
+        <span class="weui-cell__bd">
+          <p>中国火箭发射成本1公斤一万美...</p>
+          <p>为何却敢报价5000美元</p>
+        </span>
+        <span class="weui-cell__ft">
+          <p class="weui-cell__ft_p">15:42</p>
+        </span>
+      </a>
+    </div>
+    <div class="weui-cells">
+        <a href="" class="weui-cell">
+          <span class="weui-cell__hd">
+            <img src="./photos/微信.png" alt="">
+          </span>
+          <span class="weui-cell__bd">
+            <p>前端招聘+求职【不闲聊】</p>
+            <p>招人-三桥sankyu：要是base HK就不错呀</p>
+          </span>
+          <span class="weui-cell__ft">
+            <p class="weui-cell__ft_p">15:42</p>
+          </span>
+        </a>
+      </div>
+      <div class="weui-cells">
+          <a href="" class="weui-cell">
+            <span class="weui-cell__hd">
+              <img src="./photos/支付宝.png" alt="">
+            </span>
+            <span class="weui-cell__bd">
+              <p>交易提醒</p>
+              <p>你有一笔16.00元的支出，点此查看详情。</p>
+            </span>
+            <span class="weui-cell__ft">
+              <p class="weui-cell__ft_p">11:50</p>
+            </span>
+          </a>
+        </div>
+        <div class="weui-cells">
+            <a href="" class="weui-cell">
+              <span class="weui-cell__hd">
+                <img src="./photos/腾讯新闻.png" alt="">
+              </span>
+              <span class="weui-cell__bd">
+                <p>为了它，进百名飞行员集结西部</p>
+                <p>目前近百名飞行员正集结我国西部，现役装...</p>
+              </span>
+              <span class="weui-cell__ft">
+                <p class="weui-cell__ft_p">16:08</p>
+              </span>
+            </a>
+          </div>
+          <a class="weui-tabbar">
+            <img src="./photos/相机.png" alt="">
+          </a>
+	</div>
+</body>
+</html>
