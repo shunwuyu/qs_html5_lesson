@@ -62,17 +62,28 @@
                 }else {
                     player.imageX += 50;
                 }
-
-
                 if (player.imageX >= 150) {
                     player.imageX = 0;
                 }
+                //删掉上面这段if 后 则长按方向移动时 马里奥会隐身移动？
                 if(direction === 'right') {
-                    player.x += 5;
+                    if(player.x <= canvas.width-player.width)
+                        player.x += 5;
                     player.imageY = 0;
+                    console.log(player.x);
                 }else if(direction === 'left') {
-                    player.x -= 5;
+                    if(player.x > 0)
+                        player.x -= 5;
                     player.imageY = 60;
+                    console.log(player.x);
+                }else if(direction === 'up') {
+                    if(player.y > 0)
+                        player.y -= 5;
+                    console.log(player.y);
+                }else if(direction === 'down') {
+                    if(player.y <= canvas.height-1-player.height)
+                        player.y += 5;
+                    console.log(player.y)
                 }else {
                     player.imageX = 0;
                 }
@@ -104,7 +115,7 @@
             var player = {
                 width: 50,
                 height: 60,
-                x: 50,
+                x: 0,
                 y: 0,
                 imageX: 0,
                 imageY: 0,
@@ -120,7 +131,7 @@
                 // 绘制的笔
                 context.drawImage(marrio,player.imageX,player.imageY,
                     player.width,player.height,player.x,
-                    canvas.height-player.height,player.width,player.height);
+                    player.y,player.width,player.height);
                 
             }
         }
