@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>万圣节 canvas 基本绘图技巧</title>
+    <style>
+        html,
+        body,
+        canvas {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        .switch{
+            position: absolute;
+            top: 70%;
+            right: 10%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px; /*设置半径为50px的圆 */
+            outline: none;
+            cursor: pointer; /*cursor 定义鼠标指针悬浮在元素上方显示的鼠标光标光标呈现为指示链接的指针（一只手）*/
+            animation: switch-animate alternate infinite ease 1s;
+        }
+        @keyframes switch-animate {
+            from {
+                box-shadow: 0 0 30px #ece9c5;
+            }
+            to {
+                box-shadow: 0 0 10px #eae5a7;
+            }
+        }
+</style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <button id="btn" class="switch">click</button>
+</body>
+</html>

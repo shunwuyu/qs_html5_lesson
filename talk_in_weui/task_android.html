@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>talk in weui</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="./css/weui.min.css">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    line-height: 1.6;
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+    background-image: linear-gradient(50deg, #0F3E5C,#2D4D5A,#545F61,#636564);
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .vue-version {
+    font-size: 12px;
+    color: #cccccc;
+  }
+  /* 空格后代选择 
+  >子元素选择器 */
+  .weui-cell__hd>img {
+    display: block;
+    margin-right: 10px;
+    width: 40px;
+  }
+  .center .center_tp {
+    font-size: 68px;
+    color:white;
+  }
+  .center .center_md {
+    font-size: 20px;
+    color: white;
+  }
+  .weui-cell_access::before {
+      border: 0; 
+  }
+  .weui-cells::before {
+    border: 0;
+  }
+  .weui-cells::after {
+    border: 0;
+  }
+  .weui-cells {
+    background: transparent;
+    padding-top:38px; 
+    
+  }
+  .weui-cell__ft::after{
+    display: none;
+  }
+  .weui-cell__hd, .weui-cell__bd, .weui-cell__ft {
+    color:white;
+  }
+  .weui-cells a:hover{
+    background-color: #11495A ;  
+  }
+  
+  /* .weui_demo {
+      overflow : hidden;
+      text-overflow: ellipsis;
+  } */
+  
+  </style>
+</head>
+<body ontouchstart>
+  <!-- 单页应用 -->
+  <div style="height:100%;">
+    <div class="center" >
+        <p class="center_tp">16 : 10</p>
+        <p class="center_md">&nbsp;11月6日&nbsp;&nbsp;星期一</p>
+    </div>
+
+    <div class="weui-cells">
+
+        <a href="#" class="weui-cell weui-cell_access">
+          <div class="weui-cell__hd">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="">
+          </div>
+          <div class="weui-cell__bd">
+            <p class="weui_demo" style="font-weight:bold;">中国火箭发射成本1公斤1万美元</p>
+            <span>为何却敢报价5000美元？<span>
+          </div>
+          <div class="weui-cell__ft">
+            <p>15:42</p>
+          </div>
+        </a>
+
+        <a href="#" class="weui-cell weui-cell_access">
+            <div class="weui-cell__hd">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="">
+            </div>
+            <div class="weui-cell__bd">
+                <p style="font-weight:bold;">中国火箭发射成本1公斤1万美元</p>
+                <span>为何却敢报价5000美元？<span>
+            </div>
+            <div class="weui-cell__ft">
+                <p>15:36</p>
+            </div>
+          </a>
+
+          <a href="#" class="weui-cell weui-cell_access">
+              <div class="weui-cell__hd">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="">
+              </div>
+              <div class="weui-cell__bd">
+                  <p style="font-weight:bold;">中国火箭发射成本1公斤1万美元</p>
+                  <span >为何却敢报价5000美元？<span>
+              </div>
+              <div class="weui-cell__ft">
+                  <p>11:50</p>
+              </div>
+            </a>
+
+            <a href="#" class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="">
+                </div>
+                <div class="weui-cell__bd">
+                    <p style="font-weight:bold;">中国火箭发射成本1公斤1万美元</p>
+                    <span>为何却敢报价5000美元？<span>
+                </div>
+                <div class="weui-cell__ft">
+                    <p>16:08</p>
+                </div>
+              </a>             
+      </div>
+      <div class="weui_tabbar" >
+          <a href="#" class="weui-tabbar__item">
+              <span style="position:relative;display:block;top:42px;right:-158px;">
+                  <img src="./images/camera.png" alt="" class="weui-tabbar__icon">
+              </span>
+            </a>
+      </div>
+  </div>
+  
+</body>
+</html>
