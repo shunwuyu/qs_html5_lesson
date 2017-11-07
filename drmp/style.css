@@ -1,0 +1,68 @@
+html {
+    font-size: 10px;
+    background: url(./images/bg.jpg);
+    /* css3背景 */
+    /* 多屏时代 电脑 手机 ipad 访问同一个资源
+    一张图片 再不同的设备上 怎么做背景
+    盒子的大小w h 和图片 w h 的关系
+    cover 等比例放大或缩小 填充满整个容器 
+    超过的地方(不等比)  剪裁掉; 
+    可确保背景填充满 最重要的图片部分显示出来 */
+    background-size: cover;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.keys {
+    /* PC mobile pad 物联网 的任何一块屏 */
+    display: flex;
+    /* vh 相对单位 相对视窗
+    手机 100vh 占据整个容器*/
+    min-height: 100vh;
+    /* 专属于弹性布局的纵轴 对齐方式  */
+    align-items: center;
+    /* 专属于弹性布局的横轴（主轴）对齐方式  */
+    justify-content: center;
+}
+
+.key {
+    color: #ffffff;
+    text-align: center;
+    width: 10rem;
+    border: .4rem solid #000;
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    /* css 效果过渡动画  */
+    transition: all .07s ease;
+}
+
+.key div {
+    font-size: 4rem;
+}
+
+.sound {
+    /* rem? 相对单位 px 
+    px 在多端时代行不通
+    手机的密度不同 retina 三倍的retina 
+    px 不可靠
+    rem 相对 html font-size 进行等比例计算
+    12px = 1.2rem * 10px (html 根) */
+
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #ffc600;
+    box-shadow: 0 0 .5rem black;
+}
+
+.playing {
+    /* 转换样式 移动 缩放 旋转 */
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+}

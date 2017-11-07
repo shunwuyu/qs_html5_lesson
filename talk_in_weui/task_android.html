@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>talk in weui</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="./css/weui.min.css">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    line-height: 1.6;
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+    background-color: #121213;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .vue-version {
+    font-size: 12px;
+    color: #cccccc;
+  }
+  /* 空格后代选择 
+  >子元素选择器 */
+  .weui-cell__hd>img {
+    display: block;
+    margin-right: 5px;
+    width: 40px;  
+  }
+  /* 修改引入的框架的 ft 部分 为不显示 */
+  .weui-cell__ft {
+    display: none;
+  }
+  .weui-cell :before{
+    border-top: 0px;
+  }
+  .span1 {
+    font-size:17px;
+    color:white
+  }
+
+  .span2 {
+    font-size:5px;
+    color:rgb(167, 167, 204)
+  }
+  .span3 {
+    font-size: 4px;
+    position:absolute;
+    top:-20px;
+    right:2px;
+  }
+
+  </style>
+</head>
+<body ontouchstart>
+  <!-- 单页应用 -->
+  <div style="height:100%">
+    <div class="center">
+      <p style="font-size:70px;color:white">16:10</p>
+      <p class="vue-version">11月6日 星期一</p>
+    </div>
+    <div class="weui cells">
+      <br><br><br>
+      <a href="" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+          <img src="./images/weibo.jpg" alt="">
+        </div>
+        <div class="weui-cell__bd">
+          <span class = "span1">鹿晗与关晓彤竟然公然宣布恋情了！！</span>
+          <br>
+          <span class="span2">他竟然不要他的几千万的小迷妹了吗</span>  
+        </div>
+        <div class="weui-cell__ft">
+          <span class="span3">
+              11:11
+          </span>
+        </div>
+      </a>
+      <a href="" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+          <img src="./images/weixin.jpg" alt="">
+        </div>
+        <div class="weui-cell__bd">
+            <span class="span1">相亲相爱一家人</span>
+            <br>
+            <span class="span2">Huzj:大家好</span>
+        </div>
+          <div class="weui-cell__ft">
+              <span class="span3">
+                  22:22
+              </span>
+          </div>
+      </a>
+      <a href="" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+          <img src="./images/zhifubao.jpg" alt="">
+        </div>
+        <div class="weui-cell__bd">
+            <span class = "span1">交易提醒</span>
+            <br>
+            <span class="span2">你有一笔66.00元的支出，点此查看详情。</span>    
+        </div>
+          <div class="weui-cell__ft">
+            <span class="span3">
+              66:66
+          </span>
+        </div>
+      </a>
+      <a href="" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+          <img src="./images/txxw.jpg" alt="">
+        </div>
+        <div class="weui-cell__bd">
+            <span class = "span1">财大某寝室忽然断电，竟是因为...</span>
+            <br>
+            <span class="span2">有点害怕了，睡觉睡觉</span>
+        </div>
+        <div class="weui-cell__ft">
+          <span class="span3">
+            00:00
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="cemera">
+      <img src="" alt="">
+    </div>
+	</div>
+</body>
+</html>
