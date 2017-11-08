@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>talk in weui</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body{ 
+            height: 100%;
+            line-height: 1.6;
+            font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+            background:-webkit-gradient(linear, 0% 50%, 30% 100%, 
+            from(rgb(74, 74, 80)), 
+            to(rgba(9, 47, 70, 0.89)));
+            overflow-x: hidden ;
+        }
+        .weui-cells{
+        background-color: transparent; 
+        }
+
+        .localtime {
+            text-align: center;
+            font-size: 50px;
+            color: white;
+        }
+        .weui-cell:before{
+            border: 0px;
+        }
+        .weui-cells:before{
+            border: 0px;
+        }
+        .weui-cell:after{
+            border: 0px;
+        }
+        .weui-cells:after{
+            border: 0px;
+        }
+
+        .foot {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .localdate {
+            text-align: center;
+            font-size: 14px;
+            color: white;
+        }
+        .image{
+            display: inline;
+        }
+        .weui-cell__bd
+        {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height:100%">
+
+            <div class="weui-cell">
+                <div class="weui-cell__bd">中国移动
+                </div>
+                <div class="weui-cell__ft">
+                        <img src="images/icon_tabbar.png" class="image" style="width: 20px;">
+ 
+                </div>
+        </div>
+        <div class="localtime">
+            <h id="localhour">16</h>
+            <h>:</h>
+            <h id="localmin">40</h>
+
+        </div>
+        <div class="localdate">
+            <h id="localday">11月6日</h>
+            &nbsp
+            <h id="localweek">星期一</h>
+        </div>
+
+        <div class="weui-cells">
+
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <img src="images/1.jpg" style="width: 30px;display: block;margin-right:10px;">
+                </div>
+                <div class="weui-cell__bd">
+                    <p style="font-weight:400 ;vertical-align:middle;color:white;">中国火箭发射成本一公斤一万</p>
+                    <p style="font-size: 13px; color: #807e7e">为何却敢报价5000美元？</p>
+
+                </div>
+                <div class="weui-cell__ft">
+                    <p>15:42</p>
+
+                </div>
+            </div>
+            <br>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <img src="images/2.jpg" style="width: 30px;display: block;margin-right:10px;">
+                </div>
+                <div class="weui-cell__bd">
+                    <p style="font-weight:400 ;vertical-align:middle;color:white;">前端招聘+求职【不闲聊】</p>
+                    <p style="font-size: 13px; color: #807e7e">招人-三橋sankyu 要是base HK</p>
+
+                </div>
+                <div class="weui-cell__ft">15:36</div>
+            </div>
+            <br>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <img src="images/3.jpg" style="width: 30px;display: block;margin-right:10px;">
+                </div>
+                <div class="weui-cell__bd">
+                    <p style="font-weight:400 ;vertical-align:middle;color:white;">交易提醒</p>
+                    <p style="font-size: 13px; color: #807e7e">您有一笔16.00元的支出，点击查看</p>
+
+                </div>
+                <div class="weui-cell__ft">11:50</div>
+            </div>
+            <br>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <img src="images/4.png" style="width: 30px;display: block;margin-right:10px;">
+                </div>
+                <div class="weui-cell__bd">
+                    <p style="font-weight:400 ;vertical-align:middle;color:white;">为了它，近百名飞行员集结西部</p>
+                    <p style="font-size: 13px; color: #807e7e">近百名飞行员正集结我国西部，现役</p>
+
+                </div>
+                <div class="weui-cell__ft">11:08</div>
+            </div>
+        </div>
+        <div class="foot">
+            <img src="images/icon_tabbar.png" style="width: 30px;display: block;float:right">
+        </div>
+    </div>
+</body>
+
+</html>
