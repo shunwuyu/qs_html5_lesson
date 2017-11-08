@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>talk in weui</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="./css/weui.min.css">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    line-height: 1.6;
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+    background-color: #cccccc;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  .time {
+    text-align: center;
+    font-size: 60px;
+  }
+  .weui-cells{
+    margin-top: 90px;
+    background-color: #cccccc;
+  }
+
+  .vue-version {
+    font-size: 12px;
+  }
+  /* 空格后代选择 
+  >子元素选择器 */
+  .weui-cell__hd>img {
+    display: block;
+    margin-right: 5px;
+    width: 30px;
+  }
+
+  .titletext {
+    font-size:15px;
+    font-weight: bold;
+  }
+  .text{
+    font-size: 12px;
+  }
+  .icon{
+
+  }
+  </style>
+</head>
+<body ontouchstart>
+  <!-- 单页应用 -->
+  <div style="height:100%">
+    <div class="center">
+      <p class="time">16:10</p>
+      <p class="vue-version">11月6日 星期一</p>
+    </div>
+    <div class="weui-cells">
+        <a href="" class="weui-cell weui-cell_access">
+          <div class="weui-cell__hd"><img src="../tnews.jpg" alt=""></div>
+          <div class="weui-cell__bd">
+            <span><p class="titletext">中国火箭发射成本1公斤1万美元</p></span>
+            <span><p class="text">为何却敢报价5000美元</p></span>
+          </div>
+          <div class="weui-cell__ft">15:42</div>
+        </a>
+        <a href="" class="weui-cell weui-cell_access">
+          <div class="weui-cell__hd"><img src="../wechat.jpg" alt=""></div>
+          <div class="weui-cell__bd">
+            <span><p class="titletext">前端招聘+求职 【不闲聊】</p></span>
+            <span><p class="text">招人-三桥sankyu：要是base HK 就不错啊</p></span>
+          </div>
+          <div class="weui-cell__ft"><p>15:36</p></div>
+          <a href="" class="weui-cell weui-cell_access">
+            <span class="weui-cell__hd"><img src="../pay.jpg" alt=""></span>
+            <span class="weui-cell__bd">
+              <span><p class="titletext">交易提醒</p></span>
+              <span><p class="text">你有一笔16.00元的支出，点此查看详情</p></span>
+            </span>
+            <span class="weui-cell__ft">11:50</span>
+          </a>
+          <a href="" class="weui-cell weui-cell_access">
+            <span class="weui-cell__hd"><img src="../tnews.jpg" alt=""></span>
+            <span class="weui-cell__bd">
+              <span><p class="titletext">为了它，近百名飞行员集结西部</p></span>
+            <span><p class="text">目前近百名飞行员正集结我国西部，现役装...</p></span>
+            </span>
+            <span class="weui-cell__ft">16:08</span>
+          </a>
+          <!-- .weui-cell__hd+.weui-cell__bd>img+.weui-cell__ft -->
+        </a>
+     </div>
+     <div class="weui-tabbar" style="background-color:#cccccc">
+      <a href="" class="weui-tabbar__item">
+        <span style="position:relative;display:inline-block;">
+            <img src="../camera.jpg" alt="" class="weui-tabbar__icon">
+        </span>
+      </a>
+    </div>
+	</div>
+</body>
+</html>
