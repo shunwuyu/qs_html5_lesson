@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js工厂模式</title>
+</head>
+<body>
+    <script>
+        // 基本类型 number string boolean
+        // undefined null Symbol
+        // 其他的都叫object 复杂类型 属性和方法 
+        // array  key index 可遍历的对象 和function call() 也都为object类型
+        var BicycleShop = function () {
+            // es5 类的标准
+            // constructor
+            console.log('实例化一个分店');
+        }
+
+        var Speedster = function (size, bicycleColor, num){
+           
+                this.size = size;
+                this.bicycleColor = bicycleColor;
+                this.num = num; 
+            
+           
+        }
+
+        var Lowride = function (size, bicycleColor, num){
+            
+                this.size = size;
+                this.bicycleColor = bicycleColor;
+                this.num = num; 
+            
+           
+        }
+
+        var comfortCuriser = function (size, bicycleColor, num){
+                this.size = size;
+                this.bicycleColor = bicycleColor;
+                this.num = num;  
+        }
+        // js 继承原型链 prototype
+        // 类的方法添加
+        //原型链添加方法
+        BicycleShop.prototype = {
+            //卖车方法
+            sellBicycle: function (model) {
+                var bicycle;
+                // 工厂模式
+               
+                // switch (model) {
+                //     case 'The Speedster':
+                //         bicycle = new Speedster('middle', '蓝色', 2);
+                        
+                //         break;
+
+                //     case 'The Lowride':
+                //         bicycle = new Lowride('large', '红色', 1);
+                       
+                //         break;
+
+                //     case 'The Comfort Curiser':
+                       
+                //     default:
+                //         bicycle = new comfortCuriser('large', '红色', 1);
+                //         break;
+                // }
+               var customs = new BicycleFactory.creatBicycle(model);
+               return bicycle;
+            }
+
+        //    repair: function (params) {}
+        } 
+
+        //工厂模式 JSON对象
+        // 将众多的实例化对象交给工厂类来做
+        //解耦
+        var BicycleFactory = {          
+            creatBicycle: function (model) {
+                var bicycle;
+                switch (model) {
+                    case 'The Speedster':
+                        bicycle = new Speedster('middle', '蓝色', 2);
+                        
+                        break;
+
+                    case 'The Lowride':
+                        bicycle = new Lowride('large', '红色', 1);
+                       
+                        break;
+
+                    case 'The Comfort Curiser':
+                       
+                    default:
+                        bicycle = new comfortCuriser('large', '红色', 1);
+                        break;
+                }
+                //利于升级
+                return bicycle;
+            }    
+        }
+
+        var japan = new BicycleShop();
+            
+        var bike = japan.sellBicycle('The Speedster');
+        // BicycleShop.prototype.assemble = function (params) {
+            
+        // }
+    </script>
+</body>
+</html>
