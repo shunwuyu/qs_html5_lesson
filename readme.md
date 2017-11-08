@@ -2,4 +2,9 @@
 # 秋水伊人 旅梦开发团html课程
 ## html5 demos
  - 星球大战
+<<<<<<< HEAD
  - fir.im 飞机3D动画
+=======
+ - fir.im 飞机CSS3D动画
+ 
+>>>>>>> 7ad8068f43fb7c246a639fc5d9df82d1779de7ec
