@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>talk in weui</title>
+  <title>Mobile Cover</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
   <link rel="stylesheet" href="./css/weui.min.css">
   <style>
@@ -22,35 +22,171 @@
   body {
     line-height: 1.6;
     font-family: -apple-system-font, "Helvetica Neue", sans-serif;
-    background-color: #fbf9fe;
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#626463), to(#0B4654), to(#0B4654));  
+
+  }
+
+  .cover-header {
+    height: 40px;
+  }
+
+  .zgyd {
+    color: white;
+    font-size: .5rem;
+    padding: .3rem;
   }
 
   .center {
     text-align: center;
+    position: relative;
+    height: 250px;
   }
 
-  .logo {
-    width: 60px;
-    height: 60px;
+  .cover-time {
+    font-size: 6rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
-  .vue-version {
-    font-size: 12px;
+  .cover-date {
+    font-size: 15px;
+    color: white;
+  }
+
+  .cell-bt {
+    padding-right: 22px;
+    color: white;
+    font-size: 0.77em;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    
+  }
+
+  .cell-nr {
     color: #cccccc;
+    font-size: .67rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
   }
-  /* 空格后代选择 
-  >子元素选择器 */
-  .weui-cell__hd>img {
-    display: block;
-    margin-right: 5px;
-    width: 20px;
+
+  .cell-tm {
+    font-size: .3em;
+    color: white;
+    position: absolute;
+    right: -.2rem;
+    top: .15rem;
+    font-family: '微软雅黑';
   }
-  
+  /* 空格 后代选择
+   > 子元素选择器 */
+   .weui-cell__hd>img {
+     display: block;
+     margin-right: 5px;
+     width: 25px;
+   }
+
+   .weui-cells {
+     margin-top: 0;
+     background:rgba(255,255,255,0);
+     margin-left:20px;
+    
+   }
+
+   .weui-cell__bd {
+     width: 70%;
+     margin-left:10px;
+     position: relative;
+   }
+
+   .weui-cells::before {
+     border-top: 0;
+   }
+
+   .weui-cells::after {
+     border-bottom: 0;
+   }
+
+   .weui-cell_access .weui-cell__ft:after {
+     content: none;
+   }
+
+   .cover-photo {
+     position: absolute;
+     bottom: .3rem;
+     right: .3rem;
+     width: 2rem;
+     height: 2rem;
+   }
   </style>
 </head>
-<body ontouchstart>
+<body ontouchstart>
   <!-- 单页应用 -->
-  <div style="height:100%">
-	</div>
+  <div style="height: 100%; ">
+    <div class="cover-header"><p class="zgyd">中国移动</p></div>
+        <div class="center">
+        <div class="cover-time">16:10</div>
+            <p class="cover-date">11月6日 星期一</p>
+    </div>
+
+    <div class="weui-cells">
+      <a href="#" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+          <img src="./images/1.png" alt="">
+        </div>
+        <div class="weui-cell__bd">
+          <p class="cell-bt">中国火箭成本发射一公斤一万美元</p>
+          <p class="cell-nr">为何却敢报价5000美元？</p>
+          <p class="cell-tm">15:42</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+    </div>
+  
+    <div class="weui-cells">
+      <a href="#" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+          <img src="./images/2.png" alt="">
+        </div>
+        <div class="weui-cell__bd">
+          <p class="cell-bt">前端招聘+求职【不闲聊】</p>
+          <p class="cell-nr">招人-三sankyu: 要是base HK 就不错呀</p>
+          <p class="cell-tm">15:42</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+    </div>
+     
+    <div class="weui-cells">
+      <a href="#" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+          <img src="./images/3.png" alt="">
+        </div>
+        <div class="weui-cell__bd">
+          <p class="cell-bt">交易提醒</p>
+          <p class="cell-nr">你有一笔16.00元的支出，点此查看详情。</p>
+          <p class="cell-tm">15:42</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+    </div>
+
+    <div class="weui-cells">
+      <a href="#" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+          <img src="./images/4.png" alt="">
+        </div>
+        <div class="weui-cell__bd">
+          <p class="cell-bt">为了他，近百名飞行员集结西部</p>
+          <p class="cell-nr">目前近百名飞行员正集结我国西部，现役装备所有3代机。</p>
+          <p class="cell-tm">15:42</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+    </div>
+       <br>
+    <img src="./images/photo.png" class="cover-photo" alt="photo">   
+  </div>
 </body>
 </html>
