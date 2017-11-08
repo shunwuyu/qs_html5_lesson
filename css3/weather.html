@@ -1,12 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>纯CSS3天气动画图标DEMO演示</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>纯CSS3天气动画图标DEMO演示</title>
+    <style>
+        html {
+            /* height: 100%;
+             display: flex;
+            align-items: center;
+            justify-content: center;居中方法二 */
+        }
+        
+        .container {
+            width: 1200px;
+            height: 210px;
+            /* webkit 浏览器内核 chrome safari 针对浏览器写样式 */
+            /* background参数的 linear-gradient 的方法 属性 
+            渐变方向为 top left right bottom 
+            color stop 颜色断点 color percent */
+            background: -webkit-linear-gradient(left, #0bf, #0bf 14.3%, #2eb5e5 14.3%, #2eb5e5 28.6%, #e6e6e6 28.6%, #e6e6e6 42.9%, #f3d166 42.9%, #f3d166 57.2%, #223 57.2%, #223 71.5%, #444 71.5%, #444 85.8%, #85d88c 85.8%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            /* 绝对居中方法三 transform: translate(-50%);*/
+            /* position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -600px;
+            margin-top: -65px;
+            让元素绝对居中方法一 */
+        }
+        
+        .sunny {
+            /* -moz-animation: ;
+            -ms-animation: ; 浏览器内核 webkit支持手机端内核 包括 safari*/
+            -webkit-animation: sunny 15s linear infinite;
+            /* animation-name: sunny;
+          animation-duration: 15s;
+          animation-timing-function:linear;
+          animation-iteration-count: infinite; */
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 0) 100%);
+            width: 20px;
+            height: 140px;
+            position: absolute;
+            top: 20px;
+            left: 90px;
+            margin-left: -15px;
+            /* 白色条子 */
+        }
+        /* 伪元素after 元素开始前 */
+        
+        .sunny:after {
+            content: '';
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+            width: 20px;
+            height: 140px;
+            opacity: 1;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: rotate(90deg);
+            /* 旋转90度 有顺时针 逆时针 */
+        }
+        /* 伪元素after 元素结束前 */
+        
+        .sunny:before {
+            /* content: 'after';文字 */
+            content: '';
+            background: #f3d166;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            box-shadow: rgba(255, 255, 0, .2) 0 0 0 15px;
+            /* 太阳天气 */
+        }
+        
+        @keyframes sunny {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .cloudy {
+            /* 先慢后快……ease-in-out 造成自然的云浮动效果*/
+            animation: cloudy 5s ease-in-out infinite;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            left: 255px;
+            top: 70px;
+            margin-left: -60px;
+            /* 多重阴影来绘制云 */
+            box-shadow: #fff 65px -15px 0 -5px, #fff 25px -25px, #fff 30px 10px, #fff 60px 15px 0 -10px, #f55 85px 5px 0 -5px;
+        }
+        
+        .cloudy::after {
+            /* 阴影也随之改变 向下降阴影变大 向上升阴影变小 */
+            animation: cloudy_shadow 5s ease-in-out infinite;
+            /* 没有content:'';伪元素不显示 */
+            content: '';
+            background: #000;
+            border-radius: 50%;
+            width: 120px;
+            height: 15px;
+            /* opacity透明度 */
+            opacity: 0.2;
+            position: absolute;
+            left: 5px;
+            bottom: -60px;
+            /* 缩小0.7倍 */
+            transform: scale(.7);
+        }
+        /* 云动关键帧 */
+        
+        @keyframes cloudy {
+            50% {
+                /* 添加兼容性 */
+                -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
+            }
+        }
+        
+        @-webkit-keyframes cloudy {
+            50% {
+                /* 添加兼容性 包括keyframes也得添加*/
+                -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
+            }
+        }
+        /* 云阴影动关键帧 */
+        
+        @keyframes cloudy_shadow {
+            50% {
+                /* 添加兼容性 */
+                -webkit-transform: translateY(20px) scale(1);
+                transform: translateY(20px) scale(1);
+                opacity: .05;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  
+
+    <script>
+    </script>
+    <!-- .container>div[class=]*7 -->
+    <div class="container">
+        <!-- 每个元素都有两个伪元素:before :after  
+      没有标签 却可以显示出来 -->
+
+        <!-- <div class="sunny">a</div> 内容显示在伪元素begin after之间 -->
+        <div class="sunny"></div>
+        <div class="cloudy"></div>
+        <div class="snowy"></div>
+        <div class="rainy"></div>
+        <div class="rainbow"></div>
+        <div class="starry"></div>
+        <div class="stormy"></div>
+    </div>
 </body>
+
 </html>
