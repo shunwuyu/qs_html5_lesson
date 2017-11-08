@@ -22,35 +22,126 @@
   body {
     line-height: 1.6;
     font-family: -apple-system-font, "Helvetica Neue", sans-serif;
-    background-color: #fbf9fe;
+    /* 渐变色 */
+    background:-webkit-gradient(linear, 0% 50%, 30% 100%, from(rgb(80, 80, 82)), to(rgba(58, 121, 146, 0.89)));
   }
 
   .center {
     text-align: center;
+    margin-bottom: 40px;
   }
-
-  .logo {
-    width: 60px;
-    height: 60px;
+  .vux-version1 {
+    font-size: 90px;
+    color: white;
+    font-family: MingLiU;
+    margin-top: 30px;
   }
-
-  .vue-version {
-    font-size: 12px;
-    color: #cccccc;
+  .vux-version2 {
+    font-size: 14px;
+    color: white;
+    margin-top: -10px;
   }
   /* 空格后代选择 
   >子元素选择器 */
+  .weui-cell__hd{
+    margin-left: 10px;
+  }
   .weui-cell__hd>img {
     display: block;
-    margin-right: 5px;
-    width: 20px;
+    margin-right: 13px;
+    width: 30px;
+    margin-top: -13px;
   }
-  
+  .weui-cells{
+    margin-top: 8px;
+    background-color:transparent;
+  }
+  .weui-cells:before{
+    border-top:1px solid transparent;
+  }
+  .weui-cells:after{
+    border-bottom:1px solid transparent;
+  }
+  .weui-cell__title{
+    font-size: 17px;
+    font-family: Droid Sans;
+    color: white;
+  }
+  .weui-cell__content{
+    font-size: 15px;
+    color: #c5c0c0;
+    font-family: MingLiU;
+    margin-top: 3px;
+  }
+  .weui-cell__time{
+    font-size: 15px;
+    color: #c5c0c0;
+    font-family: MingLiU;
+    float:right;
+    margin-right: 10px;
+    margin-top: 4px;
+  }
   </style>
 </head>
 <body ontouchstart>
   <!-- 单页应用 -->
-  <div style="height:100%">
-	</div>
+
+    <div class="center">
+      <p class="vux-version1">16:10</p>
+      <p class="vux-version2">11月6日 星期一</p>
+    </div>
+
+    <div class="weui-cells">
+        <a href="" class="weui-cell weui-cell_access">
+            <div class="weui-cell__hd">
+              <img src="./images/TouTiao.jpg">
+            </div>
+            <div class="weui-cell__bd">
+              <span class="weui-cell__title">中国火箭发射成本1公斤1万美..</span>
+              <span class="weui-cell__time">15:42</span>
+              <p class="weui-cell__content">为何却敢报价5000美元？</p>
+            </div>
+          </a>
+    </div>
+
+    <div class="weui-cells">
+        <a href="" class="weui-cell weui-cell_access">
+            <div class="weui-cell__hd">
+              <img src="./images/WeiXin.jpg">
+            </div>
+            <div class="weui-cell__bd">
+              <span class="weui-cell__title">前端招聘+求职 【不闲聊】</span>
+              <span class="weui-cell__time">15:36</span>
+              <p class="weui-cell__content">招人-三橋sankyu:要是base HK 就不错呀</p>
+            </div>
+          </a>
+    </div>
+
+    <div class="weui-cells">
+        <a href="" class="weui-cell weui-cell_access">
+            <div class="weui-cell__hd">
+              <img src="./images/ZhiFuBao.jpg">
+            </div>
+            <div class="weui-cell__bd">
+              <span class="weui-cell__title">交易提醒</span>
+              <span class="weui-cell__time">11:50</span>
+              <p class="weui-cell__content">你有一笔16.00元的支出，点此查看详..</p>
+            </div>
+          </a>
+    </div>
+
+    <div class="weui-cells">
+        <a href="" class="weui-cell weui-cell_access">
+            <div class="weui-cell__hd">
+              <img src="./images/QQ.jpg">
+            </div>
+            <div class="weui-cell__bd">
+              <span class="weui-cell__title">为了它，近百名飞行员集结西部</span>
+              <span class="weui-cell__time">11:08</span>
+              <p class="weui-cell__content">目前近百名飞行员正集结我国西部,现..</p>
+            </div>
+          </a>
+    </div>
+
 </body>
 </html>
