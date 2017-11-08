@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>talk in weui</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="./css/weui.min.css">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    line-height: 1.6;
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+    background-color: #fbf9fe;
+  }
+
+  .center {
+    text-align: center;
+    color: #cccccc;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  .title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #cccccc;
+  }
+  .titlelist {
+    font-size: 12px;
+    color: #cccccc;
+  }
+  .vue-version {
+    font-size: 12px;
+    color: #cccccc;
+  }
+  /* 空格后代选择 
+  >子元素选择器 */
+  .weui-cell__hd>img {
+    display: block;
+    margin-right: 5px;
+    width: 20px;
+  }
+
+  .weui-cells {
+    background: none;
+  }
+
+  .weui-cells::before{
+    display: none;
+  }
+
+  .weui-cell__ft::after{
+    display: none;
+  }
+
+  .weui-tabbar::before{
+    display: none;
+  }
+  
+  </style>
+</head>
+<body ontouchstart>
+  <!-- 单页应用 -->
+  <div style="height:100%;background-color:#505050;" >
+          <div class="center">
+            <p style="font-size:60px"> 16:10 </p>
+            <p style="font-size:12px"> 11月6日 星期一 </p>
+          </div>
+          <div class="weui-cells">
+              <a href="#" class="weui-cell weui-cell_access">
+                <div class="weui-cell__hd">
+                  <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510139808739&di=3d417b45e0926fc66c2471307d738a1f&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160528%2F5e1681c1347b4e07bf08a4cc72a1cc80_th.jpg" alt="">
+                </div>
+                  <span class="weui-cell__bd">
+                      <p class="title">中国火箭发射成本1公斤1万美元..</p>
+                      <p class="titlelist">为何却敢报价5000美元？</p>
+                  </span>
+                <div class="weui-cell__ft">
+                  <p style="font-size:10px">15:42</p>
+                </div>
+              </a>
+            </div>
+            <div class="weui-cells">
+                <a href="#" class="weui-cell weui-cell_access">
+                  <div class="weui-cell__hd">
+                    <img src="http://img7.cntrades.com/201403/02/13-20-43-72-815009.jpg.middle.jpg" alt="">
+                  </div>
+                    <span class="weui-cell__bd">
+                        <p class="title">腾讯招人群</p>
+                        <p class="titlelist">招人-外向的孤独患者：年薪100万有人来吗</p>
+                    </span>
+                  <div class="weui-cell__ft">
+                    <p style="font-size:10px">11:50</p>
+                  </div>
+                </a>
+              </div>
+              <div class="weui-cells">
+                  <a href="#" class="weui-cell weui-cell_access">
+                    <div class="weui-cell__hd">
+                      <img src="http://img2.imgtn.bdimg.com/it/u=2385923974,937879903&fm=214&gp=0.jpg" alt="">
+                    </div>
+                      <span class="weui-cell__bd">
+                          <p class="title">交易提醒</p>
+                          <p class="titlelist">你有一笔1000万转账记录，点此查看详情</p>
+                      </span>
+                    <div class="weui-cell__ft">
+                      <p style="font-size:10px">15:36</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="weui-cells">
+                    <a href="#" class="weui-cell weui-cell_access">
+                      <div class="weui-cell__hd">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510146897580&di=b3c8e7acd938fe40a413947972354a53&imgtype=0&src=http%3A%2F%2Fdesk.links123.com%2FPublic%2FUploads%2FLinks%2Findex%2F4264.jpg" alt="">
+                      </div>
+                        <span class="weui-cell__bd">
+                            <p class="title">惊！小小地方竟然培育出如此多人才</p>
+                            <p class="titlelist">据说，一家名为旅梦的培训基地...</p>
+                        </span>
+                      <div class="weui-cell__ft">
+                        <p style="font-size:10px">16:08</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="weui-tabbar">
+                      <a href="" class="weui-tabbar__item">
+                          <img src="http://img.zcool.cn/community/01d96a594ce43aa8012193a33ce59d.jpg@1280w_1l_2o_100sh.jpg" 
+                          alt="" class="weui-tabbar__icon">
+                        </a>
+                  </div>
+	</div>
+</body>
+</html>
