@@ -2,143 +2,169 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>纯CSS3天气动画图标DEMO演示</title>
-    <style>
-        html {
-            /* height: 100%;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>纯CSS3天气动画图标DEMO演示</title>
+  <style>
+    html {
+      /* height: 100%;
              display: flex;
             align-items: center;
             justify-content: center;居中方法二 */
-        }
-        
-        .container {
-            width: 1200px;
-            height: 210px;
-            /* background-color: red; */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%);
-            /* webkit浏览器前缀  代表浏览器的内核 chrome safari
+    }
+
+    .container {
+      width: 1200px;
+      height: 210px;
+      /* background-color: red; */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%);
+      /* webkit浏览器前缀  代表浏览器的内核 chrome safari
             IE 内核是专有的
             css 针对浏览器写样式 */
-            /* 颜色渐变  第一个参数指明渐变起始方向  top left right bottom
+      /* 颜色渐变  第一个参数指明渐变起始方向  top left right bottom
             color stop  颜色的断点  color  percent 构成 */
-            background: -webkit-linear-gradient(left, #00BBFF, #00BBFF 14.3%, #2EB5E5 14.3%, #2EB5E5 28.6%, #E6E6E6 28.6%, #E6E6E6 42.9%, #F3D166 42.9%, #F3D166 57.2%, #222233 57.2%, #222233 71.5%, #444444 71.5%, #444444 85.8%, #85db8c 85.8%);
-            /* 绝对居中方法三 */
-            /* position: absolute;
+      background: -webkit-linear-gradient(left, #00BBFF, #00BBFF 14.3%, #2EB5E5 14.3%, #2EB5E5 28.6%, #E6E6E6 28.6%, #E6E6E6 42.9%, #F3D166 42.9%, #F3D166 57.2%, #222233 57.2%, #222233 71.5%, #444444 71.5%, #444444 85.8%, #85db8c 85.8%);
+      /* 绝对居中方法三 */
+      /* position: absolute;
             top: 50%;
             left: 50%;
             margin-left: -600px;
             margin-top: -65px;
             让元素绝对居中方法一 */
-        }
-        .sunny{
-          -moz-animation: sunny 15s linear infinite;
-          -ms-animation: sunny 15s linear infinite;
-          -webkit-animation: sunny 15s linear infinite;
-          animation: sunny 15s linear infinite;
-          /* animation-name: sunny;
+    }
+
+    .sunny {
+      -moz-animation: sunny 15s linear infinite;
+      -ms-animation: sunny 15s linear infinite;
+      -webkit-animation: sunny 15s linear infinite;
+      animation: sunny 15s linear infinite;
+      /* animation-name: sunny;
           animation-duration: 15s;
           随着时间渐变的方式  linear   是匀速 
           animation-timing-function: linear;
           animation-iteration-count: infinite; */
-          background: -webkit-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,.8) 50%,rgba(255,255,255,0) 100%);
-          width: 20px;
-          height: 140px;
-          position: absolute;
-          top: 20px;
-          left: 90px;
-          margin-left: -15px;
-    
-        }
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 0) 100%);
+      width: 20px;
+      height: 140px;
+      position: absolute;
+      top: 20px;
+      left: 90px;
+      margin-left: -15px;
 
-        /* content: '';是伪元素必有的属性，有该属性，伪元素才能起作用 */
-        .sunny:before {
-          content: '';
-          background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 50%,rgba(255, 255, 255, 0) 100%);
-          width: 20px;
-          height: 140px;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          /* 顺时针 */
-          transform: rotate(90deg);
-        }
-        /* 元素结束前 */
-        .sunny:after{
-          content: '';
-          background-color: #FFEE44;
-          border-radius: 50%;
-          width: 80px;
-          height: 80px;
-          position: absolute;
-          top: 30px;
-          left: -30px;
-          box-shadow: rgba(255, 255, 0, .2) 0 0 0 15px;
-        }
-        @keyframes sunny {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-        .cloudy{
-          animation: cloudy 5s ease-in-out infinite;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          background-color: #FFFFFF;
-          position: absolute;
-          left: 255px;
-          top: 70px;
-          margin-left: -60px;
-          /* 多重阴影来绘制云，一个阴影一个阴影叠加 */
-          box-shadow: #FFFFFF 65px -15px 0 -5px, #FFFFFF 60px -15px 0 -10px, #FFFFFF 25px -25px, #FFFFFF 30px -10px, #FFFFFF 85px -5px 0 -5px; 
-        }
-        /* 阴云的影子 */
-        .cloudy:after {
-          /* 伪元素添加content属性 */
-          content: '';
-          background: #000;
-          border-radius: 50%;
-          width: 120px;
-          height: 15px;
-          opacity: 0.2;
-          position: absolute;
-          left: 5px;
-          bottom: -60px;
-          transform: scale(.7);
-        }
-        @keyframes cloudy {
-          /* 只定义50%会自动从0到50到100 */
-          50% {
+    }
 
-          }
-        }
-    </style>
+    /* content: '';是伪元素必有的属性，有该属性，伪元素才能起作用 */
+
+    .sunny:before {
+      content: '';
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 0) 100%);
+      width: 20px;
+      height: 140px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      /* 顺时针 */
+      transform: rotate(90deg);
+    }
+
+    /* 元素结束前 */
+
+    .sunny:after {
+      content: '';
+      background-color: #FFEE44;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: 30px;
+      left: -30px;
+      box-shadow: rgba(255, 255, 0, .2) 0 0 0 15px;
+    }
+
+    @keyframes sunny {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .cloudy {
+      animation: cloudy 5s ease-in-out infinite;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      position: absolute;
+      left: 255px;
+      top: 70px;
+      margin-left: -60px;
+      /* 多重阴影来绘制云，一个阴影一个阴影叠加 */
+      box-shadow: #FFFFFF 65px -15px 0 -5px, #FFFFFF 60px -15px 0 -10px, #FFFFFF 25px -25px, #FFFFFF 30px -10px, #FFFFFF 85px -5px 0 -5px;
+    }
+
+    /* 阴云的影子 */
+
+    .cloudy:after {
+      /* 伪元素添加content属性 */
+      content: '';
+      background: #000;
+      border-radius: 50%;
+      width: 120px;
+      height: 15px;
+      opacity: 0.2;
+      position: absolute;
+      left: 5px;
+      bottom: -60px;
+      transform: scale(.7);
+    }
+
+    @keyframes cloudy {
+      /* 只定义50%会自动从0到50到100 */
+      50% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+      }
+    }
+
+    @-webkit-keyframes cloudy_shadow {
+      50% {
+        -webkit-transform: translateY(20px) scale(1);
+        transform: translateY(20px) scale(1);
+        opacity: .05;
+      }
+    }
+
+    @keyframes cloudy_shadow {
+      50% {
+        -webkit-transform: translateY(20px) scale(1);
+        transform: translateY(20px) scale(1);
+        opacity: .05;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- .container>div[class=]*7 -->
-    <div class="container">
-        <!-- 每个元素都有两个伪元素:before :after  
+  <!-- .container>div[class=]*7 -->
+  <div class="container">
+    <!-- 每个元素都有两个伪元素:before :after  
       没有标签 却可以显示出来 -->
 
-        <div class="sunny"></div>
-        <div class="cloudy"></div>
-        <div class="snowy"></div>
-        <div class="rainy"></div>
-        <div class="rainbow"></div>
-        <div class="starry"></div>
-        <div class="stormy"></div>
-    </div>
+    <div class="sunny"></div>
+    <div class="cloudy"></div>
+    <div class="snowy"></div>
+    <div class="rainy"></div>
+    <div class="rainbow"></div>
+    <div class="starry"></div>
+    <div class="stormy"></div>
+  </div>
 </body>
 
 <ml>
