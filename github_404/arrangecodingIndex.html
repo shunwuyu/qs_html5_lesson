@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document 404</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrapper {
+            position: relative;
+            height: 100%;
+            width: 1680px;
+            margin: 0 auto;
+        }
+
+        #field {
+            /* 往上找，找到离他最近级别的夫级relative定位 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 370px;
+        }
+
+        #pictures {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .img_bg {
+            position: absolute;
+            top: -11px;
+            left: -20px;
+            width: 120%;
+            height: 450px;
+        }
+
+        .img_text {
+            position: absolute;
+            z-index: 20;
+        }
+
+        .img_cat {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .img_cat_shadow {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .img_speeder {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .img_speeder_shadow {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .img_building_1 {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .img_building_2 {
+            position: absolute;
+            z-index: 8;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="field">
+            <img src="./images/field.jpg" alt="" class="img_bg">
+        </div>
+        <div id="pictures">
+            <img src="./images/text.png" alt="" class="img_text">
+            <img src="./images/cat.png" alt="" class="img_cat">
+            <img src="./images/cat_shadow.png" alt="" class="img_cat_shadow">
+            <img class="img_speeder" src="./images/speeder.png">
+            <img class="img_speeder_shadow" src="./images/speeder_shadow.png">
+            <img class="img_building_1" src="./images/buliding_1.png">
+            <img class="img_building_2" src="./images/building_2.png">
+        </div>
+    </div>
+    <script>
+        // 组织代码 命名空间
+        var github404 = {
+            // 运用一个初始化方法提供一个外部的接口
+            // JSON进行代码的组织
+            imaData: {
+                bg: { 
+                    left: -780,
+                    top: -200,
+                    scale: 0.06,
+                    isFont: false
+                },
+                text: {
+                    left: -500,
+                    top: -120,
+                    scale: 0.03,
+                    isFont: true
+                },    
+                cat: { left: -200, top: -100, scale: 0.02, isFont: true },
+                cat_shadow: { left: -189, top: 100, scale: 0.02, isFont: true },
+                speeder: { left: -70, top: -40, scale: 0.01, isFont: true },
+                speeder_shadow: { left: -70, top: 75, scale: 0.01, isFont: true },
+                building_1: { left: 20, top: -111, scale: 0.03, isFont: false },
+                building_2: { left: 300, top: -60, scale: 0.05, isFont: false },
+            },
+            elePic : document.querySelector('#pictures'),
+            window_width : document.body.clientWidth,
+            window_height : document.body.clientHeight,
+            field : document.getElementById('field'),
+           
+           
+           
+            init: function () {
+                this.initData();
+                this.replaceImg();
+                this.attachMoseMove();
+            },
+
+            initData: function () {
+                this.field_width = field.offsetWidth;                
+                this.field_height = field.offsetHeight;
+                this.rate_w = this.field_width/this.window_width;
+                this.rate_h = this.field_height/this.window_height;
+            },
+
+            replaceImg: function () {
+                for (var key in this.imaData) {
+                    console.log(key);
+                    // 位置运算和执行的顺序
+                    var theImage = document.querySelector('.img_' + key);
+                    console.log(this.theImage);
+                
+                    var offset_w = this.field_width/2 * this.imaData[key].scale;
+                    var offset_h = this.field_height/2 * this.imaData[key].scale;
+
+                    theImage.style.left = this.field_width/2 + offset_w + this.imaData[key].left + "px";
+                    theImage.style.top = this.field_height/2 + offset_h + this.imaData[key].top + "px";
+                    // var offset_le
+                    // if (object.hasOwnProperty(key)) {
+                    //     var element = object[key];
+                        
+                    // }
+                    this.elePic.style.opacity = 1;
+                }
+            },
+
+            picMove: function (pageX, pageY) {
+                for (var key in this.imaData) {
+                    // var field_width = field.offsetWidth;
+                    // var field_height = field.offsetHeight;
+                    // var rate_w = field_width/window_width;
+                    // var rate_h = field_height/window_height;
+                    // var element = document.querySelector('.img_' + key);
+                    var theImage = document.querySelector('.img_' + key);
+                    var offset_w = this.rate_w * pageX * this.imaData[key].scale;
+                    var offset_h = this.rate_h * pageY * this.imaData[key].scale;
+
+                    theImage.style.left = this.field_width/2 + offset_w + this.imaData[key].left + "px";
+                    theImage.style.top = this.field_height/2 + offset_h + this.imaData[key].top + "px"; 
+                }
+            },
+
+            attachMoseMove: function () {
+                var that = this;
+                document.body.onmousemove = function (e) {
+                    that.picMove(e.pageX, e.pageY);
+                }
+            }
+        }
+
+        window.onload = function () {
+            github404.init();
+            // JS交互就像是魔法
+            
+            // console.log(window_width, window_height);
+
+           
+            // offset得到元素在夫元素占的宽度和高度
+           
+
+            
+            
+            // 配置 对象字面量
+            // 编写配置为了适应多种设备以及多种浏览器
+           
+
+            // JSON的遍历 也是 object 遍历 key=>value
+            // DOM查找的技巧需要定义名字的相对性
+            
+
+            
+            // setTimeout(function () {
+            //     elePic.style.display = 'block';
+            // }, 3000);
+        }
+    </script>
+</body>
+
+</html>
