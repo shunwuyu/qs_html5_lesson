@@ -91,7 +91,7 @@
       border-radius: 50%;
       background-color: #FFFFFF;
       position: absolute;
-      left: 255px;
+      left: 250px;
       top: 70px;
       margin-left: -60px;
       box-shadow: #FFFFFF 65px -15px 0 -5px,
@@ -108,11 +108,12 @@
       border-radius: 50%;
       width: 120px;
       height: 15px;
-      opacity: 0.2;
+      opacity: .2;
       position: absolute;
       left: 5px;
       bottom: -60px;
       transform: scale(.7);
+
     }
     @-webkit-keyframes cloudy{
       50%{
@@ -126,22 +127,183 @@
         transform: translateY(-20px);
       }
     }
-
-
-
     @-webkit-keyframes cloudy_shadow {
       50%{
-        -webkit-transform: translateY(20)px scale(1);
-        transform: translateY(20)px scale(1);
+        -webkit-transform: translateY(20px) scale(1);
+        transform: translateY(20px) scale(1);
         opacity: .05;
       }
     }
     @keyframes cloudy_shadow {
       50%{
-        -webkit-transform: translateY(20)px scale(1);
-        transform: translateY(20)px scale(1);
+        -webkit-transform: translateY(20px) scale(1);
+        transform: translateY(20px) scale(1);
         opacity: .05;
       }
+    }
+
+    .rainy{
+      -webkit-animation: cloudy  5s ease-in-out infinite;
+      animation: cloudy  5s ease-in-out infinite;
+      animation-delay:-1.5s;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color:rgb(212, 206, 206);
+      position: absolute;
+      left: 420px;
+      top: 70px;
+      margin-left: -60px;
+      box-shadow: rgb(212, 206, 206) 65px -15px 0 -5px,
+        rgb(212, 206, 206) 25px -25px,
+        rgb(212, 206, 206) 30px 10px,
+        rgb(212, 206, 206) 60px 15px 0 -10px,
+        rgb(212, 206, 206) 85px 5px 0 -5px; 
+    }
+    .rainy:before{
+      -webkit-animation: rainy  .9s linear infinite;
+      animation: rainy  .9s linear infinite;
+      animation-delay:-1.5s;
+      content: '';
+      background: rgb(122, 119, 11,0);
+      width: 3px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      left: 25px;
+      bottom: -10px;
+    }
+    @-webkit-keyframes rainy {
+      0%{
+        box-shadow:
+        rgb(122, 119, 119) 0px -5px ,
+        rgb(122, 119, 119) 15px -15px ,
+        rgba(248, 248, 248, 0) 25px -30px,
+        rgba(122, 119, 119, 0) 35px -5px ,
+        rgba(248, 248, 248, 0) 45px -35px,
+        rgba(248, 248, 248, 0) 55px -30px,  
+        rgb(122, 119, 119) 65px -15px ,
+        rgba(129, 126, 126, 0.753) 75px -15px;
+      }
+      25%{
+        box-shadow:
+        rgb(122, 119, 119) 0px 5px ,
+        rgb(122, 119, 119) 15px 5px ,
+        rgba(122, 119, 119, 0) 25px -20px,
+        rgba(122, 119, 119, 0) 35px 3px ,
+        rgba(248, 248, 248) 45px -25px,
+        rgba(122, 119, 119, 0) 55px -20px,
+        rgb(122, 119, 119) 65px 5px,
+        rgba(129, 126, 126, 0.753) 75px -5px;
+      }
+      50%{
+        box-shadow:
+        rgb(122, 119, 119) 0px 15px ,
+        rgb(122, 119, 119) 15px 25px,
+        rgba(122, 119, 119, 0) 25px -15px,
+        rgba(122, 119, 119, 0) 35px -5px ,
+        rgb(122, 119, 119) 45px 7px,
+        rgba(122, 119, 119, 0) 55px -15px,
+        rgb(122, 119, 119) 65px 25px,
+        rgba(129, 126, 126, 0.753) 75px 5px;
+      }
+      75%{
+        box-shadow:
+        rgb(122, 119, 119) 0px 30px ,
+        rgb(122, 119, 119) 15px 45px ,
+        rgb(122, 119, 119) 25px 40px,
+        rgb(122, 119, 119) 35px 10px ,
+        rgb(122, 119, 119) 45px 38px,
+        rgb(122, 119, 119) 55px 20px,
+        rgb(122, 119, 119) 65px 45px,
+        rgba(129, 126, 126, 0.753) 75px 15px;
+
+      }
+      100%{
+        box-shadow:
+        rgb(122, 119, 119) 0px 45px ,
+        rgb(248, 248, 248) 15px 65px,
+        rgb(122, 119, 119) 25px 60px,
+        rgb(122, 119, 119) 35px 32px ,
+        rgb(248, 248, 248) 45px 70px,
+        rgb(122, 119, 119) 55px 60px,
+        rgb(248, 248, 248) 65px 65px,
+        rgba(129, 126, 126, 0.753) 75px 25px;
+      }
+    }
+    @keyframes rainy {
+      0%{
+        box-shadow:
+        rgb(122, 119, 119) 0px -5px ,
+        rgb(122, 119, 119) 15px -15px ,
+        rgba(248, 248, 248, 0) 25px -30px,
+        rgba(122, 119, 119, 0) 35px -5px ,
+        rgba(248, 248, 248, 0) 45px -35px,
+        rgba(248, 248, 248, 0) 55px -30px,  
+        rgb(122, 119, 119) 65px -15px ,
+        rgba(129, 126, 126, 0.753) 75px -15px;
+      }
+      25%{
+        box-shadow:
+        rgb(122, 119, 119) 0px 5px ,
+        rgb(122, 119, 119) 15px 5px ,
+        rgba(122, 119, 119, 0) 25px -20px,
+        rgba(122, 119, 119, 0) 35px 3px ,
+        rgba(248, 248, 248) 45px -25px,
+        rgba(122, 119, 119, 0) 55px -20px,
+        rgb(122, 119, 119) 65px 5px,
+        rgba(129, 126, 126, 0.753) 75px -5px;
+      }
+      50%{
+        box-shadow:
+        rgb(122, 119, 119) 0px 15px ,
+        rgb(122, 119, 119) 15px 25px,
+        rgba(122, 119, 119, 0) 25px -15px,
+        rgba(122, 119, 119, 0) 35px -5px ,
+        rgb(122, 119, 119) 45px 7px,
+        rgba(122, 119, 119, 0) 55px -15px,
+        rgb(122, 119, 119) 65px 25px,
+        rgba(129, 126, 126, 0.753) 75px 5px;
+      }
+      75%{
+        box-shadow:
+        rgb(122, 119, 119) 0px 30px ,
+        rgb(122, 119, 119) 15px 45px ,
+        rgb(122, 119, 119) 25px 40px,
+        rgb(122, 119, 119) 35px 10px ,
+        rgb(122, 119, 119) 45px 38px,
+        rgb(122, 119, 119) 55px 20px,
+        rgb(122, 119, 119) 65px 45px,
+        rgba(129, 126, 126, 0.753) 75px 15px;
+
+      }
+      100%{
+        box-shadow:
+        rgb(122, 119, 119) 0px 45px ,
+        rgb(248, 248, 248) 15px 65px,
+        rgb(122, 119, 119) 25px 60px,
+        rgb(122, 119, 119) 35px 32px ,
+        rgb(248, 248, 248) 45px 70px,
+        rgb(122, 119, 119) 55px 60px,
+        rgb(248, 248, 248) 65px 65px,
+        rgba(129, 126, 126, 0.753) 75px 25px;
+      }
+    }
+    
+    .rainy:after{
+      -webkit-animation: cloudy_shadow 5s ease-in-out infinite;
+      animation: cloudy_shadow 5s ease-in-out infinite;
+      animation-delay:-1.5s;
+      content: '';
+      background: #000;
+      border-radius: 50%;
+      width: 120px;
+      height: 15px;
+      opacity: .2;
+      position: absolute;
+      left: 5px;
+      bottom: -60px;
+      transform: scale(.7);
     }
 
   </style>
