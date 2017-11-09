@@ -1,12 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新书速递标签栏</title>
+    <style>
+        .tags-img {
+            width: 50px;
+            height: 100px;
+        }
+        
+        ul li {
+            /* list-style: none; */
+            display: inline;
+        }
+    </style>
 </head>
+
 <body>
-  
+    section标签将网页分为几部分 新书速递
+    <section class="section book-express">
+
+        <!-- .hd+.bd  快捷键 代码块语义化-->
+        <div class="hd">
+            <h2>
+                <span>新书速递 </span>
+                <span class="link-more">
+              <a href="#">更多&gt;&gt;</a>
+            </span>
+            </h2>
+            <div class="side-controls">
+                <!-- ol.slide-dots>(li>a[href='#'])*4 -->
+                <ol class="slide-dots">
+                    <li>
+                        <a href="#" class="active"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ol>
+                <div class="slide-btns">
+                    <a href="#" class="prev">&lt;</a>
+                    <a href="#" class="next">&gt;</a>
+                </div>
+            </div>
+        </div>
+        <!-- 语义化命名 -->
+        <div class="bd">
+            <ul>
+                <li>
+                    <div class="cover">
+                        <a href="#" title="xbx">
+                            <img src="xbx.png" title="xbx" alt="" width="115px" height="172px">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <a href="#" title="包边">包边</a>
+                        </div>
+                        <div class="author">
+                            木心
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cover">
+                        <a href="#" title="xbx">
+                            <img src="xbx.png" title="xbx" alt="" width="115px" height="172px">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <a href="#" title="包边">包边</a>
+                        </div>
+                        <div class="author">
+                            木心
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cover">
+                        <a href="#" title="xbx">
+                            <img src="xbx.png" title="xbx" alt="" width="115px" height="172px">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <a href="#" title="包边">包边</a>
+                        </div>
+                        <div class="author">
+                            木心
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- 图书资讯
+    <section>
+
+    </section>
+    最受欢迎的图书榜
+    <section>
+
+    </section> -->
+    <!-- <div class="aside">
+        <h2>
+            <span>热门标签</span>
+             热门标签 css组件 复用性 所有超链接的样式 
+              link-more 模块的名字 为样式负责 表现及结构=样式 少为样式取名 不能复用 
+            <span class="link-more">
+            <a href="#" class="">更多&gt;&gt;</a>
+          </span>
+        </h2>
+        <ul class="hot-tags-col5">
+            <li>
+                <a><img src="newbook.png" alt="" class="tags-img"></a>
+                <p>酷MA萌与我</p>
+                <p>[日]</p>
+            </li>
+            <li>
+                <a><img src="newbook.png" alt="" class="tags-img"></a>
+                <p>酷MA萌与我</p>
+                <p>[日]</p>
+            </li>
+        </ul>
+    </div> -->
 </body>
+
 </html>

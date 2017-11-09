@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>纯CSS3天气动画图标DEMO演示</title>
     <style>
-        html {
-            /* height: 100%;
+        /* html{
+            height: 100%;
              display: flex;
             align-items: center;
-            justify-content: center;居中方法二 */
-        }
+            justify-content: center;居中方法二
+        } */
         
         .container {
             width: 1200px;
@@ -33,6 +33,13 @@
             margin-left: -600px;
             margin-top: -65px;
             让元素绝对居中方法一 */
+            /* -webkit-animation: container 5s linear infinite; */
+        }
+        
+        @keyframes container {
+            50% {
+                transform: translate(0%);
+            }
         }
         
         .sunny {
@@ -144,11 +151,131 @@
         
         @keyframes cloudy_shadow {
             50% {
-                /* 添加兼容性 */
+                /* 添加兼容性 这里添加translateY属性是为了让阴影停在原地*/
                 -webkit-transform: translateY(20px) scale(1);
                 transform: translateY(20px) scale(1);
                 opacity: .05;
             }
+        }
+        
+        .snowy {
+            animation: snowy 8s ease-in-out infinite;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #bebebe;
+            position: absolute;
+            left: 425px;
+            top: 70px;
+            margin-left: -60px;
+            /* 多重阴影来绘制云 */
+            box-shadow: #bebebe 65px -15px 0 -5px, #bebebe 25px -25px, #bebebe 30px 10px, #bebebe 60px 15px 0 -10px, #bebebe 85px 5px 0 -5px;
+        }
+        
+        .snowy:after {
+            /* 阴影也随之改变 向下降阴影变大 向上升阴影变小 */
+            animation: snowy_shadow 8s ease-in-out infinite;
+            /* animation-timing-function: */
+            /* 没有content:'';伪元素不显示 */
+            content: '';
+            background: #000;
+            border-radius: 50%;
+            width: 120px;
+            height: 15px;
+            /* opacity透明度 */
+            opacity: 0.2;
+            position: absolute;
+            left: 5px;
+            bottom: -60px;
+            /* 缩小0.7倍 */
+            transform: scale(.7);
+        }
+        
+        .snowy:before {
+            content: '';
+            animation: snowy_snow 1s infinite linear;
+            background: #000;
+            border-radius: 50%;
+            height: 10px;
+            width: 3px;
+            opacity: 0.3;
+            transform: scale(.9);
+            /* 特性加了display才有 为什么 */
+            display: block;
+        }
+        
+        @keyframes snowy {
+            50% {
+                /* 添加兼容性 包括keyframes也得添加*/
+                -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes snowy_shadow {
+            50% {
+                /* 添加兼容性 这里添加translateY属性是为了让阴影停在原地*/
+                -webkit-transform: translateY(20px) scale(1);
+                transform: translateY(20px) scale(1);
+                opacity: .05;
+            }
+        }
+        
+        @keyframes snowy_snow {
+            0% {
+                box-shadow: rgba(0, 0, 0, 0) 30px 30px, rgba(0, 0, 0, 0) 40px 40px, #000 50px 75px, #000 55px 50px, #000 70px 100px, #000 80px 95px, #000 110px 45px, #000 90px 35px;
+            }
+            25% {
+                box-shadow: #000 30px 45px, #000 40px 60px, #000 50px 90px, #000 55px 65px, rgba(0, 0, 0, 0) 70px 120px, rgba(0, 0, 0, 0) 80px 120px, #000 110px 70px, #000 90px 60px;
+            }
+            26% {
+                box-shadow: #000 30px 45px, #000 40px 60px, #000 50px 90px, #000 55px 65px, rgba(0, 0, 0, 0) 70px 40px, rgba(0, 0, 0, 0) 80px 20px, #000 110px 70px, #000 90px 60px;
+            }
+            50% {
+                box-shadow: #000 30px 70px, #000 40px 80px, rgba(0, 0, 0, 0) 50px 100px, #000 55px 80px, #000 70px 60px, #000 80px 45px, #000 110px 95px, #000 90px 85px;
+            }
+            51% {
+                box-shadow: #000 30px 70px, #000 40px 80px, rgba(0, 0, 0, 0) 50px 45px, #000 55px 80px, #000 70px 60px, #000 80px 45px, #000 110px 95px, #000 90px 85px;
+            }
+            75% {
+                box-shadow: #000 30px 95px, #000 40px 100px, #000 50px 60px, rgba(0, 0, 0, 0) 55px 95px, #000 70px 80px, #000 80px 70px, rgba(0, 0, 0, 0) 110px 120px, rgba(0, 0, 0, 0) 90px 110px;
+            }
+            76% {
+                box-shadow: #000 30px 95px, #000 40px 100px, #000 50px 60px, rgba(0, 0, 0, 0) 55px 35px, #000 70px 80px, #000 80px 70px, rgba(0, 0, 0, 0) 110px 25px, rgba(0, 0, 0, 0) 90px 15px;
+            }
+            100% {
+                box-shadow: rgba(0, 0, 0, 0) 30px 120px, rgba(0, 0, 0, 0) 40px 120px, #000 50px 75px, #000 55px 50px, #000 70px 100px, #000 80px 95px, #000 110px 45px, #000 90px 35px;
+            }
+        }
+        
+        .rainbow {
+            animation: rainbow 8s ease-in-out infinite;
+            width: 125px;
+            height: 28px;
+            /* border-radius: 50%; */
+            background: -webkit-linear-gradient(top, #0bf, #0bf 14.3%, #2eb5e5 14.3%, #2eb5e5 28.6%, #e6e6e6 28.6%, #e6e6e6 42.9%, #f3d166 42.9%, #f3d166 57.2%, #223 57.2%, #223 71.5%, #444 71.5%, #444 85.8%, #85d88c 85.8%);
+            position: absolute;
+            left: 598px;
+            top: 70px;
+            margin-left: -60px;
+        }
+        
+        .rainbow::after {
+            animation: rainbow_shadow 8s ease-in-out infinite;
+            /* animation-timing-function: */
+            /* 没有content:'';伪元素不显示 */
+            content: '';
+            background: #000;
+            border-radius: 50%;
+            width: 120px;
+            height: 15px;
+            /* opacity透明度 */
+            opacity: 0.2;
+            position: absolute;
+            left: 5px;
+            bottom: -70px;
+            /* 缩小0.7倍 */
+            transform: scale(.7);
         }
     </style>
 </head>
