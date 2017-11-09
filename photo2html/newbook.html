@@ -1,12 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .container {
+    width: 80%;
+  }
+  .header {
+    line-height: 100px;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  .header_top {
+    float: left;
+    color: black;
+    font-size: 18px;
+    margin-left: 20px;
+  }
+
+  .header_bottom {
+    float: left;
+    color: yellow;
+    font-size: 14px;
+    margin-left: 30px;
+  }
+
+  .content {
+    height: 400px;
+    width: 100%;
+    border-bottom: 1px dotted blue;
+  }
+
+  .content ul li {
+    float: left;
+    font-size: 14px;
+    margin-left: 30px;
+    list-style-type: none;
+    display: block;
+    background-color: blue;
+  }
+
+  .content ul li a {
+    text-decoration: none;
+  }
+
+  .clear {
+    clear: both;
+  }
+  .content_top {
+    margin-top: 20px;
+  }
+  .content_bottom {
+    margin-top:40px;
+  }
+</style>
+
 <body>
+  <div class="container">
+      <div class="header">
+          <p class="header_top">热门标签</p>
+          <p class="header_bottom">所有热门标签》</p>
+        </div>
+        <div class="content">
+          <div class="content_top">
+            <p>文学</p>
+          </div>
+          <div class="content_bottom">
+            <ul>
+              <li>
+                <a href="">小说</a>
+              </li>
+              <li>
+                <a href="">随笔</a>
+              </li>
+              <li>
+                <a href="">日本文学</a>
+              </li>
+              <li>
+                <a href="">散文</a>
+              </li>
+              <li>
+                <a href="">诗歌</a>
+              </li>
+              <li>
+                <a href="">童话</a>
+              </li>
+              <li>
+                <a href="">名著</a>
+              </li>
+              <li>
+                <a href="">港台</a>
+              </li>
+              <li>
+                <a href="">更多》</a>
+              </li>
+            </ul>
+          </div>
+      
+      
+          <div class="clear"></div>
+        </div>
+  </div>
   
 </body>
+
 </html>
