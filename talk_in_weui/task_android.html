@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>talk in weui</title>
+  <title></title>
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
   <link rel="stylesheet" href="./css/weui.min.css">
   <style>
@@ -17,17 +17,20 @@
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    background: -webkit-linear-gradient(top,lightblue,skyblue,
+    rgb(107, 107, 243),#6264E0);
   }
 
   body {
     line-height: 1.6;
     font-family: -apple-system-font, "Helvetica Neue", sans-serif;
-    background-color: #fbf9fe;
   }
 
   .center {
     text-align: center;
+    opacity: 0.8;
   }
+  
 
   .logo {
     width: 60px;
@@ -35,13 +38,11 @@
   }
 
   .vue-version {
-    font-size: 12px;
-    color: #cccccc;
+    font-size: 16px;
   }
-  /* 空格后代选择 
-  >子元素选择器 */
+
   .weui-cell__hd>img {
-    display: block;
+    display: block; 
     margin-right: 5px;
     width: 20px;
   }
@@ -49,8 +50,61 @@
   </style>
 </head>
 <body ontouchstart>
-  <!-- 单页应用 -->
+
   <div style="height:100%">
-	</div>
+    <div style="height:20% ;margin:50px 0 0 0;" class="center">
+      <p style="color:white;font-size:36px;font-weight: bold;"
+      class="vux-version">16：10</p>
+      <p style="color:white;font-size:10px;">11月6日 星期一</p>
+    </div>
+    <div style="height:48%;background: -webkit-linear-gradient(top,#8DCFEA,#7897EF 50%,
+    #7897EF,#6868ED)" class="weui-cells" >
+      <a href="#" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="">
+        </div>
+        <div class="weui-cell__bd">
+          <p style="color:white;font-size:20px;">中国火箭发射成本1公斤1万美..</p>
+          <p style="color:#CBDCDA;font-size:10px;">为何却报价5000美元？</p>
+        </div>
+        <div class="weui-cell_ft">
+          <p style="color:white;font-size:8px;">15:42</p>
+        </div>
+      </a>
+      <a href="" class="weui-cell weui-cell_access">
+        <span class="weui-cell__hd">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt=""></span>
+        <span class="weui-cell__bd">
+          <p style="color:white;font-size:20px;">前端招聘+求职 【不闲聊】</p>
+          <p style="color:#CBDCDA;font-size:10px;">招人-三橘sankyu：要是base HK 就不错呀</p>
+        </span>
+        <div class="weui-cell_ft">
+          <p style="color:white;font-size:8px;">15:36</p>
+        </div>
+      </a>
+      <a href="" class="weui-cell weui-cell_access">
+        <span class="weui-cell__hd">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt=""></span>
+        <span class="weui-cell__bd">
+          <p style="color:white;font-size:20px;">交易提醒</p>
+          <p style="color:#CBDCDA;font-size:10px;">你有一笔16：00元的支出，点此查看详情。</p>
+        </span>
+        <div class="weui-cell_ft">
+          <p style="color:white;font-size:8px;">11：50</p>
+        </div>
+      </a>
+      <a href="" class="weui-cell weui-cell_access">
+          <span class="weui-cell__hd">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt=""></span>
+          <span class="weui-cell__bd">
+            <p style="color:white;font-size:20px;">为了它，近百名飞行员集结西部</p>
+            <p style="color:#CBDCDA;font-size:10px;">目前近百名飞行员正集结我国西部，现役装..</p>
+          </span>
+          <div class="weui-cell_ft">
+            <p style="color:white;font-size:8px;">16：08</p>
+          </div>
+        </a>
+    </div>
+    
 </body>
 </html>
