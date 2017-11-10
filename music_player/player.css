@@ -32,3 +32,39 @@ html, body {
     width: 100%;
     height: 100%;
 }
+
+.title {
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    z-index: 11;
+    background-color: rgba(253, 253, 253, .04)
+}
+
+.title .music-info {
+    padding: 0 20px;
+    margin: 0 auto;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    overflow: hidden;
+}
+
+.music-info .song, .artist {
+	width: 100%;
+    font-size: 18px;
+    color: red;
+	font-weight: lighter;
+    margin: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-info .artist {
+	font-size: 14px;
+	color: #c8c0cc;
+	margin-top: 4px;
+}
