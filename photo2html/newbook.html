@@ -4,9 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>新书速递 html语义表达</title>
 </head>
 <body>
-  
+  <!-- <div class="aside">
+    <div>
+      <span><h3>新书速递</h3></span>
+      <span class="link-more">
+          <a href="#">&nbsp;&nbsp; &nbsp; 更多&gt;&gt;</a>
+      </span>
+    </div>
+   
+  </div>
+  <div class="tags_1">
+    <ul>
+      <li>
+        <span><img src=""></span>
+        <span><img src=" ">推荐</span>
+        <span class="iterms_1"><a href="#">书名</a></span>
+        <span class="iterms_1">作者</span>
+      </li>
+    </ul>
+  </div>
+  <div class="tags_2">
+      <ul>
+        <li>
+          <span><img src=""></span>
+          <span><a href="#">书名</a></span>
+          <span>作者</span>
+        </li>
+      </ul>
+  </div> -->
+  <!-- 虚块标签 
+  新书速递
+  图书咨询
+  最受关注图书榜 
+  使用section替代div
+  -->
+  <section class="section book-express">
+      <div class="hd">
+        <h2>
+          <span>新书速递</span>
+          <span class="link-more">更多&gt;&gt;</span>
+        </h2>
+        <div class="side-controls">
+          <ol class="slide-dots">
+            <li><a href="#" class="active"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ol>
+          <div class="slide-btns">
+             <a href="#" class="prev">&lt;</a>
+             <a href="#" class="next">&gt;</a>
+          </div>
+        </div>
+      </div>
+      <div class="bd">
+          <ul class="list-express">
+            <li>
+              <!-- <a href="#"><img src=""></a>
+              <span><a href="#"></a></span>
+              <span></span> -->
+              <div class="cover">
+                <a href="#"><img src="" title="" alt="" width="115px" height="172px"></a>
+              </div>
+              <div class="info">
+                <div class="title"><a href="#" title="">书名</a></div>
+                <div class="author">作者</div>
+              </div>           
+            </li>
+          </ul>
+      </div>
+  </section>
+
+
+
 </body>
 </html>
