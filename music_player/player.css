@@ -1,0 +1,34 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* 超出则隐藏 html5 仿APP */
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 110%;
+    width: 110%;
+    /* 110%中心点与100%重合 */
+    margin: 5%;
+    background: #a0a0a0 center;
+    background-size: cover;
+    z-index: -1;
+    /* 过滤器 */
+    -webkit-filter: blur(20px);
+}
+
+.bg-cover {
+    background: rgba(0, 0, 0, .4);
+    width: 100%;
+    height: 100%;
+}
