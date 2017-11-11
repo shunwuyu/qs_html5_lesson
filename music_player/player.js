@@ -30,7 +30,7 @@ var MusicPlayer = {
     // 进度条上的小圆点
     $cur: null,
     initDate: function () {
-        // jQuery封装后的元素是一个jQuery对象        
+        // jQuery封装后  元素是一个jQuery对象        
         this.player = document.getElementById('player');
         this.$bg = $('#bg');
         this.$artist = $('#artist');
