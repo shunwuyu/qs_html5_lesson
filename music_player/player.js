@@ -21,6 +21,7 @@ var MusicPlayer = {
     // 碟片封面
     $diskCover:null,
     $album: null,
+    
     // 上一首和下一首歌的切换
     $pre: null,
     $next: null,
@@ -41,6 +42,7 @@ var MusicPlayer = {
         this.$album = $('.album');
         this.$playBtn = $('#controls .play');
         this.$pauseBtn = $('#controls .pause');
+        
         this.$pre = $('#controls .pre');
         this.$next = $('#controls .next');
         this.$totalTime = $('#totalTime');
@@ -49,34 +51,6 @@ var MusicPlayer = {
         this.player.src = this.currentSong.mp3Url;
         this.play();
         // console.log(playList);
-    },
-    play: function () {
-        this.player.play();
-        // 一个函数只做一件事
-        this.moveNeedle(true);
-        this.changeAnimationState(this.$diskCover,'running')
-        this.$playBtn.hide();
-        this.$pauseBtn.show();
-    },
-    pause: function () {
-        this.player.pause();
-        this.moveNeedle(false);
-        this.changeAnimationState(this.$diskCover, 'paused');
-        this.$playBtn.show();
-        this.$pauseBtn.hide();
-    },
-    moveNeedle: function (play) {
-        if(play){
-            this.$needle.removeClass('.pause-needle').addClass('resume-needle');            
-        } else {
-            this.$needle.addClass('.pause-needle').removeClass('resume-needle');
-        }
-    },
-    changeAnimationState: function ($ele, state) {
-        $ele.css ({
-            'animation-play-state': state,
-            '-webkit-animation-play-state': state
-        });
     },
     prev: function () {
         this.resetBar();
@@ -176,6 +150,34 @@ var MusicPlayer = {
         parseInt((parseFloat((parseFloat(time /3600.0) - parseInt(time /3600.0)) *60) -  
         parseInt((parseFloat(time /3600.0) - parseInt(time /3600.0)) *60)) *60); 
         return showTime;
+    },
+    play: function () {
+        this.player.play();
+        // 一个函数只做一件事
+        this.moveNeedle(true);
+        this.changeAnimationState(this.$diskCover,'running')
+        this.$playBtn.hide();
+        this.$pauseBtn.show();
+    },
+    pause: function () {
+        this.player.pause();
+        this.moveNeedle(false);
+        this.changeAnimationState(this.$diskCover, 'paused');
+        this.$playBtn.show();
+        this.$pauseBtn.hide();
+    },
+    moveNeedle: function (play) {
+        if(play){
+            this.$needle.removeClass('.pause-needle').addClass('resume-needle');            
+        } else {
+            this.$needle.addClass('.pause-needle').removeClass('resume-needle');
+        }
+    },
+    changeAnimationState: function ($ele, state) {
+        $ele.css ({
+            'animation-play-state': state,
+            '-webkit-animation-play-state': state
+        });
     },
     init: function () {
         // $  jQuery的查找
