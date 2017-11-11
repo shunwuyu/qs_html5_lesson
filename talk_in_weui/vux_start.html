@@ -53,18 +53,21 @@
   <div style="height:100%">
     <div class="center">
       <img src="
-      https://www.vue-js.com/public/images/vue.png" alt="vue" class="logo">
+      https://www.vue-js.com/public/images/vue.png 
+
+" alt="vue" class="logo">
       <p class="vux-version">v0.0.1</p>
     </div>
-    <!-- cells 单元格来展示数据 
-    weui 是框架 zk 前缀 
-    css 世界里是有组件 词汇量
+    <!-- cells 单元格来显示数据 
+    weui 是框架 前缀
+    css 世界里是有组件的 词汇量
     基于这些常理，构建自己的框架
-    命名空间 有利于多人协作  zk- 防冲突 -> 整站的风格
-    tb-   tm-  
-    单复数 
+    命名空间 有利于多人协作 最先的出现是为了防冲突  发展后能变成一种整站的风格 如：tb- tm-
+    单复数
+    weui-cell 代表一个格子  weui-cell_access代表是否能点击 要在命名上进行体现
     -->
     <div class="weui-cells">
+      <!-- _access能显示一个箭头 -->
       <a href="#" class="weui-cell weui-cell_access">
         <div class="weui-cell__hd">
           <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="">
@@ -84,6 +87,7 @@
           <p>Buy me a coffee</p>
         </span>
         <span class="weui-cell__ft">
+          <!-- weui-badge是显示在箭头前面的红色提示小框 -->
           <div class="weui-badge">donate</div>
         </span>
       </a>
@@ -106,18 +110,18 @@
         <p class="weui-tabbar__label">Home</p>
       </a>
       <a href="" class="weui-tabbar__item">
-        <span style="position:relative;display:inline-block;">      
-          <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
-          <span class="weui-badge" 
-          style="position:absolute;top:-2px;right:-13px;">8</span>
+        <span style="position:relative;display:inline-block">
+            <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+            <!-- weui-badge表示一个红色的展示区 -->
+            <span class="weui-badge" style="position:absolute;top:-6;right:-11px">8</span>
         </span>
         <p class="weui-tabbar__label">Demos</p>
       </a>
       <a href="" class="weui-tabbar__item">
-        <span style="position:relative;display:inline-block;">
+        <span style="position:relative;display:inline-block">
             <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
-            <span class="weui-badge weui-badge_dot" 
-            style="position:absolute;top:0;right:-6px;"></span>
+            <!-- weui-badge_dot小圆点，给一个相对于span的定位，放在右上角 -->
+            <span class="weui-badge weui-badge_dot" style="position:absolute;top:0;right:-6px"></span>
         </span>
         <p class="weui-tabbar__label">Donate</p>
       </a>
