@@ -4,9 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>新书速递 html 语义表达</title>
 </head>
 <body>
-  
+  <!-- html 表达结构的语义化 -->
+  <!-- section 标签替代 div 能让搜索更为友好，搜索更精准 -->
+  <!-- 新书速递 -->
+  <section class="section book-express">
+    <div class="hd">
+      <h2>
+        <span>新书速递</span>
+        <span class="link-more">
+          <a href="#">更多&gt;&gt;</a>
+        </span>
+      </h2>
+      <div class="side-controls">
+        <ol class="slid-dots">
+          <li><a href="#" class="active"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ol>
+        <div class="slide-btns">
+          <a href="#" class="prev">&lt;</a>
+          <a href="#" class="next">&gt;</a>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <ul class="list-express">
+        <li>
+          <div class="cover">
+            <!-- 加上 title 能够实现无障碍浏览 -->
+            <a href="#" title="豹变">
+                <img src="" title="豹变" width="115px" height="172px">
+            </a>
+          </div>
+          <div class="info">
+            <div class="title">
+              <a href="#" title="豹变">豹变</a>
+            </div>
+            <div class="author">
+              木心
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- 图书资讯 -->
+  <!-- 最受关注的图书榜 -->
 </body>
 </html>

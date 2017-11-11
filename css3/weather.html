@@ -8,6 +8,7 @@
   <title>纯CSS3天气动画图标DEMO演示</title>
   <style>
     html {
+<<<<<<< HEAD
       /* height: 100%;
              display: flex;
             align-items: center;
@@ -18,10 +19,27 @@
       width: 1200px;
       height: 210px;
       /* background-color: red; */
+=======
+      height: 100%;
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+    }
+    .container {
+      width:1200px;
+      height:210px; 
+      /* webkit 浏览器内核 chrome safari
+      IE css 针对浏览器来写样式 渐变色*/
+      /* 渐变方向 top left right bottom
+      color stop 颜色断点  color percent */
+      background:
+       -webkit-linear-gradient(left, #00BBFF, #00BBFF 14.3%, #2EB5E5 14.3%, #2EB5E5 28.6%,#E6E6E6 28.6%, #E6E6E6 42.9%,#F3D166 42.9%,#F3D166 57.2%,#222233 57.2%, #222233 71.5%,#444444 71.5%, #444444 85.8%, #85DB8c 85.8%);
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%);
+<<<<<<< HEAD
       /* webkit浏览器前缀  代表浏览器的内核 chrome safari
             IE 内核是专有的
             css 针对浏览器写样式 */
@@ -37,23 +55,39 @@
             让元素绝对居中方法一 */
     }
 
+=======
+      /*margin-left:-600px;
+      margin-top:-65px; */
+    }
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
     .sunny {
       -moz-animation: sunny 15s linear infinite;
       -ms-animation: sunny 15s linear infinite;
       -webkit-animation: sunny 15s linear infinite;
       animation: sunny 15s linear infinite;
       /* animation-name: sunny;
+<<<<<<< HEAD
           animation-duration: 15s;
           随着时间渐变的方式  linear   是匀速 
           animation-timing-function: linear;
           animation-iteration-count: infinite; */
       background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 0) 100%);
+=======
+      animation-duration: 15s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite; */
+      background: -webkit-linear-gradient(
+        top,rgba(255,255,255,0) 0%,
+       rgba(255,255,255,.8) 50%,
+        rgba(255,255,255,0) 100%);
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
       width: 20px;
       height: 140px;
       position: absolute;
       top: 20px;
       left: 90px;
       margin-left: -15px;
+<<<<<<< HEAD
 
     }
 
@@ -76,15 +110,42 @@
     .sunny:after {
       content: '';
       background-color: #FFEE44;
+=======
+    }
+    .sunny:before {
+      content: '';
+      background:
+       -webkit-linear-gradient(top,rgba(255,255,255,0) 0%,
+       rgba(255,255,255,.8) 50%,
+        rgba(255,255,255,0) 100%);
+      width: 20px;
+      height: 140px;
+      opacity: 1;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      /* 顺时针  */
+      transform: rotate(90deg);
+    }
+    /* 元素结束前 */
+    .sunny:after {
+      content: '';
+      background:#FFEE44;
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
       border-radius: 50%;
       width: 80px;
       height: 80px;
       position: absolute;
       top: 30px;
       left: -30px;
+<<<<<<< HEAD
       box-shadow: rgba(255, 255, 0, .2) 0 0 0 15px;
     }
 
+=======
+      box-shadow: rgba(255,255,0,.2) 0 0 0 15px;
+    }
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
     @keyframes sunny {
       0% {
         transform: rotate(0deg);
@@ -93,9 +154,14 @@
         transform: rotate(360deg);
       }
     }
+<<<<<<< HEAD
 
     .cloudy {
       animation: cloudy 5s ease-in-out infinite;
+=======
+    .cloudy {
+      animation: cloudy  5s ease-in-out infinite;
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
       width: 50px;
       height: 50px;
       border-radius: 50%;
@@ -104,6 +170,7 @@
       left: 255px;
       top: 70px;
       margin-left: -60px;
+<<<<<<< HEAD
       /* 多重阴影来绘制云，一个阴影一个阴影叠加 */
       box-shadow: #FFFFFF 65px -15px 0 -5px, #FFFFFF 60px -15px 0 -10px, #FFFFFF 25px -25px, #FFFFFF 30px -10px, #FFFFFF 85px -5px 0 -5px;
     }
@@ -112,6 +179,19 @@
 
     .cloudy:after {
       /* 伪元素添加content属性 */
+=======
+      /* 多重阴影来绘制云 */
+      box-shadow: #FFFFFF 65px -15px 0 -5px,
+          #FFFFFF 25px -25px,
+          #FFFFFF 30px 10px,
+          #FFFFFF 60px 15px 0 -10px,
+            #FFFFFF 85px 5px 0 -5px; 
+    }
+    /* 阴云的影子 */
+    .cloudy:after{
+      -webkit-animation: cloudy_shadow 5s ease-in-out infinite;
+      animation: cloudy_shadow 5s ease-in-out infinite;
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
       content: '';
       background: #000;
       border-radius: 50%;
@@ -123,15 +203,22 @@
       bottom: -60px;
       transform: scale(.7);
     }
+<<<<<<< HEAD
 
     @keyframes cloudy {
       /* 只定义50%会自动从0到50到100 */
+=======
+    @keyframes cloudy {
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
       50% {
         -webkit-transform: translateY(-20px);
         transform: translateY(-20px);
       }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
     @-webkit-keyframes cloudy_shadow {
       50% {
         -webkit-transform: translateY(20px) scale(1);
@@ -139,7 +226,10 @@
         opacity: .05;
       }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
     @keyframes cloudy_shadow {
       50% {
         -webkit-transform: translateY(20px) scale(1);
@@ -147,6 +237,7 @@
         opacity: .05;
       }
     }
+<<<<<<< HEAD
 
     .rainy {
       animation: rainy 5s ease-in-out infinite 1s;
@@ -404,10 +495,13 @@
         #000 90px 35px;
       }
     }
+=======
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
   </style>
 </head>
 
 <body>
+<<<<<<< HEAD
 
   <!-- .container>div[class=]*7 -->
   <div class="container">
@@ -418,6 +512,16 @@
     <div class="cloudy"></div>
     <div class="snowy"></div>
     <div class="rainy"></div>
+=======
+  <div class="container">
+    <!-- 每个元素都有两个伪元素
+    没有标签 可以显示出来 
+    :before :after -->
+    <div class="sunny"></div>
+    <div class="cloudy"></div>
+    <div class="rainy"></div>
+    <div class="snowy"></div>
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
     <div class="rainbow"></div>
     <div class="starry"></div>
     <div class="stormy"></div>
