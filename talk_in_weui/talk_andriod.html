@@ -7,22 +7,129 @@
   <title>talk in weui</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
   <link rel="stylesheet" href="./css/weui.min.css">
+<style>
+ * {
+    margin: 0;
+    padding: 0;
+  }
 
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+   body {
+    line-height: 1.6;
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+    background:-webkit-gradient(linear, 0% 50%, 30% 100%, from(rgb(80, 80, 82)), to(rgba(58, 121, 146, 0.89)));
+    /* background:linear-gradient(to top, red, blue); */
+   }
+   .center {
+       text-align: center;
+   }
+   .time {
+       font-size: 50px;
+       color: #ffffff;
+   }
+   .date {
+        color: #ffffff;
+   }
+   /* .weui-cells_bd {
+       
+   } */
+   .title {
+       margin-left: 10px;
+   }
+   
+   .title-small{
+    font-size: 14px;
+    color: #c5c0c0;
+    margin-top: 6px;
+    margin-left: 10px;
+   }
+   .weui-cell__ft {
+       font-size: 16px;
+       color: #c5c0c0;
+       margin-top: -20px;
+   }
+   .weui-cell_access .weui-cell__ft:after{
+     border-width:0 0 0 0 ;
+  }
+  .weui-cells{
+    background-color:transparent;
+  }
+
+ 
+</style>
   
   </head>
   <body ontouchstart>
-      <div  class="shijian">
-          <div class="da_shijian">
-              <p>16:10</p>
-          </div>
-          <div class="xiao_shijian">
-              <p>11月6日 星期一</p>
-          </div>
-      </div>
-      <div class="weui-cells"></div>
-      <div class="weui-cells"></div>
-      <div class="weui-cells"></div>
-      <div class="weui-cells"></div>
-      
+
+<div style="height:100%">
+    <div class="top"></div>
+    <div class="center">
+        <p class="time" >16:10</p>
+        <p class="date">11月6日 星期一</p>
+    </div>
+   
+
+<div class="weui-cells">     
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-hd">
+                <img src="./images/TouTiao.png" alt="">
+            </div>
+            <div class="weui-cell__bd">
+                <p class="title">中国火箭发射成本1公斤1万美..</p>
+                <p class="title-small">为何却敢报价5000美元？</p>
+            </div>
+            <div class="weui-cell__ft">
+               15.42
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_access">
+                <div class="weui-hd">
+                    <img src="./images/WeiXi.png" alt="">
+                </div>
+                <div class="weui-cell__bd">
+                    <p class="title">中国火箭发射成本1公斤1万美..</p>
+                    <p class="title-small">为何却敢报价5000美元？</p>
+                </div>
+                <div class="weui-cell__ft">
+                   15.42
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_access">
+                    <div class="weui-hd">
+                        <img src="./images/ZFB.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd">
+                        <p class="title">中国火箭发射成本1公斤1万美..</p>
+                        <p class="title-small">为何却敢报价5000美元？</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                       15.42
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_access">
+                        <div class="weui-hd">
+                            <img src="./images/TXW.png" alt="">
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p class="title">中国火箭发射成本1公斤1万美..</p>
+                            <p class="title-small">为何却敢报价5000美元？</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                           15.42
+                        </div>
+</div> 
+
+
+
+
+
+
+
+</div>
+</div>
   </body>
   </html>
