@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>超级玛丽奥-canvas行走</title>
+</head>
+<body>
+    <canvas id="demo" width="800" height="400" 
+        style="border: 1px solid blue;margin:50px auto;display:block">
+        <!-- html5有兼容性 现代浏览器都没有问题
+        IE9 以下不支持 -->
+        您的浏览器不支持canvas
+    </canvas>
+    <script>
+        // window 对象最强
+        // onload 表示页面加载完成 JS事件机制 html css js 下载完成了,
+        //  页面可以开始写交互了
+        window.onload = function() {
+            // 查询选择器 
+            let canvas = document.querySelector('#demo')
+            let context = canvas.getContext('2d');
+            var marrio = new Image();
+            // web http协议 
+            // .src js宿主是浏览器 设置src时 会新开一个线程去下载图片(远程,相对本地)
+            // 文件写入的过程 完成时 会触发预先定义好的 onload 事件
+            // 优化网页 减少 http 请求数
+            // 403 forbidden
+            // 肉鸡攻击 
+            marrio.src='http://static.blueidea.com/attachment/forum/201207/03/180652md4ydy2txwotdd7l.png';
+            marrio.onload = function() {
+                // 加载marrio
+                // 绘制
+                drawMario();
+            }
+            //键盘事件 DOM 的根 document 文档对象  
+            // 回调函数 callback
+            //添加事件监听函数  当按下键时
+            document.addEventListener('keydown',function(e) {
+                var direction = getDirection(e);
+                player.stop = false;
+                playAction(direction);
+            })
+            //添加事件监听函数  当不按键时
+            document.addEventListener('keyup',function(e) {
+                // DRY don't repeat your self;
+                var direction = getDirection(e);
+                player.stop = true;
+                playAction(direction);
+            })
+
+            function playAction(direction) {
+                playerMove(direction);
+            }
+
+            function playerMove(direction) {
+                // canvas 可以边擦除 边画新的
+                context.clearRect(0,0,canvas.width,canvas.height);
+                if (player.stop) {
+                    player.imageX = 0;
+                }else {
+                    player.imageX += 50;
+                }
+                if (player.imageX >= 150) {
+                    player.imageX = 0;
+                }
+                //删掉上面这段if 后 则长按方向移动时 马里奥会隐身移动？
+                if(direction === 'right') {
+                    if(player.x <= canvas.width-player.width)
+                        player.x += 5;
+                    player.imageY = 0;
+                    console.log(player.x);
+                }else if(direction === 'left') {
+                    if(player.x > 0)
+                        player.x -= 5;
+                    player.imageY = 60;
+                    console.log(player.x);
+                }else if(direction === 'up') {
+                    if(player.y > 0)
+                        player.y -= 5;
+                    console.log(player.y);
+                }else if(direction === 'down') {
+                    if(player.y <= canvas.height-1-player.height)
+                        player.y += 5;
+                    console.log(player.y)
+                }else {
+                    player.imageX = 0;
+                }
+                drawMario();
+
+            }
+            //获得方向键的方向
+            function getDirection(e) {
+                var keyCode = e.keyCode;
+                var direction;
+                switch(keyCode) {
+                    case 37:
+                        direction = 'left'; break;
+                    case 38:
+                        direction = 'up'; break;
+                    case 39:
+                        direction = 'right'; break;
+                    case 40:
+                        direction = 'down'; break;
+                }
+                return direction;
+            }
+            
+
+            
+
+            // 复杂的数据容器
+            //游戏中的配置项 JSON 是最廉价的数据结构
+            var player = {
+                width: 50,
+                height: 60,
+                x: 0,
+                y: 0,
+                imageX: 0,
+                imageY: 0,
+                stop: true
+            }
+            /*
+            *作者： Huzj
+            *时间 17-11-6 19:50
+            *功能 绘制marrio
+            */
+
+            function drawMario() {
+                // 绘制的笔
+                context.drawImage(marrio,player.imageX,player.imageY,
+                    player.width,player.height,player.x,
+                    player.y,player.width,player.height);
+                
+            }
+        }
+    </script>
+</body>
+</html>
