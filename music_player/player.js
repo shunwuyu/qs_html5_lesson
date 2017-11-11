@@ -22,8 +22,8 @@ var MusicPlayer = {
     $album: null,
     $totalTime: null,
     playTime: null,
-    $currentTime: null,
-    $processBtn: null,
+    // $currentTime: null,
+    // $processBtn: null,
     initData: function() {
         // jquery封装后的元素是一个jquery 对象
         this.player = document.getElementById('player');
