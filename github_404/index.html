@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>github 404</title>
+	<style>
+	html, body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+    }
+    /* 父系 */
+	#wrapper {
+		position: relative;
+		width: 1680px;
+		margin:0 auto;
+		/* css继承 inherit */
+		height: 100%;
+    }
+    /* 子类继承 */
+	#field {
+		/* 往上找， 找到离它最近父级的relative 定位
+		body 默认 */
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 370px;
+	}
+    #pictures{
+        opacity: 0;
+        transition: opacity .5s;
+    }
+	.img_bg {
+		position: absolute;
+		top: -11px;
+		left: -20px;
+		width: 120%;
+		height: 425px;
+	}
+	.img_cat {
+		/* 定位之后， 它离开了文档(document.body)流
+		(从上到下block，从左到右inline inline-block)
+		 */
+		position: absolute;
+		/* 层次  */
+		z-index:7;
+	}
+	.img_text {
+		position: absolute;
+		z-index: 8;
+	}
+	.img_speeder {
+		position: absolute;
+		z-index:6;
+	}
+	.img_cat_shadow {
+		position: absolute;
+		z-index: 5;
+	}
+	.img_speeder_shadow {
+		position: absolute;
+		z-index:4;
+	}
+	.img_building_1 {
+		position: absolute;
+		z-index:3;
+	}
+	.img_building_2 {
+		position: absolute;
+		z-index: 2;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="field">
+			<img src="./images/field.jpg" alt="" class="img_bg">
+		</div>
+		<div id="pictures">
+			<img src="./images/text.png" alt="" class="img_text">
+			<img src="./images/cat.png" alt="" class="img_cat">
+			<img src="./images/cat_shadow.png" alt="" class="img_cat_shadow">
+			<img class="img_speeder" src="./images/speeder.png">                        
+			<img class="img_speeder_shadow" src="./images/speeder_shadow.png">            
+			<img class="img_building_1" src="./images/buliding_1.png">
+			<img class="img_building_2" src="./images/building_2.png">     
+		</div>
+
+    </div>
+	<script>
+        // 组织代码  命名空间
+        var Github404 = {
+            imgData : {
+                bg: { left: -780,top: -200,scale: 0.06,isFont: false},
+                text: {left: -500, top: -120, scale: 0.03,isFont: true },
+                cat : { left: -200, top: -100 ,scale: 0.02, isFont: true },
+                cat_shadow : { left: -189, top: 100 ,scale: 0.02, isFont: true },
+                speeder : { left: -70, top: -40 ,scale: 0.01, isFont: true },
+                speeder_shadow : { left: -70, top: 75 ,scale: 0.01, isFont: true },
+                building_1 : { left: 20, top: -111 ,scale: 0.03, isFont: false },
+                building_2 : { left: 300, top: -60 ,scale: 0.05, isFont: false },
+            },
+            elePic: 
+            document.querySelector('#pictures'),
+            field: document.getElementById('field'),
+            rate_w: 0,
+            reate_h: 0,
+            init: function() {
+                this.setRateWH();
+                this.placeImg();
+                this.attachMouseMoveEvent();
+            },
+            attachMouseMoveEvent: function() {
+                var that = this;
+                // 保存一个this引用
+                // 指向对象
+                document.body.onmousemove = function(e) {
+                    that.picMove(e.pageX, e.pageY);
+                }
+            },
+            picMove: function (pageX, pageY) {
+                for (key in this.imgData) {
+                    // 局部变量
+                    var oImg = 
+                        document.querySelector('.img_' + key);
+                    var offset_w = this.rate_w * pageX 
+                    * this.imgData[key].scale;
+                    var offset_h = this.rate_h * pageY *
+                     this.imgData[key].scale;
+                    var field_width = this.field.offsetWidth;
+                    var field_height = this.field.offsetHeight;
+                
+                    oImg.style.left = field_width/2 - offset_w
+                    + this.imgData[key].left + 'px';
+                    oImg.style.top = field_height/2-offset_h
+                    + this.imgData[key].top + 'px';
+                }
+            },
+            setRateWH: function() {
+                var window_width = document.body.clientWidth;
+                var window_height = 
+                document.body.clientHeight;
+                var field_width = this.field.offsetWidth;
+                var field_height = this.field.offsetHeight;
+                this.rate_w = field_width/window_width;
+                this.rate_h = field_height/window_height;
+            },
+            placeImg: function() {
+                for (key in this.imgData) {
+                console.log(key);
+                // .img_+key  找到元素 DOM
+                var oImg = 
+                document.querySelector('.img_' + key);
+                console.log(oImg);
+                var field_width = this.field.offsetWidth;
+                var field_height = this.field.offsetHeight;
+                var offset_w = 
+                    field_width/2*this.imgData[key].scale;
+                var offset_h = 
+                    field_height/2*this.imgData[key].scale;
+                oImg.style.left = 
+                    field_width/2 + offset_w
+                     + this.imgData[key].left + "px";
+                oImg.style.top = 
+                    field_height/2 + offset_h
+                    + this.imgData[key].top + "px";
+                // style.left
+                // style.right
+                // style.display block
+    
+                // 位置运算
+                // 执行顺序
+                }
+                this.elePic.style.opacity = 1;
+            }
+        }
+    
+        window.onload = function() {
+            Github404.init();
+        }
+    
+	</script>
+</body>
+</html>
