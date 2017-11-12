@@ -85,10 +85,11 @@
       this.drawText();
       // 闪电
       this.lighting();
-     
+
+      var self = this;
       // 一个函数代码超过10行， 封装
       setTimeout(function() {
-        this.ctx.clearRect( 0, 0, this.w, this.h);   
+        self.ctx.clearRect( 0, 0, self.w, self.h);   
       },500)
 
     }
@@ -130,6 +131,9 @@
   // 给按钮加点击事件
   btn.addEventListener('click', function() {
     halloween.thunder();
+    setTimeout(function() {
+        halloween.initDraw(img);   
+      },500)
   }, false);
   // 将图片添加到canvas里
   // 首先要加载图片
