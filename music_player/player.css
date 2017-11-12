@@ -228,8 +228,8 @@ body {
     -webkit-animation: process-btn 1s infinite linear;
     animation: process-btn 1s infinite linear;
     /* 运动状态 */
-    -webkit-animation-play-state: paused;
-    animation-play-state: paused;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
 }
 
 @keyframes process-btn {

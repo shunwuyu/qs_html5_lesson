@@ -1,5 +1,6 @@
 // 命名空间 json 
 // 模块化的封装
+var i = 0;
 var MusicPlayer = {
     // $bg:由jquery找到元素DOM
     // undefined null 
@@ -22,7 +23,8 @@ var MusicPlayer = {
     $album: null,
     $totalTime: null,
     playTime: null,
-    // $currentTime: null,
+    $currentTime: null,
+    bool: false,
     // $processBtn: null,
     initData: function() {
         // jquery封装后的元素是一个jquery 对象
@@ -62,7 +64,6 @@ var MusicPlayer = {
         // 更新界面的代码
         // html() === innerHTML
         // text(文字) == innerText
-        var i = 0;
         this.$songName.text(this.currentSong.name);
         this.$artist.text(this.currentSong.artists[0].name);
         this.$bg.css({
@@ -90,7 +91,8 @@ var MusicPlayer = {
         this.player.play();
         // this.moveProcessBtn(this.$processBtn, 'running', this.currentSong.bMusic.playTime);
         // 一个函数只做一件事
-        // this.displayTime(this.$currentTime, true);
+        this.bool = true;
+        this.displayTime(this.$currentTime, this.bool);
         this.moveNeedle(true);
         this.changeAnimationState(this.$diskCover, 'running');
         this.$playBtn.hide();
@@ -99,25 +101,40 @@ var MusicPlayer = {
     pause: function() {
         this.player.pause();
         this.moveNeedle(false);
+        this.bool = false;
+        this.displayTime(this.$currentTime, this.bool);
         // this.moveProcessBtn(this.$processBtn, false, this.currentSong.bMusic.playTime);
         this.changeAnimationState(this.$diskCover, 'paused');
         this.$playBtn.show();
         this.$pauseBtn.hide();
     },
 
-    // displayTime: function($ele, e) {
-    //     let j, k;
-    //     setTimeout({
-    //         if (e) {
-    //             i = i + 1;
-    //             j = i / 60;
-    //             k = i % 60;
-    //             $ele.text(j + ":" + k);
-    //         }
-    //         console.log();
-    //     }, 1000);
-    //     console.log('328782');
-    // },
+    displayTime: function($ele, e) {
+
+        setInterval(function() {
+
+            if (e) {
+                var time = setInterval(function() {
+
+                    var j, k;
+                    i = i + 1;
+                    j = parseInt(i / 60);
+                    k = i % 60;
+                    $ele.text(j + ":" + k);
+                    // if (!this.bool && e) { clearInterval(time); }
+                    console.log(i);
+
+
+
+                }, 1000);
+            }
+            if (this.bool != true) {
+                clearInterval(time);
+            }
+        }, 1000);
+
+
+    },
     // moveProcessBtn: function($ele, state, e) {
     //     console.log(300 / (e / 1000));
     //     setTimeout(function() {
