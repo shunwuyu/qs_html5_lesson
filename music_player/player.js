@@ -29,7 +29,18 @@ var MusicPlayer = {
     $nextBtn: null,
 	// 碟片封面
 	$diskCover: null,
-    $album: null,
+	$album: null,
+	//显示时间
+	$currentTime: 0,
+	$totalTime: null,
+	//进度条
+	$processBtn: null,
+	//显示进度的光标
+	$curAnimation: null,
+	$cur: null,
+	//当前歌曲播放时间
+	currentTime: 0,
+
 	initData: function() {
 		// jquery封装后的元素是一个jquery 对象
 		this.player = 
@@ -44,10 +55,18 @@ var MusicPlayer = {
 		this.$album = $('.album');
 		this.$playBtn = $('#controls .play');
         this.$pauseBtn = $('#controls .pause');
-        this.$preBtn = $('#controls .pre')
-        this.$nextBtn = $('#controls .next')
+        this.$preBtn = $('#controls .pre');
+		this.$nextBtn = $('#controls .next');
+		this.$totalTime = $("#totalTime");
+		this.$currentTime = $("#currentTime");
+		this.$curAnimation = $(".process-cur-animation");
+		this.$processBtn = $("#processBtn");
+		// this.$rdy = $(".rdy");
+		// this.rdy_width = this.$rdy.wid
 		// this.currentSong = this.playList...;
-		// console.log(this.$bg);
+		// console.log(this.rdy);
+		// console.log(this.$diskCover);
+		// console.log(this.$totalTime.width);
 	},
 	updateSong: function() {
 		// 更新界面的代码
@@ -65,27 +84,62 @@ var MusicPlayer = {
 		});
 		// attr 设置html标签的属性
 		this.$album.attr('src', 
-		this.currentSong.artists[0].img1v1Url);
-		// console.log(this.currentSong.mp3Url);
+			this.currentSong.artists[0].img1v1Url);
+			this.currentTime = 0;
+		this.$currentTime.text(this.changeTimeForm(this.currentTime));
+		// console.log(this.changeTimeForm(1110)+'111');
+		this.$totalTime.text(
+			this.changeTimeForm(this.currentSong.duration)
+		);
+		this.setCurMoveTime(this.$curAnimation,this.getCurMoveTime());
+		console.log();
         this.player.src = this.currentSong.mp3Url;
-        console.log(this.currentSong.mp3Url);
+        
 		this.play();
 		// 追债 唱针？ 唱片，旋转起来？ 进度条，....
+	},
+	changeTimeForm: function(time) {//转换时间的显示格式
+		var t1,t2;
+		if(time >= 0){
+			t1 = parseInt(time / 1000);
+			t2 = t1 % 60;
+			t1 = parseInt(t1 / 60);
+			// console.log("diercit1" + t1);
+			if(t1 <10)
+				t1 = "0" + t1;
+			if(t2 <10)
+				t2 = "0" + t2;
+		}
+		return t1 + ":" + t2;
+	},
+	getCurMoveTime: function() {//光标移动的时间
+		var v = this.currentSong.duration / 1000;
+		return v + 's';
+	},
+	setCurMoveTime: function($ele,time) {
+		$ele.css({
+			'-webkit-animation-duration': time,
+			'animation-duration': time,
+		});
 	},
 	play: function() {
 		this.player.play();
 		// 一个函数最好只做一件事
 		this.moveNeedle(true);
 		this.changeAnimationState(
-			this.$diskCover, 'running')
+			this.$diskCover, 'running');
+		this.changeAnimationSidesway(this.$curAnimation,'running')
 		this.$playBtn.hide();
 		this.$pauseBtn.show();
+		this.changeForCuttrenTime('play');
 	},
 	pause: function() {
 		this.player.pause();
 		this.moveNeedle(false);
 		this.changeAnimationState(
 			this.$diskCover, 'paused');
+		this.changeAnimationSidesway(this.$curAnimation,'paused')
+		this.changeForCuttrenTime('pause');
 		this.$playBtn.show();
 		this.$pauseBtn.hide();
     },
@@ -95,7 +149,8 @@ var MusicPlayer = {
             this.currentIndex--;
         else 
             this.currentIndex = this.playList.length - 1;
-        console.log(this.playList.length);
+		// console.log(this.playList.length);
+		int = window.clearInterval(int);
         this.updateSong();
     },
     next: function() {
@@ -103,11 +158,34 @@ var MusicPlayer = {
         if(this.currentIndex != this.playList.length - 1)
             this.currentIndex++;
         else 
-            this.currentIndex = 0;
+			this.currentIndex = 0;
+		int = window.clearInterval(int);
         this.updateSong();
     },
-
+	changeForCuttrenTime(state) {
+		var that = this;
+		if(state === "play"){
+			int = self.setInterval(function(){
+				that.currentTime += 1000;
+				that.$currentTime.text(that.changeTimeForm(that.currentTime));
+				console.log(that.currentTime);
+				console.log(that.currentSong.duration);
+				if(that.currentTime >= that.currentSong.duration+1000){
+					that.currentTime = 0;
+					int = window.clearInterval(int);
+					that.next();
+				}
+			},1000);
+		}else if(state === "pause")
+			int=window.clearInterval(int);
+	},
 	changeAnimationState: function($ele, state) {
+		$ele.css({
+			'animation-play-state': state,
+			'-webkit-animation-play-state': state,
+		});
+	},
+	changeAnimationSidesway: function($ele, state) {
 		$ele.css({
 			'animation-play-state': state,
 			'-webkit-animation-play-state': state,
@@ -137,7 +215,7 @@ window.onload = function() {
 		type: 'GET',
 		dataType: 'json',
 		success: function (data) {
-            console.log(data.result.tracks.length);
+            console.log(data.result.tracks);
 			MusicPlayer.playList = 
 				data.result.tracks;
 			MusicPlayer.init();
