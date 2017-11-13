@@ -15,7 +15,6 @@
         position: relative;
         width: 1680px;
         margin: 0 auto;
-
         /* css继承 inherit */
         height: 100%;
     }
@@ -31,6 +30,10 @@
     #pictures {
         opacity: 0;
         transition: opacity .5s;
+        /* 此属性的效果为 图片会在0.5s慢慢呈现 */
+    }
+    .img {
+        display: none;
     }
     .img_bg {
         position: absolute;
@@ -76,15 +79,12 @@
 <body>
     <div id="wrapper">
         <div id="field">
-            <img src="./images/field.jpg" alt="" class="img_bg">
+            <img src="./images/field.png" alt="" class="img_bg">
         </div>
         <div id="pictures">
-            <!-- <img src=".images/img_text.png" alt="" class="img_text">
-            <img src=".images/img_cat.png" alt="" class="img_cat">
-            <img src=".images/img_shadow.png" alt="" class="img_cat_shower"> -->
-            <img src="./images/text.png" alt="" class="img_text">
-			<img src="./images/cat.png" alt="" class="img_cat">
-			<img src="./images/cat_shadow.png" alt="" class="img_cat_shadow">
+            <img class="img_text" src="./images/text.png">
+			<img class="img_cat" src="./images/cat.png">
+			<img class="img_cat_shadow" src="./images/cat_shadow.png">
             <img class="img_speeder" src="./images/speeder.png">                        
             <img class="img_speeder_shadow" src="./images/speeder_shadow.png">            
             <img class="img_building_1" src="./images/buliding_1.png">
@@ -143,7 +143,9 @@
                 // console.log(field_width,field_height);
                 for(key in this.imgData) {
                     var field_width = field.offsetWidth;
+                    
                     var field_height = field.offsetHeight;
+                    console.log(field_width,field_height);
                     var oImg = document.querySelector(".img_" + key);
                     // console.log(oImg);
                     var offset_w = field_width/2*this.imgData[key].scale;
@@ -154,6 +156,7 @@
                     
                     oImg.style.top = 
                         field_height/2 + offset_h +this.imgData[key].top + "px";         
+                    console.log(oImg.style.left,oImg.style.top);
                 }
                 this.elePic.style.opacity = 1;
                 //加载完后 透明度设为1  显示图片
@@ -171,12 +174,12 @@
                     var oImg = document.querySelector(".img_" + key);
                     var field_width = field.offsetWidth;
                     var field_height = field.offsetHeight;
+                    console.log(field_width,field_height);
                     var offer_w = this.rate_w * pageX * this.imgData[key].scale;
                     var offer_h = this.rate_h * pageY * this.imgData[key].scale;
-                    // console.log(this.rate_w,this.rate_h);
+                    console.log(offer_w,offer_h);
                     oImg.style.left = 
-                        field_width/2 - offer_w + this.imgData[key].left + 'px';
-                    console.log(field_width/2 - offer_w + '+' + this.imgData[key].left);
+                        field_width/2 - offer_w + this.imgData[key].left + 'px';         
                     oImg.style.top = 
                         field_height/2 - offer_h + this.imgData[key].top + 'px';
                 } 
@@ -185,19 +188,6 @@
 
         window.onload = function () {
             github404.init();
-            // js 交互就像魔法师 
-           
-            // console.log(rate_w,rate_h);
-            // JSON 的遍历 object  遍历 key=> value
-            
-
-            
-
-            
-
-            // setTimeout(function() {
-            //     elePic.style.display = 'block';
-            // },3000)
         }
     </script>
 </body>
