@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>纯CSS3天气动画图标DEMO演示</title>
   <style>
+<<<<<<< HEAD
     html{
       height: 100%;
 
@@ -22,10 +23,28 @@
       color stop 颜色断点 color percent*/
       background: -webkit-linear-gradient(left,#00BBFF,#00BBFF 14.3%,#2EB5E5 14.3%,#2EB5E5 28.6%,#E6E6E6 28.6%,#E6E6E6 42.9%,
       #F3D166 42.9%,#F3D166 57.2%,#222233 57.2%,#222233 71.5%,#444444 71.5%,#444444 85.8%,#85DB8c 85.8%);
+=======
+    html {
+      height: 100%;
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+    }
+    .container {
+      width:1200px;
+      height:210px; 
+      /* webkit 浏览器内核 chrome safari
+      IE css 针对浏览器来写样式 渐变色*/
+      /* 渐变方向 top left right bottom
+      color stop 颜色断点  color percent */
+      background:
+       -webkit-linear-gradient(left, #00BBFF, #00BBFF 14.3%, #2EB5E5 14.3%, #2EB5E5 28.6%,#E6E6E6 28.6%, #E6E6E6 42.9%,#F3D166 42.9%,#F3D166 57.2%,#222233 57.2%, #222233 71.5%,#444444 71.5%, #444444 85.8%, #85DB8c 85.8%);
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%);
+<<<<<<< HEAD
     }
     .sunny{
       /* 动画 */
@@ -38,6 +57,24 @@
       animation-timing-function: linner;
       animation-iteration-count: infinite; */
       background: -webkit-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(255,255,255,0) 100%);
+=======
+      /*margin-left:-600px;
+      margin-top:-65px; */
+    }
+    .sunny {
+      -moz-animation: sunny 15s linear infinite;
+      -ms-animation: sunny 15s linear infinite;
+      -webkit-animation: sunny 15s linear infinite;
+      animation: sunny 15s linear infinite;
+      /* animation-name: sunny;
+      animation-duration: 15s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite; */
+      background: -webkit-linear-gradient(
+        top,rgba(255,255,255,0) 0%,
+       rgba(255,255,255,.8) 50%,
+        rgba(255,255,255,0) 100%);
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
       width: 20px;
       height: 140px;
       position: absolute;
@@ -45,6 +82,7 @@
       left: 90px;
       margin-left: -15px;
     }
+<<<<<<< HEAD
     /* 伪元素  */
     .sunny:before{
       content: '';
@@ -63,6 +101,27 @@
     .sunny:after{
       content: '';/* 必须 */
       background-color: #FFEE44;
+=======
+    .sunny:before {
+      content: '';
+      background:
+       -webkit-linear-gradient(top,rgba(255,255,255,0) 0%,
+       rgba(255,255,255,.8) 50%,
+        rgba(255,255,255,0) 100%);
+      width: 20px;
+      height: 140px;
+      opacity: 1;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      /* 顺时针  */
+      transform: rotate(90deg);
+    }
+    /* 元素结束前 */
+    .sunny:after {
+      content: '';
+      background:#FFEE44;
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
       border-radius: 50%;
       width: 80px;
       height: 80px;
@@ -71,6 +130,7 @@
       left: -30px;
       box-shadow: rgba(255,255,0,.2) 0 0 0 15px;
     }
+<<<<<<< HEAD
     /* 动作脚本 */
     @keyframes sunny{
       /* 光晕旋转 */
@@ -78,6 +138,13 @@
         transform: rotate(0deg);
       }
       100%{
+=======
+    @keyframes sunny {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
         transform: rotate(360deg);
       }
     }
@@ -133,6 +200,7 @@
         opacity: .05;
       }
     }
+<<<<<<< HEAD
     .rainy{
       animation: rainy 5s ease-in-out infinite;
       -webkit-animation: rainy 5s ease-in-out infinite;
@@ -455,10 +523,13 @@
     }
 }
     
+=======
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
   </style>
 </head>
 <body>
   <div class="container">
+<<<<<<< HEAD
     <!-- 每个元素都有两次伪元素 -->
     <!-- 没有标签，却可以显示出来 -->
     <!-- :before :after -->
@@ -469,6 +540,18 @@
     <div class="starry"></div>
     <div class="stormy"></div>
     <div class="snowy"></div>
+=======
+    <!-- 每个元素都有两个伪元素
+    没有标签 可以显示出来 
+    :before :after -->
+    <div class="sunny"></div>
+    <div class="cloudy"></div>
+    <div class="rainy"></div>
+    <div class="snowy"></div>
+    <div class="rainbow"></div>
+    <div class="starry"></div>
+    <div class="stormy"></div>
+>>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
   </div>
 </body>
 </html>
