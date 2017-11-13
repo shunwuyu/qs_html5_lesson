@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js 
+    
+    "></script>
+    <link rel="stylesheet" href="./common.css?v1">
+	<title>马总广发英雄贴--攻守道</title>
+	<style>
+	
+	</style>
+</head>
+<body>
+        <div id="app">
+                <div id="loading">
+                    <div class="loading"></div>
+                    <div class="text">
+                    作为中国功夫的铁粉，连马云都对我佩服有加。
+                    让我们一起为#功守道#打call， 致敬中国传统文化！
+                    </div>
+                </div>
+                
+            </div>
+    <!-- <div class="box"></div>
+    <div class="box1"></div><div class="box2"></div> -->
+	<script>
+         // font-size动态，  屏幕宽度的1/10-->
+        var winWidth = document.body.clientWidth;
+        var remSize = winWidth/10 + 'px';
+        document.getElementsByTagName('html')[0].style.fontSize = remSize
+        // // alert(winWidth)
+        // window.onresize = function() {
+        //     alert('resize');
+        // } 
+   
+        'use strict';
+         var KungfuMayun = {
+            loadingEle: null,
+            init() {
+                this.loadingEle = document.getElementById('loading');
+                this.hideLoading();
+            },
+            hideLoading () {
+                // var that = this;
+                // alert(that);
+                setTimeout(() => {  
+                    // alert(this);
+                     // window === this
+                // this 动态的 执行的时候才会决定，
+                // 函数被调用方式决定的
+                // 函数作为普通函数被调用 
+                // 函数作为普通函数被调用
+                // dom 为每个id 元素都加了索引
+                    this.loadingEle.style.display = 'none';
+                }, 1000);
+            }
+        }
+        window.onload = function() {
+            KungfuMayun.init();
+        }
+	</script>
+</body>
+</html>
