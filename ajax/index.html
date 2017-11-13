@@ -52,11 +52,13 @@
             }
             //渲染页面 负责dom api
             var renderUserInfo = function (data) {
-
+                var avatar = data.data.avatar;
+                var username = data.data.nickname;
+                var sex = data1.data.sex;
                 // console.log(data.data.avatar);
-                $('#avatar').attr('src',data.data.avatar);
-                $('#username span').text(data.data.nickname);
-                $('#sex span').text(data.data.sex);
+                $('#avatar').attr('src',avatar);
+                $('#username span').text(username);
+                $('#sex span').text(sex);
 
             }
             getUserInfo(renderUserInfo);
