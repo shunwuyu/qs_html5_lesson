@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>music player</title>
+    <!-- /是根目录，./是相对目录 -->
+    <link rel="stylesheet" type="text/css" href="./player.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div id="bg" class="bg">
+            <div class="bg-cover"></div>
+        </div>
+        <div class="title">
+            <div class="music-info">
+                <div class="song" id="songName">后羿后羿后羿后羿
+                    后羿后羿后羿后羿后羿后羿后羿后羿后羿后羿后羿后
+                    羿后羿后羿后羿后羿后羿羿后羿后羿后羿后羿后羿羿后羿后羿后羿后羿后羿羿后羿后羿后羿后羿后羿羿后羿后羿后羿后羿后羿
+                    </div>
+                <div class="artist" id="artist">李荣浩</div>
+            </div>
+        </div>
+    </div>
+    <!-- js具有阻塞性，script会阻塞，所以放到下面 -->
+    <!-- cdn技术，将会找到离你最近的服务器节点提供文件访问
+    为什么要用cdn  1、速度快  2、有可能别的网站用的也是cdn地址，我们就可以用浏览器缓存文件 -->
+    <script src="http://cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>
+    <script src="./player.js"></script>
+</body>
+</html>
