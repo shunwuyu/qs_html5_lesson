@@ -24,7 +24,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      /* transform: translate(-50%,-50%); */
+      transform: translate(-50%,-50%);
       /*margin-left:-600px;
       margin-top:-65px; */
     }
@@ -91,15 +91,17 @@
       border-radius: 50%;
       background-color: #FFFFFF;
       position: absolute;
-      left: 250px;
+      left: 255px;
       top: 70px;
       margin-left: -60px;
+      /* 多重阴影来绘制云 */
       box-shadow: #FFFFFF 65px -15px 0 -5px,
-        #FFFFFF 25px -25px,
-        #FFFFFF 30px 10px,
-        #FFFFFF 60px 15px 0 -10px,
-        #FFFFFF 85px 5px 0 -5px; 
+          #FFFFFF 25px -25px,
+          #FFFFFF 30px 10px,
+          #FFFFFF 60px 15px 0 -10px,
+            #FFFFFF 85px 5px 0 -5px; 
     }
+    /* 阴云的影子 */
     .cloudy:after{
       -webkit-animation: cloudy_shadow 5s ease-in-out infinite;
       animation: cloudy_shadow 5s ease-in-out infinite;
@@ -313,9 +315,7 @@
     <!-- 每个元素都有两个伪元素
     没有标签 可以显示出来 
     :before :after -->
-    <div class="sunny">
-
-    </div>
+    <div class="sunny"></div>
     <div class="cloudy"></div>
     <div class="rainy"></div>
     <div class="snowy"></div>
