@@ -1,154 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>纯CSS3天气动画图标DEMO演示</title>
-  <style>
-    html {
-      height: 100%;
-      /* display: flex;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>纯CSS3天气动画图标DEMO演示</title>
+    <style>
+        html {
+            height: 100%;
+            /* display: flex;
       align-items: center;
       justify-content: center; */
-    }
-    .container {
-      width:1200px;
-      height:210px; 
-      /* webkit 浏览器内核 chrome safari
+        }
+        
+        .container {
+            width: 1200px;
+            height: 210px;
+            /* webkit 浏览器内核 chrome safari
       IE css 针对浏览器来写样式 渐变色*/
-      /* 渐变方向 top left right bottom
+            /* 渐变方向 top left right bottom
       color stop 颜色断点  color percent */
-      background:
-       -webkit-linear-gradient(left, #00BBFF, #00BBFF 14.3%, #2EB5E5 14.3%, #2EB5E5 28.6%,#E6E6E6 28.6%, #E6E6E6 42.9%,#F3D166 42.9%,#F3D166 57.2%,#222233 57.2%, #222233 71.5%,#444444 71.5%, #444444 85.8%, #85DB8c 85.8%);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%);
-      /*margin-left:-600px;
+            background: -webkit-linear-gradient(left, #00BBFF, #00BBFF 14.3%, #2EB5E5 14.3%, #2EB5E5 28.6%, #E6E6E6 28.6%, #E6E6E6 42.9%, #F3D166 42.9%, #F3D166 57.2%, #222233 57.2%, #222233 71.5%, #444444 71.5%, #444444 85.8%, #85DB8c 85.8%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            /*margin-left:-600px;
       margin-top:-65px; */
-    }
-    .sunny {
-      -moz-animation: sunny 15s linear infinite;
-      -ms-animation: sunny 15s linear infinite;
-      -webkit-animation: sunny 15s linear infinite;
-      animation: sunny 15s linear infinite;
-      /* animation-name: sunny;
+        }
+        
+        .sunny {
+            -moz-animation: sunny 15s linear infinite;
+            -ms-animation: sunny 15s linear infinite;
+            -webkit-animation: sunny 15s linear infinite;
+            animation: sunny 15s linear infinite;
+            /* animation-name: sunny;
       animation-duration: 15s;
       animation-timing-function: linear;
       animation-iteration-count: infinite; */
-      background: -webkit-linear-gradient(
-        top,rgba(255,255,255,0) 0%,
-       rgba(255,255,255,.8) 50%,
-        rgba(255,255,255,0) 100%);
-      width: 20px;
-      height: 140px;
-      position: absolute;
-      top: 20px;
-      left: 90px;
-      margin-left: -15px;
-    }
-    .sunny:before {
-      content: '';
-      background:
-       -webkit-linear-gradient(top,rgba(255,255,255,0) 0%,
-       rgba(255,255,255,.8) 50%,
-        rgba(255,255,255,0) 100%);
-      width: 20px;
-      height: 140px;
-      opacity: 1;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      /* 顺时针  */
-      transform: rotate(90deg);
-    }
-    /* 元素结束前 */
-    .sunny:after {
-      content: '';
-      background:#FFEE44;
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      position: absolute;
-      top: 30px;
-      left: -30px;
-      box-shadow: rgba(255,255,0,.2) 0 0 0 15px;
-    }
-    @keyframes sunny {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-    .cloudy {
-      animation: cloudy  5s ease-in-out infinite;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #FFFFFF;
-      position: absolute;
-      left: 255px;
-      top: 70px;
-      margin-left: -60px;
-      /* 多重阴影来绘制云 */
-      box-shadow: #FFFFFF 65px -15px 0 -5px,
-          #FFFFFF 25px -25px,
-          #FFFFFF 30px 10px,
-          #FFFFFF 60px 15px 0 -10px,
-            #FFFFFF 85px 5px 0 -5px; 
-    }
-    /* 阴云的影子 */
-    .cloudy:after{
-      -webkit-animation: cloudy_shadow 5s ease-in-out infinite;
-      animation: cloudy_shadow 5s ease-in-out infinite;
-      content: '';
-      background: #000;
-      border-radius: 50%;
-      width: 120px;
-      height: 15px;
-      opacity: 0.2;
-      position: absolute;
-      left: 5px;
-      bottom: -60px;
-      transform: scale(.7);
-    }
-    @keyframes cloudy {
-      50% {
-        -webkit-transform: translateY(-20px);
-        transform: translateY(-20px);
-      }
-    }
-    @-webkit-keyframes cloudy_shadow {
-      50% {
-        -webkit-transform: translateY(20px) scale(1);
-        transform: translateY(20px) scale(1);
-        opacity: .05;
-      }
-    }
-    @keyframes cloudy_shadow {
-      50% {
-        -webkit-transform: translateY(20px) scale(1);
-        transform: translateY(20px) scale(1);
-        opacity: .05;
-      }
-    }
-  </style>
+            background: -webkit-linear-gradient( top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 0) 100%);
+            width: 20px;
+            height: 140px;
+            position: absolute;
+            top: 20px;
+            left: 90px;
+            margin-left: -15px;
+        }
+        
+        .sunny:before {
+            content: '';
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 0) 100%);
+            width: 20px;
+            height: 140px;
+            opacity: 1;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /* 顺时针  */
+            transform: rotate(90deg);
+        }
+        /* 元素结束前 */
+        
+        .sunny:after {
+            content: '';
+            background: #FFEE44;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            box-shadow: rgba(255, 255, 0, .2) 0 0 0 15px;
+        }
+        
+        @keyframes sunny {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .cloudy {
+            animation: cloudy 5s ease-in-out infinite;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            position: absolute;
+            left: 255px;
+            top: 70px;
+            margin-left: -60px;
+            /* 多重阴影来绘制云 */
+            box-shadow: #FFFFFF 65px -15px 0 -5px, #FFFFFF 25px -25px, #FFFFFF 30px 10px, #FFFFFF 60px 15px 0 -10px, #FFFFFF 85px 5px 0 -5px;
+        }
+        /* 阴云的影子 */
+        
+        .cloudy:after {
+            -webkit-animation: cloudy_shadow 5s ease-in-out infinite;
+            animation: cloudy_shadow 5s ease-in-out infinite;
+            content: '';
+            background: #000;
+            border-radius: 50%;
+            width: 120px;
+            height: 12px;
+            opacity: 0.2;
+            position: absolute;
+            left: 5px;
+            bottom: -60px;
+            transform: scale(.7);
+        }
+        
+        @keyframes cloudy {
+            50% {
+                -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
+            }
+        }
+        
+        @-webkit-keyframes cloudy_shadow {
+            50% {
+                -webkit-transform: translateY(20px) scale(1);
+                transform: translateY(20px) scale(1);
+                opacity: .05;
+            }
+        }
+        
+        @keyframes cloudy_shadow {
+            50% {
+                -webkit-transform: translateY(20px) scale(1);
+                transform: translateY(20px) scale(1);
+                opacity: .05;
+            }
+        }
+        
+        .rainy {
+            animation: rainy 5s ease-in-out infinite;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #C0C0C0;
+            position: absolute;
+            left: 420px;
+            top: 70px;
+            margin-left: -60px;
+            /* 多重阴影来绘制云 */
+            box-shadow: #C0C0C0 65px -15px 0 -5px, #C0C0C0 25px -25px, #C0C0C0 30px 10px, #C0C0C0 60px 15px 0 -10px, #C0C0C0 85px 5px 0 -5px;
+        }
+        
+        .rainy:before {
+            -webkit-animation: rainy_rain .7s infinite linear;
+            animation: rainy_rain .7s infinite linear;
+            content: '';
+            background: #CCCCCC;
+            border-radius: 50%;
+            display: block;
+            height: 6px;
+            width: 3px;
+            opacity: 0.3;
+            -webkit-transform: scale(.9);
+            -ms-transform: scale(.9);
+            transform: scale(.9);
+        }
+        
+        .rainy:after {
+            -webkit-animation: rainy_shadow 5s ease-in-out infinite;
+            animation: rainy_shadow 5s ease-in-out infinite;
+            content: '';
+            background: #000;
+            border-radius: 50%;
+            width: 120px;
+            height: 12px;
+            opacity: 0.2;
+            position: absolute;
+            left: 5px;
+            bottom: -60px;
+            -webkit-transform: scale(.7);
+            transform: scale(.7);
+        }
+        
+        @keyframes rainy {
+            50% {
+                -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
+            }
+        }
+        
+        @-webkit-keyframes rainy_shadow {
+            50% {
+                -webkit-transform: translateY(20px) scale(1);
+                transform: translateY(20px) scale(1);
+                opacity: .05;
+            }
+        }
+        
+        @keyframes rainy_shadow {
+            50% {
+                -webkit-transform: translateY(20px) scale(1);
+                transform: translateY(20px) scale(1);
+                opacity: .05;
+            }
+        }
+        
+        @-webkit-keyframes rainy_rain {
+            0% {
+                box-shadow: rgba(0, 0, 0, 0) 30px 30px, rgba(0, 0, 0, 0) 40px 40px, #000 50px 75px, #000 55px 50px, #000 70px 100px, #000 80px 95px, #000 110px 45px, #000 90px 35px;
+            }
+            25% {
+                box-shadow: #000 30px 45px, #000 40px 60px, #000 50px 90px, #000 55px 65px, rgba(0, 0, 0, 0) 70px 120px, rgba(0, 0, 0, 0) 80px 120px, #000 110px 70px, #000 90px 60px;
+            }
+            26% {
+                box-shadow: #000 30px 45px, #000 40px 60px, #000 50px 90px, #000 55px 65px, rgba(0, 0, 0, 0) 70px 40px, rgba(0, 0, 0, 0) 80px 20px, #000 110px 70px, #000 90px 60px;
+            }
+            50% {
+                box-shadow: #000 30px 70px, #000 40px 80px, rgba(0, 0, 0, 0) 50px 100px, #000 55px 80px, #000 70px 60px, #000 80px 45px, #000 110px 95px, #000 90px 85px;
+            }
+            51% {
+                box-shadow: #000 30px 70px, #000 40px 80px, rgba(0, 0, 0, 0) 50px 45px, #000 55px 80px, #000 70px 60px, #000 80px 45px, #000 110px 95px, #000 90px 85px;
+            }
+            75% {
+                box-shadow: #000 30px 95px, #000 40px 100px, #000 50px 60px, rgba(0, 0, 0, 0) 55px 95px, #000 70px 80px, #000 80px 70px, rgba(0, 0, 0, 0) 110px 120px, rgba(0, 0, 0, 0) 90px 110px;
+            }
+            76% {
+                box-shadow: #000 30px 95px, #000 40px 100px, #000 50px 60px, rgba(0, 0, 0, 0) 55px 35px, #000 70px 80px, #000 80px 70px, rgba(0, 0, 0, 0) 110px 25px, rgba(0, 0, 0, 0) 90px 15px;
+            }
+            100% {
+                box-shadow: rgba(0, 0, 0, 0) 30px 120px, rgba(0, 0, 0, 0) 40px 120px, #000 50px 75px, #000 55px 50px, #000 70px 100px, #000 80px 95px, #000 110px 45px, #000 90px 35px;
+            }
+        }
+        
+        @keyframes rainy_rain {
+            0% {
+                box-shadow: rgba(0, 0, 0, 0) 30px 30px, rgba(0, 0, 0, 0) 40px 40px, #000 50px 75px, #000 55px 50px, #000 70px 100px, #000 80px 95px, #000 110px 45px, #000 90px 35px;
+            }
+            25% {
+                box-shadow: #000 30px 45px, #000 40px 60px, #000 50px 90px, #000 55px 65px, rgba(0, 0, 0, 0) 70px 120px, rgba(0, 0, 0, 0) 80px 120px, #000 110px 70px, #000 90px 60px;
+            }
+            26% {
+                box-shadow: #000 30px 45px, #000 40px 60px, #000 50px 90px, #000 55px 65px, rgba(0, 0, 0, 0) 70px 40px, rgba(0, 0, 0, 0) 80px 20px, #000 110px 70px, #000 90px 60px;
+            }
+            50% {
+                box-shadow: #000 30px 70px, #000 40px 80px, rgba(0, 0, 0, 0) 50px 100px, #000 55px 80px, #000 70px 60px, #000 80px 45px, #000 110px 95px, #000 90px 85px;
+            }
+            51% {
+                box-shadow: #000 30px 70px, #000 40px 80px, rgba(0, 0, 0, 0) 50px 45px, #000 55px 80px, #000 70px 60px, #000 80px 45px, #000 110px 95px, #000 90px 85px;
+            }
+            75% {
+                box-shadow: #000 30px 95px, #000 40px 100px, #000 50px 60px, rgba(0, 0, 0, 0) 55px 95px, #000 70px 80px, #000 80px 70px, rgba(0, 0, 0, 0) 110px 120px, rgba(0, 0, 0, 0) 90px 110px;
+            }
+            76% {
+                box-shadow: #000 30px 95px, #000 40px 100px, #000 50px 60px, rgba(0, 0, 0, 0) 55px 35px, #000 70px 80px, #000 80px 70px, rgba(0, 0, 0, 0) 110px 25px, rgba(0, 0, 0, 0) 90px 15px;
+            }
+            100% {
+                box-shadow: rgba(0, 0, 0, 0) 30px 120px, rgba(0, 0, 0, 0) 40px 120px, #000 50px 75px, #000 55px 50px, #000 70px 100px, #000 80px 95px, #000 110px 45px, #000 90px 35px;
+            }
+        }
+        
+        .rainbow {
+            -webkit-animation: rainbow 5s ease-in-out infinite;
+            animation: rainbow 5s ease-in-out infinite;
+            border-radius: 170px 0 0 0;
+            box-shadow: #FB323C -2px -2px 0 1px, #F99716 -4px -4px 0 3px, #FEE124 -6px -6px 0 5px, #AFDF2E -8px -8px 0 7px, #6AD7F8 -10px -10px 0 9px, #60B1F5 -12px -12px 0 11px, #A3459B -14px -14px 0 13px;
+            height: 70px;
+            width: 70px;
+            margin-left: -40px;
+            position: absolute;
+            left: 610px;
+            top: 71px;
+            -webkit-transform: rotate(40deg);
+            -ms-transform: rotate(40deg);
+            transform: rotate(40deg);
+        }
+        
+        .rainbow:after {
+            -webkit-animation: rainbow_shadow 5s ease-in-out infinite;
+            animation: rainbow_shadow 5s ease-in-out infinite;
+            background: #000000;
+            border-radius: 50%;
+            content: '';
+            opacity: 0.2;
+            height: 15px;
+            width: 120px;
+            position: absolute;
+            bottom: -23px;
+            left: 17px;
+            -webkit-transform: rotate(-40deg);
+            -ms-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+            -webkit-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+        }
+        
+        @-webkit-keyframes rainbow {
+            50% {
+                -webkit-transform: rotate(50deg);
+                transform: rotate(50deg);
+            }
+        }
+        
+        @keyframes rainbow {
+            50% {
+                -webkit-transform: rotate(50deg);
+                transform: rotate(50deg);
+            }
+        }
+        
+        @-webkit-keyframes rainbow_shadow {
+            50% {
+                -webkit-transform: rotate(-50deg) translate(10px) scale(.7);
+                transform: rotate(-50deg) translate(10px) scale(.7);
+                opacity: 0.05;
+            }
+        }
+        
+        @keyframes rainbow_shadow {
+            50% {
+                -webkit-transform: rotate(-50deg) translate(10px) scale(.7);
+                transform: rotate(-50deg) translate(10px) scale(.7);
+                opacity: 0.05;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <!-- 每个元素都有两个伪元素
+    <<<<<<< HEAD <div class="container">
+        <!-- 每个元素都有两个伪元素
     没有标签 可以显示出来 
     :before :after -->
-    <div class="sunny"></div>
-    <div class="cloudy"></div>
-    <div class="rainy"></div>
-    <div class="snowy"></div>
-    <div class="rainbow"></div>
-    <div class="starry"></div>
-    <div class="stormy"></div>
-  </div>
+        <div class="sunny"></div>
+        <div class="cloudy"></div>
+        <div class="rainy"></div>
+        <div class="snowy"></div>
+        <div class="rainbow"></div>
+        <div class="starry"></div>
+        <div class="stormy"></div>
+        </div>
+        =======
+        <div class="container">
+            <!-- 每个元素都有两个伪元素
+    没有标签 可以显示出来 
+    :before :after -->
+            <div class="sunny"></div>
+            <div class="cloudy"></div>
+            <div class="rainy"></div>
+            <div class="snowy"></div>
+            <div class="rainbow"></div>
+            <div class="starry"></div>
+            <div class="stormy"></div>
+        </div>
+        >>>>>>> 4faba67982f6c4bdddc0e8e1de04eaad039adaaf
 </body>
+
 </html>
