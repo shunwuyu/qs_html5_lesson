@@ -86,6 +86,7 @@ var MusicPlayer = {
 		this.$album.attr('src', 
 			this.currentSong.artists[0].img1v1Url);
 			this.currentTime = 0;
+		//设置currentHtml的内容
 		this.$currentTime.text(this.changeTimeForm(this.currentTime));
 		// console.log(this.changeTimeForm(1110)+'111');
 		this.$totalTime.text(
@@ -110,7 +111,7 @@ var MusicPlayer = {
 			if(t2 <10)
 				t2 = "0" + t2;
 		}
-		return t1 + ":" + t2;
+		return t1 + ":" + t2;1
 	},
 	getCurMoveTime: function() {//光标移动的时间
 		var v = this.currentSong.duration / 1000;
@@ -122,7 +123,7 @@ var MusicPlayer = {
 			'animation-duration': time,
 		});
 	},
-	play: function() {
+	play: function() {//播放
 		this.player.play();
 		// 一个函数最好只做一件事
 		this.moveNeedle(true);
@@ -133,7 +134,7 @@ var MusicPlayer = {
 		this.$pauseBtn.show();
 		this.changeForCuttrenTime('play');
 	},
-	pause: function() {
+	pause: function() {//暂停
 		this.player.pause();
 		this.moveNeedle(false);
 		this.changeAnimationState(
@@ -143,7 +144,7 @@ var MusicPlayer = {
 		this.$playBtn.show();
 		this.$pauseBtn.hide();
     },
-    prev: function() {
+    prev: function() {//上一首
         this.player.pause();
         if(this.currentIndex != 0)
             this.currentIndex--;
@@ -153,7 +154,7 @@ var MusicPlayer = {
 		int = window.clearInterval(int);
         this.updateSong();
     },
-    next: function() {
+    next: function() {//下一首
         this.player.pause();
         if(this.currentIndex != this.playList.length - 1)
             this.currentIndex++;
@@ -162,14 +163,13 @@ var MusicPlayer = {
 		int = window.clearInterval(int);
         this.updateSong();
     },
-	changeForCuttrenTime(state) {
+	changeForCuttrenTime(state) {//当前播放时间变化的函数
 		var that = this;
 		if(state === "play"){
 			int = self.setInterval(function(){
 				that.currentTime += 1000;
 				that.$currentTime.text(that.changeTimeForm(that.currentTime));
-				console.log(that.currentTime);
-				console.log(that.currentSong.duration);
+				
 				if(that.currentTime >= that.currentSong.duration+1000){
 					that.currentTime = 0;
 					int = window.clearInterval(int);
