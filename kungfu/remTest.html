@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>马云广发英雄帖--攻守道</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        /* rem 是一个相对单位  适用于移动开发   由于手机分辨率不同px不可靠
+        rem 相对于HTML元素    HTML的像素  1个rem是37.5 */
+        /* iPhone6  375px  物理像素 */
+        font-size: 41.4px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .3);
+    }
+    .box, .box1, .box2 {
+        /* 10rem  能够产生 10 份的布局 */
+        width: 10rem;
+        height: 3rem;
+        background-color: red;
+    }
+    .box1 {
+        background-color: blue;
+        width: 3rem;
+    }
+    .box2 {
+        width: 7rem;
+        background-color: green;
+    }
+    .box1, .box2 {
+        /* inline 元素是不能设定宽高的 */
+        /* inline-block  不会换行， 同时可以设置大小 
+        但是本身自带 bug 两个 inline-block 中间有空格的话  浏览器会识别  产生间隙 */
+        display: inline-block;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="loading">
+            <div class="loading"></div>
+        </div>
+    </div>
+    <!-- <div class="box"></div>
+    <div class="box1"></div><div class="box2"></div> -->
+</body>
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+<!-- <script>
+    // font-size 动态获取：  屏幕宽度的1/10
+    // 得到窗口宽度
+var winWidth = document.body.clientWidth;
+var remSize = winWidth/10 + 'px';
+// getElementsByTagName 获得的是数组
+document.getElementsByTagName('html')[0].style.fontSize = remSize;
+window.onresize = function () {
+    // alert('resize');
+}
+</script> -->
+</html>
