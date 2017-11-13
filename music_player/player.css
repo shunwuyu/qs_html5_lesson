@@ -1,0 +1,69 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* 超出则隐藏
+  html5 仿app */
+  overflow: hidden;
+}
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 110%;
+    width: 110%;
+    /* 110%中心点与 100% 重合
+    背景图片比较大
+    有利于中心图片区域的展示 */
+    margin: -5%;
+    background: #a0a0a0 center;
+    background-size: cover;
+    z-index: -1;
+    /* 过滤器 */
+    -webkit-filter: blur(20px);
+    /* background-image: url(http://p1.music.126.net/d2qORjtkjzNLzQLtAPLAEA==/2945591653332384.jpg    ); */
+}
+.bg-cover {
+    background: rgba(0, 0,0, .4);
+    width: 100%;
+    height: 100%;
+}
+.title {
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    z-index: 11;
+    background-color: rgba(253,253,253,.05);
+}
+.tilte .music-info {
+    padding: 0 20px;
+    margin: 0 auto;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+}
+.music-info .song, .artist {
+    width: 100%;
+    font-size: 18px;
+    font-weight: lighter;
+    margin: 8px;
+    /* 文件换行的 空白符 awesome */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.music-info .artist {
+    font-size: 14px;
+    color: #c8c0cc;
+    margin-top: 4px;
+
+}
