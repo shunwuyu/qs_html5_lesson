@@ -19,7 +19,7 @@ html, body {
     height: 110%;
     width: 110%;
     /* 110%中心点与100%重合 */
-    margin: 5%;
+    margin: -5%;
     background: #a0a0a0 center;
     background-size: cover;
     z-index: -1;

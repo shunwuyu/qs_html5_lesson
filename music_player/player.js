@@ -36,6 +36,6 @@ window.onload = function () {
             // console.log(data.result.coverImgUrl);
             // console.log(data.result.tracks);
         }
-    })
+    });
     
 }
