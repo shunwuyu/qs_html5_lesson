@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax 构建假数据</title>
+</head>
+<body>
+    <div class="box">
+        <img src="" id="avatar">
+        <div id="username">姓名:<span></span></div>
+        <div id="sex">性别:<span></span></div>
+    </div>
+    <!-- 引入jquery的链接 -->
+    <script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script>
+    // document.onready
+    $(function() {
+        // js 主动拉数据 ajax 异步请求带来动态渲染
+        // 拉数据 
+
+        // $.getJSON('http://www.easy-mock.com/mock/5a09868128b23066479b836c/ajaxData/getUserInfo', 
+        // function(data) {
+        // //  success callback
+        // console.log(data);
+        // // dom 更新 获取页面更新提示
+        // var avatar = data.data.avatar;
+        // var username = data.data.nickname;
+        // var sex = data.data.sex;
+        // // 打印看是否成功
+        // // console.log(avatar,username,sex);
+
+        // //  jquery的$函数中 # 里面放置的是选择器
+        // //  attr代表setAttribute
+        // $('#avatar').attr('src',avatar);
+        // // document.getElementById('avatar')
+        // //     .getAttribute('src');
+        // // $('#username span').text(username);
+        // // $('#sex span').text(sex);
+        // $('#username').find('span').text(username);
+        // $('#sex').find('span').text(sex);
+
+        // })
+
+        // 函数式编程
+        // 数据通信
+        var renderUserInfo = function(data) {
+            var avatar = data.data.avatar;
+            var username = data.data.nickname;
+            var sex = data.data.sex;
+            $('#avatar').attr('src',avatar);
+            $('#username span').text(username);
+            $('#sex span').text(sex);    
+        }
+    
+        var getUserInfo = function(callback) {
+            // 异步处理 js 消耗时间， 传输ajax，
+            // callback 回调函数， 当成功返回时，执行
+            // 数据库数据  文件读写
+            $.getJSON('http://www.easy-mock.com/mock/5a09868128b23066479b836a/ajaxData/getUserInfo',function(data) {
+            callback(data)});
+        }
+
+        getUserInfo(renderUserInfo);
+        // 负责把数据渲染页面  dom api
+        
+    })
+    </script>
+</body>
+</html>
