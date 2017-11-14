@@ -25,7 +25,7 @@ var MusicPlayer = {
     playTime: null,
     $currentTime: null,
     bool: false,
-    // $processBtn: null,
+    $processBtn: null,
     initData: function() {
         // jquery封装后的元素是一个jquery 对象
         this.player = document.getElementById('player');
@@ -89,7 +89,7 @@ var MusicPlayer = {
     // };
     play: function() {
         this.player.play();
-        // this.moveProcessBtn(this.$processBtn, 'running', this.currentSong.bMusic.playTime);
+        this.moveProcessBtn(this.$processBtn, 'running', this.currentSong.bMusic.playTime);
         // 一个函数只做一件事
         this.bool = true;
         this.displayTime(this.$currentTime, this.bool);
@@ -103,19 +103,21 @@ var MusicPlayer = {
         this.moveNeedle(false);
         this.bool = false;
         this.displayTime(this.$currentTime, this.bool);
-        // this.moveProcessBtn(this.$processBtn, false, this.currentSong.bMusic.playTime);
+        this.moveProcessBtn(this.$processBtn, false, this.currentSong.bMusic.playTime);
         this.changeAnimationState(this.$diskCover, 'paused');
         this.$playBtn.show();
         this.$pauseBtn.hide();
     },
 
     displayTime: function($ele, e) {
-
+        if (!this.bool) { clearInterval(time); }
         setInterval(function() {
 
             if (e) {
                 var time = setInterval(function() {
-
+                    if (this.bool != true) {
+                        clearInterval(time);
+                    }
                     var j, k;
                     i = i + 1;
                     j = parseInt(i / 60);
@@ -123,28 +125,22 @@ var MusicPlayer = {
                     $ele.text(j + ":" + k);
                     // if (!this.bool && e) { clearInterval(time); }
                     console.log(i);
-
-
-
                 }, 1000);
             }
-            if (this.bool != true) {
-                clearInterval(time);
-            }
-        }, 1000);
+        });
 
 
     },
-    // moveProcessBtn: function($ele, state, e) {
-    //     console.log(300 / (e / 1000));
-    //     setTimeout(function() {
-    //         $ele.css({
-    //             'transform': "translateX(300px)",
-    //         });
+    moveProcessBtn: function($ele, state, e) {
+        $ele.css({
+            '-webkit - animation': e,
+            'animation': e,
+            /* 运动状态 */
 
-    //     }, 1000);
-    //     console.log('328982057');
-    // },
+            'webkit - animation - play - state': state,
+            'animation - play - state': state,
+        })
+    },
     changeAnimationState: function($ele, state) {
         $ele.css({
             'animation-play-state': state,

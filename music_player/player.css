@@ -225,16 +225,16 @@ body {
 }
 
 .process-btn-animation {
-    -webkit-animation: process-btn 1s infinite linear;
-    animation: process-btn 1s infinite linear;
+    -webkit-animation: processbtn 60s infinite linear;
+    animation: processbtn 60s infinite linear;
     /* 运动状态 */
     -webkit-animation-play-state: running;
     animation-play-state: running;
 }
 
-@keyframes process-btn {
+@keyframes processbtn {
     100% {
-        transform: translateX(0);
+        transform: translateX(300px);
     }
 }
 

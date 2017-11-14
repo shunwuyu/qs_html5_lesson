@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>热门标签</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>热门标签</title>
 </head>
+
 <body>
-  
+    <!-- 网页布局，栅格系统
+  侧边栏里的一个内容模块 -->
+    <!-- <aisde></aisde> -->
+    <div class="aside">
+        <h2>
+            <span> 热门标签 
+      <!-- css 组件
+      link-more 为样式负责
+      表现及结构 = 样式
+      少为内容取名，（如果为内容取名）不能复用 -->
+      <span class="link-more">
+      <a href="#">热门标签&gt;&gt;</a>
+      </span>
+        </h2>
+        <ul class="hot-tag-col5">
+            <li>
+                <ul>
+                    <!-- 标题 display：block -->
+                    <li class="tag_title">文学</li>
+                    <li><a>小说</a></li>
+
+
+                </ul>
+            </li>
+        </ul>
+    </div>
 </body>
+
 </html>
