@@ -5,8 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>热门标签</title>
+  <style>
+      a {
+        text-decoration: none;
+        font-size: 18px;
+      }
+      h2 {
+        display: inline-block;
+      }
+      ul {
+        list-style: none;
+        margin-left: -40px;
+        width: 500px;
+      }
+      li {
+        display: inline;
+        height: 30px;
+        background-color: #F7F5F1;
+        margin-right: 10px;
+        padding: 10px;
+      }
+      .tag {
+        color: #0000ff;
+      }
+      .tag.more_tag {
+        color:yellowgreen;
+      }
+  </style>
 </head>
 <body>
-  
+  <!-- 网页布局，栅格系统 -->
+  <!-- 侧边栏里的一个模块内容 -->
+  <!-- <aside> 的内容可用作文章的侧栏。 -->
+  <aside>
+  </aside> 
+ <div class="aside">
+   <h2>
+    <span>热门标签</span> 
+    <!-- css组件
+    link-more 为样式负责
+    少为内容取名，不能复用
+    -->
+     <span class="link-more">
+        <a href="#">所有热门标签&gt;&gt;</a>
+     </span>
+   </h2>
+   <h3>文学</h3>
+   <ul class="hot-tags-col5">
+    <!-- <li> -->
+      <!-- <ul> -->
+         <!-- 标题 display:block -->
+         <!-- 
+          <li class="tag_title">文学</li> 
+         -->
+         <li> <a class="tag">小说</a></li>
+         <li> <a class="tag">随笔</a></li>
+         <li> <a class="tag">日本文学</a></li>
+         <li> <a class="tag">散文</a></li>
+         <li> <a class="tag">诗歌</a></li><br><br>
+         <li> <a class="tag">童话</a></li>
+         <li> <a class="tag">名著</a></li>
+         <li> <a class="tag">港台</a></li>
+         <li><a class="tag more_tag">更多&gt;&gt;</a></li>
+      </ul>
+    <!-- </li> -->
+   <!-- </ul> -->
+    <h3>流行</h3>
+    <ul>
+        <li> <a class="tag">漫画</a></li>
+        <li> <a class="tag">推理</a></li>
+        <li> <a class="tag">绘本</a></li>
+        <li> <a class="tag">青春</a></li>
+        <li> <a class="tag">科幻</a></li><br><br>
+        <li> <a class="tag">言情</a></li>
+        <li> <a class="tag">武侠</a></li>
+        <li> <a class="tag">奇幻</a></li>
+        <li><a class="tag more_tag">更多&gt;&gt;</a></li>
+    </ul>
+ </div>
 </body>
 </html>
