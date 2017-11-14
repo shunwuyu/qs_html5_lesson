@@ -38,12 +38,7 @@
             <div class="post-count">
                 <span class="icon-article"></span>
                 <span>
-                    <!-- react-text: 206 -->共发表
-                    <!-- /react-text -->
-                    <!-- react-text: 207 -->583
-                    <!-- /react-text -->
-                    <!-- react-text: 208 -->篇
-                    <!-- /react-text -->
+                    
                 </span>
             </div>
             <div class="post-list">
@@ -54,8 +49,8 @@
                             <a href="/p/5102586.html?from=authorlatest" target="_blank">1</a>
                         </p>
                         <p class="note am-cf">
-                            <span class="time am-fl">12小时前</span>
-                            <span class="tag am-fr">创投新闻</span>
+                            <span class="time am-fl"></span>
+                            <span class="tag am-fr"></span>
                         </p>
                     </li>
                     <li data-stat-click="articles.latestnews.470866504.5102645">
@@ -63,8 +58,8 @@
                             <a href="#" target="_blank"></a>
                         </p>
                         <p class="note am-cf">
-                            <span class="time am-fl">12小时前</span>
-                            <span class="tag am-fr">大公司</span>
+                            <span class="time am-fl"></span>
+                            <span class="tag am-fr"></span>
                         </p>
                     </li>
                     <li data-stat-click="articles.latestnews.470866504.5102555">
@@ -72,8 +67,8 @@
                             <a href="#" target="_blank"></a>
                         </p>
                         <p class="note am-cf">
-                            <span class="time am-fl">18小时前</span>
-                            <span class="tag am-fr">大公司</span>
+                            <span class="time am-fl"></span>
+                            <span class="tag am-fr"></span>
                         </p>
                     </li>
                 </ul>
@@ -86,17 +81,24 @@
 
     // 设置文本框内容
     var renderAuthorInfo = function (data) {
-        var author = data.data.authorName;
+        var author = data.data.author.name;
+        var aiticleNum = data.data.author.aiticleNum;
         $('.arrow').text(author);
-        console.log(document.getElementsByClassName('.arrow').text);
+        $('.post-count').text("共发表" + aiticleNum + "篇文章");
+        console.log(author);
     }
     var renderArticles = function (data) {
         var articles = data.data.artical;
         var ps = $('.title a');
+        var times = $('.time');
+        var tags = $('.tag');
         // console.log(ps[0].innerHTML);
         // ps[0].innerHTML = "12345";
         for(var i = 0; i <ps.length; i++){
-            ps[i].innerHTML = articles[i];
+            ps[i].innerHTML = articles[i].title;
+            ps[i].href = articles[i].link;
+            times[i].innerHTML = articles[i].publicTime;
+            tags[i].innerHTML = articles[i].comeFrom;
         }
     }
     // 传递data值  设置文本框内容
