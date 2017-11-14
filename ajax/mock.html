@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax 构建假数据</title>
+</head>
+<body>
+    <div class="box">
+        <img src ="" id= "avata"/>
+        <div id="username">姓名: <span></span></div>
+        <div id="sex">性别<span><span></div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.1.2/jquery.min.js"></script>
+    <script>
+        // 相当于document.onreadystatechange
+    $(function() {
+        //js 主动拉请求 ajax 异步请求 动态渲染
+        //拉数据 
+  // $.getJSON('http://www.easy-mock.com/mock/5a09868628b23066479b8392/ajaxData/getUserInfo#!method=get',
+   //function(data){
+// success callback
+//console.log(data.data.avata);
+//    dom 更新
+//var avatar = data.data.avata;
+//var username = data.data.nikname;
+//var sex = data.data.sex;
+//console.log(avata,username,sex);在数据输入之前查看一下
+//jQuery  属性 除标签外，都叫属性
+//$('#avatar').attr('src',avatar);
+// alert(document.getElementById('avata').getAttribute());
+// dom 编程
+// $('#username span').text(username) ;
+//  $('#sex span').text(sex);
+// $("#username").find('span').text(username);
+// $('#sex').find('span').text(sex);
+  // })
+   //
+//callback 回调
+    var getUserInfo = function(callback) {
+        // 异步处理 js 耗时间 传输ajax callback 回调 当成功返回时 执行 数据库数据
+        //文件的读写
+        $.getJSON('http://www.easy-mock.com/mock/5a09868628b23066479b8392/ajaxData/getUserInfo#!method=get',
+        function(data){
+            callback(data);
+        
+    })
+    }
+    var renderUserInfo = function(data){
+        var avata = data.data.avata;
+		var username = data.data.nikname;
+		var sex = data.data.sex;
+			
+			$('#avata').attr('src', avata);
+			$('#username').find('span').text(username);
+			$('#sex').find('span').text(sex);
+    }
+    getUserInfo(renderUserInfo);
+//负责页面 dom api
+
+    
+    // 数据通信
+
+    })
+    </script>
+</body>
+</html>
