@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    a {
+        text-decoration: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="author-info">
+        <a href="#" class="name pointer"></a>
+    </div>
+    <div class="author-info">
+        <!-- react-empty: 190 -->
+        <!-- react-empty: 191 -->
+        <!-- react-empty: 192 -->
+        <div class="role-writer padding-wrapper right-author">
+            <div class="author-avatar">
+                <a href="/user/470866504" target="_blank" class="pointer" style="background-image: url(&quot;https://pic.36krcnd.com/avatar/201701/04082954/xlgogz4tat8mfj33.jpg!480&quot;);"></a>
+            </div>
+            <div class="author-info">
+                <a class="name pointer" href="#" target="_blank"></a>
+                <span class="kr-tag-arrow-blue kr-size-min">
+                    <span class="arrow">
+                        <em></em>
+                    </span>
+                    <span>新锐作者</span>
+                </span>
+            </div>
+            <div class="author-desc">关注特斯拉、无人驾驶、新能源车、车联网、出行及后市场</div>
+            <div class="post-count">
+                <span class="icon-article"></span>
+                <span>
+                    <!-- react-text: 206 -->共发表
+                    <!-- /react-text -->
+                    <!-- react-text: 207 -->583
+                    <!-- /react-text -->
+                    <!-- react-text: 208 -->篇
+                    <!-- /react-text -->
+                </span>
+            </div>
+            <div class="post-list">
+                <h4>最近文章</h4>
+                <ul class="list">
+                    <li data-stat-click="articles.latestnews.470866504.5102586">
+                        <p class="title">
+                            <a href="/p/5102586.html?from=authorlatest" target="_blank">1</a>
+                        </p>
+                        <p class="note am-cf">
+                            <span class="time am-fl">12小时前</span>
+                            <span class="tag am-fr">创投新闻</span>
+                        </p>
+                    </li>
+                    <li data-stat-click="articles.latestnews.470866504.5102645">
+                        <p class="title">
+                            <a href="#" target="_blank"></a>
+                        </p>
+                        <p class="note am-cf">
+                            <span class="time am-fl">12小时前</span>
+                            <span class="tag am-fr">大公司</span>
+                        </p>
+                    </li>
+                    <li data-stat-click="articles.latestnews.470866504.5102555">
+                        <p class="title">
+                            <a href="#" target="_blank"></a>
+                        </p>
+                        <p class="note am-cf">
+                            <span class="time am-fl">18小时前</span>
+                            <span class="tag am-fr">大公司</span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.1.2/jquery.js"></script>
+<script>
+
+    // 设置文本框内容
+    var renderAuthorInfo = function (data) {
+        var author = data.data.authorName;
+        $('.arrow').text(author);
+        console.log(document.getElementsByClassName('.arrow').text);
+    }
+    var renderArticles = function (data) {
+        var articles = data.data.artical;
+        var ps = $('.title a');
+        // console.log(ps[0].innerHTML);
+        // ps[0].innerHTML = "12345";
+        for(var i = 0; i <ps.length; i++){
+            ps[i].innerHTML = articles[i];
+        }
+    }
+    // 传递data值  设置文本框内容
+    var set = function (data) {
+        renderAuthorInfo(data);
+        renderArticles(data);
+    }
+    // 获取用户信息
+    var getUserInfo = function (callback) {
+        $.getJSON("http://www.easy-mock.com/mock/5a0a2d347b68855a07f7b782/carHome/getAuthorInfo", function (data) {
+                callback(data);
+                // console.log(data);
+        });
+    }
+    getUserInfo(set);
+</script>
+
+</html>
