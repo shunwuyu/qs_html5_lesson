@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>马云广发英雄帖--功守道</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js "></script>
+    <!-- 清空静态文件的缓存 ？v1 强制用户更新静态文件 -->
+    <link rel="stylesheet" href="./common.css?v1" />
+  
+</head>
+<body>
+    <div id="app">
+        <div id="loading">
+            <div class="loading"></div>
+            <div class="text">
+                作为中国功夫的铁粉，连马云都对我佩服有加。
+                让我们一起为#功守道#打道，致敬中国传统文化！
+
+            </div>
+        </div>
+    </div>
+    <script>
+        'use strict';
+        var KungfuMayun = {
+            // es6里的简写形式
+            loadingEle: null,
+            init() {
+                this.loadingEle = document.getElementById('loading');
+                this.hideLoading();
+            },
+            hideLoading () {
+                // var that = this;
+                // es6 箭头函数 用于降低函数复杂度 规避掉this会被改写的问题 内部的this会指向父级
+                setTimeout(() => {
+                    // window === this 
+                    // this 动态的 执行的时候才会决定，
+                    // 函数被调用的方式来决定的。
+                    // 函数作为普通对象被调用 window 
+                    // 函数作为对象的方法被调用 this 对象
+                    // DOM 为每个ID元素都加了索引
+                    this.loadingEle.style.display = 'none';
+                },1000);
+            }
+        }
+        window.onload = function() {
+            KungfuMayun.init();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+            background-color: pink;
+        }
+        .box, .box1, box2 {
+            /* rem 相对单位 相对于根元素 html 移动开发*/
+            width: 10rem;
+            height: 3rem;
+            background-color: red;
+        }
+        .box1 {
+            width: 7rem;
+            background-color: blueviolet;
+        }
+        .box2 {
+            width: 3rem;
+            background-color: seagreen;
+        }
+        .box1, .box2 {
+            /* inline 行内元素 不能设定宽高 由内容撑起
+            inline-block 行内块状元素 不能换行 可以设置大小 两个盒子div之间不能有空格 否则页面上两个盒子之间会有空白 */
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <script>
+        //获取当前屏幕大小
+        var winWidth = document.body.clientWidth;
+        // 设置1rem的px值
+        var remSize = winWidth/10 + 'px';
+        //getElementByTagName（） 根据标签查找元素 得到的是一个数组
+        //设置字体的rem值
+        document.getElementsByTagName('html')[0].style.fontSize = remSize;
+        //屏幕大小变化时发生
+        window.onresize = function() {
+            var winWidth = document.body.clientWidth;
+            var remSize = winWidth/10 + 'px';
+            document.getElementsByTagName('html')[0].style.fontSize = remSize;
+        }
+    </script>
+</body>
+</html>
