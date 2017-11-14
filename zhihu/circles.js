@@ -14,8 +14,8 @@ class Circle{
         this._my = Math.random();
     }
     move(w,h){
-     this._mx = (this.x<w && this.x>0) ? this._mx :(-this._x);
-     this._my = (this.y < h && this.y > 0)?this._my: (-this._my);     
+     this._mx = (this.x<w && this.x>0) ? this._mx: (-this._mx);
+     this._my = (this.y<h && this.y>0) ? this._my: (-this._my);     
      this.x += this._mx/2;
      this.y += this._my/2;
     }
