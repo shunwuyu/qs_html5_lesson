@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax 构建假数据</title>
+</head>
+<body>
+    <div class="box">
+        <img id="avatar" src="" alt="">
+        <div class="" id="username">姓名:<span></span></div>
+        <div class="" id="sex">性别:<span></span></div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $(function () {
+            //js 主动拉数据 ajax 异步请求,动态渲染
+            // $.getJSON('http://www.easy-mock.com/mock/5a09868228b23066479b8371/ajaxData/getUserInfo',
+            // function (data) {
+            //     //success callback
+            //     //拉数据
+            //     console.log(data);
+            //     //dom 更新
+            //     var avatar = data.data.avatar;
+            //     var username = data.data.name;
+            //     var sex = data.data.sex;
+            //     //在处理数据之前可以先输出数据进行查看 可以预防数据获取bug
+            //     console.log(avatar, username, sex);
+            //     // js的用法
+            //     // document.getElementById('avatar').setAttribute('src', avatar);
+            //     // DOM 编程
+            //     // $('#username span').text(username);
+            //     // $('#sex span').text(sex); 
+
+            //     //jQuery的DOM用法
+            //     $('#avatar').attr('src', avatar);
+            //     $('#username').find('span').text(username);
+            //     $('#sex').find('span').text(sex);
+            // });
+
+            // $result: [];
+            // $avatar: null;
+            // $username: null;
+            // $sex: null;
+
+            //数据通信
+            var getUserInfo = function (callback) {
+            // 异步处理js消耗时间，传输ajax
+               $.getJSON('http://www.easy-mock.com/mock/5a09868228b23066479b8371/ajaxData/getUserInfo',
+               function(data) {
+                    callback(data);
+                });
+                // $.getJSON('http://www.easy-mock.com/mock/5a09868228b23066479b8371/ajaxData/getUserInfo',
+                // function ($result) {
+                //     this.$avatar = $result[0].data.avatar;
+                //     this.$username = $result[0].data.name;
+                //     this.$sex = $result[0].data.sex;
+                // });
+            }
+            //渲染dom api
+            var renderUserInfo = function (data) {
+                var avatar = data.data.avatar;
+                var username = data.data.nickname;
+                var sex = data.data.sex;
+                
+                $('#avatar').attr('src', avatar);
+                $('#username').find('span').text('username');
+                $('#sex').find('span').text(sex);
+            }
+            getUserInfo(renderUserInfo);
+        })
+    </script>
+</body>
+</html>
