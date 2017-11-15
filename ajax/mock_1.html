@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax 构建假数据练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            display: block;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <src></src>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.1.2/jquery.min.js"></script>
+    <script>
+       
+        var renderAuthorInfo = function(data) {
+            var avatar = data.data.author.avatar;
+            var name = data.data.author.name;
+            var articleNum = data.data.author.articleNum;
+            $('#avatar').attr('src',avatar);
+            
+        }
+
+        var renderArticles = function(data) {
+
+        }
+
+       var getAutorInfo = function(callback) {
+        $getJSON(' http://www.easy-mock.com/mock/5a0a8a02fed5cf26fd6b4215/getAutorInfo', function(data){
+            callback(data)
+        }); 
+    }
+    getAutorInfo(renderAuthorInfo);
+    getAutorInfo(renderArticles);
+    
+    </script>
+</body>
+</html>
