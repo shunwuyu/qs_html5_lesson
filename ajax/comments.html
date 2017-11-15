@@ -294,6 +294,7 @@
     .kr-tag-arrow-blue, .kr-tag-gray {
         display: inline-block;
     }
+
     .kr-tag-arrow-blue {
         vertical-align: middle;
         padding: 0 10px;
@@ -306,24 +307,47 @@
         line-height: 20px;
         font-size: 12px;
     }
-    .kr-tag-arrow-blue.kr-size-min .arrow em {
-        border-width: 4px 4px 4px 0;
-        top: -4px;
+    /* arrow */
+    .kr-tag-arrow-blue .arrow {
+        border-color: transparent #4285f4 transparent transparent;
+        top: 50%;
     }
-    .kr-tag-arrow-blue .arrow em {
-        border-color: transparent #fff transparent transparent;
-        left: 1px;
-    }
-    .kr-tag-arrow-blue .arrow, .kr-tag-arrow-blue .arrow em {
+    .kr-tag-arrow-blue .arrow {
         display: block;
         position: absolute;
         width: 0;
         height: 0;
         border-style: solid;
     }
+    .kr-tag-arrow-blue.kr-size-min .arrow {
+        border-width: 4px 4px 4px 0;
+        left: -4px;
+        margin-top: -4px;
+    }
+
+
     i, cite, em, var, address, dfn {
         font-style: italic;
     }
+
+    .kr-tag-arrow-blue .arrow em {
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+    .kr-tag-arrow-blue .arrow em {
+        border-color: transparent #fff transparent transparent;
+        left: 1px;
+    }
+    .kr-tag-arrow-blue.kr-size-min .arrow em {
+        border-width: 4px 4px 4px 0;
+        top: -4px;
+    }
+
+    
+    
     .article-detail {
         opacity: 1;
         width: 100%;
@@ -351,8 +375,86 @@
         line-height: 1;
         -webkit-font-smoothing: antialiased;
     }
+    /* post-list */
+    .right-author .post-list {
+        margin-top: 15px;
+        border-top: 1px solid #d3d7db;
+        padding-top: 15px;
+    }
+    h4 {
+        margin: 0 0 1.6rem;
+        font-weight: 600;
+    }
+    .right-author .post-list h4 {
+        margin-bottom: 0;
+        color: #68727d;
+        font-size: 14px;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .right-author .post-list li {
+        padding-top: 15px;
+    }
+    p {
+        margin: 0;
+    }
+    .right-author .post-list li .title {
+        font-size: 16px;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        line-height: 1.4em;
+        max-height: 2.8em;
+    }
     
-    
+    a {
+        background-color: transparent;
+        transition: all .2s ease;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .right-author .post-list li .title a {
+        color: #3d464d;
+    }
+    .note {
+        color: #aaa;
+        font-size: .6rem;
+    }
+    .right-author .post-list li .note {
+        margin-top: 5px;
+    }
+    .am-cf:before {
+        content: " ";
+        display: table;
+    }
+    .am-fl {
+        float: left;
+    }
+    .right-author .post-list li .note .time {
+        color: #9ca4ab;
+    }
+    .am-fr {
+        float: right;
+    }
+    .right-author .post-list li .note .tag {
+        color: #4285f4;
+    }
+    .am-cf:after {
+    content: " ";
+    clear: both;
+    display: table;
+    }
+    section {
+        display: block;
+    }
+    .right-author .enter-report {
+        margin-top: 30px;
+    }
     
 
     </style>
@@ -385,6 +487,41 @@
                                 共发表768篇
                             </span>
                         </div>
+                        <div class="post-list">
+                            <h4>最近文章</h4>
+                            <ul class="list">
+                                <li>
+                                    <p class="title">
+                                        <a href="">携程内部通报“虐童事件”进展：园方主要责任人被刑拘，两位人力资源副总裁停职调查</a>
+                                        <p class="note am-cf">
+                                            <span class="time am-fl">13小时前</span>
+                                            <span class="tag am-fr">大公司</span>
+                                        </p>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="title">
+                                        <a href="">氪星晚报 | 360拿100亿布局短视频；电力公司“断电”将挤压比特币矿场生存空间；雷军：小米Q3在印度市场排名第一</a>
+                                        <p class="note am-cf">
+                                            <span class="time am-fl">15小时</span>
+                                            <span class="tag am-fr">大公司</span>
+                                        </p>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="title">
+                                        <a href="">氪星晚报 | 俞永福辟谣称不会离开；刘强东晒京东缓解腰椎损伤的外骨骼机器人；2100名头部主播收入3.1亿</a>
+                                        <p class="note am-cf">
+                                            <span class="time am-fl">2017-11-13</span>
+                                            <span class="tag am-fr">大公司</span>
+                                        </p>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <section class="enter-report">
+                            <a href="">阅读更多文章，狠戳这里</a>
+                        </section>
                     </div>
                 </div>
             </div>
