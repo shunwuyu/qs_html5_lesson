@@ -59,8 +59,8 @@
             弹窗内容，告知当前状态，信息，解决方法，描述文字尽量控制在三行内
           </div>
           <div class="weui-dialog__ft">
-            <a href="#" class="weui-dialog__btn weui-dialog__btn_default" id="hideIOSDiolog1">取消</a>
-            <a href="#" class="weui-dialog__btn weui-dialog__btn_primary" id="hideIOSDiolog1">保存</a>
+            <a href="#" class="weui-dialog__btn weui-dialog__btn_default" >取消</a>
+            <a href="#" class="weui-dialog__btn weui-dialog__btn_primary" >保存</a>
           </div>
         </div>
       </div>
@@ -76,8 +76,14 @@
     $('#showIOSDialog1').click(function(){
       $('#iosDialog1').show();
        })
-    $('hideIOSDiolog1').click(function(){
-      $('#iosDiolog1').hide();
+      //  多个地方触发关闭，
+      //  js事件有个冒泡的性质
+      //  沿途经过的所有元素，定义了事件的都触发
+      //  html 层级关系
+      //  #dialogs click
+      //  .weui-dialog__btn click
+    $('dialogs').click(function(){
+      
     })
   </script>
 </body>
