@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>36氪新媒体</title>
+    <style>
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            min-height: 100%;
+        }
+
+        html {
+            font-size: 20px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            position: relative;
+            background: #fff;
+            font-family: PingFang SC, Lantinghei SC, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, STHeitiSC-Light, simsun, \\5B8B\4F53, WenQuanYi Zen Hei, WenQuanYi Micro Hei, "sans-serif";
+            font-weight: 400;
+            line-height: 1.6;
+            color: #333;
+            font-size: 1.6rem;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-size-adjust: 100%!important;
+            -ms-text-size-adjust: 100%!important;
+            -webkit-text-size-adjust: 100%!important;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .mainlib_flex_wapper {
+            display: table;
+            width: 100%;
+        }
+
+        .article-detail .post-detail-con-box {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .mainlib {
+            background-color: #fff;
+            min-height: 5rem;
+            display: table-cell;
+            vertical-align: top;
+            max-width: 800px;
+        }
+
+        .rightlib {
+            display: table-cell;
+            width: 320px;
+            vertical-align: top;
+            -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+            order: 2;
+        }
+
+        .right-author {
+            margin-top: 70px;
+            padding: 20px 20px 25px;
+            border: 1px solid #d3d7db;
+            color: #999;
+            font-size: .65rem;
+        }
+
+        .right-author .author-avatar {
+            position: relative;
+            height: 30px;
+        }
+
+        .right-author .author-avatar a {
+            display: block;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            position: absolute;
+            top: -65px;
+            left: 0;
+            background-size: cover;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, .1);
+            background-color: #d6e3f2;
+            /* cursor: default; */
+        }
+
+        .right-author .author-avatar a.pointer {
+            cursor: pointer;
+        }
+
+        .right-author .author-info {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #366df0;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .right-author .author-info .name {
+            color: #3d464d;
+            margin-right: 10px;
+            cursor: default;
+            vertical-align: middle;
+        }
+
+        .right-author .author-info .name.pointer {
+            cursor: pointer;
+        }
+
+        .kr-tag-arrow-blue,
+        .kr-tag-gray {
+            display: inline-block;
+            height: 26px;
+            line-height: 24px;
+        }
+
+        .kr-tag-arrow-blue {
+            vertical-align: middle;
+            padding: 0 10px;
+            border: 1px solid #4285f4;
+            color: #4285f4;
+            position: relative;
+        }
+
+        .kr-tag-arrow-blue.kr-size-min {
+            height: 22px;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        .kr-tag-arrow-blue .arrow {
+            border-color: #333 transparent transparent;
+            border-color: transparent #4285f4 transparent transparent;
+            left: -10px;
+            top: 50%;
+            margin-top: -10px;
+        }
+
+        .kr-tag-arrow-blue .arrow,
+        .kr-tag-arrow-blue .arrow em {
+            display: block;
+            border-width: 10px 10px 10px 0;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .kr-tag-arrow-blue.kr-size-min .arrow {
+            border-width: 4px 4px 4px 0;
+            left: -4px;
+            margin-top: -4px;
+        }
+
+        .kr-tag-arrow-blue .arrow em {
+            border-color: transparent #fff transparent transparent;
+            top: -10px;
+            left: 1px;
+        }
+
+        .right-author .author-desc {
+            margin-top: 5px;
+        }
+
+        .right-author .post-count {
+            margin-top: 5px;
+        }
+
+        @font-face {
+            font-family: icomoon;
+            src: url(//sta.36krcnd.com/36krx2016-front/static/icomoon.746ffd0f5b1a596c081462543e653795.eot);
+            src: url(//sta.36krcnd.com/36krx2016-front/static/icomoon.746ffd0f5b1a596c081462543e653795.eot#iefix) format("embedded-opentype"),
+            url(//sta.36krcnd.com/36krx2016-front/static/icomoon.456e238be86a7883642c31a3c8195e47.ttf) format("truetype"),
+            url(//sta.36krcnd.com/36krx2016-front/static/icomoon.02d7c66d136e89eb794fe992e76a7a86.woff) format("woff"),
+            url(//sta.36krcnd.com/36krx2016-front/static/icomoon.9fe269e34ec5f7cf4d5e6cfe856582e4.svg#icomoon) format("svg");
+            font-weight: 400;
+            font-style: normal
+        }
+
+        [class^=icon-] {
+            font-family: icomoon!important;
+            speak: none;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* :before {
+            box-sizing: border-box;
+        } */
+
+        .icon-article:before {
+            content: "\E921";
+        }
+
+        .right-author .post-count span {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .right-author .post-count span {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .right-author .post-list {
+            margin-top: 15px;
+            border-top: 1px solid #d3d7db;
+            padding-top: 15px;
+        }
+
+        h4 {
+            margin: 0 0 1.6rem;
+        }
+
+        .right-author .post-list h4 {
+            margin-bottom: 0;
+            color: #68727d;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 2em;
+        }
+
+        p,
+        ul {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+        }
+
+        .right-author .post-list li {
+            padding-top: 15px;
+        }
+
+        .right-author .post-list li .title {
+            font-size: 16px;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            line-height: 1.4em;
+            max-height: 2.8em;
+        }
+
+        /* a {
+            color: #366df0;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            text-decoration: none;
+            cursor: pointer;
+        } */
+
+        a:-webkit-any-link {
+            color: -webkit-link;
+            cursor: auto;
+            text-decoration: none;
+        }
+
+        a {
+            background-color: transparent;
+            color: #0e90d2;
+        }
+
+        a {
+            color: #366df0;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:hover {
+            outline: 0;
+            color: #095f8a;
+        }
+
+        a:hover {
+            color: #3da9f7;
+        }
+
+        .right-author .post-list li .title a {
+            color: #3d464d;
+        }
+
+        .right-author .post-list li .title a:hover {
+            color: #4285f4;
+        }
+
+        .note {
+            color: #aaa;
+            font-size: .6rem;
+        }
+
+        .right-author .post-list li .note {
+            margin-top: 5px;
+        }
+
+        .am-fl {
+            float: left;
+        }
+
+        .right-author .post-list li .note .time {
+            color: #9ca4ab;
+        }
+
+        .am-fr {
+            float: right;
+        }
+
+        .right-author .post-list li .note .tag {
+            color: #4285f4;
+        }
+
+        .am-cf:after,
+        .am-cf:before {
+            content: " ";
+            display: table;
+        }
+
+        .am-cf:after {
+            clear: both;
+        }
+
+        .right-author .enter-report {
+            margin-top: 30px;
+        }
+
+        a:-webkit-any-link {
+            color: -webkit-link;
+            cursor: auto;
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0e90d2;
+        }
+
+        a:hover {
+            color: #095f8a;
+        }
+
+        .right-author .enter-report a {
+            display: block;
+            border-radius: 4px;
+            background-color: #4285f4;
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="post-detail-con-box full-reading mainlib_flex_wapper">
+        <div class="mainlib"></div>
+        <div class="rightlib cover_css">
+            <div class="pad_inner">
+                <div class="author-info">
+                    <div class="role-writer padding-wrapper right-author">
+                        <div class="author-avatar">
+                            <a href="/user/149962" target="_blank" class="pointer" style="background-image: url(https://pic.36krcnd.com/avatar/201708/26021216/b19ypdk5q2d51udx.jpeg!480);">
+                            </a>
+                        </div>
+                        <div class="author-info">
+                            <a class="name pointer" href="/user/149962" target="_blank">高小倩</a>
+                            <span class="kr-tag-arrow-blue kr-size-min">
+                                <span class="arrow">
+                                    <em></em>
+                                </span>
+                                <span>新锐作者</span>
+                            </span>
+                        </div>
+                        <div class="author-desc">交流WeChat：GQ125671922，注明职位等。</div>
+                        <div class="post-count">
+                            <span class="icon-article"></span>
+                            <span>
+                                <!-- react-text: 177 -->共发表
+                                <!-- /react-text -->
+                                <!-- react-text: 178 -->768
+                                <!-- /react-text -->
+                                <!-- react-text: 179 -->篇
+                                <!-- /react-text -->
+                            </span>
+                        </div>
+                        <div class="post-list">
+                            <h4>最近文章</h4>
+                            <ul class="list">
+                                <li data-stat-click="articles.latestnews.149962.5102833">
+                                    <p class="title">
+                                        <a href="/p/5102833.html?from=authorlatest" target="_blank">氪星晚报 | 360拿100亿进军短视频；电力公司“断电”将挤压比特币矿场生存空间；雷军：小米Q3在印度市场排名第一</a>
+                                    </p>
+                                    <p class="note am-cf">
+                                        <span class="time am-fl">11分钟前</span>
+                                        <span class="tag am-fr">大公司</span>
+                                    </p>
+                                </li>
+                                <li data-stat-click="articles.latestnews.149962.5102629">
+                                    <p class="title">
+                                        <a href="/p/5102629.html?from=authorlatest" target="_blank">氪星晚报 | 俞永福辟谣称不会离开；刘强东晒京东缓解腰椎损伤的外骨骼机器人；2100名头部主播收入3.1亿</a>
+                                    </p>
+                                    <p class="note am-cf">
+                                        <span class="time am-fl">2017-11-13</span>
+                                        <span class="tag am-fr">大公司</span>
+                                    </p>
+                                </li>
+                                <li data-stat-click="articles.latestnews.149962.5102545">
+                                    <p class="title">
+                                        <a href="/p/5102545.html?from=authorlatest" target="_blank">10月全球 App 市场：王者荣耀收入第一，腾讯视频收入超奈飞，快手收入增加强劲</a>
+                                    </p>
+                                    <p class="note am-cf">
+                                        <span class="time am-fl">2017-11-13</span>
+                                        <span class="tag am-fr">100个酷产品</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <section class="enter-report">
+                            <a rel="nofollow" href="/user/149962" target="_blank">阅读更多文章，狠戳这里</a>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
