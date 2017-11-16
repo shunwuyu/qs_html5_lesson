@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+#loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -.86667rem;
+    margin-top: -1.46667rem;
+    z-index: 9999;
+}
+._block{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: black  ;
+}
