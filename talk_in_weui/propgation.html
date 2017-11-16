@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://baidu.com" id="lnkbaidu">前往百度</a>
+    <div class="box">
+        <div class="inner">
+
+        </div>
+    </div>
+    <script>
+        var oBox = document.querySelector('.box'), oInner = document.querySelector('.inner');
+        oInner.addEventListener('click', function (e) {
+            console.log('oInner');
+            //阻止冒泡 e为在瞬间执行时创建的
+           // e.stopPropagation();
+        }, true);
+
+        //事件冒泡和事件捕获在监听器为第三个结点
+        oBox.addEventListener('click', function (e) {
+            console.log('oBox');
+            
+        }, false);
+
+        document.getElementById('lnkbaidu').addEventListener('click', function (e) {
+            e.preventDefault();
+            alert('问百度');
+        }, false);
+    </script>
+</body>
+</html>
