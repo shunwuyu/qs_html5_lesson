@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js "></script>
+    <style>
+       * {
+        margin: 0;
+        padding: 0;
+      }
+    
+      html, body {
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+    
+      body {
+        line-height: 1.6;
+        /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+        background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#59615f), to(#0c385a));
+      }
+      .page__hd .page__bd .page__ft{
+          width:10rem;
+      }
+      .page__title{
+          text-align: center;
+          /* padding-top: px; */
+          font-size: 18px;
+          color: #f3fbf9;
+          padding-top: 160px;
+      }
+      .sp_items{
+        width:350px;
+        margin-top: 30px;
+        margin-left: 1.59rem;
+      }
+      .sp_items__item{
+          height: 1.55rem;
+          width: 1.55rem;
+          border-radius: 50%;
+          border: 1px solid #828491;
+          float: left;
+          margin-bottom: 0.7rem;
+          margin-right: 1.1rem;
+          text-align: center;
+      }
+      .sp_items__item:nth-child(3n){
+          margin-right: 0;
+      }
+      .sp_items__item a{
+          color: #c1d8d9;
+          font-size: 20px;
+          line-height: 1.55rem;
+          text-decoration:none;
+          display: block;
+          height: 100%;
+          width: 100%;
+      }
+      .sp_items__item a:active{
+          border-radius: 50%;
+          background: rgba(0,0,0,.4);
+      }
+      .sp_items__last{
+          margin-left: 2.65rem;
+      }
+      .page__ft{
+          height: 80px;
+      }
+      .sp_btn_wrapper{
+          width: 100%;
+          bottom: 0;
+          position: absolute;
+          margin-left: 10px;
+          color: #628c9b;
+      }
+      .btn{
+          font-size: 15px;
+          /* margin-bottom: -25px; */
+      }
+      .right{
+          float: right;
+          margin-right: 18px;
+          display: block;
+          margin-bottom: 14px;
+      }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="page__hd">
+            <div class="page__title"><p>输入密码</p></div>
+        </div>
+        <div class="page__bd">
+                <ul class="sp_items">
+                        <li class="sp_items__item sp_items--active"><a href="javascript:;" class="round_btn">1</a></li>
+                        <li class="sp_items__item"><a href="javascript:;" class="round_btn">2</a></li>
+                        <li class="sp_items__item"><a href="javascript:;" class="round_btn">3</a></li>
+                        <li class="sp_items__item"><a href="javascript:;" class="round_btn">4</a></li>
+                        <li class="sp_items__item"><a href="javascript:;" class="round_btn">5</a></li>
+                        <li class="sp_items__item"><a href="javascript:;" class="round_btn">6</a></li>
+                        <li class="sp_items__item"><a href="javascript:;" class="round_btn">7</a></li>
+                        <li class="sp_items__item"><a href="javascript:;" class="round_btn">8</a></li>
+                        <li class="sp_items__item"><a href="javascript:;" class="round_btn">9</a></li>
+                        <li class="sp_items__item sp_items__last"><a href="javascript:;" class="round_btn">0</a></li>
+                    </ul>
+                </div>
+                <div class="page__ft">
+                    <div class="sp_btn_wrapper">
+                        <div class="btn btn-default right"><p>取消</p></div>
+                        <div class="btn btn-default"><p>紧急呼叫</p></div>
+                    </div>
+                </div>
+    </div>
+    
+</body>
+</html>
