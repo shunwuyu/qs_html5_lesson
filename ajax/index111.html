@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>36氪评论</title>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        .comments {
+            border:1px dashed gray;
+            width: 700px;
+            height:130px;
+            border-left: none;
+            border-right: none;
+        }
+        ._rt {
+            position: absolute;
+            margin-left:680px;
+            margin-top: 70px;
+        } */
+
+        html {
+            height: 100%;
+            font-size: 12px;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .display-module {
+            text-align: center;
+            margin-bottom: 1rem;
+            width: 800px;
+            height: 100px;
+
+        }
+
+        div {
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        p,
+        ul {
+            margin: 0;
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+        }
+        a{
+          text-decoration: none;            
+        }
+
+        ul,
+        menu,
+        dir {
+            display: block;
+            list-style-type: disc;
+            -webkit-margin-before: 1em;
+            -webkit-margin-after: 1em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -webkit-padding-start: 40px;
+        }
+
+        .display-module li {
+            text-align: left;
+            padding: .5rem 0;
+            border-top: 1px dashed #e8e8e8;
+        }
+
+        li {
+            display: list-item;
+        }
+
+        .display-module .img {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: .75rem;
+            vertical-align: middle;
+            float: left;
+            margin-top: .5rem;
+        }
+
+        .display-module .msgwrap {
+            overflow: hidden;
+            font-size: 14px;
+            line-height: 21px;
+        }
+
+        .display-module .msgwrap .name {
+            color: #4285f4;
+        }
+
+        .display-module .msgwrap .time {
+            color: #ccc;
+
+        }
+
+        .display-module .msgwrap .text {
+            color: #666;
+            word-break: break-all;
+            word-wrap: break-word;
+            white-space: pre-line;
+        }
+
+        .display-module .msgwrap .replay_button {
+            text-align: right;
+        }
+
+        .display-module .msgwrap .submit {
+            border: 0 none;
+            background-color: transparent;
+            color: #4285f4;
+            font-size: 14px;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div  class="comments">
+        <div class="_lt" >
+        <a href="#"><img src="1.png" /></a>
+        </div>
+        <div class="_md">
+            <a href="#" style="color:blue;font-size:16px;"><span class="author">作者</span></a>
+            <span class="time" style="font-size:14px;color:gray;">时间</span>
+            <p class="table_comment">老板真帅</p>
+        </div>
+        <div class="_rt">
+            <a href="#">回复</a>
+        </div>
+    </div> -->
+    <div class="display-module">
+        <div>
+            <ul>
+                <li id="470013">
+                    <span class="img" style="background: url(http://wx.qlogo.cn/mmopen/mX8KmgSpyyBI5jwXxXLDlKxrROAvqDeJ4nhJoC8sOn9EibcC1j8komiaU7NgJEmbzYMV8rkV0xRWApvK8yIuxWxuZcExu53zkF/0) 50% 50% / cover no-repeat;"></span>
+                    <div class="msgwrap">
+                        <span class="name">王涛</span>
+                        <span class="time">&nbsp;&nbsp;"4分钟前"</span>
+                        <p>
+                            <span class="text">发型是特别做的吧</span>
+                        </p>
+                        <div class="replay_button">
+                            <a href="#" class="submit">回复</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        var article_comment = {
+            inputVal: '',
+            getCommentHTML: function () {
+                // `` es6 字符串模板，$表示参数
+                return `
+                <li>${this.inputVal}</li>
+                `;
+            }
+        }
+        article_comment.inputVal = '老板好帅！';
+        var commentHTML = article_comment.getCommentHTML();
+        console.log(commentHTML);
+
+    </script>
+</body>
+
+</html>

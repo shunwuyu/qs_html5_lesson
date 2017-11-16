@@ -143,7 +143,7 @@ class Circle {
         // 数学绘制函数
         ctx.arc(this.x, this.y, this.r, 0, 360);
         ctx.closePath();
-        ctx.fillstlye = 'rgba(241, 158, 194, .6)';
+        ctx.fillStyle = 'rgba(255,77,54,.6)';
         ctx.fill();
     }
     drawLine(ctx, _circle) {
@@ -155,7 +155,7 @@ class Circle {
             ctx.moveTo(this.x, this.y);
             ctx.lineTo(_circle.x, _circle.y);
             ctx.closePath();
-            ctx.strokStyle = 'rgba(241, 158, 194, .6)';
+            ctx.strokeStyle ='rgba(255,77,54,.6)';
             ctx.stroke();
         }
     }
@@ -170,7 +170,7 @@ class CurrentCircle extends Circle {
         this.r = 8;
         ctx.arc(this.x, this.y, this.r, 0, 360);
         ctx.closePath();
-        ctx.fillstlye = 'rgba(241, 158, 194, .6)';
+        ctx.fillStyle = 'rgba(255,77,54,.6)';
         ctx.fill();
     }
 }

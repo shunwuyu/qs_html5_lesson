@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            /* 弹性布局 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: salmon;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inner {
+            
+            width: 150px;
+            height: 180px;
+            background: pink;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com" id="lnk">前往百度</a>
+    <div class="box">
+        <div class="inner">
+        </div>
+    </div>
+    <script>
+        var oBox = document.querySelector('.box');
+        var oInner = document.querySelector('.inner');
+        oInner.addEventListener("click", function(e) {
+            // stopPropagation() 停止冒泡
+            // e.stopPropagation();
+            console.log("点击了Inner盒子");
+        },true);
+        oBox.addEventListener("click", function(e) {
+            console.log("点击了外部盒子");
+        },true);
+        document.getElementById('lnk').addEventListener("click",function(e) {
+            // e.preventDefault() 阻止超链接的跳转 阻止表单提交的跳转
+            e.preventDefault();
+            alert('问度娘');
+        },false);
+    </script>
+</body>
+</html>
