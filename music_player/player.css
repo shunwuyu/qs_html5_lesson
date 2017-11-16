@@ -194,8 +194,8 @@ html, body {
 }
 
 .process-cur-animation {
-    -webkit-animation: cur-sidesway 60s 1 linear;
-            animation: cur-sidesway 60s 1 linear;
+    -webkit-animation: cur-sidesway 60s infinite linear;
+            animation: cur-sidesway 60s infinite linear;
     -webkit-animation-play-state: pause;
             animation-play-state: pause;
 }
@@ -211,19 +211,19 @@ html, body {
 }
 
 .process-cur-animation-back {
-    -webkit-animation: cur-sideway-back 1s 1 linear;
-            animation: cur-sideway-back 1s 1 linear;
+    -webkit-animation: cur-sideway-back .5s 1 linear;
+            animation: cur-sideway-back .5s 1 linear;
     -webkit-animation-play-state: pause;
             animation-play-state: pause;
 }
 @keyframes cur-sideway-back {
     100%{
-        left: 280px;
+        left: 0px;
     }
 }
 @-webkit-keyframes cur-sideway-back {
     100%{
-        left: 280px;
+        left: 0px;
     }
 }
 

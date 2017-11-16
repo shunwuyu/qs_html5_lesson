@@ -129,7 +129,7 @@ var MusicPlayer = {
 		this.moveNeedle(true);
 		this.changeAnimationState(
 			this.$diskCover, 'running');
-		this.changeAnimationSidesway(this.$curAnimation,'running')
+		this.changeAnimationState(this.$curAnimation,'running')
 		this.$playBtn.hide();
 		this.$pauseBtn.show();
 		this.changeForCuttrenTime('play');
@@ -139,7 +139,7 @@ var MusicPlayer = {
 		this.moveNeedle(false);
 		this.changeAnimationState(
 			this.$diskCover, 'paused');
-		this.changeAnimationSidesway(this.$curAnimation,'paused')
+		this.changeAnimationState(this.$curAnimation,'paused')
 		this.changeForCuttrenTime('pause');
 		this.$playBtn.show();
 		this.$pauseBtn.hide();
@@ -179,18 +179,18 @@ var MusicPlayer = {
 		}else if(state === "pause")
 			int=window.clearInterval(int);
 	},
-	changeAnimationState: function($ele, state) {
+	changeAnimationState: function($ele, state) {// 改变 animation 的状态 可复用
 		$ele.css({
 			'animation-play-state': state,
 			'-webkit-animation-play-state': state,
 		});
 	},
-	changeAnimationSidesway: function($ele, state) {
-		$ele.css({
-			'animation-play-state': state,
-			'-webkit-animation-play-state': state,
-		});
-	},
+	// changeAnimationSidesway: function($ele, state) {//光标的移动
+	// 	$ele.css({
+	// 		'animation-play-state': state,
+	// 		'-webkit-animation-play-state': state,
+	// 	});
+	// },
 	moveNeedle: function(play) {
 		if (play) {
 			this.$needle
