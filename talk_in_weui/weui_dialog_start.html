@@ -7,9 +7,82 @@
   <title>talk in weui--Dialog</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
   <link rel="stylesheet" href="./css/weui.min.css">
-  <link rel="stylesheet" href="./css/common.css">
+  <!-- <link rel="stylesheet" href="./css/common.css"> -->
+  <style>
+   .page__hd{
+     padding: 40px;
+   }
+   .page__title{
+     text-align: left;
+     font-size: 20px;
+     font-weight: 400;
+   }
+   .page__desc{
+     margin-top: 5px;
+     color: #888888;
+   }
+   /* bd 的一个状态 ，BEM里的Modifier */
+   .page__bd_spacing{
+     /* 移动页面在body区域最常见的就是内容滚动，
+     提倡左右留15px的间距（留白） */
+     padding: 0 15px;
+   }
+  </style>
 </head>
 <body ontouchstart>
+  <!-- 页面，dialog是一个特定页面 -->
+  <div class="page dialog">
+    <!-- css国际命名规范 BEM 
+    Block Element __(两个下划线是往下降级)
+    -->
+    <div class="page__hd">
+      <h1 class="page__title">Dialog</h1>
+      <p class="page__desc">对话框</p>
+    </div>
+    <div class="page__bd page__bd_spacing">
+      <!-- weui-btn 基础组件 -->
+      <!-- <a href="#" class="weui-btn weui-btn_warn">IOS Dialog样式</a>
+      <a href="#" class="weui-btn weui-btn_primary">IOS Dialog样式</a> -->
+      <a href="#" id="showIOSDialog1" class="weui-btn weui-btn_default">IOS Dialog样式</a>
+    </div>
+    <div id="dialogs">
+      <div id="iosDialog1" class="js.dialog"
+      style="display:none">
+        <!-- 遮罩层 -->
+        <div class="weui-mask"></div>
+         <div class="weui-dialog">
+           <div class="weui-dialog__hd">
+             <div class="weui-dialog__title">弹窗标题</div>
+           </div>
+           <div class="weui-dialog__bd">
+             <!-- 任何东西 说明，文字，表单 -->
+             弹窗内容，告知当前状态、信息和解决方法，
+             描述文字尽量控制在三行内
+           </div>
+           <div class="weui-dialog__ft">
+             <a href="#" id="d" class="weui-dialog__btn weui-dialog__btn__default">取消</a>
+             <a href="#" class="weui-dialog__btn weui-dialog__btn__primary">保存</a>
+           </div>
+         </div>
+
+      </div>
+    </div>
+  </div>
   <script src="./js/zepto.min.js"></script>
+  <script>
+    // zepto是jquery的移动版
+    // jquery比较大，以兼容性擅长（IE678）
+    // zepto支持jquery所有的api
+    $('#showIOSDialog1').click(function(){
+      $('iosDialog1').show();
+    });
+    // 多个地方会触发关闭
+    // js事件，冒泡性质
+    // 沿途经过的所有元素上都触发这个事件
+    // html 层级关系
+    // #dialog click
+    // .weui-dialog__btn click
+    
+  </script>
 </body>
 </html>
