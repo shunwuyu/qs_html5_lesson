@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+            background-color: #385057;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        .phone__hd, .phone__bd, .phone__ft {
+            width: 10rem;
+            /* border: 1px solid red; */
+        }
+        .phone__hd {
+            height: 184px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            line-height: 340px;
+        }
+        .phone__bd {
+            height: 466px;
+        }
+        .phone__bd__items {
+            width: 7rem;
+            /* border: 1px solid green; */
+            margin-top: 10%;
+            margin-left: 1.6rem;
+            height: 80%;
+        }
+        .phone__bd__item {
+            width: 1.55rem;
+            height: 1.55rem;
+            border: 1px solid white;
+            border-radius: 50%;
+            float: left;
+            margin-right: 1.1rem;
+            margin-bottom:0.74074rem;
+            color:white;
+
+        }
+        .phone__bd__item  a {
+            display:block;
+            height: 100%;
+            text-align: center;
+            line-height: 1.48148rem;
+            color: white!important;
+            font-size: 26px;
+            text-decoration: none;
+        }
+        .phone__bd__item a:active {
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, .4);
+        }
+        .phone__bd__item:nth-child(3n) {
+            /* display:none; */
+            margin-right:0;
+        } 
+        .phone__bd__item--last {
+            margin-left:2.6rem;
+        }
+        .phone__ft {
+            height: 80px;
+        }
+        .wrapper {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            margin-left: 10px;
+        }
+        .btn {
+            font-size: 18px;
+        }
+        .btn-right {
+            display: block;
+            float: right;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone">
+        <div class="phone__hd">
+            <p class="phone__title">输入密码</p>
+        </div>
+        <div class="phone__bd">
+            <ul class="phone__bd__items">
+                <div class="phone__bd__item"><a href="#">1</a></div>
+                <div class="phone__bd__item"><a href="#">2</a></div>
+                <div class="phone__bd__item"><a href="#">3</a></div>
+                <div class="phone__bd__item"><a href="#">4</a></div>
+                <div class="phone__bd__item"><a href="#">5</a></div>
+                <div class="phone__bd__item"><a href="#">6</a></div>
+                <div class="phone__bd__item"><a href="#">7</a></div>
+                <div class="phone__bd__item"><a href="#">8</a></div>
+                <div class="phone__bd__item"><a href="#">9</a></div>
+                <div class="phone__bd__item phone__bd__item--last"><a href="#">0</a></div>
+            </ul>
+        </div>
+        <div class="phone__ft">
+            <div class="wrapper">
+                <a href="#" class="btn btn-left">紧急呼叫</a>
+                <a href="#" class="btn btn-right">取消</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
