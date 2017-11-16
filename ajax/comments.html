@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>36kr 评论</title>
+</head>
+<body>
+    <script>
+    var article_comment = {
+        inputVal:'',
+        getCommentHTML:function(){
+            return `
+                <li>${this.inputVal}</li>
+            `;
+        }
+    }
+    article_comment.inputVal = '老板好帅，来开滴滴';
+    var commentHTML = article_comment.getCommentHTML();
+    console.log(commentHTML);
+    </script>
+</body>
+</html>

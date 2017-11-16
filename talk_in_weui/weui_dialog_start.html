@@ -74,7 +74,7 @@
   <script src="./js/zepto.min.js"></script>
   <script>
   var showDialog = function(){
-    document.getElementById('weui-dialog').style.display = 'block';
+    document.getElementById('weui-dialog');
 
   }
   // zeoto是jQuery的移动版
@@ -82,7 +82,12 @@
   // jQuery api 都支持
   $('#showIOSDialog1').click(function(){
     $('#iosDialog1').show();
-  })
+  });
+  // 多个地方会触发关闭，js事件，冒泡性质
+  // 沿途经过的所有元素上，定义了事件的都触发 html 层级关系
+  // #dialogs
+  // .weui-dialog__btn click 
+  
   </script>
 </body>
 </html>
