@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js "></script>
+    <title>手机锁屏界面</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    
+      html, body {
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        background-color: #535f5c;
+        /* font-size: 37.5px; */
+      }
+      .page__hd {
+          height: 5rem;
+          width: 10rem;
+      }
+      .page__title {
+          color: #e6fbff;
+          font-size: 18px;
+          align-content: center;
+          text-align:center;
+          line-height: 6rem;
+      }
+      .page__bd {
+          width: 10rem;
+          height: 8.6rem;
+          position: relative;
+      }
+      /* .page__bd .sp_items {
+          
+      } */
+      .page__bd .sp_items__item{
+        width: 1.5rem;
+        height: 1.5rem;
+        border:2px solid #6b8fa0;
+        border-radius:1.5rem;
+        float: left;
+        margin:0.4rem 0.5rem;
+        align-content: center;
+        text-align:center;
+      }
+      .page__bd .round_btn {
+        color: #e6fbff;
+        margin:0 auto;
+        line-height: 1.5rem;
+        font-size: 25px;
+      }
+      .page__bd .sp_items {
+          width: 8rem;
+          position: absolute;
+          margin-left: 1rem;
+      }
+      .sp_items__item a:active {
+          display: block;
+          /* color: white; */
+          background-color: hsl(200, 74%, 20%);
+          border-radius: 50%;
+          /* outline: none;
+          text-decoration: none; */
+      }
+      .sp_items__item a {
+          text-decoration: none;
+      }
+      .sp_items__item.sp_items__last{
+          margin-left: 3.1rem;
+      }
+      .page__ft {
+          position: relative;
+          width: 10rem;
+          height: 3rem;
+          top: 1rem;
+      }
+      .page__ft .sp_btn_wrapper {
+        position: absolute;
+        left: 0.2rem;
+        bottom: 0;   
+        width: 9.6rem;
+      }
+      .btn.btn-default {
+          color: #678da5;
+          font-size: 20px;
+      }
+      .btn.btn-default.right {
+          float: right;
+      }
+      .page__ft .sp_btn_wrapper a {
+      text-decoration: none;
+      }
+    </style>
+    
+</head>
+<body>
+    <div class="page">
+        <div class="page__hd">
+            <div class="page__title">输入密码</div>
+        </div>
+        <div class="page__bd">
+            <ul class="sp_items">
+                <li class="sp_items__item sp_items--active"><a href="javascript:;" class="round_btn">1</a></li>
+                <li class="sp_items__item"><a href="javascript:;" class="round_btn">2</a></li>
+                <li class="sp_items__item"><a href="javascript:;" class="round_btn">3</a></li>
+                <li class="sp_items__item sp_items--active"><a href="javascript:;" class="round_btn">4</a></li>
+                <li class="sp_items__item"><a href="javascript:;" class="round_btn">5</a></li>
+                <li class="sp_items__item"><a href="javascript:;" class="round_btn">6</a></li>
+                <li class="sp_items__item sp_items--active"><a href="javascript:;" class="round_btn">7</a></li>
+                <li class="sp_items__item"><a href="javascript:;" class="round_btn">8</a></li>
+                <li class="sp_items__item"><a href="javascript:;" class="round_btn">9</a></li>
+                <li class="sp_items__item sp_items__last"><a href="javascript:;" class="round_btn">0</a></li>
+            </ul>
+        </div>
+        <div class="page__ft">
+            <div class="sp_btn_wrapper">
+                <a class="btn btn-default">紧急呼叫</a>
+                <a class="btn btn-default right">取消</a>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="lick_page">
+        <p class="lick_page-title" >输入密码</p>
+    </div>
+    <div class="lick_accesses">
+        <div class="lick_access lick_access-num1">
+            <p class="lick_access-text">1</p>
+        </div>
+    </div> -->
+
+    
+    
+</body>
+</html>

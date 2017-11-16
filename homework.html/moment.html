@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js "></script>
+    <title>朋友圈</title>
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <style>
+       * {
+        margin: 0;
+        padding: 0;
+      }
+    
+      html, body {
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        /* font-size: 37.5px; */
+      }
+      .weui-cell__ft {
+       font-size: 16px;
+       color: #c5c0c0;
+       
+   }
+   .weui-cell_page {
+       background-color: #000000c7;
+       margin-top: 0;
+   }
+   #weui-cell_page_text {
+       color: white;
+       font-size: 17px;
+   }
+   .weui-cell_page .weui-cell__bd {
+       text-align: center;
+       color: white;
+       font-size: 23px;
+   }
+   .weui-cell_access {
+       position: relative;
+       width: 10rem;
+       height: 10rem;
+   }
+   .weui-cell_access .weui-hd {
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 5px;
+    top: 20px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+   }
+   .weui-cell_access .weui-cell__bd {
+       position: absolute;
+       height: 7.7rem;
+       width: 7.5rem;
+       top: 20px;
+       left: 2.5rem;
+   }
+  
+   #weui-cell_access_text {
+       color: #546893;
+   } 
+   .weui-cell_access .weui-cell__bd .title {
+       font-size:20px;
+   }
+   .weui-time {
+       color: #a5a5a5;
+       font-size: 15px;
+   }
+   .weui-cell_access .weui-cell__ft {
+       position: absolute;
+       left: 8.5rem;
+       top:9rem;
+   }
+   /* .weui-cell_page .weui-cell__ft:after{
+     border-width:0 0 0 0 ;
+  } */
+    </style>
+</head>
+<body ontouchstart>
+    <div class="weui-cells">
+            <div class="weui-cell weui-cell_page">
+                <div class="weui-hd">
+                    <a href="" id="weui-cell_page_text">&lt;发现</a>
+                </div>
+                <div class="weui-cell__bd">
+                    <p class="title_one">朋友圈</p>
+                </div>
+                <div class="weui-cell__ft">
+                <img src="./images/XiangJi.png" alt="">
+                </div>
+            </div>
+            <br/>
+            <div class="weui-cell weui-cell_access">
+                    <div class="weui-hd">
+                        <img src="./images/TouXiang1.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd">
+                        <a href="" id="weui-cell_access_text">qing叫我小兔子”</a>
+                        <p class="title">有木有觉得很搭配</p>
+                        <img src="./images/XiangPian1.png" alt="">
+                        <p class="weui-time">2天前</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                       <img src="./images/ONE.png" alt="">
+                    </div>
+                </div>
+            <br/>
+            <div class="weui-cell weui-cell_access">
+                    <div class="weui-hd">
+                        <img src="./images/TouXiang1.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd">
+                        <a href="" id="weui-cell_access_text">qing叫我小兔子”</a>
+                        <p class="title">有木有觉得很搭配</p>
+                        <img src="./images/XiangPian1.png" alt="">
+                        <p class="weui-time">2天前</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                       <img src="./images/ONE.png" alt="">
+                    </div>
+                </div>
+            <br/>
+            
+    </div>
+</body>
+</html>
