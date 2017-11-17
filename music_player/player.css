@@ -222,14 +222,17 @@ body {
     width: 22px;
     height: 22px;
     margin-left: -11px;
+    -webkit-animation: processbtn 1 infinite linear;
+    animation: processbtn 1 infinite linear;
+    /* 运动状态 */
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
 }
 
-.process-btn-animation {
-    -webkit-animation: processbtn 60s infinite linear;
-    animation: processbtn 60s infinite linear;
-    /* 运动状态 */
-    -webkit-animation-play-state: running;
-    animation-play-state: running;
+@-webkit-keyframes processbtn {
+    100% {
+        transform: translateX(300px);
+    }
 }
 
 @keyframes processbtn {

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- pc mobile
+    width=device-width
+    user-scalable=no 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">    -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双11 flexsible</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js 
+
+"></script>
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js 
+
+"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            color: #000000;
+            background: #ffffff;
+            font-family: sans-serif;
+        }
+        
+        html * {
+            outline: 0;
+            -webkit-tap-highlight-color: red;
+        }
+        
+        .item-section {
+            min-height: 100%;
+            background-color: #ee0a3b;
+            position: relative;
+            font-size: 12px;
+        }
+        
+        .item-section-header {
+            text-align: center;
+        }
+        
+        .item-section-header img {
+            width: 10rem;
+            height: 6.41333rem;
+        }
+        
+        .item-section ul {
+            padding: .133333rem;
+            /* 10/75 */
+        }
+        
+        .flag {
+            /* display: inline-block; */
+            display: table;
+            width: 100%;
+            background-color: white;
+        }
+        
+        .flag .flag-item.figure {
+            width: 2.346667rem;
+            /* 176/75 */
+            height: 2.346667rem;
+            /* 176/75 */
+        }
+        
+        .flag .flag-item.figure img {
+            width: 2.346667rem;
+            /* 176/75 */
+            height: 2.346667rem;
+            /* 176/75 */
+        }
+        
+        .flag .flag-item {
+            display: table-cell;
+            padding: 0.16rem 0;
+            background-color: #fff;
+        }
+        
+        .flag .flag-item.figcaption {
+            width: 133.33333rem;
+            padding-left: .213333rem;
+            /* 16/75 */
+            padding-right: .213333rem;
+            position: relative;
+        }
+        
+        .flag-title {
+            top: .11rem;
+            position: absolute;
+        }
+        
+        .flag-title a {
+            color: black;
+        }
+        
+        .flag-price {
+            top: 1rem;
+            position: absolute;
+            width: 6.333334rem;
+            /* 200/75 */
+            height: .533334rem;
+            /* float: left; */
+        }
+        
+        .flag-price span:nth-child(odd) {
+            background-color: #f32a4c;
+            color: white;
+            /* width: .2rem; */
+        }
+        
+        .flag-price span:nth-child(even) {
+            color: #f5294c;
+            font-size: .45rem;
+        }
+        
+        .flag-price small {
+            color: #f5294c;
+            font-size: .42rem;
+        }
+        
+        .flag-type {
+            top: 1.65rem;
+            position: absolute;
+            color: #ff6a30;
+        }
+        
+        .flag-btn {
+            width: 2.5rem;
+            height: .65rem;
+            color: white;
+            background-color: #f5294c;
+            text-align: center;
+            font-size: .5rem;
+            position: absolute;
+            right: .253333rem;
+            /* 19/75 */
+            bottom: .25rem;
+            /* 15/75 */
+        }
+        /* input {
+            width: 80%;
+            display: inline-block;
+            /* border: 1px solid red; */
+        /* outline: 1px solid blue; */
+        /*    border: none;
+        }
+        
+        .btn {
+            width: 20%;
+            display: inline-block;
+        }
+        
+        .search-box {
+            font-size: 0;
+        }
+        
+        .search-box .btn {
+            font-size: 12px;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="search-box">
+        <input type="text">
+        <a class="btn">搜索</a>
+    </div>
+    <input type="text">
+    <br>
+    <br> -->
+    <!-- 
+    开发时用的iphone8 375px 750px
+    414 iPhone8 plus
+    320 iPhone5
+    android 375-480之间 -->
+    <div class="html_content">
+        <div class="item-section">
+            <div class="item-section-header">
+                <h2>
+                    <img src="http://gw.alicdn.com/mt/TB1PNLZKXXXXXaTXXXXXXXXXXXX-750-481.jpg" alt="">
+                </h2>
+            </div>
+            <ul>
+                <li class="flag">
+                    <a href="#" class="flag-item figure">
+                        <img src="https://placeimg.com/350/350/people/grayscale" alt="">
+                    </a>
+                    <div class="flag-item figcaption">
+                        <div class="flag-title">
+                            <a href="">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内，small SEO -->
+                            <span>双11价</span>
+                            <span>¥299.06</span>
+                            <small>(满400减100)</small>
+                        </div>
+                        <div class="flag-type">1小内时卖5885件</div>
+                        <a href="#" class="flag-btn">马上抢!</a>
+                    </div>
+                </li>
+                <li class="flag">
+                    <a href="#" class="flag-item figure">
+                        <img src="https://placeimg.com/350/350/people/grayscale" alt="">
+                    </a>
+                    <div class="flag-item figcaption">
+                        <div class="flag-title">
+                            <a href="">Nike 耐克官方 ZOOM KOBE VENOMEN5 EP 科比男子篮球鞋815757</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内，small SEO -->
+                            <span>双11价</span>
+                            <span>￥699.50</span>
+                            <small>(满300减150)</small>
+                        </div>
+                        <div class="flag-type">6744正在疯抢</div>
+                        <a href="#" class="flag-btn">马上抢!</a>
+                    </div>
+                </li>
+                <li class="flag">
+                    <a href="#" class="flag-item figure">
+                        <img src="https://placeimg.com/350/350/people/grayscale" alt="">
+                    </a>
+                    <div class="flag-item figcaption">
+                        <div class="flag-title">
+                            <a href="">现货 【送皮套+钢模+耳机】Xiaomi/小米红米Note2手机note2</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内，small SEO -->
+                            <span>双11价</span>
+                            <span>￥799.00</span>
+                            <small>(满300减150)</small>
+                        </div>
+                        <div class="flag-type">7833人正在疯抢</div>
+                        <a href="#" class="flag-btn">马上抢!</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>

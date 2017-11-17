@@ -89,10 +89,10 @@ var MusicPlayer = {
     // };
     play: function() {
         this.player.play();
-        this.moveProcessBtn(this.$processBtn, 'running', this.currentSong.bMusic.playTime);
+        this.moveProcessBtn(this.$processBtn, 'running', this.currentSong.bMusic.playTime / 1000 + 's');
         // 一个函数只做一件事
         this.bool = true;
-        this.displayTime(this.$currentTime, this.bool);
+        // this.displayTime(this.$currentTime, this.bool);
         this.moveNeedle(true);
         this.changeAnimationState(this.$diskCover, 'running');
         this.$playBtn.hide();
@@ -102,43 +102,44 @@ var MusicPlayer = {
         this.player.pause();
         this.moveNeedle(false);
         this.bool = false;
-        this.displayTime(this.$currentTime, this.bool);
-        this.moveProcessBtn(this.$processBtn, false, this.currentSong.bMusic.playTime);
+        // this.displayTime(this.$currentTime, this.bool);
+        this.moveProcessBtn(this.$processBtn, 'paused', this.currentSong.bMusic.playTime / 1000 + 's');
         this.changeAnimationState(this.$diskCover, 'paused');
         this.$playBtn.show();
         this.$pauseBtn.hide();
     },
 
-    displayTime: function($ele, e) {
-        if (!this.bool) { clearInterval(time); }
-        setInterval(function() {
+    // displayTime: function($ele, e) {
+    //     if (!this.bool) { clearInterval(time); }
+    //     setInterval(function() {
 
-            if (e) {
-                var time = setInterval(function() {
-                    if (this.bool != true) {
-                        clearInterval(time);
-                    }
-                    var j, k;
-                    i = i + 1;
-                    j = parseInt(i / 60);
-                    k = i % 60;
-                    $ele.text(j + ":" + k);
-                    // if (!this.bool && e) { clearInterval(time); }
-                    console.log(i);
-                }, 1000);
-            }
-        });
+    //         if (e) {
+    //             var time = setInterval(function() {
+    //                 if (this.bool != true) {
+    //                     clearInterval(time);
+    //                 }
+    //                 var j, k;
+    //                 i = i + 1;
+    //                 j = parseInt(i / 60);
+    //                 k = i % 60;
+    //                 $ele.text(j + ":" + k);
+    //                 // if (!this.bool && e) { clearInterval(time); }
+    //                 console.log(i);
+    //             }, 1000);
+    //         }
+    //     });
 
 
-    },
+    // },
     moveProcessBtn: function($ele, state, e) {
+        console.log(e);
         $ele.css({
-            '-webkit - animation': e,
-            'animation': e,
+            '-webkit-animation': 'processbtn e infinite linear',
+            'animation': 'processbtn e infinite linear',
             /* 运动状态 */
 
-            'webkit - animation - play - state': state,
-            'animation - play - state': state,
+            'webkit-animation-play-state': state,
+            'animation-play-state': state,
         })
     },
     changeAnimationState: function($ele, state) {
