@@ -1,0 +1,58 @@
+<!-- 1 flexible 10rem 
+2 栅格系统 10 columns 10rem
+3 奇数列和偶数列不一样的颜色 h100% -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body, .page{
+            height: 100%;
+            overflow: hidden;
+        }
+        .full_page{
+            height: 100%;
+        }
+        .col_2, .col_6{
+            height: 100%;
+            float: left;
+        }
+        .col_2{
+            width: 2rem;
+        }
+        .col_6{
+            width: 2rem;
+        }
+        .col:nth-child(odd){
+            background-color: green;
+        }
+        .col:nth-child(even){
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="row full_page">
+            <div class="col col_2"></div>
+       
+            <div class="col col_6"></div>
+
+            <div class="col col_2"></div>
+        </div>
+
+
+        
+    </div>
+</body>
+</html>
