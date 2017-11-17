@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>超级马里奥 - canvas</title>
+</head>
+<body>
+    <canvas id="demo" width="800" height="400" style="border:1px solid blue;margin:50px auto;display:block">
+        <!-- html5有兼容性  表现在：现代浏览器（非IE浏览器）都没有问题
+        IE9以下不支持
+        对于不支持canvas的浏览器要对用户进行提醒：您的浏览器不支持canvas -->
+    </canvas>
+    <script>
+        // window 王
+        // 页面加载完成 JS事件机制 html css js 下载完成了
+        // 页面可以开始写交互了
+        // 加上window.onload确保页面的dom元素都加载完毕
+      window.onload=function(){
+        let canvas = document.querySelector('#demo');
+        let context = canvas.getContext('2d');
+        let img = new Image();
+        // web http协议
+        // .src js宿主是浏览器 新开一个线程去下载图片（远程，相对本地）
+        // 文件写入的过程 完成文件写入时， 会触发一个预先定义好的onload 事件
+        // 优化网页的时候， 减少HTTP的请求数
+        // 403 forbidden 状态码的意义 肉鸡攻击
+        // img.src = 'http://static.blueidea.com/attachment/forum/201207/03/180652md4ydy2txwotdd7l.png';
+        img.src="./180652md4ydy2txwotdd7l.png";
+        img.onload = function(){
+            // 加载Mario
+            drawMario();
+        }
+        // 监听键盘事件
+        // document 是DOM的根 可以理解为body
+        // 交给回调函数 callback  参数e包含了事件的所有信息
+        document.addEventListener('keydown',function(e){
+            var direction = getDirection(e);
+            // 判断Mario前进的状态，如果已经停住了，就显示静态的图片。当鼠标移开的时候就表示已经停住了
+            player.stop = false;
+            playAction(direction);
+        })
+        document.addEventListener('keyup',function(e){
+            // DRY dont't repeat yourself
+            var direction = getDirection(e);
+            player.stop = true;
+            playAction(direction);
+        })
+
+        // 获得方向键的方向
+        function getDirection(e) {
+            var direction;
+            var keyCode = e.keyCode;
+            switch (keyCode) {
+                case 37:
+                    direction = 'left';
+                    break;
+                case 38:
+                    direction = 'up';
+                    break;
+                case 39:
+                    direction = 'right';
+                    break;
+                case 40:
+                    direction = 'down';
+                    break;
+            }
+            return direction;
+        }
+
+        var posX = 0;
+        function playAction(direction) {
+                // 向前走
+                // 位置要往前移
+                // 位置要往前移一个身位
+                playerMove(direction);
+                // 移动过程中，图片要切换
+                // 向后走
+      }
+
+        function playerMove(direction){
+            // canvas 边擦除，边画新的
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            if (player.stop){
+                player.imageX = 0;
+            }else {
+                player.imageX += 50;
+            }
+            // 不会在三帧以后消失
+            if (player.imageX>=150){
+                player.imageX = 0;
+            }
+            if (direction === 'right') {
+                player.x += 5;
+                player.imageY = 0;
+            } else if (direction === 'left') {
+                player.x -= 5;
+                player.imageY = 60;
+            }
+            drawMario();
+        }
+
+        // 游戏的配置项 JSON 是最廉价的数据结构
+        // 复杂数据容器
+        var player = {
+            width:50,
+            height:60,
+            x:50,
+            y:0,
+            imageX:0,
+            imageY:0,
+            stop:true
+        }
+
+        // 绘制Mario
+        function drawMario(){
+            // context.drawImage(img, 0, 0, img.width / 3, img.height / 2, 0, 350, img.width / 3, img.height / 2);
+            context.drawImage(img, player.imageX, player.imageY, player.width, player.height, player.x, canvas.height - player.height, player.width, player.height);
+        }
+        
+      }
+    </script>
+</body>
+</html>
