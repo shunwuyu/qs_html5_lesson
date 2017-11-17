@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>36氪新媒体</title>
+    <style>
+        @font-face{font-family:icomoon;
+        src:url(//sta.36krcnd.com/36krx2016-front/static/icomoon.746ffd0f5b1a596c081462543e653795.eot);
+        src:url(//sta.36krcnd.com/36krx2016-front/static/icomoon.746ffd0f5b1a596c081462543e653795.eot#iefix ) format("embedded-opentype"),
+        url(//sta.36krcnd.com/36krx2016-front/static/icomoon.456e238be86a7883642c31a3c8195e47.ttf ) format("truetype"),
+        url(//sta.36krcnd.com/36krx2016-front/static/icomoon.02d7c66d136e89eb794fe992e76a7a86.woff ) format("woff"),
+        url(//sta.36krcnd.com/36krx2016-front/static/icomoon.9fe269e34ec5f7cf4d5e6cfe856582e4.svg#icomoon) format("svg");font-weight:400;font-style:normal}
+
+        *, :after, :before {
+            box-sizing: border-box;
+        }
+        body, html {
+            min-height: 100%;
+        }
+        html {
+            font-size: 20px;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            position: relative;
+            background: #fff;
+            font-family: PingFang SC,Lantinghei SC,Helvetica Neue,Helvetica,Arial,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,STHeitiSC-Light,simsun,\\5B8B\4F53,WenQuanYi Zen Hei,WenQuanYi Micro Hei,"sans-serif";
+            font-weight: 400;
+            line-height: 1.6;
+            color: #333;
+            font-size: 1.6rem;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-size-adjust: 100%!important;
+            -ms-text-size-adjust: 100%!important;
+            -webkit-text-size-adjust: 100%!important;
+        }
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .mainlib_flex_wapper {
+            display: table;
+            width: 100%;
+        }
+        .article-detail .post-detail-con-box {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        .mainlib {
+            background-color: #fff;
+            min-height: 5rem;
+            display: table-cell;
+            vertical-align: top;
+            max-width: 800px;
+        }
+        .rightlib {
+            display: table-cell;
+            width: 320px;
+            vertical-align: top;
+            -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+            order: 2;
+        }
+        .right-author {
+            margin-top: 70px;
+            padding: 20px 20px 25px;
+            border: 1px solid #d3d7db;
+            color: #999;
+            font-size: .65rem;
+        }
+        .right-author .author-avatar {
+            position: relative;
+            height: 30px;
+        }
+        .right-author .author-avatar a {
+            display: block;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            position: absolute;
+            top: -65px;
+            left: 0;
+            background-size: cover;
+            box-shadow: 0 3px 8px rgba(0,0,0,.1);
+            background-color: #d6e3f2;
+        }
+        .right-author .author-info {
+            margin-bottom: 5px;
+        }
+        .right-author .author-info a {
+            /* 光标显示形状 */
+            cursor: pointer;
+            color: #3d464d;
+            margin-right: 10px;
+            vertical-aliign:middle;
+            /* 向文本添加修饰 */
+            text-decoration: none;
+        }
+        .right-author .author-info .kr-tag-arrow-blue {
+            height: 22px;
+            line-height: 20px;
+            font-size: 12px;
+            /* 设置元素的垂直对齐方式  放在父元素的中部*/
+            vertical-align: middle;
+            padding: 0 10px;
+            border: 1px sol #4285f4;
+            color: #4285f4;
+            position: relative;
+            display: inline-block;
+        }
+        .right-author .author-info .kr-tag-arrow-blue .arrow em{
+            display: block;
+            position: absolute;
+            border-width: 10px 10px 10px 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        .right-author .author-info .kr-tag-arrow-blue .arrow{
+            border-width: 4px 4px 4px 0;
+            left: -4px;
+            margin-top: -4px;
+            border-color: transparent #4285f4 transparent transparent;
+        }
+        .right-author .author-desc {
+            margin-top: 5px;
+        }
+        .right-author .post-count {
+            margin-top: 5px;
+        }
+        .right-author .post-count span {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        [class^=icon-] {
+            font-family: icomoon!important;
+            speak: none;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        :before {
+            box-sizing: border-box;
+        }
+        .icon-article:before {
+            content: "\E921";
+        }
+        .right-author .post-list {
+            margin-top: 15px;
+            border-top:1px solid #d3d7db;
+            padding-top:15px;
+        }
+        .right-author .post-list h4 {
+            margin: 0 0 1.6rem;
+            font-weight: 600;
+            margin-bottom:0;
+            color: #68727d;
+            font-size: 14px;
+        }
+        .right-author .post-list ul {
+            /* 把图像设置为列表中的列表项目标记 */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .right-author .post-list li {
+            /* 此元素作为列表显示 */
+            display: list-item;
+            text-align: -webkit-match-parent;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-detail-con-box full-reading mainlib_flex_wapper">
+    <div class="mainlib"></div>
+    <div class="rightlib cover_css">
+        <div class="pad_inner">
+            <div class="author-info">
+                    <div class="role-writer padding-wrapper right-author">
+                        <div class="author-avatar">
+                            <a href="/user/149962" target="_blank" class="pointer"
+                            style="background-image: url(https://pic.36krcnd.com/avatar/201708/26021216/b19ypdk5q2d51udx.jpeg!480 );">
+                            </a>
+                        </div>
+                        <div class="author-info">
+                            <a href="/user/149962" target="_blank" class="name pointer">高小倩</a>
+                            <span class="kr-tag-arrow-blue kr-size-min">
+                                <span class="arrow">
+                                    <em></em>
+                                </span>
+                                <span>新锐作者</span>
+                            </span>
+                        </div>
+                        <div class="author-desc">交流WeChat:GQ125671922,注明职位等。</div>
+                        <div class="post-count">
+                            <span class="icon-article"></span>
+                            <span>共发表768篇</span>
+                        </div>
+                        <div class="post-list">
+                            <h4>最近文章</h4>
+                            <ul class="list">
+                                <li data-stat-click="articles.latestnews.149962.5102833">
+                                    <p class="title">
+                                        <a href="/p/5102833.html?from=authorlatest" target="_blank">氪星晚报 | 360拿100亿进军短视频；电力公司“断电”将挤压比特币矿场生存空间；雷军：小米Q3在印度市场排名第一</a>
+                                    </p>
+                                    <p class="note am-cf">
+                                        <span class="time am-fl">12分钟前</span>
+                                        <span class="tag am-fr">大公司</span>
+                                    </p>
+                                </li>
+                                <li data-stat-click="articles.latestnews.149962.5102629">
+                                    <p class="title">
+                                        <a href="/p/5102629.html?from=authorlatest" target="_blank">氪星晚报 | 俞永福辟谣称不会离开；刘强东晒京东缓解腰椎损伤的外骨骼机器人；2100名头部主播收入3.1亿</a>
+                                    </p>
+                                    <p class="note am-cf">
+                                        <span class="time am-fl">2017-11-13</span>
+                                        <span class="tag am-fr">大公司</span></p>
+                                    </li>
+                                <li data-stat-click="articles.latestnews.149962.5102545">
+                                    <p class="title">
+                                        <a href="/p/5102545.html?from=authorlatest" target="_blank">10月全球 App 市场：王者荣耀收入第一，腾讯视频收入超奈飞，快手收入增加强劲</a>
+                                    </p>
+                                    <p class="note am-cf">
+                                        <span class="time am-fl">2017-11-13</span>
+                                        <span class="tag am-fr">100个酷产品</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <section class="enter-report"></section>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
