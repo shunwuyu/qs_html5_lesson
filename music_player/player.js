@@ -109,8 +109,8 @@ var MusicPlayer = {
 		// 追债 唱针？ 唱片，旋转起来？ 进度条，....
 	},
 
-
-	changeTimeForm: function(time) {//转换时间的显示格式
+        //转换时间的显示格式
+	changeTimeForm: function(time) {
 		var t1,t2;
 		if(time >= 0){
 			t1 = parseInt(time / 1000);
