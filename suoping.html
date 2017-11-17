@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html, body {        
+        height: 100%;
+        background-color: gray;
+    }
+
+    .suoping {
+        height: 100%;
+        width: 100%;
+        
+    }
+    .suoping_title {
+        padding: 3rem 2.7rem;
+        text-align: center;
+        font-size: 0.6rem;
+        color: white;
+    }
+    .sp__items {
+        width: 6.944rem;
+        height: 6.944rem;
+        margin: 0 auto;
+        
+    }
+    .sp__item:nth-child(3n) {
+        margin-right:0;
+    }
+    .sp__item {
+        margin-right: 0.925rem;
+        margin-bottom: 0.7962rem;
+        border: 0.074rem solid #8C999A;
+        width: 1.4444rem;
+        height: 1.4444rem;
+        border-radius: 50%;
+        float: left;
+    }   
+    .sp__item_last {
+        align-content: center;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
+    ul, li, a{
+        text-align: center;
+        font-size: 0.5185rem;
+        line-height: 1.4148rem;
+        color: white;
+        display: block;
+    }
+    .suoping__ft{
+        width: 100%;
+        height: 10%;
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+    suoping__ft_item .call {
+        font-size: .4rem;
+        float: left;
+    }
+    suoping__ft_item .reset {
+        float: left;
+        font-size: .4rem;
+        position: absolute;
+        right: .4rem;
+    }
+    </style>
+</head>
+
+
+<body>
+    <div class="suoping">
+        <div class="suoping__hd">
+            <div class="suoping_title">输入密码</div>
+        </div>
+        <div class="suoping__bd">
+            <ul class="sp__items">
+                <li class="sp__item"><a href="#">1</a></li>
+                <li class="sp__item"><a href="#">2</a></li>
+                <li class="sp__item"><a href="#">3</a></li>
+                <li class="sp__item"><a href="#">4</a></li>
+                <li class="sp__item"><a href="#">5</a></li>
+                <li class="sp__item"><a href="#">6</a></li>
+                <li class="sp__item"><a href="#">7</a></li>
+                <li class="sp__item"><a href="#">8</a></li>
+                <li class="sp__item"><a href="#">9</a></li>
+                <li class="sp__item sp__item_last"><a href="#">0</a></li>
+            </ul>
+        </div>
+        <div class="suoping__ft">
+            <div class="suoping__ft_item call">
+                <a href="#" >紧急拨号</a>
+            </div>
+            <div class="suoping__ft_item reset">
+                <a href="#">取消</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
