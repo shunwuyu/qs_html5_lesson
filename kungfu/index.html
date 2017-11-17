@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>马云广发英雄贴--功守道</title>
     <!-- 自动设置移动页面布局 -->
-    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <!-- <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script> -->
     
-    <!-- <style>
+    <style>
         html {
             /* 相当于一个界面适配器，pc以及移动端都可以进行设置 */
             font-size: 37.5px;
@@ -35,12 +35,12 @@
              /* bug与旁边元素会有一些间隙 例如换行 */
              display: inline-block;
          }
-    </style> -->
+    </style>
     <!-- ?v1为css版本号 -->
     <link rel="stylesheet" href="./common.css?v1">
 </head>
 <body>
-    <div id="app">
+    <!-- <div id="app">
         <div id="loading">
             <div class="loading"></div>
             <div class="text">
@@ -48,46 +48,47 @@
                 让我们
             </div>
         </div>
-    </div>
-    <!-- <div class="box"></div>
-    <div class="box1"></div><div class="box2"></div> -->
-    <script>
-        // var window_width = document.body.clientWidth;
-        // var window_height = document.body.clientHeight;
-        //  获取html的DOM
-        // var htmlfontsizt = document.getElementsByTagName('html')[0];
-        // htmlfontsizt.style.fontSize = window_width/10 + 'px';
-        //  屏幕大小变化时发生
-        // window.onreset = function () {
-        //     var window_width = document.body.clientWidth;
-        //     var htmlfontsizt = document.getElementsByTagName('html')[0];
-        //     htmlfontsizt.style.fontSize = window_width/10 + 'px';
-        //     alert();
-       // }
-       'use strict';
-       var KungfuMayun = {
-           loadingEle: null,
-            init () {
-                this.loadingEle = document.getElementById('loading');
-                this.hideLoading();
-            },
-
-            hideLoading () {
-                var that = this;
-                // 在这里也可以使用箭头函数模式
-                // setTimeout(() => {
-                //     this.loadingEle.style.display = 'none';
-                // }, 1000);
-                setTimeout(function () {
-                    // this是动态的 执行的时候才会执行 函数被调用的方式决定的
-                    that.loadingEle.style.display = 'none';
-                }, 1000);
-            }
-       }
-
-       window.onload = function () {
-           KungfuMayun.init();
-       }
-    </script>
+    </div> -->
+    <div class="box"></div>
+    <div class="box1"></div><div class="box2"></div>
+    
 </body>
+    <script>
+        var window_width = document.body.clientWidth;
+        var window_height = document.body.clientHeight;
+        //  获取html的DOM
+        var htmlfontsizt = document.getElementsByTagName('html')[0];
+        htmlfontsizt.style.fontSize = window_width/10 + 'px';
+        //  屏幕大小变化时发生
+        window.onreset = function () {
+            var window_width = document.body.clientWidth;
+            var htmlfontsizt = document.getElementsByTagName('html')[0];
+            htmlfontsizt.style.fontSize = window_width/10 + 'px';
+            alert();
+       }
+    //    'use strict';
+    //    var KungfuMayun = {
+    //        loadingEle: null,
+    //         init () {
+    //             this.loadingEle = document.getElementById('loading');
+    //             this.hideLoading();
+    //         },
+
+    //         hideLoading () {
+    //             var that = this;
+    //             // 在这里也可以使用箭头函数模式
+    //             // setTimeout(() => {
+    //             //     this.loadingEle.style.display = 'none';
+    //             // }, 1000);
+    //             setTimeout(function () {
+    //                 // this是动态的 执行的时候才会执行 函数被调用的方式决定的
+    //                 that.loadingEle.style.display = 'none';
+    //             }, 1000);
+    //         }
+    //    }
+
+    //    window.onload = function () {
+    //        KungfuMayun.init();
+    //    }
+    </script>
 </html>
