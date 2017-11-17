@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- device-width 物理设备宽度
+    把页面宽度设置为手机的物理宽度
+    user-scalable=no 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双十一 flexible</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        color: #00000000;
+        background: #ffffffff;
+        font-family: sans-serif;
+    }
+    html * {
+        /* outline: 0; */
+        -webkit-tab-highlight-color: red;
+    }
+
+    /* inline-block 使用注意事项
+    下面的例子  本来是2 8分，会在同一行显示，事实是会分行，原因如下：
+    1、两个元素不能换行，否则会产生空隙（解决办法：把空格符的font-size设置为0）
+    2、输入框自带一个border  要设置为none */
+
+
+    input {
+        /* border会撑大盒子模型  outline不会  
+        手机会默认给元素一个outline  再点击的时候显示
+        我们在写页面的时候最好去掉outline */
+        width: 80%;
+        display: inline-block;
+        border: none;
+        /* margin-right: -4px; */
+        /* border: 1px solid red; */
+        /* outline: 1px solid blue; */
+    }
+    .btn {
+        width: 20%;
+        display: inline-block;
+    }
+    .search-box {
+        font-size: 0;
+    }
+    .search-box .btn {
+        font-size: 12px;
+    }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+            <input type="text" name="" id="">
+            <a href="#" class="btn">搜索</a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- 开发时用iPhone8 375pt 750px
+    414 iphone8 plus
+    320 iphone5
+    android 375-480之间 -->
+    <div class="html_content">
+        <div class="item-section">
+            <div class="item-section-header">
+                <h2>
+                    <img src="http://gw.alicdn.com/mt/TB1PNLZKXXXXXaTXXXXXXXXXXXX-750-481.jpg" alt="">
+                </h2>
+            </div>
+            <ul>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale" alt="">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内样式  不换行    small 的语义化很好 SEO 搜索引擎 -->
+                            <span>双十一价</span>
+                            <span>¥299.06</span>
+                            <small>（满400减100）</small>
+                        </div>
+                        <div class="flag-type">1小时卖5885件</div>
+                        <a href="#" class="flag-btn">马上抢</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

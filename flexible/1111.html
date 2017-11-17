@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- device-width 物理设备宽度
+    把页面宽度设置为手机的物理宽度
+    user-scalable=no 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双十一 flexible</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        color: #00000000;
+        background: #ffffffff;
+        font-family: sans-serif;
+    }
+    html * {
+        /* outline: 0; */
+        -webkit-tab-highlight-color: red;
+    }
+    .item-section {
+        min-height: 100%;
+        background-color: #ee0a3b;
+        position: relative;
+        font-size: 12px;
+    }
+    .item-section-header {
+        text-align: center;
+    }
+    .item-section-header img {
+        width: 10rem;
+        /* 把图片等比例缩小高度，可以不写 */
+        height: 6.41333rem;
+    }
+    .item-section ul {
+        /* padding: .13333rem; */
+        padding: .133333rem /* 10/75 */
+    }
+    .flag {
+        /* 快速让行内样式形成横竖的布局 */
+        display: table;
+        width: 100%;
+        background-color: white;
+    }
+    .flag .flag-item.figure {
+        width: 2.346667rem /* 176/75 */;
+        height: 2.346667rem /* 176/75 */;
+    }
+    .flag .flag-item {
+        display: table-cell;
+        padding: 0.16rem 0;
+        background-color: #ffffff;
+    }
+    .flag .flag-item.figcaption {
+        /* width: 133.33333rem; */
+        width: 7rem;
+        height: 2.2rem;
+        float: left;
+        padding-left: .213333rem /* 16/75 */;
+        padding-right: .253333rem /* 19/75 */;
+        position: relative;
+    }
+    .flag .figure img {
+        width: 2.346667rem /* 176/75 */;
+        height: 2.346667rem /* 176/75 */;
+    }
+    .flag-title a {
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+    }
+    .flag-price {
+        margin-top: .08rem /* 6/75 */;
+    }
+    .flag-price span {
+        color: #f32a4c;
+    }
+    .flag-price span:first-child {
+        display: inline-block;
+        background-color: #f32a4c;
+        border-radius: 3px;
+        color: white;
+        font-size: 16px;
+        padding: 2px;
+    }
+    .flag-price span:nth-child(2) {
+        font-weight: 400;
+        font-size: 20px;
+    }
+    small {
+        color: #f32a4c;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .flag-type {
+        color: #ff6a30;
+        font-size: 16px;
+        font-weight: 300;
+        margin-top: .08rem /* 6/75 */;
+    }
+    .flag-btn {
+        float: right;
+        margin-top: -20px; /* 10/75 */;
+        margin-right: 20px;
+        display: inline-block;
+        background-color: #f5294c;
+        padding: 2px 12px;
+        color: white;
+        font-size: 18px;
+        border-radius: 3px;
+    }
+    </style>
+</head>
+<body>
+    <!-- 开发时用iPhone8 375pt 750px
+    414 iphone8 plus
+    320 iphone5
+    android 375-480之间 -->
+    <div class="html_content">
+        <div class="item-section">
+            <div class="item-section-header">
+                <h2>
+                    <img src="http://gw.alicdn.com/mt/TB1PNLZKXXXXXaTXXXXXXXXXXXX-750-481.jpg" alt="">
+                </h2>
+            </div>
+            <ul>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale" alt="">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内样式  不换行    small 的语义化很好 SEO 搜索引擎 -->
+                            <span>双11价</span>
+                            <span>¥299.06</span>
+                            <small>（满400减100）</small>
+                        </div>
+                        <div class="flag-type">1小时卖5885件</div>
+                        <a href="#" class="flag-btn">马上抢！</a>
+                    </div>
+                </li>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale" alt="">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="">Nike 耐克官方 ZOOM KOBE VENOMENON 5EP</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内样式  不换行    small 的语义化很好 SEO 搜索引擎 -->
+                            <span>双11价</span>
+                            <span>¥699.50</span>
+                            <small>（满300减150）</small>
+                        </div>
+                        <div class="flag-type">6744人正在疯抢</div>
+                        <a href="#" class="flag-btn">马上抢！</a>
+                    </div>
+                </li>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale" alt="">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="">现货【送皮套+钢模+耳机】Xiaomi/小米 红米Note2手机note2</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内样式  不换行    small 的语义化很好 SEO 搜索引擎 -->
+                            <span>双11价</span>
+                            <span>¥799.00</span>
+                            <small>（满300减150）</small>
+                        </div>
+                        <div class="flag-type">7833人正在疯抢</div>
+                        <a href="#" class="flag-btn">马上抢！</a>
+                    </div>
+                </li>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale" alt="">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内样式  不换行    small 的语义化很好 SEO 搜索引擎 -->
+                            <span>双11价</span>
+                            <span>¥299.00</span>
+                            <small>（满400减100）</small>
+                        </div>
+                        <div class="flag-type">2379人想买</div>
+                        <a href="#" class="flag-btn">马上抢！</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
