@@ -24,7 +24,7 @@
         .box{
             width: 200px;
             height: 200px;
-            background-color: green;
+            background-color: rgb(135, 135, 248);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -32,14 +32,14 @@
         .inner {
             width: 100px;
             height: 100px;
-            background: blue;
+            background: pink;
             align-self: flex-end; 
             /* 自主定义 */
         }
     </style>
 </head>
 <body>
-    <a href="http://www.baidu.com" id="lnk">前往百度</a>
+    <!-- <a href="http://www.baidu.com" id="lnk">前往百度</a> -->
     <div class="box">
         <div class="inner">
 
@@ -57,7 +57,7 @@
             console.log('点击了box');
         },true);
         document.getElementById('lnk').addEventListener('click',function(e){
-            e.preventDefault();
+            // e.preventDefault();
             alert('问度娘');
             
         },false);

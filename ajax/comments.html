@@ -111,10 +111,10 @@
         a {
             background-color: transparent;
         }
-        .kr-tag-arrow-blue.kr-size-min{
-            height: 22px;
-            line-height: 20px;
-            font-size: 12px;
+        .kr-tag-arrow-blue, .kr-tag-gray {
+            display: inline-block;
+            height: 26px;
+            
         }
         .kr-tag-arrow-blue{
             vertical-align: middle;
@@ -122,12 +122,11 @@
             border:1px solid #4285f4;
             color: #4285f4;
             position: relative;
-            display: inline-block;
         }
-        .kr-tag-arrow-blue.kr-size-min .arrow{
-            border-width: 4px 4px 4px 0;
-            left: -4px;
-            margin-top: -4px;
+        .kr-tag-arrow-blue.kr-size-min{
+            height: 22px;
+            line-height: 20px;
+            font-size: 12px;
         }
         .kr-tag-arrow-blue .arrow, .kr-tag-arrow-blue .arrow em{
             display: block;
@@ -135,21 +134,35 @@
             position: absolute;
             width: 0;
             height: 0;
+            border-style: solid;
             
         }
-        .kr-tag-arrow-blue .arrow em {
+        
+        /* .kr-tag-arrow-blue.kr-size-min .arrow{
+            border-width: 4px 4px 4px 0;
+            left: -4px;
+            margin-top: -4px;
+        } */
+       
+        .kr-tag-arrow-blue .arrow em{
+            /* border-color: #333 transparent transparent; */
+            border-color: transparent #fff transparent transparent;
+            left: 1px;
+            /* top: -4px; */
+            /* margin-top: -10px; */
+            
+        }
+        .kr-tag-arrow-blue.kr-size-min .arrow em {
+            border-width: 4px 4px 4px 0;
+            top: -4px;
+        }
+        /* .kr-tag-arrow-blue .arrow em {
             border-color: transparent #4285f4 transparent transparent;
             top: 11px;
             left: 0;
             border-style: solid;
         }
-        .kr-tag-arrow-blue .arrow {
-            border-color: #333 transparent transparent;
-            /* border-color: transparent #4285f4 transparent transparent; */
-            /* left: 1px;
-            top: -4px; */
-            margin-top: -10px;
-        }
+         */
         .right-author .author-desc {
             margin-top: 5px;
         }
