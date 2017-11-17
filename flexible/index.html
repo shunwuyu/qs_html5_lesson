@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .full_page {
+        height: 100%;
+    }
+    html, body, .page {
+        height: 100%;
+    }
+    .col-1 {
+        width: 1rem;
+        height: 100%;
+        float: left;
+        outline: 1px solid red;
+    }
+    .col-1:nth-child(odd) {
+        background-color: red;
+    }
+    .col-1:nth-child(even){
+        background-color: green;
+    }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="row full_page">
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS的冒泡机制</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            /* 主轴居中对齐 */
+            justify-content: center;
+            /* 纵轴居中 */
+            align-items: center'
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            position: relative;
+            /* 给父元素设置为弹性布局 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /* 自己不受父元素的控制  位于元素的最底部 */
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com" id="lnk">前往百度</a>
+    <div class="box">
+        <div class="inner">
+
+        </div>
+    </div>
+    <script>
+        // 事件冒泡机制的形成：当点击页面，页面能监听到鼠标当前点击的位置以及确定是哪个元素。
+        //                     程序能在当前页面的这棵DOM tree上，往上一层层找到这个元素经历的所有父节点。
+        //                     根据addEventListener的第三个参数来确定冒泡是从子节点到父节点还是从父节点到子节点。
+    var oBox = document.querySelector('.box'),
+    oInner = document.querySelector('.inner');
+    // 为两个盒子加上第三个参数  都是 true  会先执行外部的大盒子
+    oInner.addEventListener ('click', function (e) {
+        // 停止冒泡
+        // e.stopPropagation();
+        console.log('点击了 inner盒子');
+    }, true);
+    oBox.addEventListener ('click', function () {
+        console.log('点击了外部盒子');
+    }, true);
+    document.getElementById('lnk').addEventListener('click', function (e) {
+        // 阻止事件的默认执行
+        e.preventDefault();
+        // alert('问度娘');
+    }, false);
+    </script>
+</body>
+</html>

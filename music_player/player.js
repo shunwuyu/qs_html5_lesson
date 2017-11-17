@@ -21,7 +21,6 @@ var MusicPlayer = {
     // 碟片封面
     $diskCover:null,
     $album: null,
-    
     // 上一首和下一首歌的切换
     $pre: null,
     $next: null,
@@ -42,7 +41,6 @@ var MusicPlayer = {
         this.$album = $('.album');
         this.$playBtn = $('#controls .play');
         this.$pauseBtn = $('#controls .pause');
-        
         this.$pre = $('#controls .pre');
         this.$next = $('#controls .next');
         this.$totalTime = $('#totalTime');
@@ -79,7 +77,7 @@ var MusicPlayer = {
         });
         this.$totalTime.text(this.calcuTime(parseInt(this.currentSong.duration/1000)));
         this.$currentTime = 0;
-        this.clearInterval(interval);
+        // this.clearInterval(this.updateTime.interval);
         this.updateTime();
     },
     updatePrevNext: function () {
@@ -109,13 +107,17 @@ var MusicPlayer = {
         // this.updateTotalTime(time);
         var currentTime = 0;
         // this.updateCurrentTime(currentTime);
+        // 改变进度条以及倒计时
+        this.changeTime(time, currentTime);
+    },
+    changeTime: function (time, currentTime) {
         interval = setInterval(function (self) {
             return function() {
                 time --;
                 self.$totalTime.text(self.calcuTime(time));
                 currentTime ++;
                 self.$currentTime.text(self.calcuTime(currentTime));
-                console.log(currentTime/time*280);
+                // console.log(currentTime/time*280);
                 self.$cur.css ({
                     'left': currentTime/time*280 + 'px'
                 });
@@ -205,7 +207,7 @@ window.onload = function () {
         success:function(data){
             MusicPlayer.playList = data.result.tracks;
             MusicPlayer.init();
-            console.log(MusicPlayer.playList);
+            // console.log(MusicPlayer.playList);
             // console.log(data.result.tracks[0].artists[0].name);
         }
     })
