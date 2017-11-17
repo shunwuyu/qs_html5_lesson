@@ -1,0 +1,94 @@
+* {
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 0;
+    padding: 0
+}
+
+#app {
+    position: relative;
+    height: 100%;
+    width: 10rem;
+}
+
+.authordmassage {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: pink;
+}
+
+.authordmassage a {
+    position: absolute;
+    width: 5rem;
+    height: 45px;
+    left: 2rem;
+    font-size: 18px;
+    top: 11px;
+}
+
+.authordidclass {
+    position: absolute;
+    width: 2rem;
+    height: 45px;
+    left: 5.3333rem;
+    top: 15px;
+}
+
+.allcontentclass {
+    position: absolute;
+    width: 2rem;
+    height: 45px;
+    left: 7.3333rem;
+    top: 15px;
+}
+
+.authordphoto {
+    position: absolute;
+    top: 5px;
+    left: .33333rem;
+    width: 1rem;
+    border-radius: 2em;
+   /* border-radius: */
+}
+
+.authorartical {
+    position: absolute;
+    top: 75px;
+    width: 100%;
+    height: 700px;
+    /* background-color: rgb(201, 192, 192); */
+}
+
+.authorartical ul  li {
+    position: absolute;
+    height: 110px;
+    width: 100%;
+    border-bottom: 1px solid #e6e8eb;
+    margin-top: -1px;
+}
+
+
+
+.authorartical ul  li img {
+    position: absolute;
+    margin-top: 15px;
+    left: .13333rem;
+    width: 3rem;
+}
+
+.passageimage2 {
+    position: absolute;
+    height: 110px;
+    width: 100%;
+    border-bottom: 1px solid #e6e8eb;
+    top: 110px;
+}
+.authorartical ul  li a {
+    position: absolute;
+    margin-top: 15px;
+    left: 3.6333rem;
+    width: 6rem;
+    font-size: 18px;
+    color: black;
+}
