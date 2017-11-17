@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- user-scalable=no 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双十一 flexible</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            color: #000000;
+            background: #fff;
+            font-family: sans-serif;
+        }
+
+        html * {
+            /* outline: 0; */
+            -webkit-tap-highlight-color: red;
+        }
+
+        /* input {
+            width: 100%;
+            display: inline-block;
+            border: none; */
+            /* border: 1px solid red; */
+            /* outline: 1px solid skyblue;  // 轮廓 会撑大盒子*/
+        /* } */
+
+        /* .btn {
+            width: 20%;
+            display: inline-block; 在元素之间会产生间隙 
+        } */
+        /* 用font-size为0去掉inline-block产生的间隙 */
+        /* .search-box {
+            font-size: 0;
+        }
+        .search-box .btn {
+            font-size: 12px;
+        } */
+        .item-section {
+            min-height: 100%;
+            background-color: #ee0a3b;
+            position: relative;
+            font-size: 12px;
+        }
+
+        .item-section-header {
+            text-align: center;
+        }
+        .item-section-header img {
+            width: 10rem;
+            height: 6.41333rem;
+        }
+        .item-section ul {
+            padding: .133333rem /* 10/75 */;
+        }
+        .flag {
+            /* 次元素会作为块级表格来显示 */
+            display: table;
+            width: 100%;
+            background-color: #fff;
+        }
+        .flag .flag-item.figure {
+            width: 2.346667rem /* 176/75 */;
+            height: 2.346667rem /* 176/75 */;
+        }
+        .flag .flag-item.figure img {
+            width: 2.346667rem /* 176/75 */;
+            height: 2.346667rem /* 176/75 */;
+        }
+        .flag .flag-item {
+            /* 此元素会作为一个表格单元格显示 */
+            display: table-cell;
+            padding: 0.16rem 0;
+            background-color: #fff;
+        }
+        .flag .figcaption {
+            width: 133.3333rem;
+            padding-left: .213333rem  ;
+            padding-right: .2133333rem ;
+            position: relative;
+        }
+        .flag-title, .flag-price, .flag-type {
+            position: absolute;      
+        }
+        .flag-title {
+            top: .293333rem  /* 20/75 */;
+        }
+        .flag-item a {
+            color: #000;
+        }
+        .flag-price {
+            top: 1.333333rem /* 100/75 */;
+        }
+        .fg-colors {
+            background-color: #f32a4c;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .fg-color {
+            color: #f32a4c;
+            font-weight: bold;
+        }
+        .flag-type {
+            top: 1.866667rem /* 140/75 */;
+            color: #ff6a30;
+        }
+        
+        .flag .flag-item .flag-title a {
+            text-decoration: none;
+        }
+        .flag-rt {
+            float: right;
+            padding-right: .16rem /* 12/75 */;
+            /* padding-bottom: .186667rem 14/75; */
+        }
+        .flag-rt a {
+            display: block;
+            text-decoration: none;
+            width: 2.266667rem /* 170/75 */;
+            height: .666667rem /* 50/75 */;
+            color: #fff;
+            border-radius: 6%;
+        }
+        .flag-btn {
+            background-color: #f5294c;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 开发的主力机型 iPhone8 375px 750px
+    基本机型 
+    iphone8 plus 414
+    iphone5 320
+    android 375-480之间 -->
+    <!-- <div class="search-box">
+        <input type="text">
+        <a href="#" class="btn">搜索</a>
+    </div>
+    <br>
+    </br> -->
+    <div class="html_content">
+        <div class="item-section">
+            <div class="item-section-header">
+                <h2>
+                    <img src="http://gw.alicdn.com/mt/TB1PNLZKXXXXXaTXXXXXXXXXXXX-750-481.jpg ">
+                </h2>
+            </div>
+            <ul>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="#">
+                                Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093
+                            </a>
+                        </div>
+                        <div class="flag-price">
+                            <span class="fg-colors">双11价</span>
+                            <span class="fg-color">¥299.06</span>
+                            <small class="fg-color">(满400减100)</small>
+                        </div>
+                        <div class="flag-type">1小时卖内热卖5885件</div>
+                        <div class="flag-rt">
+                        <a href="#" class="flag-btn">马上抢!</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="flag">
+                        <a href="#" class="figure flag-item">
+                            <img src="https://placeimg.com/350/350/people/grayscale">
+                        </a>
+                        <div class="figcaption flag-item">
+                            <div class="flag-title">
+                                <a href="#">
+                                    Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093
+                                </a>
+                            </div>
+                            <div class="flag-price">
+                                <span class="fg-colors">双11价</span>
+                                <span class="fg-color">¥299.06</span>
+                                <small class="fg-color">(满400减100)</small>
+                            </div>
+                            <div class="flag-type">1小时卖内热卖5885件</div>
+                            <div class="flag-rt">
+                            <a href="#" class="flag-btn">马上抢!</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flag">
+                            <a href="#" class="figure flag-item">
+                                <img src="https://placeimg.com/350/350/people/grayscale">
+                            </a>
+                            <div class="figcaption flag-item">
+                                <div class="flag-title">
+                                    <a href="#">
+                                        Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093
+                                    </a>
+                                </div>
+                                <div class="flag-price">
+                                    <span class="fg-colors">双11价</span>
+                                    <span class="fg-color">¥299.06</span>
+                                    <small class="fg-color">(满400减100)</small>
+                                </div>
+                                <div class="flag-type">1小时卖内热卖5885件</div>
+                                <div class="flag-rt">
+                                <a href="#" class="flag-btn">马上抢!</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flag">
+                                <a href="#" class="figure flag-item">
+                                    <img src="https://placeimg.com/350/350/people/grayscale">
+                                </a>
+                                <div class="figcaption flag-item">
+                                    <div class="flag-title">
+                                        <a href="#">
+                                            Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093
+                                        </a>
+                                    </div>
+                                    <div class="flag-price">
+                                        <span class="fg-colors">双11价</span>
+                                        <span class="fg-color">¥299.06</span>
+                                        <small class="fg-color">(满400减100)</small>
+                                    </div>
+                                    <div class="flag-type">1小时卖内热卖5885件</div>
+                                    <div class="flag-rt">
+                                    <a href="#" class="flag-btn">马上抢!</a>
+                                    </div>
+                                </div>
+                            </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
