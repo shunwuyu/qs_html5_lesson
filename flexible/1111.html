@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <title>双11flexible</title>
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js "></script>
+  <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      /*reset*/
+    }
+
+    html, body{
+      color: #000000;
+      background: #ffffff;
+      font-family: sans-serif;
+      height: 100%;
+      width: 100%;
+    }
+
+    html * {
+      outline: 0;
+      -webkit-tap-highlight-color: red;
+
+    }
+
+    /* input{
+            width: 80%;
+            display: inline-block;
+            /* inline-block默认周围会产生间隙，所以元素要挨在一起 */
+
+    /* border会撑大盒子模型，所以使用outline:none*/
+
+    /* outline: 1px solid blue; */
+
+    /* border: none; */
+
+    /* margin-right: -4px;
+            *margin-right:0; */
+
+    /* }
+        .btn{
+            width: 20%;
+            display: inline-block;
+            /* margin-right: -4px; 
+        } */
+
+    /* .search-box{
+            font-size: 0;
+        }
+        .search-box .btn{
+            font-size: 12px;
+        } */
+
+    .item-setction {
+      min-height: 100%;
+      background-color: #ee0a3b;
+      position: relative;
+      font-size: 12px;
+      width: 10.266667rem /* 770/75 */;
+    }
+
+    .item-section-header {
+      text-align: center;
+    }
+
+    .item-section-header img {
+      width: 10rem;
+      height: 6.41333rem;
+    }
+
+    .item-section ul {
+      padding: .133333rem/* 10/75 */;
+      width: 100%;
+
+    }
+
+    .flag {
+      display: table;
+      width: 100%;
+      background-color: white;
+    }
+
+    .flag .flag-item .figure {
+      width: 2.346667rem/* 176/75 */
+      ;
+      height: 2.34666rem;
+    }
+
+    .flag .flag-item {
+      display: table-cell;
+      padding: 0.16rem 0;
+      background-color: #fff;
+    }
+
+    .flag .flag-item .figcaption {
+      width: 133.33333rem;
+      padding-left: .133333rem/* 10/75 */
+      ;
+      padding-right: .213333rem/* 16/75 */
+      ;
+      position: relative;
+    }
+    .html_content {
+      background-color: #ee0a3b;
+      width: 100%;
+      height: 100%;
+    }
+    ul{
+      /* width: 100%; */
+      /* height: 6.666667rem 500/75; */
+      box-sizing: border-box;
+      margin: 0 .133333rem /* 10/75 */ 0 .133333rem /* 10/75 */;
+    }
+    ul li {
+      background-color: #fff;
+      border-bottom: 1px solid red;
+    }
+    .flag {
+      /* width: 9.733333rem 730/75; */
+      height: 2.8rem /* 210/75 */;
+      width: 100%;
+    }
+    .flag img{
+      width: 2.346667rem /* 176/75 */;
+      height: 2.346667rem /* 176/75 */;
+      float: left;
+      /* margin-left: .133333rem 10/75; */
+    }
+    .figcaption {
+      float: left;
+      margin-left: .213333rem /* 16/75 */;
+      /* width: 7.653333rem 574/75; */
+      height: 2.346667rem ;
+      overflow: hidden;
+    }
+    .flag-title a{
+      color: black;
+      font-size: 4px;
+    }
+    .flag-price {
+      margin-top: .133333rem /* 10/75 */
+    }
+    .flag-price span:nth-child(1){
+      color: #ffffff;
+      background-color: #f32a4c;
+      width: .4rem /* 30/75 */;
+      height: .133333rem /* 10/75 */;
+      font-size: 8px;
+    }
+    .flag-price span:nth-child(2){
+      color: #f32a4c;
+      font-size: 10px;
+    }
+    .flag-price small{
+      color: #f32a4c;
+      font-size: 10px;
+    }
+    .flag-type {
+      color: #f32a4c;
+      margin-top: .133333rem /* 10/75 */;
+    }
+    a {
+      margin-right: .133333rem /* 10/75 */;
+    }
+    .flag-btn {
+      /* width: .533333rem 40/75; */
+      /* height: .266667rem 20/75; */
+      background-color: #f5294c;
+      color: #ffffff;
+      /* margin-right: .133333rem 10/75; */
+
+      float: right;
+      font-size: 14px;
+      padding: .133333rem /* 10/75 */;
+      text-align: center;
+      height: .266667rem /* 20/75 */;
+      line-height: .266667rem /* 20/75 */;
+      margin-right: .133333rem /* 10/75 */;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+        开发时用iphone8 375px 750px
+    414 iphone8Plus
+    320 iphone5
+    andriod 375~480之间 -->
+  <!-- <div class="search-box">
+        <input type="text">
+        <a class="btn">搜索</a>
+    </div>
+    <input type="text">
+    <br>
+    <br> -->
+  <div class="html_content">
+    <div class="item-section">
+      <div class="item-section-header">
+        <h2>
+          <img src="http://gw.alicdn.com/mt/TB1PNLZKXXXXXaTXXXXXXXXXXXX-750-481.jpg " />
+        </h2>
+      </div>
+    </div>
+    <ul>
+      <li class="flag">
+        <a href="" class="figure flag-item">
+          <img src="https://placeimg.com/350/350/people/grayscale " alt="" />
+        </a>
+        <div class="figcaption flag-item">
+          <div class="flag-title">
+            <a href="#">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093</a>
+          </div>
+          <div class="flag-price">
+            <!-- span 行内 -->
+            <span>双11价 </span>
+            <span>￥299.06</span>
+            <small>(满400减100)</small>
+          </div>
+          <div class="flag-type">1小时卖5885件</div>
+          <a href="#" class="flag-btn">马上抢</a>
+        </div>
+      </li>
+      <li class="flag">
+        <a href="" class="figure flag-item">
+          <img src="https://placeimg.com/350/350/people/grayscale " alt="" />
+        </a>
+        <div class="figcaption flag-item">
+          <div class="flag-title">
+            <a href="#">Nike耐克官方 ZOOM KOBE VENOMENE5 EP 科比男子篮球鞋6777</a>
+          </div>
+          <div class="flag-price">
+            <!-- span 行内 -->
+            <span>双11价 </span>
+            <span>￥699.5</span>
+            <small>(满300减150)</small>
+          </div>
+          <div class="flag-type">6744人正在疯抢</div>
+          <a href="#" class="flag-btn">马上抢</a>
+        </div>
+      </li>
+      <li class="flag">
+        <a href="" class="figure flag-item">
+          <img src="https://placeimg.com/350/350/people/grayscale " alt="" />
+        </a>
+        <div class="figcaption flag-item">
+          <div class="flag-title">
+            <a href="#">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093</a>
+          </div>
+          <div class="flag-price">
+            <!-- span 行内 -->
+            <span>双11价 </span>
+            <span>￥299.06</span>
+            <small>(满400减100)</small>
+          </div>
+          <div class="flag-type">1小时卖5885件</div>
+          <a href="#" class="flag-btn">马上抢</a>
+        </div>
+      </li>
+      <li class="flag">
+        <a href="" class="figure flag-item">
+          <img src="https://placeimg.com/350/350/people/grayscale " alt="" />
+        </a>
+        <div class="figcaption flag-item">
+          <div class="flag-title">
+            <a href="#">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093</a>
+          </div>
+          <div class="flag-price">
+            <!-- span 行内 -->
+            <span>双11价 </span>
+            <span>￥299.06</span>
+            <small>(满400减100)</small>
+          </div>
+          <div class="flag-type">1小时卖5885件</div>
+          <a href="#" class="flag-btn">马上抢</a>
+        </div>
+      </li>
+      <li class="flag">
+        <a href="" class="figure flag-item">
+          <img src="https://placeimg.com/350/350/people/grayscale " alt="" />
+        </a>
+        <div class="figcaption flag-item">
+          <div class="flag-title">
+            <a href="#">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093</a>
+          </div>
+          <div class="flag-price">
+            <!-- span 行内 -->
+            <span>双11价 </span>
+            <span>￥299.06</span>
+            <small>(满400减100)</small>
+          </div>
+          <div class="flag-type">1小时卖5885件</div>
+          <a href="#" class="flag-btn">马上抢</a>
+        </div>
+      </li>
+      <li class="flag">
+        <a href="" class="figure flag-item">
+          <img src="https://placeimg.com/350/350/people/grayscale " alt="" />
+        </a>
+        <div class="figcaption flag-item">
+          <div class="flag-title">
+            <a href="#">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G093</a>
+          </div>
+          <div class="flag-price">
+            <!-- span 行内 -->
+            <span>双11价 </span>
+            <span>￥299.06</span>
+            <small>(满400减100)</small>
+          </div>
+          <div class="flag-type">1小时卖5885件</div>
+          <a href="#" class="flag-btn">马上抢</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</body>
+
+</html>
