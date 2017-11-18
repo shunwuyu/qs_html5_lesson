@@ -81,11 +81,11 @@ html, body {
 	left: 50%;
 	margin: 0 -12px;
 	z-index: 10;
-  width: 100px;
-  transition: transform .4s;
-  -webkit-transition: transform .4s;
-  transform-origin: 20px 20px;
-  -webkit-transform-origin: 20px 20px;
+	width: 100px;
+	-webkit-transition: transform .4s;
+	transition: transform .4s;
+	-webkit-transform-origin: 20px 20px;
+	transform-origin: 20px 20px;
 }
 .disk-bg {
 	width: 282px;
@@ -118,152 +118,153 @@ html, body {
 	top: 0;
 }
 .pause-needle {
-  -webkit-transform: rotateZ(-25deg);
-  transform: rotateZ(-25deg);
+	-webkit-transform: rotateZ(-25deg);
+	transform: rotateZ(-25deg);
 }
 .resume-needle {
-  transform: rotateZ(0deg);
-  -webkit-transform: rotateZ(0deg); 
+	-webkit-transform: rotateZ(0deg);
+	transform: rotateZ(0deg);
 }
 .disk-cover-animation {
-  -webkit-animation:rotate-disk 20s infinite linear;
-  animation:rotate-disk 20s infinite linear;
-  /* 运动状态 */
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
+	-webkit-animation: rotate-disk 20s infinite linear;
+	animation: rotate-disk 20s infinite linear;
+	/* 运动状态 */
+	animation-play-state: paused;
+	animation-play-state: paused;
 }
 @-webkit-keyframes rotate-disk {
-  100%{
-    transform: rotateZ(360deg);
-  }
+	100% {
+		transform: rotateZ(360deg);
+	}
 }
 @keyframes rotate-disk {
-  100%{
-    transform: rotateZ(360deg);
-  }
+	100% {
+		transform: rotateZ(360deg);
+	}
 }
+
 #player {
-  display: none;
+	display: none;
 }
 
 .c-btn {
-  background-position: center;
-  display: inline-block;
-  -webkit-filter: brightness(0.9);
+	background-position: center;
+	display: inline-block;
+	-webkit-filter: brightness(0.9);
 }
 
 .c-btn:hover {
-  -webkit-filter: brightness(1);
+	-webkit-filter: brightness(1);
 }
 
 .process {
-  width: 350px;
-  height: 50px;
-  position: absolute;
-  bottom: 100px;
-  margin: 0px -175px;
-  left: 50%;
-  font-size: 12px;
-  font-family: Arial, Helvetica, sans-serif;
+	width: 350px;
+	height: 50px;
+	position: absolute;
+	bottom: 100px;
+	margin: 0px -175px;
+	left: 50%;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
 
 }
 
 .process .process-bar {
-  position: absolute;
-  left: 36px;
-  width: 280px;
-  margin-top: 5px;
-  background-color: #615D5C;
+	position: absolute;
+	left: 36px;
+	width: 280px;
+	margin-top: 5px;
+	background-color: #615D5C;
 }
 
 .process-bar .rdy {
-  background-color: #B1ADAC;
-  height: 2px;
+	background-color: #B1ADAC;
+	height: 2px;
 
 }
 
 .process-bar .cur {
-  background-color: #FB0D0D;
-  height: 2px;
-  position: absolute;
-  top: 0;
-  left: 0;
+	background-color: #FB0D0D;
+	height: 2px;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .cur .process-btn {
-  cursor: pointer;
-  background-image: url(resource/images/process_btn.png);
-  background-size: cover;
-  position: absolute;
-  top: -9px;
-  right: -13px;
-  width: 22px;
-  height: 22px;
-  margin-left: -11px;
+	cursor: pointer;
+	background-image: url(resource/images/process_btn.png);
+	background-size: cover;
+	position: absolute;
+	top: -9px;
+	right: -13px;
+	width: 22px;
+	height: 22px;
+	margin-left: -11px;
 }
 
 .process > span:first-child {
-  position: absolute;
-  left: 0px;
+	position: absolute;
+	left: 0px;
 }
 
 .process > span:last-child {
-  position: absolute;
-  right: 0px;
+	position: absolute;
+	right: 0px;
 }
 
 .control {
-  position: absolute;
-  text-align: center;
-  width: 350px;
-  bottom: 10px;
-  left: 50%;
-  margin: 0px -175px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 10px;
+	position: absolute;
+	text-align: center;
+	width: 350px;
+	bottom: 10px;
+	left: 50%;
+	margin: 0px -175px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 10px;
 }
 
 .control .c-btn {
-  cursor: pointer;
-  background-position:center;
-  background-size: contain;
-  width: 50px;
-  height: 50px;
+	cursor: pointer;
+	background-position:center;
+	background-size: contain;
+	width: 50px;
+	height: 50px;
 }
 
 .control .c-btn.pre {
-  background-image: url(resource/images/play_btn_prev.png);
+	background-image: url(resource/images/play_btn_prev.png);
 }
 
 .control .c-btn.play, .c-btn.pause {
-  width: 70px;
-  height: 70px;
+	width: 70px;
+	height: 70px;
 }
 
 .control .c-btn.play {
-  background-image: url(resource/images/play_rdi_btn_play.png);
+	background-image: url(resource/images/play_rdi_btn_play.png);
 }
 
 .control .c-btn.pause {
-  background-image: url(resource/images/play_rdi_btn_pause.png);
+	background-image: url(resource/images/play_rdi_btn_pause.png);
 }
 
 .control .c-btn.next {
-  background-image: url(resource/images/play_btn_next.png);
+	background-image: url(resource/images/play_btn_next.png);
 }
 
 .control .c-btn.list-btn,.control .c-btn.loop-btn {
-  width: 32px;
-  height: 32px;
+	width: 32px;
+	height: 32px;
 }
 
 .control .c-btn.list-btn{
-  background-image: url(resource/images/play_icn_src.png);
+	background-image: url(resource/images/play_icn_src.png);
 }
 
 .control .c-btn.loop-btn {
-  position: relative;
-  background-image: url(resource/images/play_icn_loop.png);
+	position: relative;
+	background-image: url(resource/images/play_icn_loop.png);
 }

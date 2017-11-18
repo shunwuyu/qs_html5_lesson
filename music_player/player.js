@@ -32,8 +32,6 @@ var MusicPlayer = {
 		this.$needle = $('#needle');
 		this.$diskCover = $('.disk-cover');
 		this.$album = $('.album');
-		this.$playBtn = $('#controls .play');
-		this.$pauseBtn = $('#controls .pause');
 		// this.currentSong = this.playList...;
 		// console.log(this.$bg);
 	},
@@ -43,6 +41,8 @@ var MusicPlayer = {
 		// html(html) === innerHTML 
 		// text(文字) === innerText
 		this.$songName.text(this.currentSong.name 
+
+ 
 
 );
 		this.$artist.text(this.currentSong
@@ -60,28 +60,17 @@ var MusicPlayer = {
 		// 追债 唱针？ 唱片，旋转起来？ 进度条，....
 	},
 	play: function() {
-		this.player.play();
-		// 一个函数最好只做一件事
-		this.moveNeedle(true);
-		this.changeAnimationState(
-			this.$diskCover, 'running')
-		this.$playBtn.hide();
-		this.$pauseBtn.show();
-	},
-	pause: function() {
-		this.player.pause();
-		this.moveNeedle(false);
-		this.changeAnimationState(
-			this.$diskCover, 'paused');
-		this.$playBtn.show();
-		this.$pauseBtn.hide();
-	},
-	changeAnimationState: function($ele, state) {
-		$ele.css({
-			'animation-play-state': state,
-			'-webkit-animation-play-state': state
-		});
-	},
+    this.player.play();
+    // 一个函数最好只做一件事
+    this.moveNeedle(true);
+    this.changeAnimationState(this.$diskCover,'running')
+  },
+  changeAnimationState:function($ele,state){
+    $ele.css({
+      'animation-play-state':state,
+      '-webkit-animation-play-state':state
+    });
+  },
 	moveNeedle: function(play) {
 		if (play) {
 			this.$needle
