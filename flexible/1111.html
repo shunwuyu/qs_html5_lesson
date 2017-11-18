@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- pc mobile
+    width=device-width
+    user-scalable=no禁止缩放 -->
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">    
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双十一 flexsible</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js "></script>
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js "></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html {
+            color: #000;
+            background-color: #ffffff;
+            font-family: sans-serif;
+        }
+        html * {
+            /* outline: none; */
+            -webkit-tap-highlight-color: pink;
+        }
+        /* input {
+            width: 100%;
+            display: inline-block;
+            /* out-line: 3px solid black; */
+            /* border: 1px solid red; */
+            /* border: none;
+        }
+        .btn {
+            width: 20%;
+            display: inline-block;
+        }
+        .search-box {
+            font-size: 0;
+        }
+        .search-box .btn {
+            font-size: 12px;
+        } */ 
+        .item-section {
+            min-height: 100%;
+            background-color: #ee0a3b;
+            position: relative;
+            font-size: 12px;
+        }
+        .item-section-header {
+            text-align: center;
+        }
+        .item-section-header img {
+            width: 10rem;
+            /* 高度会被图片撑起
+            height: 6.41333rem; */
+        }
+        .item-section ul {
+            padding: .133333rem /* 10/75 */;
+        }
+        .flag {
+            /* display: table; */
+            width: 100%;
+            background-color: white;
+            border-bottom: 1px solid #ee0a3b;
+        }
+        .flag .flag-item {
+            display: table-cell;
+            padding: 0.16rem 0;
+            background-color: #fff;
+        }
+        .flag .figure {
+            width: 2.346667rem /* 176/75 */;
+            height: 2.346667rem /* 176/75 */;
+        }
+        .flag .figure img{
+            width: 2.346667rem /* 176/75 */;
+            height: 2.346667rem /* 176/75 */;
+            margin-top:.24rem /* 18/75 */;
+        }
+        .flag .figcaption{
+            width: 133rem;
+            padding-left: .213333rem /* 16/75 */;
+            padding-right: .213333rem /* 16/75 */;
+            position: relative;
+        }
+        .flag-title {
+            position: absolute;
+            font-size: .293333rem /* 22/75 */;
+            top: .266667rem /* 20/75 */;
+        }
+        .flag-title a{
+            color: #000;
+            display: block;
+            padding-right: 1.666667rem /* 125/75 */;
+            text-decoration: none;
+        }
+        .flag-price {
+            position: absolute;
+            top: 1.173333rem /* 88/75 */;
+            color: #f32a4c;
+        }
+        .flag-price span:nth-child(1) {
+            background-color: #f32a4c;
+            padding-left: .106667rem /* 8/75 */;
+            padding-right: .106667rem /* 8/75 */;
+            color: #ffff;
+            font-size: .293333rem /* 22/75 */;
+            border-radius: 2px;
+        }
+        .flag-price span:nth-child(2) {
+            font-size: .333333rem /* 25/75 */;
+            font-weight: bold;
+        }
+        .flag-price span:nth-child(3) {
+            font-size: .266667rem /* 20/75 */;
+        }
+        .flag-type {
+            position: absolute;
+            bottom: .693333rem /* 52/75 */;
+            color: #ff6130;
+            font-size: .32rem /* 24/75 */;
+        }
+        .flag-btn {
+            position: absolute;
+            bottom: .2rem /* 15/75 */;
+            right: .253333rem /* 19/75 */;
+            background-color: #f5294c;
+            font-size: .373333rem /* 28/75 */;
+            color: #ffff;
+            padding:.133333rem /* 10/75 */.48rem /* 36/75 */ ;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 开发时用iphone8 375pt 750px
+    414 iphone8 plus
+    320 iphone5
+    android 375-480之间 -->
+    <!-- <div class="search-box">
+        <input type="text">
+        <a href="#" class="btn">搜索</a>
+    </div> -->
+    <div class="html_content">
+        <div class="item-section">
+            <div class="item-section-header">
+                <h2>
+                    <img src="http://gw.alicdn.com/mt/TB1PNLZKXXXXXaTXXXXXXXXXXXX-750-481.jpg " alt="">
+                </h2>
+            </div>
+            <ul>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale " alt="">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G09</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内元素， -->
+                            <span>双11价</span>
+                            <span>￥299.06</span>
+                            <small>(满400减100)</small>
+                        </div>
+                        <div class="flag-type">1小时内热卖5885件</div>
+                        <a href="#" class="flag-btn">马上抢!</a>
+                    </div>
+                </li>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale " alt="">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G09</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内元素， -->
+                            <span>双11价</span>
+                            <span>￥299.06</span>
+                            <small>(满400减100)</small>
+                        </div>
+                        <div class="flag-type">1小时内热卖5885件</div>
+                        <a href="#" class="flag-btn">马上抢!</a>
+                    </div>
+                </li>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale " alt="">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G09</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内元素， -->
+                            <span>双11价</span>
+                            <span>￥299.06</span>
+                            <small>(满400减100)</small>
+                        </div>
+                        <div class="flag-type">1小时内热卖5885件</div>
+                        <a href="#" class="flag-btn">马上抢!</a>
+                    </div>
+                </li>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale " alt="">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G09</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内元素， -->
+                            <span>双11价</span>
+                            <span>￥299.06</span>
+                            <small>(满400减100)</small>
+                        </div>
+                        <div class="flag-type">1小时内热卖5885件</div>
+                        <a href="#" class="flag-btn">马上抢!</a>
+                    </div>
+                </li>
+                <li class="flag">
+                    <a href="#" class="figure flag-item">
+                        <img src="https://placeimg.com/350/350/people/grayscale " alt="">
+                    </a>
+                    <div class="figcaption flag-item">
+                        <div class="flag-title">
+                            <a href="">Carter's1年式灰色长袖连体衣包脚爬服全棉鲸鱼男婴儿童装115G09</a>
+                        </div>
+                        <div class="flag-price">
+                            <!-- span 行内元素， -->
+                            <span>双11价</span>
+                            <span>￥299.06</span>
+                            <small>(满400减100)</small>
+                        </div>
+                        <div class="flag-type">1小时内热卖5885件</div>
+                        <a href="#" class="flag-btn">马上抢!</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
