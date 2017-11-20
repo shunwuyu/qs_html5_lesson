@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>马云关发英雄贴--攻守道</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" href="./common.css?v2">
+    
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div id="loading">
+            <div class="loading"></div>
+            <div class="text">
+                    作为中国功夫的铁粉，连马云都对我佩服有加。
+                    让我们一起为#功守道#打道，致敬中国传统文化！
+                </div>
+        </div>
+    </div>  
+    <!-- <div class="box"></div>
+    <div class="box1"></div><div class="box2"></div> -->
+    <!-- <script>
+        font-size 动态获取屏幕宽度 屏幕宽度的十分之一
+        // 当屏幕大小变化的时候 
+        window.onresize =function() {
+            var winWidth = document.body.clientWidth;
+            var remSize = winWidth/10 + 'px';  
+            document.getElementsByTagName('html')[0].style.fontSize = remSize; // 获取html的方法  根据标签获取html 
+        }
+    </script> -->
+    <script>
+        'user strict';
+        var kungfuMayun = {
+            loadingEle:null,
+            init () {
+                this.loadingEle = document.getElementById('loading');
+                this.hideLoading();//这是作为内部方法被调用
+            },
+            hideLoading () {
+                // var that = this;
+                // // dom里面为每个id 都加了索引
+                // // 函数作为普通函数被调用  this就会指向window
+                // //函数作为对象的方法被调用  this 指向对象
+                // setTimeout(function() {
+                //     that.loadingEle.style.display = 'none';
+                // }, (1000));
+                // var that = this;
+                // dom里面为每个id 都加了索引
+                // 函数作为普通函数被调用  this就会指向window
+                //函数作为对象的方法被调用  this 指向对象
+                setTimeout(() => {
+                    this.loadingEle.style.display = 'none';
+                }, (1000));
+            }
+        }
+        window.onload = function() {
+            kungfuMayun.init();
+        }
+    </script>
+
+</body>
+</html>
