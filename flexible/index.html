@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body, .page{
+            height: 100%;
+            width: 10rem;
+            display: block;
+        }
+        
+        .full_page{
+            height: 100%;
+            width: 10rem;
+            border: 1px solid #000000;
+            
+        }
+        .col-2, .col-6{
+            height: 100%;
+            float: left;
+        }
+        .col-2{
+           
+            width: 2rem;
+            background-color: rgb(140, 140, 221);
+            
+            /* border: 1px solid #000000; */
+        }
+        .col-6{
+           
+            width: 6rem;
+            background-color: pink;
+           
+            /* border: 1px solid #000000; */
+        }
+        /* .right{
+            float: left;
+        } */
+        /* 奇数 */
+        /* .col-1:nth-child(even){
+            background-color: rgb(75, 75, 167);
+        } */
+        /* 偶数 */
+        /* .col-1:nth-child(odd){
+            background-color: pink;
+        } */
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="row full_page">
+            <div class="col-2"></div>
+            <div class="col-6"></div>
+            <div class="col-2 right"></div>
+        </div>
+    </div>
+</body>
+</html>
