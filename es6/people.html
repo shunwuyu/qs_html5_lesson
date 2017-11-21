@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="people">
+        <p>Wes</p>
+        <p>Kait</p>
+        <p>Randy</p>
+    </div>
+</body>
+<script>
+    // 获取页面上的元素p
+    // 数组 多个元素 类数组 转换成真正的数组
+    const people = Array.from(document.querySelectorAll('.people p'));
+    const strNames = people.map(person => person.innerHTML).join(',');
+    console.log(strNames);
+    // for(let i = 0,len = people.length;i < len;i++){
+    //     arr.push(ps[i].innerHTML);
+    // }
+    // console.log(arr);
+</script>
+</html>
