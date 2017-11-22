@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .single-post-comment {
+            width: 500px;
+        }
+        .single-post-comment .notlogin textarea {
+            background-color: #fafafa;
+            color: #b6cad9;
+            width: 300px;
+            border: 1px solid #d3d7db;
+            height: 50px;;
+            border-radius:3px;
+            overflow:auto;
+            vertical-align: top;
+        }
+        .single-post-comment .notlogin button a, .single-post-comment .notlogin button a:hover {
+            color: #4285f4;
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+        }
+        .single-post-comment .notlogin button {
+            margin-left: 230px;
+            margin-top: 10px;
+        }
+
+        .display-module {
+        text-align: center;
+        margin-bottom: 1rem;
+        /* width: 800px; */
+        height: 100px;
+        
+    }
+   
+    ul {
+    list-style: none;
+    padding: 0;
+    }
+    
+    
+    
+    .display-module li {
+        text-align: left;
+        padding: .5rem 0;
+        border-top: 1px dashed #e8e8e8;
+    }
+    
+   .display-module .img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: .75rem;
+        vertical-align: middle;
+        float: left;
+        margin-top: .5rem;
+    }
+    .display-module .msgwrap {
+        overflow: hidden;
+        font-size: 14px;
+        line-height: 21px;
+    }
+    .display-module .msgwrap .name {
+    color: #4285f4;
+    }
+    .display-module .msgwrap .time {
+        color: #ccc;
+      
+    }
+    .display-module .msgwrap .text {
+        color: #666;
+        word-break: break-all;
+        word-wrap: break-word;
+        white-space: pre-line;
+    } 
+    .display-module .msgwrap .replay_button {
+        text-align: right;
+    }
+    .display-module .msgwrap .submit {
+    border: 0 none;
+    background-color: transparent;
+    color: #4285f4;
+    font-size: 14px;
+    padding: 0;
+}
+    </style>
+</head>
+
+<body>
+    <section class="single-post-comment">
+        <h4>
+            <a name="comment">参与讨论</a>
+        </h4>
+        <div class="input-module notlogin">
+            <textarea placeholder="请登录后参与评论..."></textarea>
+            <div class="user">
+                <button type="button" title="请登录后参与评论">
+                    <a href="#">提交评论</a>
+                </button>
+            </div>
+        </div>
+        <div class="display-module">
+                <div>
+                    <ul>
+                        
+                    </ul>
+                </div>
+            </div>
+    </section>
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script>
+    var commentList = {
+        inputEle: null,
+        inputVal: '',
+        ulEle: null,
+        getCommentItemHTML: function(comment) {
+            return `
+            <li>
+                            <span class="img" style="background: url(${comment.avatar}) 50% 50% / cover no-repeat;"></span>
+                            <div class="msgwrap">
+                                <span class="name">${comment.name}</span>
+                                <span class="time">&nbsp;&nbsp;"${comment.publicTime}"</span>
+                                <p><span class="text">${comment.content}</span></p>
+                                <div class="replay_button"><a href="#" class="submit">回复</a></div>
+                            </div>
+                        </li>
+            `;
+        },
+        showCommentsList: function() {
+           var that = this;
+           $.getJSON('http://www.easy-mock.com/mock/5a0d83329b049244f7526315/36kr/36kr',
+            function(data) {
+                var comments = data.data.comments;
+                that.ulEle.innerHTML = 
+                comments.map(function(comment){
+                   return that.getCommentItemHTML(comment);
+                }).join('')
+           })
+        },
+        init: function () {
+            this.ulEle = 
+            document.querySelector('.display-module ul');
+            this.inputEle = 
+            document.querySelector(
+                '.single-post-comment textarea');
+            this.showCommentsList();
+            var that = this;
+            document
+                .querySelector('.user button')
+                .addEventListener('click', function(e) {
+                    e.preventDefault();
+                    $(that.ulEle).prepend($(
+                        that.getCommentItemHTML({
+                            "avatar": "http://www.jf258.com/uploads/2013-07-05/101222933.jpg",
+                            "name": "Cui Y",
+                            "content": that.inputEle.value,
+                            "publicTime": "• 刚刚"
+                        })
+                    ))
+                });
+
+        }
+    }
+
+    commentList.init();
+    </script>
+</body>
+</html>
