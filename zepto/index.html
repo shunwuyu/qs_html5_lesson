@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function extend() {
+      // 不知道有多少参数
+      let isDeep = false
+      let i = 1
+      let length = arguments.length
+      let target = arguments[0] || {}
+
+      if (typeof target == 'boolean') {
+          isDeep = target;
+          target = arguments[i] || {};
+          i++;
+      }
+      // 如果target不是对象，我们是无法进行复制的，所以设为{}
+      if (typeof target !== 'object') {
+          target = {}
+      }
+
+      for(;i < length; i++) {
+        options = arguments[i]
+        if(options !== null) {
+          for (let name in options) {
+            // 目标属性值
+            let src = target[name];
+            // 要复制的对象的属性值
+            let copy = options[name];
+                
+            if (isDeep && copy && typeof copy == 'object') {
+              // 递归调用
+              target[name] = extend(isDeep, src, copy);
+            } else if (copy !== undefined){
+              target[name] = copy;
+            }
+          }
+        }
+      }
+      return target
+
+      // for(let i = 2; i < arguments.length; i++) {
+
+      //   options = arguments[i]
+
+      //   if(options !== null) {
+      //     for(name in options) {
+      //       let src = target[name]
+      //       let copy = options[name]
+      //       if(copy !== undefined) target[name] = copy
+      //     }
+      //   }
+      // }
+      // return target
+    }
+
+    let target = {}
+
+    let obj = {
+      a: 1,
+      b: {
+        b1: 2,
+        b2: 3
+      }
+    }
+
+    let obj2 = {
+      c: 3,
+      a: 2
+    }
+
+    let copyed = extend(target, obj, obj2)
+    setTimeout(() => {
+      debugger
+      obj.b.b1 = 1
+      debugger
+    }, 2000)
+    
+
+
+
+
+    // extend(1,2,3)
+    // extend(2,3)
+    // extend(5)
+
+    // var obj1 = {
+    //     a: 1,
+    //     b: { b1: 1, b2: 2 }
+    // };
+
+    // var obj2 = {
+    //     b: { b1: 3, b3: 4 },
+    //     c: 3
+    // };
+
+    // var obj3 = {
+    //     d: 4
+    // }
+
+    // console.log(extend(obj1, obj2, obj3, obj4, obj5));
+
+  </script>
+</body>
+</html>
