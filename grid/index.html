@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid 布局——走向未来</title>
+    <style>
+        .grid {
+            /* 指定了大小的九宫格布局，同时让我们指定行与列。是平面布局的形象理解。 */
+            /* display: grid; */
+            /* grid-template 可以同时设置行和列的布局
+            在垂直方向设置列的宽度
+            在水平方向设置行的高度
+            行列相交  形成cell  里面可以放置东西 */
+            /* grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px; */
+
+            display: grid;
+            /* 1 fr 等比例。按比例划分。fr 是一个比例 frection 分数 */
+            /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+            grid-template-columns: repeat(3, 1fr);
+            /* grid-template-rows: 200px 200px 200px; */
+            grid-template-rows: repeat(3, 200px);
+            /* 格子之间的间隙 */
+            grid-gap: 20px;
+        }
+        .grid div:nth-child(2n) {
+            background-color: pink;
+        }
+        .grid div:nth-child(2n+1) {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
