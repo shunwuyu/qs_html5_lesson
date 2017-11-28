@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <style>
+    .wx {
+        display: grid;
+        grid-template-columns: repeat(3, 3.333333rem);
+        grid-template-rows:  repeat(3, 3.333333rem);
+    }
+    .wx>div {
+        border-right: 1px solid red;
+        border-bottom: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .wx>div:nth-child(3n) {
+        border-right: none;
+        border-bottom: 1px solid none;
+    }
+    .last {
+        border-right: none;
+        border-bottom: none;
+    }
+    .wx div .wx__img {
+        width: auto;
+        display: block;
+        float: left;
+        margin-bottom: 10px;
+    }
+    .wx div .wx__img img {
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <!-- 1 grid 布局 九宫格
+    2 column 1fr 如何确定 高度？
+    flexible.js 10/3.rem
+    3 icon 文字
+    iconfont
+    4 每个格子内容  水平居中，垂直居中
+    flex flex-direction
+    justify-content:
+    align-items:center  -->
+    <div class="wx">
+        <div>
+            <div class="wx__img">
+                <img src="./credit.png" alt="">
+            </div>
+            <p>信用卡还款</p>
+        </div>
+        <div>
+            <div class="wx__img">
+                <img src="./credit.png" alt="">
+            </div>
+            <p>信用卡还款</p>
+        </div>
+        <div>
+            <div class="wx__img">
+                <img src="./credit.png" alt="">
+            </div>
+            <p>信用卡还款</p>
+        </div>
+        <div>
+            <div class="wx__img">
+                <img src="./credit.png" alt="">
+            </div>
+            <p>信用卡还款</p>
+        </div>
+        <div>
+            <div class="wx__img">
+                <img src="./credit.png" alt="">
+            </div>
+            <p>信用卡还款</p>
+        </div>
+        <div>
+            <div class="wx__img">
+                <img src="./credit.png" alt="">
+            </div>
+            <p>信用卡还款</p>
+        </div>
+        <div class="last">
+            <div class="wx__img ">
+                <img src="./credit.png" alt="">
+            </div>
+            <p>信用卡还款</p>
+        </div>
+        <div class="last">
+            <div class="wx__img ">
+                <img src="./credit.png" alt="">
+            </div>
+            <p>信用卡还款</p>
+        </div>
+    </div>
+</body>
+</html>
