@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="" type="" href="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 8rem);
+        }
+        
+        .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #888888;
+        }
+        
+        .item img {
+            display: block;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .item p {
+            display: block;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1 grid 布局 九宫格
+    2 columns 1fr 高度？
+    flexible.js 10/3.rem
+    3 icon 文字
+    iconfont
+    4 对齐 水平居中 垂直居中
+    flex flex-direction：column
+    justify-content：
+    align-item -->
+    <div class="grid">
+        <div class="item"><img src="images/信用卡.png" alt="">
+            <p>信用卡还贷</p>
+        </div>
+        <div class="item"><img src="images/信用卡.png" alt="">
+            <p>信用卡还贷</p>
+        </div>
+        <div class="item"><img src="images/信用卡.png" alt="">
+            <p>信用卡还贷</p>
+        </div>
+        <div class="item"><img src="images/信用卡.png" alt="">
+            <p>信用卡还贷</p>
+        </div>
+        <div class="item"><img src="images/信用卡.png" alt="">
+            <p>信用卡还贷</p>
+        </div>
+        <div class="item"><img src="images/信用卡.png" alt="">
+            <p>信用卡还贷</p>
+        </div>
+        <div class="item"><img src="images/信用卡.png" alt="">
+            <p>信用卡还贷</p>
+        </div>
+        <div class="item"><img src="images/信用卡.png" alt="">
+            <p>信用卡还贷</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
