@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid实战-微信钱包</title>
+    <link rel="stylesheet" type="text/css" href="./iconfont.css">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: (3,200px);
+            grid-gap: 10px;
+        }
+       .box {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-content: center;
+           background: pink;
+           text-align: center;
+       }
+       
+    </style>
+</head>
+<body>
+    <!-- 1 grid 布局快速解决9宫格
+    2 columns 2fr 高度
+        flexible.js
+    3 icon 文字 
+    4 里面的对齐方式 水平居中 垂直居中
+        flex flex-direction: column -->
+    <div class="grid">
+        <div class="box">
+            <i class="iconfont icon-xinyongqia"></i>
+            <p>信用卡还款</p>
+        </div>
+        <div class="box">
+            <i class="iconfont icon-qian"></i>
+            <p>手机充值</p>
+        </div>
+        <div class="box">
+            <i class="iconfont icon-licaitong"></i>
+            <p>理财通</p>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
