@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bfc 浮动</title>
+</head>
+<style>
+    .one{
+        /* 文档流 里面的文字，标签，将父元素撑起来了 */
+        background-color: pink;
+        /* BFC 创建BFC
+        float 不为none
+        position 不为static
+        display inline-block
+        overflow 不为visible
+        原理第2条
+         计算BFC元素高度时，浮动元素也会参与计算 */
+        overflow: hidden;
+    }
+    .two{
+        /* 离开了文档流 */
+        float: left;
+    }
+    /* .cf:after{
+        content: "";
+        display: block;
+        clear: both;
+    } */
+</style>
+<body>
+    <!-- 文档流 从上到下
+    但有float position:absolute
+    会脱离文档流-->
+    <div class="one cf">
+        <div class="two">Hello world</div>
+    </div>
+    你好，世界！
+</body>
+</html>
