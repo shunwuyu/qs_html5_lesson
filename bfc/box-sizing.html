@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        *, *:before, *:after{
+            box-sizing: border-box;
+        }
+        .items{    
+        }
+
+        /* 盒子的计算方式
+        IE  box-sizing 由内容+padding+border计算
+        Chrome 由内容计算 */
+
+        .item{
+            margin-left: 20px;
+            box-sizing: border-box;
+            border: 2px solid green;
+            float: left;
+            /* 该处的50%不是元素在页面上占据的宽度，是内容宽度 */
+            width: 50%;
+            height: 100px;
+            padding: 10px;
+            background-color: #123;
+        }
+        .item:nth-child(2){
+            background-color: red;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="items">
+        <div class="item">fsfsfsf</div>
+        <div class="item">sfsfs</div>
+    </div>
+</body>
+</html>
