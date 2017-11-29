@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>浮动元素高</title>
+  <style >
+    /* float 值不为 none，只要设置了浮动，当前元素就创建了一个 BFC
+position值不为static，只要设置了定位，当前元素就创建了一个 BFC
+display 值不为默认，只要设置了display，当前元素就创建了一个 BFC
+overflow 值不为 visible，只要设置了overflow，当前元素就创建了一个 BFC */
+    .one {
+      background-color: pink;
+       overflow: hidden;
+       /* 计算 BFC 高度时，浮动元素也会参与计算  */
+    }
+    .two {
+      float: left;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="one">
+    <div class="two">hello world</div>
+  </div>
+</body>
+</html>

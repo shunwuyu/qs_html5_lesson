@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style lang="">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      width: 152px;
+      height: 126px;
+      border: 1px solid #ccc;
+      margin: 0 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+
+  IE标准盒模型 一个元素的宽度
+  一个元素的宽度 = content
+  盒子总宽度 = margin-left + border-left + padding-left + width + padding-right + border-right + margin-right;
+  
+  IE怪异
+  一个元素的宽度 = content + padding + border
+  盒子总宽度 = margin-left + width + margin-right
+
+  解决方案box-sizing  向IE妥协
+
+  *, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+</body>
+</html>

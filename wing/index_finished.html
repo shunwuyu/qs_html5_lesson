@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>三栏布局</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  header,footer {
+    height: 50px;
+    background-color: red;
+  }
+  .wrapper {
+    overflow: hidden;
+    padding: 0 200px;
+  }
+  .col {
+    float: left;
+    height: 200px;
+  }
+  .left, .right {
+    position: relative;
+    width: 200px;
+  }
+  
+  .main {
+    width: 100%;
+    margin-left: -200px;
+    background-color: green;
+  }
+  .left {
+    left: -200px;
+    background-color: yellow;
+  }
+  .right {
+    margin-left: -200px;
+    right: -200px;
+    background: blue;
+  }
+
+  </style>
+</head>
+<body>
+  <header>header</header>
+  <section class="wrapper">
+    <aside class="col left">left</aside>
+    <section class="col main">main</section>
+     <aside class="col right">right</aside> 
+  </section>
+  <footer>footer</footer>
+</body>
+</html>

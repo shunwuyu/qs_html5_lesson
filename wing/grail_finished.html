@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>圣杯布局</title>
+  <style>
+  /* 
+  浏览器渲染引擎在构建和渲染渲染树是异步的
+  <section>main</section>部分提前即可优先渲染。优先看到最重要内容
+  wrapper 左右padding 留出侧边栏的位置.
+  float:left ,  两侧边栏在后依次排开
+  .left margin-left:-100% 上一行， left:-100px 到了左边
+  .right margin-right:-100px 上一行， right:-100px 到了右边
+  overflow: hidden 清除浮动
+  footer 晚点写
+  使用了relative ,float margin 负值来做圣杯布局, 将left 和right安装到两侧 */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  header,footer {
+    height: 50px;
+    background-color: red;
+  }
+  .wrapper {
+    padding: 0 200px 0 200px;
+    /* overflow hidden 本来是裁去内容超出父元素的高度。
+    所以需要去计算内容高度多少， 这样， 就得到了高度，
+    反而解决了高度崩陷的问题。 */
+    overflow:hidden; 
+  }
+  .col {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 200px;
+    /* 清除浮动的两种方式 */
+  }
+  /* .wrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+  } */
+  .main {
+    width: 100%;
+    height: 200px;
+    background-color: green;
+  }
+  .left {
+    
+    margin-left: -100%;
+    left: -200px;
+    background-color: yellow;
+  }
+  .right {
+    margin-left: -200px;
+    background: blue;
+    right: -200px;
+  }
+  </style>
+</head>
+<body>
+  <header>header</header>
+  <section class="wrapper">
+    <section class="col main">main</section>
+    <aside class="col left">left</aside>
+    <aside class="col right">right</aside>
+  </section>
+  <footer>footer</footer>
+</body>
+</html>
