@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grid--微信实战钱包</title>
+  <style>
+    .money__box {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 300px 300px 300px;
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+    }
+
+    .money__Mbox {
+      border: 1px solid grey;
+      text-align: center;
+      /* width: 33.33333333%; */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1 Grid 布局 九宫格
+  2 columns 1fr 高度？
+  flexible.js  10/3.rem
+  3 icon 文字
+  iconfont 
+  4 对齐方式？ 水平居中，垂直居中
+  flex flex-direction:colum 
+  justify-content:
+  align-items: -->
+  <div class="money">
+    <div class="money__service">腾讯服务</div>
+    <div class="money__box">
+      <div class="money__Mbox">
+        <div class="money__image">
+          <img src="./images/grid.png" alt="">
+        </div>
+        <div class="money__word">信用卡还贷</div>
+      </div>
+      <div class="money__Mbox">
+        <div class="money__image">
+          <img src="./images/grid.png" alt="">
+        </div>
+        <div class="money__word">信用卡还贷</div>
+      </div>
+      <div class="money__Mbox">
+        <div class="money__image">
+          <img src="./images/grid.png" alt="">
+        </div>
+        <div class="money__word">信用卡还贷</div>
+      </div>
+      <div class="money__Mbox">
+        <div class="money__image">
+          <img src="./images/grid.png" alt="">
+        </div>
+        <div class="money__word">信用卡还贷</div>
+      </div>
+      <div class="money__Mbox">
+        <div class="money__image">
+          <img src="./images/grid.png" alt="">
+        </div>
+        <div class="money__word">信用卡还贷</div>
+      </div>
+      <div class="money__Mbox">
+        <div class="money__image">
+          <img src="./images/grid.png" alt="">
+        </div>
+        <div class="money__word">信用卡还贷</div>
+      </div>
+      <div class="money__Mbox">
+        <div class="money__image">
+          <img src="./images/grid.png" alt="">
+        </div>
+        <div class="money__word">信用卡还贷</div>
+      </div>
+      <div class="money__Mbox">
+        <div class="money__image">
+          <img src="./images/grid.png" alt="">
+        </div>
+        <div class="money__word">信用卡还贷</div>
+      </div>
+      <div class="money__Mbox">
+        
+      </div>
+    </div>
+  </div>
+  <script>
+    var height = document.querySelector('money__Mbox');
+    
+  </script>
+</body>
+
+</html>
