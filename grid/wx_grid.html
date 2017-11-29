@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <style>
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        text-align: center;
+        grid-template-rows: repeat(3,3.333333rem)
+    }   
+    </style>
+</head>
+<body>
+    <!-- 1 grid 布局 九宫格
+    2 columns 1fr 高度？
+    flexible.js 10/3.rem
+    3 icon 文字
+    iconfont 
+    4 对齐？水平居中 垂直居中
+    flex flex-direction:column
+    justify-content
+    align-item -->
+    <div class="grid">
+        <div><img src="https://weui.io/images/icon_tabbar.png " alt=""><p>信用卡还款</p></div>
+        <div><img src="https://weui.io/images/icon_tabbar.png " alt=""><p>微粒贷借钱</p></div>
+        <div><img src="https://weui.io/images/icon_tabbar.png " alt=""><p>手机充值</p></div>
+        <div><img src="https://weui.io/images/icon_tabbar.png " alt=""><p>理财通</p></div>
+        <div><img src="https://weui.io/images/icon_tabbar.png " alt=""><p>生活缴费</p></div>
+        <div><img src="https://weui.io/images/icon_tabbar.png " alt=""><p>Q币充值</p></div>
+        <div><img src="https://weui.io/images/icon_tabbar.png " alt=""><p>城市服务</p></div>
+        <div><img src="https://weui.io/images/icon_tabbar.png " alt=""><p>腾讯公益</p></div>
+        <div></div>
+    </div>
+</body>
+</html>
