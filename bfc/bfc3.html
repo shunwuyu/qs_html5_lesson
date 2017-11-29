@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bfc</title>
+    <style>
+        /* span标签是一个行内元素，不由宽高决定，由内容撑起 */
+        /* bfc 创建有
+        overflow:hidden
+        display 换别的
+        position:absolute,relative
+        float */
+    span{
+        /* 手动创建bfc */
+        /* display: inline-block; */
+        /* float: left; */
+        position:absolute;
+        width: 200px;
+        height: 300px;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <span>抓娃娃高手</span>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bfc 解决浮动问题</title>
+    <style>
+      .one{
+          /* 文档流，里面的文字、标签，把父元素给撑起来了 */
+          background-color: pink;
+          /* bfc 创建
+          float 不为none
+          position 不为static
+          display inline-block
+          ovweflow 值不为visible
+          原理第二条 计算bfc元素高度时，浮动元素也会参与计算 */
+          overflow: hidden;
+      }
+      .two{
+          /* 离开了文档流 */
+           float: left;
+      }
+      /* 清除浮动 */
+      /* .one:after{
+          content:'';
+          display: block;
+          clear: left;
+      } */
+    </style>
+</head>
+<body>
+    <!-- 文档流，从上到下，但是当它遇到float,position:absolute时，
+        这些东西会离开文档流 -->
+   <div class="one">
+       <div class="two">hello world</div>
+   </div> 
+   你好，世界！
+</body>
+</html>
