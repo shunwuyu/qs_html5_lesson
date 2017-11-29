@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>小人走路动画</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .sprite{
+    width: 245px;
+    height: 400px;
+    display: block;
+    background:url(./walker.png)
+     no-repeat scroll 0 0 transparent;
+     margin:3em auto;
+    /* -webkit-animation: walk 1s steps(5) infinite; */
+    animation: walk 1s steps(10) infinite;
+  }
+
+  @-webkit-keyframes walk {
+    from{
+      background-position: 0 0;
+    }
+    to{
+      background-position: 0 -4000px;
+    }
+  }
+
+  @keyframes walk {
+    from{
+      background-position: 0 0;
+    }
+
+    to{
+      background-position: 0 -4000px;
+    }
+  }
+  </style>
+</head>
+<body>
+<div class="sprite">
+</div>
+</body>
+</html>
