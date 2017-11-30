@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+    <div class="people">
+        <p>Wes</p>
+        <p>Kait</p>
+        <p>Randy</p>
+        <button id="buttontest" title="点击">点击</button>
+    </div>
+    <script>
+        // 获取页面上的元素p，将这些名字串联起来，中间用逗号隔开
+        // const people = document.querySelectorAll('.people p');
+
+        // 数组 多个元素 类数组 转换成为真实的数组使用Array.from
+        const people = Array.from(document.querySelectorAll('.people p'));
+        // for(let i=0, len=people.length; i<len; i++) {
+        let strNames = people.map(person => person.innerHTML).join(',');
+        console.log(strNames);
+        $('#buttontest').click(test => console.log('button test 箭头函数'));
+        // }
+    </script>
+</body>
+</html>

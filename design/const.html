@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user = 'ysw';
+        // 类型不能变
+        // 不用es6 获得const 能够读取但是不能进行修改类型
+        // 实现私有的属性和方法
+        // 不能设置 对象的设置， 让这个变量跟你变量的查找作用域 不会经过 如何读取它?
+        // es5没有块级作用域 函数作用域 全局作用域
+        var User = (function () {
+            // 自执行函数 也为立即执行
+            // 产生函数作用域 外界就访问不到里面
+            var UPPER_BOUND = 100;
+            //提供外部访问接口
+            var ctor = function () {
+                
+            }
+            ctor.getUPPER_BOUND = function () {
+                 return UPPER_BOUND;
+            }
+           return ctor;
+        })();
+        console.log(User.getUPPER_BOUND());
+    </script>
+</body>
+</html>

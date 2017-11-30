@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图书类</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            overflow: hidden
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- 块级格式化上下文 -->
+        <div class="inner"></div>
+    </div>
+    <script>
+        // var Book = function (isBn, title, author) {
+        //     if (arguments.length == 0) {
+        //         throw new Error('error');
+        //     }
+        //     // this.isBn = isBn;
+        //     // console.log(this.checkIsbn(isBn));
+        //     this.setIsbn(isBn);
+        //     this.setTitle(title);
+        //     this.setAuthor(author);
+        //     this.author = [];
+        //     // this.title = title;
+        //     // this.author = author;
+        // }
+
+        // Book.prototype = {
+        //     _checkIsbn: function (isBn) {
+        //         //9位 正整数 正则 模式匹配内容 高效
+        //         // - 表示范围 []代表一个字符 {长度6，9}
+        //         // ^代表从开始进行匹配 $表示匹配到字符串的结束
+        //         // 验证手机号 /^1[0-9]{10}$/
+                
+        //         // if (/^[0-9]{9}$/.test(isBn)) {
+        //         //     return true;
+        //         // }else {
+        //         //     return false;
+        //         // }
+
+        //         return /^[0-9]{9}$/.test(isBn);
+        //     },
+
+        //     setIsbn: function (isBn) {
+        //         if (!this._checkIsbn(isBn)) {
+        //             throw new Error('error');
+        //         }else {
+        //             this.isBn = isBn;
+        //         }
+        //     },
+
+        //     setTitle: function (title) {
+        //         this.title = title || 'No title specified';
+        //     },
+
+        //     setAuthor: function (author) {
+        //         if (author) {
+        //             this.author.push(author);
+        //         }
+        //     },
+
+        //     getIsBn: function () {
+        //         return this.isBn;
+        //     },
+
+        //     getTitle: function () {
+        //         return this.title;
+        //     },
+
+        //     getAuthor: function () {
+        //         return this.author.join(arguments);
+        //     }
+        // }
+
+        // var book = new Book(123456789, '平凡的世界', ['路遥']);
+        
+        // console.log(book.getIsBn());
+        // 封装即隐藏
+        // 写类的人需要暴露少一些的接口  用类的人则会更加的简单和可控
+        // checkIsbn现在为public
+        //设计类 封装的粒度 具有一定的私有的属性和方法 确保类的本身不被改变 也能够提供更加简单接口给使用者
+
+        var Book = function (newIsBn, newTitle, newAuthor) {
+            // 局部变量
+            var isBn, title, author = [];
+            function checkIsbn(isBn) {
+                return /^[0-9]{9}$/.test(isBn);
+            }
+
+            this.setIsBn = function (newIsBn) {
+                if (checkIsbn(newIsBn)) {
+                    isBn = newIsBn;
+                }else{
+                    throw new Error('error');
+                }  
+            }
+
+            this.setTitle = function (newTitle) {
+                title = newTitle;
+            }
+
+            this.setAuthor = function (newAuthor) {
+                author.push(newAuthor);
+            }
+
+            this.getIsBn = function () {
+                return isBn;
+            }
+
+            this.getTitle = function () {
+                return title;
+            }
+
+            this.getAuthor = function () {
+                return author;
+            }
+        }
+
+        var book = new Book(123456789, '春风十里不如你', 'qiushui');
+    </script>
+</body>
+</html>

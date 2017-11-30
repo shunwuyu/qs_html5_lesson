@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <dic id="doc"></dic>
+    <script>
+        /*
+         * 类 EditInPlace
+         * 功能：用于就地编辑
+         * 参数： id 页面id 必填
+         * parent 将这个组件挂载在父元素上 必填
+         * value 默认值 选填
+         */
+        //  封装
+        function EditInPlace(id, parent, value) {
+            this.id = id;
+            this.parentElement = parent;
+            this.value = value || 'default value';
+            console.log(this.value);
+            // 将组件添加到页面上
+            this.createElement();
+            this.attachEvents();
+        }
+
+        EditInPlace.prototype.createElement = function () {
+            // DOM Api C html 里面有的都行能够通过js来创建
+            this.containerElement = document.createElement('div');
+            this.parentElement.appendChild(this.containerElement);
+
+            this.staticElement = document.createElement('span');
+            this.containerElement.appendChild(this.staticElement);
+            this.staticElement.innerText = this.value;
+
+            this.inputElement = document.createElement('input');
+            this.containerElement.appendChild(this.inputElement);
+            this.inputElement.value = this.value;
+
+            // this.saveBtn = document.createElement('button');
+            this.saveBtn = document.createElement('input');
+            this.saveBtn.type = 'button';
+            this.saveBtn.value = 'Save';
+            this.containerElement.appendChild(this.saveBtn);
+            this.cancleBtn = document.createElement('button');
+            this.cancleBtn.type = 'button';
+            this.cancleBtn.name = 'Cancle';
+            this.cancleBtn.innerText = "Cancle";
+            this.containerElement.appendChild(this.cancleBtn);
+            
+            this.convertToText();
+        }
+
+        EditInPlace.prototype.convertToText = function () {
+            
+           // document.querySelector('input').type = 'hidden';
+            this.inputElement.style.display = 'none';
+            this.saveBtn.style.display = 'none';
+            this.cancleBtn.style.display = 'none';
+            this.staticElement.style.display = 'inline';
+            
+        }
+
+        EditInPlace.prototype.convertToEdit = function(){
+            this.inputElement.style.display = 'inline';
+            this.saveBtn.style.display = 'inline';
+            this.cancleBtn.style.display = 'inline';
+            this.staticElement.style.display = 'none';
+        }
+
+        EditInPlace.prototype.attachEvents = function () {
+            var that = this;
+            this.staticElement.addEventListener('click', function () {
+                
+                that.convertToEdit();
+            });
+
+            this.cancleBtn.addEventListener('click', () => {
+                this.convertToText();
+            });
+        }
+
+        var titleClassical = new EditInPlace('titleClassical', document.getElementById('doc'), 'Title here');
+    </script>
+</body>
+</html>
