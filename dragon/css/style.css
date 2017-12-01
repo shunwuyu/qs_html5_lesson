@@ -16,5 +16,5 @@ body {
 
 ) no-repeat;
     background-size: contain;
-    background-size: 10rem 100%;
+    background-size: cover;
 }
