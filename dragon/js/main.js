@@ -12,7 +12,6 @@ window.onload = function() {
         if (!document.querySelector('.music input').checked) {
             audio.play();
         }
-
     })
     music.addEventListener('click', function(event) {
         event.stopPropagation();
