@@ -67,7 +67,7 @@ var MusicPlayer = {
 		// this.play();
 		// 唱针？ 唱片，旋转起来，进度条。。。
 
-		// this.$album.attr()
+		// this.$album.attr()777777777777777777777777777777777777777777777777777xxxxxx
 
 
 		//更新按钮和当前播放时间

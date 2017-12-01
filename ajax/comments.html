@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>36Kr 评论</title>
+    <style>
+        .input-module {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        #J_coment_area_5103187 {
+            background-color: #fafafa;
+            width: 600px;
+            border: 1px solid #d3d7db;
+            height: 200px;
+            ;
+            border-radius: 3px;
+            overflow: auto;
+            vertical-align: top;
+        }
+
+        .user {
+            width: 600px;
+            height: 50px;
+            margin: 0 auto;
+        }
+
+        .img {
+            width: 200px;
+        }
+
+        html {
+            height: 100%;
+            font-size: 12px;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .display-module {
+            text-align: center;
+            margin-bottom: 1rem;
+            width: 800px;
+            height: 100px;
+
+        }
+
+        div {
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        p,
+        ul {
+            margin: 0;
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+        }
+
+        ul,
+        menu,
+        dir {
+            display: block;
+            list-style-type: disc;
+            -webkit-margin-before: 1em;
+            -webkit-margin-after: 1em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -webkit-padding-start: 40px;
+        }
+
+        .display-module {
+            margin: 0 auto;
+        }
+
+        .display-module li {
+            text-align: left;
+            padding: .5rem 0;
+            border-top: 1px dashed #e8e8e8;
+        }
+
+        li {
+            display: list-item;
+        }
+
+        .display-module .img {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: .75rem;
+            vertical-align: middle;
+            float: left;
+            margin-top: .5rem;
+        }
+
+        .display-module .msgwrap {
+            overflow: hidden;
+            font-size: 14px;
+            line-height: 21px;
+        }
+
+        .display-module .msgwrap .name {
+            color: #4285f4;
+        }
+
+        .display-module .msgwrap .time {
+            color: #ccc;
+
+        }
+
+        .display-module .msgwrap .text {
+            color: #666;
+            word-break: break-all;
+            word-wrap: break-word;
+            white-space: pre-line;
+        }
+
+        .display-module .msgwrap .replay_button {
+            text-align: right;
+        }
+
+        .display-module .msgwrap .submit {
+            border: 0 none;
+            background-color: transparent;
+            color: #4285f4;
+            font-size: 14px;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-module notlogin">
+
+        <textarea name="" id="J_coment_area_5103187" cols="30" rows="10" placeholder="请登陆后参与评论..."></textarea>
+    </div>
+    <div class="user">
+        <button type="button" title="请登录后参与评论" style="margin-top: 20px; 
+        margin-right: 0px; height: 40px; float: right">
+            提交评论
+        </button>
+        <div class="current-user">
+            <span class="img" style="background: 
+                
+                center center / 80% no-repeat rgb(241, 241, 241);">
+                <img src="http://krplus-pic.b0.upaiyun.com/201601/28103657/f3a5016d8jzc4auz.png" alt="">
+            </span>
+            <a href="http://passport.36kr.com/pages/?ok_url=http://36kr.com%2Fp%2F5103187.html#/login">
+                登录</a>
+            <span>后参与讨论</span>
+        </div>
+    </div>
+
+    <div class="display-module">
+        <div>
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+
+<script>
+    var commentList = {
+        inputEle: null,
+        inputVal: '',
+        ulEle: null,
+
+        init: function () {
+            this.ulEle = document.querySelector('.display-module ul');
+            this.inputEle = document.getElementById('J_coment_area_5103187');
+            this.inputVal = this.inputEle.value;
+            this.showCommentsList();
+            var that = this;
+            document
+                .querySelector('.user button')
+                .addEventListener('click', function (e) {
+                    e.preventDefault();
+                    $(that.ulEle).prepend($(
+                        that.getCommentItemHTML({
+                            "avatar": "http://www.jf258.com/uploads/2013-07-05/101222933.jpg",
+                            "name": "Cui Y",
+                            "content": that.inputEle.value,
+                            "publicTime": "• 刚刚",
+                        })
+                    ));
+                });
+        },
+        getCommentItemHTML: function (comment) {
+            return `
+            <li>
+                    <span class="img" style="background: url('${
+                comment.avatar
+                }') 50% 50% / cover no-repeat;"></span>
+                    <div class="msgwrap">
+                        <span class="name">${
+                comment.name
+                }</span>
+                        <span class="time">&nbsp;&nbsp;"${
+                comment.publicTime
+                }"</span>
+                        <p>
+                            <span class="text">${
+                comment.content
+                }</span>
+                        </p>
+                        <div class="replay_button">
+                            <a href="#" class="submit">回复</a>
+                        </div>
+                    </div>
+            </li>
+            `;
+
+        },
+        showCommentsList: function () {
+            var that = this;
+            // 数据数组->for->
+            $.getJSON('http://www.easy-mock.com/mock/5a0d83329b049244f7526315/36kr/36kr', function (data) {
+                console.log(data);
+                var comments = data.data.comments;
+                that.ulEle.innerHTML = comments.map(function (comment) {
+                    // console.log(comment);
+                    //返回html数组
+                    return that.getCommentItemHTML(comment);
+                }).join('')
+            });
+        },
+    };
+    commentList.init();
+
+
+
+</script>
+
+</html>

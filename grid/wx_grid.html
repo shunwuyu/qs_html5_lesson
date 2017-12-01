@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js ">
+    </script>
+    <style>
+        .html {
+            font-size: 20px;
+        }
+
+        .grid {
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 3rem);
+            border: 1px solid silver;
+            /* grid-gap: 1px; */
+        }
+
+        .flex {
+            border: 1px solid silver;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        @font-face {
+            font-family: 'iconfont';  /* project id 489920 */
+            src: url('//at.alicdn.com/t/font_489920_jcursr6k1zg58kt9.eot');
+            src: url('//at.alicdn.com/t/font_489920_jcursr6k1zg58kt9.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_489920_jcursr6k1zg58kt9.woff') format('woff'),
+            url('//at.alicdn.com/t/font_489920_jcursr6k1zg58kt9.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_489920_jcursr6k1zg58kt9.svg#iconfont') format('svg');
+          }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            /*抗锯齿*/
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-huankuan:before {
+            content: "\e627";
+        }
+
+        .icon-jieqian:before {
+            content: "\e627";
+        }
+
+        .icon-shoucang:before {
+            content: "\e627";
+        }
+
+        .icon-wode:before {
+            content: "\e62f";
+        }
+
+        .icon-shouye:before {
+            content: "\e62e";
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1 grid 布局 九宫格
+    2 column 1fr  高度?
+    flexible.js  10/3rem
+    3 icon 文字
+    iconfont
+    4 里面对齐  
+    flex-direction:column  -->
+    <div class="grid">
+        <div class="flex">
+            <i class="iconfont icon-huankuan active">&#xe609;</i>
+            <img src="./font/demo_fontclass.html" alt="">
+            <div class="grid-font">
+                信用卡还款
+            </div>
+        </div>
+        <div class="flex">
+            <i class="iconfont icon-jieqian active"></i>
+            <div class="grid-font">
+                为历代借钱
+            </div>
+        </div>
+        <div class="flex">
+            <i class="iconfont icon-shoucang active"></i>
+            <div class="grid-font">
+                手机充值
+            </div>
+        </div>
+        <div class="flex">
+            <i class="iconfont icon-shoucang active"></i>
+            <div class="grid-font">
+                理财通
+            </div>
+        </div>
+        <div class="flex">
+            <i class="iconfont icon-shoucang active"></i>
+            <div class="grid-font">
+                生活额度
+            </div>
+        </div>
+        <div class="flex">
+            <i class="iconfont icon-shoucang active"></i>
+            <div class="grid-font">
+                Q币充值
+            </div>
+        </div>
+        <div class="flex">
+            <i class="iconfont icon-shoucang active"></i>
+            <div class="grid-font">
+                城市服务
+            </div>
+        </div>
+        <div class="flex">
+            <i class="iconfont icon-shoucang active"></i>
+            <div class="grid-font">
+                腾讯公益
+            </div>
+        </div>
+        <div class="flex">
+            <i class="iconfont icon-shoucang active"></i>
+            <div class="grid-font"></div>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>

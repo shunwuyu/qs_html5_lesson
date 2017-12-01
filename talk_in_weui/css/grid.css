@@ -1,0 +1,71 @@
+/* author: ysw
+data: 17-11-28 */
+.weui-grids {
+    position: relative;
+    overflow: hidden;
+  }
+  /* 用于做上边的边界 */
+  .weui-grids:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #D9D9D9;
+    /* 1px 问题 retina 手机 1px 粗*/
+     -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+     -webkit-transform-origin: 0 0; 
+     transform-origin: 0 0;   
+  
+  }
+  .weui-grids:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #D9D9D9;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 100% 100%; 
+    transform-origin: 100% 100%;  
+  }
+  .weui-grid {
+    /* before after */
+    position: relative;
+    float: left;
+    padding: 20px 10px;
+    width: 33.33333333%;
+    /* 上去了 改变盒子模型 */
+    box-sizing: border-box;
+  }
+  .weui-grid:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    border-right: 1px solid #D9D9D9;
+    -webkit-transform: scaleX(.5);
+    transform: scaleX(.5);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+  .weui-grid:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    border-bottom: 1px solid #D9D9D9;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+  } 
+  

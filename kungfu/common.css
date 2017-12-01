@@ -1,0 +1,22 @@
+*{
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+#loading {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -.86667rem;
+	margin-top: -1.46667rem;
+	z-index: 9999;
+}
+#loading, #loading .loading {
+	width: 1.73333rem;
+	height: 1.73333rem;
+}
+#loading .loading {
+	background: url(//gw.alicdn.com/tfs/TB1ZoYwbMvD8KJjy0FlXXagBFXa-130-130.gif) no-repeat  50%;  /* 第一个是水平位置，第二个是垂直位置。0表示从最左边开始，50%表示垂直居中。 */
+	background-size: 100% 100%;
+}
