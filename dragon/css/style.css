@@ -14,5 +14,5 @@ body {
     min-height:100%;
     /* no-repeat  不平铺 */
     background:url("http://gw.alicdn.com/mt/TB1.sknLXXXXXbEXpXXXXXXXXXX-750-1333.png") no-repeat;
-    background-size:10rem 100%;
+    background-size:cover;
 }
