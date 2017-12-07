@@ -50,6 +50,8 @@
         <div class="imgBox">
             <img src="./asset/test.png" alt="" id="pinchImg">
         </div>
+        <div class="title">rotate</div>
+        <div class="imgBox"><img src="./asset/test.png" alt="" id="pinchImg"/></div>
     </div>
     <script src="./asset/transform.js"></script>
     <script src="./asset/alloy_finger.js"></script>
@@ -63,7 +65,17 @@
                 console.log('tap一下');
                 pinchImg.scaleX=pinchImg.scaleY=initScale*evt.zoom
             }
-        })
+            
+        });
+        var rotateImg =document.getElementById('rotateImg');
+        Transform(rotateImg);
+        new AlloyFinger(rotateImg,{
+            rotate:function(evt){
+                console.log('tap一下');
+                rotateImg.rotateX+=evt.angle;
+            }
+            
+        });
     </script>
 </body>
 </html>
