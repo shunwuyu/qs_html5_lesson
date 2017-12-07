@@ -46,8 +46,8 @@
     <div class="header">AlloyFinger</div>
     <div class="example">
         gesture
-        <div class="title">pinch</div>
-        <div class="imgBox" id="pinchImg">
+        <div class="title">ratate</div>
+        <div class="imgBox" id="rotateImg">
             <img src="./asset/test.png" alt="">
         </div>
     </div>
@@ -56,11 +56,12 @@
     <script src="./asset/transform.js"></script>
     <script src="./asset/alloy_finger.js"></script>
     <script>
-        var pinchImg = document.getElementById('pinchImg');
-        Transform(pinchImg);
-        new AlloyFinger(pinchImg, {
-            pinch: function (evt) {
-                pinchImg.scaleX = pinchImg.scaleY = initScale * evt.zoom;
+        var rotateImg = document.getElementById('rotateImg');
+        Transform(rotateImg);
+        var initScale = 1;
+        new AlloyFinger(rotateImg, {
+            rotateImg: function (evt) {
+                rotateImg.ratateZ =+ evt.angle;
             }
         });
     </script>
