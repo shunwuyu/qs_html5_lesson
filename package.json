@@ -1,0 +1,26 @@
+{
+  "name": "qs_html5_lesson",
+  "version": "1.0.0",
+  "description": "![春风十里，不如代码懂你](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509596266846&di=127391a8dc305f4691e2c2d6c65a5078&imgtype=0&src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1708%2F1105-1FPG00413.jpg)\r # 秋水伊人 旅梦开发团html课程",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lzzhy/qs_html5_lesson.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lzzhy/qs_html5_lesson/issues"
+  },
+  "homepage": "https://github.com/lzzhy/qs_html5_lesson#readme",
+  "devDependencies": {
+    "browserify": "^14.5.0",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}
