@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>本地存储</title>
+</head>
+<body>
+    <table id="student__infos">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>学校</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <!-- <td id="name">芬芬</td>
+                <td id="collage">江西财经大学</td> -->
+            </tr>
+        </tbody>
+    </table>
+    <!-- name查找 -->
+    <form action="index.php" method="POST" name="userForm">
+        <div class="field">
+            <label for="user-name">姓名</label>
+            <input type="text" id="user-name" name="username">
+        </div>
+
+        <div class="field">
+            <label for="user-collage">学校</label>
+            <input type="text" id="user-collage" name="collage">
+        </div>
+        <input type="submit" value="提交">
+    </form>
+
+    <script>
+        const oForm = document.forms["userForm"];
+        const ouserName = oForm["username"];
+        const ocollage = oForm["collage"];
+        var arrStudents = [];
+        // console.log(oForm);
+
+        window.onload = function () {
+            loadData();
+            oForm.addEventListener('submit', function () {
+                // alert('提交里表单');
+                event.preventDefault();
+                let name = ouserName.value.trim();
+                let collage = ocollage.value.trim();
+                if(name.length >=2 && collage) {
+                    //渲染到页面上
+                    const student = {
+                        name,
+                        collage
+                    }
+                   
+                    arrStudents.push(student);
+                    // 本地存储
+                    window.localStorage.setItem("students", JSON.stringify(arrStudents));
+                    // console.log(JSON.stringify(student));
+                    renderStudent(student);
+                }else {
+                    alert("请输入姓名学校");
+                }
+            }, false);
+        }
+        
+        function renderStudent(student) {
+            // console.log(document.getElementById('name').innerHTML);
+            // $('#name').append(student.name);
+            // $('#collage').append(student.collage);
+
+            let oTr = document.createElement('tr');
+            oTr.innerHTML = `<td>${student.name}</td>
+            <td>${student.collage}</td>`;
+            document.querySelector('#student__infos tbody').appendChild(oTr);
+        }
+
+        function loadData() {
+            // 确认存储是否有数据
+            
+            let storStudent = JSON.parse(localStorage.getItem('students'));
+            console.log(storStudent);
+            
+            
+            if (storStudent) {
+                storStudent.forEach(element => {
+                arrStudents.push(element);
+                });
+                console.log(arrStudents);
+                // arrStudents = storStudent;
+                arrStudents.map(student => {
+                    renderStudent(student);
+                    
+                });
+                
+            }else {
+                document.querySelector('#student__infos tbody').innerHTML = `<td colspan="2" style="text-align:center;">当前没有数据</td>`;
+                // alert('没有')
+            }
+        }
+    </script>
+</body>
+</html>

@@ -125,14 +125,14 @@
             getCommentItemHTML: function (comment) {
                 return `
                 <li id="470013">
-                            <span class="img" style="background: url(${comment.avatar}) 50% 50% / cover no-repeat;"></span>
-                            <div class="msgwrap">
-                                <span class="name">${comment.name}</span>
-                                <span class="time">&nbsp;&nbsp;"${comment.publicTime}"</span>
-                                <p><span class="text">${comment.content}</span></p>
-                                <div class="replay_button"><a href="#" class="submit">回复</a></div>
-                            </div>
-                        </li>
+                    <span class="img" style="background: url(${comment.avatar}) 50% 50% / cover no-repeat;"></span>
+                    <div class="msgwrap">
+                        <span class="name">${comment.name}</span>
+                        <span class="time">&nbsp;&nbsp;"${comment.publicTime}"</span>
+                        <p><span class="text">${comment.content}</span></p>
+                        <div class="replay_button"><a href="#" class="submit">回复</a></div>
+                    </div>
+                </li>
                 `;
             },
             showCommentList: function () {
