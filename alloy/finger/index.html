@@ -49,6 +49,10 @@
         <div class="imgBox">
             <img src="./asset/test.png" id="pinchImg">
         </div>
+        <div class="title">rotate</div>
+        <div class="imgBox">
+            <img src="./asset/test.png" alt="" id="rotateImg">          
+        </div>
     </div>
     <!-- gesture  很复杂， ontouchstart ontouchmove ontouchend event -->
     <script src="./asset/transform.js"></script>
@@ -61,6 +65,12 @@
             pinch: function () {
                 console.log('tap一下');
                 pinchImg.scaleX = pinchImg.scaleY = initScale*evt.zoom;
+            }
+        })
+        var rotateImg = document.getElementById('rotateImg');
+        Transform(rotateImg, {
+            rotate: function(evt) {
+                rotateImg.rotateZ += evt.angle;
             }
         })
     </script>
