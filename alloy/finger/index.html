@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maxmum-scale=1.0,user-scale=no;">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>alloyFinger</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background-color: #ccc;
+            text-align: center;
+            font: 14px/1.5"Helvetica Naue",Arial,"Microsoft Yahei",sans-serif;
+        }
+        .header{
+            background-color: #333;
+            height: 44px;
+            color: white;
+            text-align: left;
+            text-indent: 20px;
+            font-weight: bold;
+            line-height: 44px;
+        }
+        .title{
+            height: 30px;
+            color: #333;
+            font-size: 20px;
+            line-height: 30px;
+
+        }
+        .example img{
+            width: 160px;
+       
+
+        }
+        .ingBox{
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+    </style>
+</head>
+<body ontouchstart>
+    <div class="header">AlloyFinger</div>
+    <div class="example">
+        gesture
+        <div class="title">pinch</div>
+        <div class="imgBox">
+            <img src="./asset/test.png" alt="" id="pinchImg">
+        </div>
+    </div>
+    <script src="./asset/transform.js"></script>
+    <script src="./asset/alloy_finger.js"></script>
+    <script>
+        var pinchImg = document.getElementById('pinchImg');
+       
+        Transform(pinchImg);
+         var initScale =1;
+        new AlloyFinger(pinchImg,{
+            pinch:function(evt){
+                console.log('tap一下');
+                pinchImg.scaleX=pinchImg.scaleY=initScale*evt.zoom
+            }
+        })
+    </script>
+</body>
+</html>
