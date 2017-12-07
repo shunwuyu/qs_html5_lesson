@@ -12,7 +12,8 @@
       border: 0;
       background: #ccc;
       text-align: center;
-      font: 14px/1.5 "Helvetica Neue", Arial,"Microsoft Yahei", sans-serif;
+      font: 14px/1.5 "Helvetica Neue", Arial,
+       "Microsoft Yahei", sans-serif;
     }
     .header {
       background-color: #333;
@@ -29,43 +30,208 @@
       font-size: 20px;
       line-height: 30px;
     }
-    .example img{
-      width: 168px;
-      /*height:auto*/
+    .example img {
+      width: 160px;
+      /* height: auto; */
       /* http 请求与响应
       chunk 到达
-      第一页面 */
+      撑一下页面 */
     }
     .imgBox {
-        margin-bottom: 10px;
-        border-bottom: 1px solid #333;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #333;
     }
+    .swipeBox {
+        height: 160px;
+        width: 160px;
+        margin: 0 auto;
+        overflow: hidden;
+        font-size: 0;
+        position: relative;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+    }
+    .scroll {
+        width: 480px;
+        height: 160px;
+        white-space: nowrap; /*空白符处理*/
+    }
+    .nuclear-nav {
+        position: absolute; /*绝对定位*/
+        bottom: 6px;
+        right: 10px;
+    }
+    .nuclear-nav a {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        margin-right: 5px;
+        border: 1px solid #808080;
+        /*cursort:position: */
+        background-color: white;
+    }
+    .nuclear-nav a.active {
+        background-color: #ffd800;
+    }
+    .longTapBox{
+            position: relative;
+            margin: 0 auto;
+            width: 160px;
+            height: 160px;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            user-select: none;
+            user-drag: none;
+            touch-callout: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        .longTapBox img{
+            pointer-events: none;
+
+        }
+
+        .overlay2,.overlay{
+            background-color: rgba(70, 70, 70, 0.8);
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 160px;
+            height: 160px;
+
+            display: none;
+        }
+        .overlay2 img, .overlay img{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 60px;
+            left: 60px;
+        }
+
+
+
   </style>
 </head>
 <body ontouchstart>
   <div class="header">AlloyFinger</div>
   <div class="example">
-      gesture
+    gesture
     <div class="title">pinch</div>
     <div class="imgBox">
-      <img src="./asset/test.png" id="pinchImg">
+      <img src="./asset/test.png"id="pinchImg">
+    </div>
+    <div class="title">rotate</div>
+    <div class="imgBox">
+      <img src="./asset/test.png"
+       alt="" id="rotateImg"/>
+    </div>
+    <div class="title">swipe</div>
+    <div class="imgBox pb6">
+        <div class="swipeBox">
+            <div class="scroll" id="swipeScroll">
+                <img src="./asset/test.png" alt="">
+                <img src="./asset/test2.png" alt="">
+                <img src="./asset/test3.png" alt="">
+            </div>
+            <div class="nuclear-nav">
+                <a href="#" data-index="0" class="active"></a>
+                <a href="#" data-index="1" class="active"></a>
+                <a href="#" data-index="2" class="active"></a>
+            </div>
+        </div>
+    </div>
+    <div class="title">longTap</div>
+    <div class="imgBox pb6">
+            <div class="longTapBox" id="longTapBox">
+                <img src="./asset/test.png" alt="" id="longTapImg">
+                <div class="overlay" id="overlay"><img src="./asset/yes.png" alt=""></div>
+            </div>
     </div>
   </div>
-  <!-- gesture 很复杂，ontouchstart
+  <!-- gesture 很复杂， ontouchstart
   ontouchmove ontouchend event -->
-<script src="./asset/transform.js"></script>
-<script src="./asset/alloy_finger.js"></script>
-<script>
-var pinchImg= document.getElementById('pinchImg');
-Transform(pinchImg);
-var initScale = 1;
-new AlloyFinger(pinchImg, {
-    tap:function() {
-        console.log('tap一下');
-        pinchImg.scalex = pinchImg.scaleY = initScale*evt.zoom;
-        pinchImg.scaley = pinchImg.scaleX = initScale*2;
+  <script src="./asset/transform.js"></script>
+  <script src="./asset/alloy_finger.js"></script>
+  <script src="./asset/to.js"></script>
+  <script>
+      function ease(x) {
+            return Math.sqrt(1 - Math.pow(x - 1, 2));
+        }
+  var pinchImg = document.getElementById('pinchImg');
+  Transform(pinchImg);
+  var initScale = 1;
+  new AlloyFinger(pinchImg, {
+    pinch: function(evt) {
+      console.log('tap一下');
+      pinchImg.scaleX=
+      pinchImg.scaleY= 
+      initScale*evt.zoom
+    }
+  })
+  var rotateImg = document.getElementById('rotateImg');
+  Transform(rotateImg);
+  new AlloyFinger(rotateImg, {
+    rotate: function(evt) {
+      rotateImg.rotateZ += evt.angle;
+    }
+  });
+//   evt 事件 左边滑动 右边滑动
+var swipeScroll = document.getElementById("swipeScroll");
+var currentIndex = 0;
+Transform(swipeScroll);
+new AlloyFinger(swipeScroll,{
+    touchMove:function(evt) {
+        evt.preventDefault();
+    },
+    swipe: function(evt) {
+        // console.log(evt);
+        if(evt.direction === 'Left') {
+            if(currentIndex < 2) {
+                currentIndex++;
+                //swipeScroll.style.tanslatex
+                new To(swipeScroll, "translateX",-160*currentIndex,500,ease,function() {
+                    activeNav(currentIndex);
+                });
+            }
+        } else if (evt.direction === 'Right') {
+            if(currentIndex > 0) {
+                currentIndex--;
+                new To(swipeScroll,'translateX', -160*currentIndex,500,ease,function() {
+                    activeNav(currentIndex);
+                })
+            }
+        }
     }
 })
-</script>
+//longtap
+var longTapBox = document.getElementById('longTapBox');
+Transform(longTapBox);
+var overlay = document.getElementById('overlay');
+new AlloyFinger(longTapBox, {
+    longTap:function(evt) {
+        evt.preventDefault();
+        overlay.style.display = 'block';
+    }
+})
+function activeNav(index) {
+    var items = document.querySelectorAll('.nuclear-nav a');
+    items.forEach((item,i) => {
+        if(index == i) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active')
+        }
+    })
+    // let i = 0;
+    // for(item of items) {
+        
+    //     i++;
+    // }
+}
+  </script>
 </body>
 </html>
