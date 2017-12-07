@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0;minimum-scale=1.0,maximum-scale=1.0,use-scale=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AlloyFinger</title>
+    <!-- link阻塞html  -->
+    <style>
+            html,body{
+                margin: 0;
+                padding: 0;
+                border: 0;
+                background: #cccccc;
+                text-align: center;
+                font: 14px/1.5 "Helvetica Neue",Arial,"MicroSoft Yahei",sans-serif;
+            }
+            .header{
+                background-color: #333333;
+                height: 44px;
+                color: white;
+                text-align: left;
+                text-indent: 20px;
+                font-weight: bold;
+                line-height: 44px;
+            }
+            .title{
+                height: 30px;
+                color: #333333;
+                font-size: 20px;
+                line-height: 30px;
+            }
+            .example img{
+                width: 160px;
+                /* http 请求与响应
+                chunk 到达 */
+                /* height: auto; */
+                /* 撑一下页面 */
+            }
+            .imgBox{
+                margin-bottom: 10px;
+                border-bottom: 1px solid #333333;
+            }
+        </style>
+</head>
+<body ontouchstart>
+    <div class="header">AlloyFinger</div>
+    <div class="example">
+        <div class="title">pinch</div>
+        <div class="imgBox">
+            <img src="./asset/test.png" alt="" id="pinchImg">
+        </div>
+    </div>
+        <!-- gesture 很复杂，ontachstar ontouchmove ontauchend event -->
+    <script src="./asset/transform.js"></script>
+    <script src="./asset/alloy_finger.js"></script>
+    <script>
+    var pinchImg = document.getElementById('pinchImg');
+    Transform(pinchImg);
+    var initScale = 1;
+    new AlloyFinger(pinchImg,{
+        pinch:function(evt){
+            console.log('tap一下');
+            pinchImg.scaleX = pinchImg.scaleY = initScale*evt.zoom
+        }
+    })
+    </script>
+</body>
+</html>
