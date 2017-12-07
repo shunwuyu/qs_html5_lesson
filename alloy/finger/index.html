@@ -56,11 +56,12 @@
   <script src="./asset//alloy_finger.js"></script>
   <script>
     var pinchImg = document.getElementById('pinchImg');
+    const initScale = 1;
     Transform(pinchImg);
     new AlloyFinger(pinchImg,{
-        pinch:function(evt) {
+        tap:function(evt) {
            console.log('tap一下');
-           pinchImg.scaleX = pinchImg.scaleY = initScale*evt.zoom;
+           pinchImg.scaleX = pinchImg.scaleY = initScale*2;
         }
     })
   </script>
