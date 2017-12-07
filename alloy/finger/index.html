@@ -39,6 +39,73 @@
             margin-bottom: 10px;
             border-bottom: 1px solid #333;
         }
+        .swipeBox {
+            height: 160px;
+            width: 160px;
+            margin: 0 auto;
+            overflow: hidden;
+            font-size: 0;
+            position: relative;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+        }
+        .scroll {
+            width: 480px;
+            width: 160px;
+            white-space: nowrap;
+        }
+        .nuclear-nav {
+            position: absolute;
+            bottom: 6px;
+            right: 10px;
+        }
+        .nuclear-nav a {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            margin-right: 5px;
+            border: 1px solid #808080;
+            /* cursor: pointer */
+        }
+        .nuclear-nav a.active {
+            background-color: #ffd800;
+        }
+        .longTapBox{
+            position: relative;
+            margin: 0 auto;
+            width: 160px;
+            height: 160px;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            user-select: none;
+            user-drag: none;
+            touch-callout: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        .longTapBox img{
+            pointer-events: none;
+
+        }
+        .overlay2,.overlay{
+            background-color: rgba(70, 70, 70, 0.8);
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 160px;
+            height: 160px;
+
+            display: none;
+        }
+        .overlay2 img, .overlay img{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 60px;
+            left: 60px;
+        }
     </style>
 </head>
 <body ontouchstart>
@@ -53,11 +120,40 @@
         <div class="imgBox">
             <img src="./asset/test.png" alt="" id="rotateImg">
         </div>
+        <div class="title">swipe</div>
+        <div class="imgBox pb6">
+            <div class="swipeBox">
+                <div class="scroll" id="swiperScroll">
+                    <img src="./asset/test.png" alt="">
+                    <img src="./asset/test.png" alt="">
+                    <img src="./asset/test.png" alt="">
+                </div>
+                <!-- 自己写的  用于表达目前正处于哪张图片 -->
+                <div class="nuclear-nav">
+                    <a href="#" data-index="0" class="active"></a>
+                    <a href="#" data-index="1"></a>
+                    <a href="#" data-index="2"></a>
+                </div>
+            </div>
+        </div>
+        <div class="title">longTap</div>
+        <div class="imgBox pb6">
+            <div class="longTapBox" id="longTapBox">
+                <img src="./asset/test.png" alt="" id="longTapImg">
+                <div class="overlay" id="overlay">
+                    <img src="./asset/yes.png" alt="">
+                </div>
+            </div>                
+        </div>
     </div>
     <!-- gesture 很复杂， 由 ontouchstart ontouchmove ontouchend event 构成 -->
     <script src="./asset/transform.js"></script>
     <script src="./asset/alloy_finger.js"></script>
+    <script src="./asset/to.js"></script>
     <script>
+        function ease(x) {
+            return Math.sqrt(1 - Math.pow(x - 1, 2));
+        }
         var pinchImg = document.getElementById('pinchImg');
         // 将图片转化成能与之交互的图片
         Transform(pinchImg);
@@ -68,14 +164,63 @@
                 // evt 能提供放大缩小的比例
                 pinchImg.scaleX = pinchImg.scaleY = initScale*evt.zoom;
             }
-        })
+        });
         var rotateImg = document.getElementById('rotateImg');
         Transform(rotateImg);
         new AlloyFinger(rotateImg, {
             rotate: function(evt) {
                 rotateImg.rotateZ += evt.angle;
             }
+        });
+        // evt 对象得到事件的细节是左滑动还是右滑动
+        var swiperScroll = document.getElementById("swiperScroll");
+        var currentIndex = 0;
+        Transform(swiperScroll);
+        new AlloyFinger(swiperScroll, {
+            touchMove: function(evt) {
+                evt.preventDefault();
+            },
+            swipe: function(evt) {
+                console.log(evt);
+                if(evt.direction === 'Left') {
+                    if(currentIndex < 2) {
+                        currentIndex ++;
+                        new To(swiperScroll, "translateX", -160*currentIndex, 500, ease, function() {
+                            activeNav(currentIndex);
+                        });
+                    }
+                } else if (evt.direction == "Right") {
+                    if (currentIndex > 0) {
+                    currentIndex--;
+                    new To(swiperScroll, 'translateX',
+                        -160*currentIndex, 500, ease, function() {
+                        activeNav(currentIndex);
+                        })
+                    }
+                }
+            }
         })
+        // longtap
+        var longTapBox = document.getElementById('longTapBox');
+        Transform(longTapBox);
+        var overlay = document.getElementById('overlay');
+        new AlloyFinger(longTapBox, {
+            longTap: function(evt) {
+                // 阻止长按文本复制的事件
+                evt.preventDefault();
+                overlay.style.display = 'block';
+            }
+        })
+        function activeNav(index) {
+            var items = document.querySelectorAll(".nuclear-nav a");
+            items.forEach((item, i) => {
+                if(index == i) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            })
+        }
     </script>
 </body>
 </html>
