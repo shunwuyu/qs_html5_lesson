@@ -53,6 +53,11 @@
       <img src="./asset/test.png"
        id="pinchImg">
     </div>
+    <div class="title">rotate</div>
+    <div class="imgBox">
+      <img src="./asset/test.png"
+       alt="" id="rotateImg"/>
+    </div>
   </div>
   <!-- gesture 很复杂， ontouchstart
   ontouchmove ontouchend event -->
@@ -68,6 +73,13 @@
       pinchImg.scaleX=
       pinchImg.scaleY= 
       initScale*evt.zoom
+    }
+  })
+  var rotateImg = document.getElementById('rotateImg');
+  Transform(rotateImg);
+  new AlloyFinger(rotateImg, {
+    rotate: function(evt) {
+      rotateImg.rotateZ += evt.angle;
     }
   })
   </script>
