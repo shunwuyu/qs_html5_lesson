@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>box-sizing</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 盒子大小重新定义 解决IE兼容问题 */
+        *, *:before, *:after{
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        /* 盒子计算方式
+        IE box-sizing 是由 content+padding+border 构成
+        而 chrome 由content 决定 */
+        .item {
+            /* 盒子 占据的位置 肉眼看不见
+            position margin (border padding content) */
+            margin: 20px;
+            box-sizing: border-box;
+            border: 2px solid blue;
+            padding: 10px;
+            /* display: inline-block; */
+            float: left;
+            /* 内容宽度
+            并不是元素宽度 */
+            width: 50%;
+            height: 100px;
+            background-color: pink;
+        }
+        .item:nth-child(2) {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="items">
+        <div class="item">132</div>
+        <div class="item">456</div>
+    </div>
+</body>
+</html>

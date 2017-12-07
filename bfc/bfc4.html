@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bfc 解决侵占浮动元素</title>
+    <style>
+        .one {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .two {
+            margin-left: 20x;
+            height: 200px;
+            background-color: red;
+            /* overflow: hidden; */
+            /* float: left;
+            width: 10px; */
+            /* 原理三 解决侵占浮动元素的问题 */
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+</body>
+</html>
