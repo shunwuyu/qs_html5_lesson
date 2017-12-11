@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>talk in weui - love</title>
+</head>
+<body>
+  <script>
+      //花店
+      //类 JS 首字母类化习惯 new
+      //JS 函数就是类
+      //男主人公 JASON 对象字面量
+      //描述对象，对象越来越清晰，对号入座
+
+
+
+
+      var Flower = function(type,num){
+          console.log(type + ', 来' + num + '支');
+      }
+      var xiaoming = {
+              name : '小明',
+              sex: '男',
+              status:'单身',
+              //向任何一位对象送花
+              //target 形参
+              sendFlower: function(target){
+                var flower = new Flower('红玫瑰',11);
+                target.receiveFlower(this);
+              }
+          } 
+      
+
+
+
+      //女主人公 小红 性别 status receiveFlower
+      var xiaohong = {
+          name:'小红',
+          face:'++',
+          sex:'女',
+          status:'单身',
+          receiveFlower:function (sender) {
+
+              console.log('收到' + sender.name + '送的花');
+          },
+          // 监听好心情
+        //   小没代理，送花，唱K。。。。。
+        // fn 函数 JS 参数可以是一个函数
+          listenGoodMood: function(fn){
+            //   心情好的时候什么，干什么都行
+            setTimeout(function(){
+                fn();
+            },10000)
+          }
+      }
+      xiaoming.sendFlower(xiaohong);
+      //A(行为)->B
+      //大型项目开发 现实世界很复杂
+      //C 来代送
+      var xiaomei = {
+          //接口的概念
+          //只要有相同的方法，那么小梅也是可以收花的
+          receiveFlower: function(sender){
+              //转送给小红
+            //   解决了小明送花有可能被失败，被很没面子的失败
+            // if (sender.name === '小明'){
+            //     console.log('其实我已经喜欢你很久了，我们在一起吧');
+            // }else{
+                // 通过代理，更复杂的人情操作
+                // 小红心情好的时候，成功概率更高
+
+                // 小红两秒钟之后心情会更好
+    //             定时器
+    //             setTimeout(function(){
+    //           xiaohong.receiveFlower(sender);
+    //       } , 2000);
+
+
+
+
+    xiaohong.listenGoodMood(function() {
+        xiaohong.receiveFlower(sender);
+    })
+      }
+    }
+    // }
+    // 代理一下 代送给小红
+    // 代理模式的好处：
+    // 为一个对象（小红）插入一个代用品或占位符（小梅），
+    // 好处，获得了对象的完全控制
+    xiaoming.sendFlower(xiaomei);
+    // xiaoming.sendFlower(xiaohong);//结果差
+    // JSON
+    var zyn = {
+        name: '赵英男',
+        word: '如果你是只飞鸟，那么我活在自己的陆地，我很坚强！'
+
+    };
+    var lq = {
+        name: '柳青',
+        word: '爱是生活的食物，但是不能陪你一起吃了'
+    };
+    var xh = {
+        name:'小红',
+        word:'你就应该是我的！'
+    }
+    var qiushui = {
+        name :'秋水',
+        college :'仁和医大',
+        hobbies: ['文学'],
+        lovers:[zyn, lq, xh]
+    }
+
+    // 遍历 fn
+    // 新数组 map 遍历并返回新数组功能的
+    var words = qiushui.lovers.map(function(lover){
+    console.log(lover.name);
+    console.log(lover.word);
+    return lover.word;
+})
+    console.log(words);
+  </script>
+</body>
+</html>
