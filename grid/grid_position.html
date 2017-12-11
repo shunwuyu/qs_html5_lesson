@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>定位和占位</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5,100px);
+      grid-template-rows: repeat(5, 100px);
+      grid-gap: 20px;
+    }
+    #a {
+      background-color: #ff2e9c;
+      grid-column: 2/3;
+      grid-row: 3/4;
+    }
+    #b {
+      background-color: #61dae4;
+      grid-column: 3/5;
+      grid-row: 2/span 3;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div id="a"></div>
+    <div id="b"></div>
+  </div>
+</body>
+</html>

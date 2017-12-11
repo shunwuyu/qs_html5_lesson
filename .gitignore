@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 pay
 /node_modules/*
 /canvas-moon/node_modules/*
+=======
+./canvas_moon/node_modules/*
+>>>>>>> dev

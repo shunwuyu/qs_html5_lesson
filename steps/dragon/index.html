@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">   
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+    <div class="dragon-poplayer" id="dragon-poplayer">
+        <div class="dragon-section dragon-ready-play" id="dragon-ready-play">
+            <div class="dragon-play">
+                <div class="music">
+                    <input type="checkbox" name="music" id="music-control">
+                    <label for="music-control">声音</label>
+                </div>
+                <div id="music">
+                    <audio src="//gw.alicdn.com/tfscom/TB1Ydd2LpXXXXaUXFXXsKFbFXXX.mp3" loop="loop" preload="load"></audio>
+                </div>
+            </div>
+        </div>
+        <div class="dragon-section dragon-playing" id="dragon-playing">
+            <div class="dragon-wrap">
+                <div class="dragon-content">
+                    <div class="dragon dragon1"></div>
+                    <div class="dragon dragon2"></div>
+                    <div class="dragon dragon3"></div>
+                    <div class="dragon dragon4"></div>
+                    <div class="dragon dragon5"></div>
+                    <section class="cloud"></section>
+                    <section class="cloud"></section>
+                    <section class="cloud"></section>
+                </div>
+            </div>
+            <div class="firecrackers firecrackers-left"></div>
+            <div class="firecrackers firecrackers-right"></div>
+        </div>
+        <div id="close"></div>
+    </div>
+    <script>
+        var pageData = {
+            endTime: "20:00", 
+            startTime: "8:00"
+        }
+    </script>
+    <script src="./js/main.js"></script>
+    
+</body>
+
+</html>
