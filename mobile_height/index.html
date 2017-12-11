@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    
+    <title>马格格广发</title>
+    <style>
+        /* .header {
+            background-color: #333;
+            height: 1.5rem;
+        }
+
+        .content {
+            background-color: #675;
+            height: 13.08rem;
+        }
+
+        .footer {
+            background-color: #756;
+            height: 1.5rem;
+        } */
+
+        * {
+            padding: 0;
+            margin: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, Microsoft Yahei, sans-serif
+        }
+
+        body, html {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            background: #333;
+        }
+
+        #app, .full-page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+        /* 每屛的业务样式 */
+        .full-page .wram-up {
+            background-color: #000;
+        }
+
+        .full-page .user-input {
+            background: yellow;
+        }
+
+        .wram-up .poster-container .poster-left {
+            position: absolute;
+            left: -3.93333rem;
+            top: 2.41333rem;
+            width: 5.41333rem;
+            height: 15.73733rem;
+            background-color: green;
+            background-image: url(https://gw.alicdn.com/tfs/TB1.XAFbRfH8KJjy1XbXXbLdXXa-406-1153.png);
+            background-size: 100% 100%;
+            background-position: 50%;
+            transition: all 1.75s ease-out;
+            opacity: 0;
+        }
+
+        .wram-up .poster-container .poster-left.end {
+            transform: translateX(3.13333rem);
+            -webkit-transform: translateX(3.13333rem);
+            opacity: 1;
+        }
+
+        .wram-up .poster-container .poster-right {
+            position: absolute;
+            left: 8rem;
+            opacity: 0;
+            top: 2.82667rem;
+            width: 4.98667rem;
+            height: 14.96rem;
+            transition: all 1.75s ease-out;
+            background-image: url(https://gw.alicdn.com/tfs/TB18XAFbRfH8KJjy1XbXXbLdXXa-374-1122.png);
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .wram-up .poster-container .poster-right.end {
+            transform: translateX(-2.56rem);
+            -webkit-transform: translateX(-2.56rem);
+            opacity: 1;
+        }
+
+        .poster-text {
+            position: absolute;
+            left: .24rem;
+            opacity: 0;
+            bottom: -.34667rem;
+            width: 9.30667rem;
+            height: 5.92rem;
+            transition: all 1s ease-out 1.25s;
+            background-image: url(https://gw.alicdn.com/tfs/TB1cbd9cr_I8KJjy1XaXXbsxpXa-688-438.png);
+            background-size: 100%;
+
+        }
+
+        .poster-text.end {
+            opacity: 1;
+            transform: translateY(-.77333rem);
+            -webkit-transform: translateY(-.77333rem);
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="header"></div>
+    <div class="content"></div>
+    <div class="footer"></div> -->
+    <div class="" id="app">
+        <!-- 会有很多屏，跳转，滑屛，点击按钮 full-page -->
+        <div class="full-page">
+            <!-- 每一屏 -->
+            <div class="wram-up full-page">
+                <div class="poster-container full-page">
+                    <div class="poster-bg full-page">
+                        <div class="poster-left"></div>
+                        <div class="poster-right"></div>
+                        <div class="poster-logo"></div>
+                        <div class="poster-mayun"></div>
+                        <div class="poster-title"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="user-input full-page" style="transform: translateY(-50%)"></div> -->
+        </div>
+        <!-- z-index 高度不可控，position fixed bottom 0 盖在上面 -->
+        <div class="poster-text"></div>
+    </div>
+    <script>
+        // alert(window.innerHeight);
+        const oPostLeft = document.querySelector('.poster-left');
+        const oPostRight = document.querySelector('.poster-right');
+        const oPostText = document.querySelector('.poster-text');
+        window.onload = function () {
+            setTimeout(() => {
+                oPostLeft.classList.add("end");
+                oPostRight.classList.add("end");
+                oPostText.classList.add("end");
+            }, 500);
+        }
+    </script>
+</body>
+</html>
