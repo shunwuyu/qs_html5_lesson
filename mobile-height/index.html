@@ -77,6 +77,21 @@
             -webkit-transform: translateX(-2.56rem);
             transform: translateX(-2.56rem);
         }
+        .poster-text{
+            position: absolute;
+            left: 0.24rem;
+            bottom: -0.34667rem;
+            width: 9.30667rem;
+            height: 5.92rem;
+            transition: all 1s ease-out 1.25s;
+            background-image: url(https://gw.alicdn.com/tfs/TB1cbd9cr_I8KJjy1XaXXbsxpXa-688-438.png);
+            background-size: 100%;
+        }
+        .poster-text.end{
+            opacity: 1;
+            -webkit-transform: translateY(-0.77333rem);
+            transform: translateY(-0.77333rem);
+        }
     </style>
 </head>
 <body>
@@ -93,6 +108,10 @@
                        <div class="poster-logo"></div>
                        <div class="poster-mayun"></div>
                      </div>
+                     <!-- z-index 高度是不可控的，flexed + bottom:0 盖在上面 -->
+                     <div class="poster-text">
+
+                     </div>
                    </div>
             </div>
             <!-- <div class="user-input full-page" style="transform:translateY(-50%);">
@@ -103,10 +122,12 @@
    <script>
        const oPostLeft = document.querySelector('.poster-left');
        const oPostRight = document.querySelector('.poster-right');
+       const oPostText = document.querySelector('.poster-text');
        window.onload = function(){
            setTimeout(function(){
             oPostLeft.classList.add('end');
             oPostRight.classList.add('end');
+            oPostText.classList.add('end');
            },500);
        }
    </script>
