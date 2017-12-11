@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     margin: 0;
     padding: 0;
@@ -91,4 +92,22 @@ body{
     to{
         opacity: 0;
     }
+=======
+* {
+  margin: 0;
+  padding: 0;
+}
+*, *:before,*:after {
+  box-sizing: border-box;
+}
+body, html {
+  height: 100vh;
+  min-width: 10rem;
+  background: 0 0;
+}
+body {
+  min-height: 100%;
+  background:url(http://gw.alicdn.com/mt/TB1.sknLXXXXXbEXpXXXXXXXXXX-750-1333.png) no-repeat;
+  background-size:cover;
+>>>>>>> 0e4ecfae74da1e2309ac83463ac9bc96d6411a2a
 }
