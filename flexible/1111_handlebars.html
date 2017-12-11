@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>手淘h5 flexible 手机适配解决方案</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js">
+  </script>
+  <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+  <script src="https://cdn.bootcss.com/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  html{
+    color:#000;
+    background: #fff;
+    font-family: sans-serif;
+  }
+
+  html *{
+    outline:0;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+  }
+
+  body {
+    background-color: #ee0a3b;
+  }
+
+  html,body,.html_content{
+    height:100%;
+  }
+
+  .item-section{
+    min-height: 100%;
+    background-color: #ee0a3b;
+    position: relative;
+    font-size: 12px;
+  }
+  .item-seciton-header{
+    text-align: center;
+  }
+  h1,h2,h3,h4,h5,h5{
+    font-size:100%;
+    font-weight: 500;
+  }
+  .item-seciton-header img{
+    width:10rem;
+  }
+
+  .item-section ul{
+    padding:.133333rem;
+  }
+
+  .flag{
+    display: table;
+    width: 100%;
+    margin-bottom: 1px;
+    background-color: white;
+  }
+
+  .flag .flag-item.figure{
+    width:2.346667rem;
+    height:2.346667rem;
+  }
+
+  .flag .flag-item img {
+    width:2.346667rem;
+    height:2.346667rem;
+    vertical-align: top;
+  }
+
+  .flag .flag-item {
+    display: table-cell;
+    padding:.16rem 0;
+    vertical-align: top;
+    background-color: #fff;
+  }
+
+  .flag .flag-item.figcaption{
+    width: 133.333333rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
+    position: relative;
+  }
+
+  .flag .flag-title a{
+    color:#333;
+    line-height: 1.25;
+    overflow: hidden;
+    -webkit-line-clamp:2;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+  }
+  .flag .flag-price{
+    padding:.15rem 0 .2rem;
+  }
+
+  .flag .flag-price span{
+    display: inline-block;
+    background-color: #ee0a3b;
+    vertical-align: middle;
+    border-radius: .0266667rem;
+    padding:.026667rem .08rem .013333rem;
+    color:#fff;
+    font-weight: 700;
+    margin-right: .066667rem;
+    font-size: 11px;
+  }
+
+  .flag .flag-price strong{
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    color:#ee0a3b;
+    font-size: 16px;
+    margin-right: .16rem;
+  }
+
+  .flag .flag-price small{
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    color:#ee0a3b;
+    font-size: 12px;
+  }
+
+  .flag .flag-type{
+    color:#ff3600;
+  }
+
+  .flag .flag-btn{
+    position: absolute;
+    width: 2.133333rem;
+    height:.64rem;
+    line-height: .64rem;
+    background-color: #ee0a3b;
+    text-align: center;
+    color:#fff;
+    font-weight: 700;
+    font-size: 14px;
+    bottom:.13333rem;
+    right: .2rem;
+    border-radius: .026667;
+  }
+  </style>
+</head>
+<body>
+  <div class="html_content" style="opacity:0;">
+    <div class="item-section">
+      <div class="item-seciton-header">
+        <h2>
+          <img  alt="">
+        </h2>
+      </div>
+      <ul>
+        
+      </ul>
+    </div>
+  </div>
+  <script>
+    $(function() {
+      function getItemHtml(item) {
+        return `
+          <li class="flag" role="link" href="${item.itemLink}">
+            <a href="${item.itemLink}" class="figure flag-item">
+              <img src="${item.imgSrc}" alt="">
+            </a>
+            <div class="figcaption flag-item">
+              <div class="flag-title">
+                <a href="#">${item.poductName}</a>
+              </div>
+              <div class="flag-price">
+                <span>双11价</span>
+                <strong>¥${item.price}</strong>
+                <small>(${item.preferential})</small>
+              </div>
+              <div class="flag-type">${item.activityType}</div>
+              <a href="javascript:;" class="flag-btn">${item.activeName}</a>
+            </div>
+          </li>
+        `;
+      }
+
+      $.getJSON('http://www.easy-mock.com/mock/5a09867f28b23066479b8365/ajaxData/1111#!method=get', function(data) {
+        // console.log(data.);
+        $('.item-seciton-header img').attr('src', data.brannerImag);
+        $('.item-section ul').html(data.items.map(function(item) {
+          console.log(getItemHtml(item));
+          return getItemHtml(item);
+        }).join(''));
+        $('.html_content').css('opacity', 1);
+      });
+    })
+  </script>
+</body>
+</html>

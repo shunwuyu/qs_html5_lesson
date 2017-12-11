@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>talk in weui-搜索框</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="./css/weui.min.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+  .page__hd {
+    padding: 40px;
+  }
+  .page__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .page__desc {
+    margin-top: 5px;
+    color: #888;
+    text-align: left;
+    font-size: 14px;
+  }
+  </style>
+</head>
+<body ontouchstart>
+  <div class="page">
+    <div class="page__hd">
+      <h1 class="page__title">SearchBar</h1>
+      <p class="page__desc">搜索栏</p>
+    </div>
+    <div class="page__bd">
+      <div class="weui-search-bar" id="searchBar">
+          <form class="weui-search-bar__form">
+              <div class="weui-search-bar__box">
+                  <i class="weui-icon-search"></i>
+                  <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+                  <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+              </div>
+              <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                  <i class="weui-icon-search"></i>
+                  <span>搜索</span>
+              </label>
+          </form>
+          <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+      </div>
+    </div>
+  </div>
+  <script>
+  const searchBar = document.getElementById('searchBar')
+  const searchInput = document.getElementById('searchInput');
+  const searchText = document.getElementById('searchText');
+  const searchCancel = document.getElementById('searchCancel');
+  const searchClear = document.getElementById('searchClear');
+  searchText.addEventListener('click', function() {
+    searchBar.classList.add('weui-search-bar_focusing');
+    searchInput.focus();
+  }, false);
+  searchCancel.addEventListener('click', function() {
+    searchBar.classList.remove('weui-search-bar_focusing');
+  });
+  searchClear.addEventListener('click', function() {
+    searchInput.value = '';
+    searchInput.focus();
+  })
+
+
+  </script>
+</body>
+</html>
