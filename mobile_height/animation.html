@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画的实现2</title>
+    <style>
+        .container {
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        .aninode {
+            visibility: hidden;
+        }
+
+        .animated .aninode {
+            visibility: visible;
+        }
+
+        .targets {
+            margin: 20px 0;
+        }
+
+        .targets .item {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            line-height: 2;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .animated .topIn {
+            animation: topIn 1s ease;
+        }
+
+        .animated .leftIn {
+            animation-name: leftIn;
+            animation-duration: 1s;
+        }
+
+        .btn {
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: 0.1s;
+        }
+
+        .btn:active {
+            border: none;
+            background: orange;
+            color: #fff;
+        }
+
+        @keyframes topIn {
+            from {
+                transform: translateY(-50px)
+            }
+            to {
+                transform: translateY(0px)
+            }
+        }
+
+        @keyframes leftIn {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        .delay200 {
+            animation-delay: 200ms;
+            animation-fill-mode: backwards!important;
+        }
+
+        .delay400 {
+            animation-delay: 400ms;
+            animation-fill-mode: backwards!important;
+        }
+
+        .delay600 {
+            animation-delay: 600ms;
+            animation-fill-mode: backwards!important;
+        }
+
+        .delay800 {
+            animation-delay: 800ms;
+            animation-fill-mode: backwards!important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="targets aninode">
+            <div class="item leftIn">春晓</div>
+            <div class="item leftIn delay200">春眠不觉晓</div>
+            <div class="item leftIn delay400">处处蚊子咬</div>
+            <div class="item leftIn delay600">夜来风雨声</div>
+            <div class="item leftIn delay800">
+                <此处请留下你们的才华>
+            </div>
+        </div>
+        <!-- <button class="btn show">show</button>
+        <button class="btn hide">hide</button> -->
+    </div>
+
+    <script>
+        window.onload = function () {
+            var show = document.querySelector('.show');
+            var hide = document.querySelector('.hide');
+            var container = document.querySelector('.container');
+            container.classList.add('animated');
+        }
+        // var show = document.querySelector('.show');
+        // var hide = document.querySelector('.hide');
+        // var container = document.querySelector('.container');
+        // show.addEventListener('click', function () {
+        //     container.classList.add('animated');
+        // }, !1);
+        // hide.addEventListener('click', function () {
+        //     container.classList.remove('animated');
+        // }, !1);
+    </script>
+</body>
+
+</html>
