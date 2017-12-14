@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            /* background: pink; */
+        }
+        .t2 {
+            display: none;
+        }
+
+        /* 媒体查询   会选择性查询设备
+            orientation: landscape  水平拿着手机 规定方向，类似于一个作用域 */
+        @media all and (orientation: landscape) {
+            .box {
+                background: skyblue;
+            }
+            .t1 {
+                display: none;
+            }
+            .t2 {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="t1">欢迎浏览手机页面</p>
+        <p class="t2">请竖拿手机</p>
+    </div>
+</body>
+</html>
