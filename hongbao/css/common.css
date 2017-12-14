@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+body {
+    background: #dbdbdb;
+}
+
+.load-msg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 40px;
+    color: #666;
+    /* translate3d 不一定要3D，会触发硬件加速 */
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+#road {
+    width: 49.333333%;
+    height: 100%;
+    margin-left: 25.333333%;
+    margin-right: 25.333333%;
+    z-index: -1;
+}
