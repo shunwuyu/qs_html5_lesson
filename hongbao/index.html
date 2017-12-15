@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CreateJS 网页小游戏</title>
+  <link rel="stylesheet"
+   href="./css/common.css">
+</head>
+<body>
+  <!-- 游戏开始前加载资源loader -->
+  <span class="load-msg"
+   id="load-msg">10%</span>
+  <canvas id="gameView" width="750"
+  height="1206" class="game-bg"></canvas>
+</body>
+<script src="./js/createjs.js"></script>
+<script src="./js/canvas.js"></script>
+<script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js 
+
+"></script>
+<script>
+  const CarGame = {
+    stage: 
+      new createjs.Stage('gameView'),
+    container: new createjs.Container(),
+    // 将canvas 绘图api-> 面向对象api
+    image1: 
+      new createjs.Bitmap('./img/bg.png'),
+    image2: 
+      new createjs.Bitmap('./img/bg.png'),
+    bgSpeed: 4,
+    tempRedArray:[],
+    handleTick (image1, image2) {
+      image1.y += this.bgSpeed;
+      image2.y += this.bgSpeed;
+      if (Math.abs(image1.y) >=
+       this.stage.canvas.height) {
+         image1.y = 0;
+         image2.y = -this.stage.canvas.height;
+       }
+    },
+    tempImgArray: [],
+    handleHit(item){
+        let pt = item.localToLocal(Math.random()*100,Math.random()*100,this.carBody);
+        if (this.carBody.hitTest(pt.x,pt.y)){
+            item.visible = false;
+            if (/red.png/.test(item.image.src)){
+                this.tempRedArray.push(item.id);
+                this.redText.text = `
+                已抢到红包个数：${this.tempRedArray.length}
+                `;
+            }else{
+                this.container.removeChild(item);
+                createjs.Sound.play("sound");
+                createjs.Sound.play("victory");
+                alert("game over");
+                createjs.Sound.stop();
+                createjs.Ticker.removeAllEventListeners();
+                setTimeout(()=>{
+                    window.location.reload();
+                },2000)
+            }
+        }
+    },
+    createImages(){
+        let index = parseInt(Math.random()*2);
+        let item = this.tempImgArray[index].clone();
+        let roadDom = 
+        document.getElementById('road');
+        let minX = Math.ceil(roadDom.offsetLeft * (750 / document.body.clientWidth));
+        let maxX = minX * 3;
+        item.x = minX +(maxX-minX)*Math.random()*0.72;
+        item.y = -150;
+        this.container.addChild(item);
+        createjs.Tween.get(item).to({
+            y:this.stage.canvas.height
+        },2500).addEventListener('change',()=>{
+            this.handleHit(item);
+            if (item.y >= this.stage.canvas.height){
+                this.createImages();
+            }
+        })
+    },
+    init() {
+        createjs.Touch.enable(this.stage);
+      //路
+      let roadHtml = 
+        $('<div id="road"></div>');
+      $('body').append(roadHtml);
+
+      // redtext
+      this.redText =
+       new createjs.Text(`已抢到红包个数:0`,
+        "28px Arial", "#ff7700");
+      this.redText.x = 50;
+      this.redText.y = 10;
+
+      // car
+      let carImg = "./img/player.png";
+      this.carBody = new createjs.Bitmap(carImg);
+      this.carBody.scaleX = 0.9;
+      this.carBody.scaleY = 0.9;
+      this.carBody.x = 324;
+      this.carBody.y = 
+        this.stage.canvas.height - 230;
+      
+      //红包 炸弹
+      let redBitMap =
+       new createjs.Bitmap('./img/red.png');
+      let boomBitMap = 
+       new createjs.Bitmap('./img/boom.png');
+      this.tempImgArray.push(
+        redBitMap, boomBitMap);
+
+      this.image2.y = - this.stage.canvas.height;
+      // 加载资源queue
+      this.queue = 
+        new createjs.LoadQueue();
+      this.queue.installPlugin(
+        createjs.Sound);
+      this.queue.loadManifest([
+        {
+          id: "bigBg",
+          src: "./img/bg.png"
+        },
+        {
+          id: "victory",
+          src: "./mp3/victory.mp3"
+        },
+        {
+          id: "sound",
+          src: "./mp3/boom.mp3"
+        }
+      ])
+      this.queue.on("progress", () => {
+        $("#load-msg").text(
+          `加载中${parseInt(this.queue.progress*100)}%...` 
+        );
+      });
+      this.queue
+        .addEventListener("complete", () => {
+        $('#load-msg').hide();
+        createjs.Sound.play('victory');
+        this.stage.addChild(this.container);
+        this.container.addChild(this.image1);
+        this.container.addChild(this.image2);
+        this.container.addChild(this.redText);
+        this.container.addChild(this.carBody);
+        this.createImages();
+        createjs.Ticker
+          .addEventListener('tick', () => {
+          this.handleTick(this.image1, this.image2);
+          this.stage.update();
+        })
+        createjs.Ticker.setFPS(60);
+      })
+    }
+  }
+  window.onload = () => {
+    CarGame.init();
+  }
+  window.addEventListener('keydown', 
+  (event) => {
+    
+    let minX = Math.ceil($('#road').offset().left *
+     (750/document.body.clientWidth));
+     let maxX = minX * 3;
+    if (event.keyCode === 39) {
+      if (CarGame.carBody.x >= 477) return;
+      CarGame.carBody.x += 51;
+    } else if (event.keyCode === 37) {
+      if (CarGame.carBody.x <= 175) return;
+      CarGame.carBody.x -= 51;
+    }
+  })
+</script>
+</html>
