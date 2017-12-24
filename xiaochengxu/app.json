@@ -1,0 +1,40 @@
+{
+  "pages": [ 
+    "pages/index/index",
+    "pages/common/list",
+    "pages/school/school",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f74a81",
+    "navigationBarTitleText": "幼师招聘",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#F788AB",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "#e0e0e0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/index.png",
+        "selectedIconPath": "./images/index_sel.png"
+      },
+      {
+        "pagePath": "pages/school/school",
+        "text": "学校",
+        "iconPath": "./images/school.png",
+        "selectedIconPath": "./images/school_sel.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./images/mine.png",
+        "selectedIconPath": "./images/mine_sel.png"
+      }
+    ]
+  }
+}
