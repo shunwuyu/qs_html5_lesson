@@ -1,0 +1,22 @@
+<view class= "section">
+  <view>
+    <text>{{motto}}</text>
+  </view>
+<view class="section__title_r">
+  <text>flex-direction:row</text>
+</view>  
+  <!-- 弹性布局是父元素跟子元素的关系 -->
+<view class="flex-wrap flex-row">
+   <view class="flex-item bc_green">1</view>
+   <view class="flex-item bc_red">2</view>
+   <view class="flex-item bc_blue">3</view>
+</view>
+<view class="section_title_c">
+    <text>flex-direction:column</text>
+</view>
+<view class="flex-wrap flex-column">
+    <view class="flex-item bd_green">1</view>
+    <view class="flex-item bd_red">2</view>
+    <view class="flex-item bd_blue">3</view>
+</view>
+</view>

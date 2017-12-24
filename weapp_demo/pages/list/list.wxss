@@ -1,0 +1,11 @@
+/* pages/list/page.wxss */
+page {
+    height: 150%;
+}
+.item {
+background-color: #f6f8f9;
+color: #0a0a0a;
+font-size: 14px;
+padding: 10px 20px;
+margin-bottom: 15px;
+}

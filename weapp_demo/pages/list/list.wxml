@@ -1,0 +1,11 @@
+<!--pages/list/page.wxml-->
+<!-- <text>pages/list/page.wxml</text> -->
+<view class="container">
+ <block
+ wx:for="{{arrList}}"
+ wx:key="index">
+ <view class="item">
+     <text>{{item}}</text>
+ </view>
+</block>
+</view>
