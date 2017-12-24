@@ -1,0 +1,28 @@
+/* pages/scroll/scroll.wxss */
+.item-style {
+    padding: 30rpx;
+    font-size: 40rpx;
+    border-top: 2rpx solid #eee;
+    position: relative;
+  }
+  .item-style:after {
+    content:"";
+    position: absolute;
+    width: 16rpx;
+    height: 16rpx;
+    border:1px solid #333;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    right: 30rpx;
+    top:50rpx;
+    transform: rotate(45deg);
+  }
+.refresh-block {
+   padding: 30rpx;
+    text-align: center;
+}  
+.refresh-block image {
+    width: 60rpx;
+    height: 60rpx;
+   
+}  

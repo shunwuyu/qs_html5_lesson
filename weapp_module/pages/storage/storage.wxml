@@ -1,0 +1,7 @@
+<view>
+    <input placeholder="请输入您的地址" bindinput="bindAddressInput" value="{{address}}" />
+    <button bindtap="bindSavaAddress">保存</button>
+    <view>
+        <button bindtap="bindClearAddress">清空</button>
+    </view>
+</view>

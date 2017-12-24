@@ -1,0 +1,20 @@
+<view>
+    <view>
+        <text>{{address}}</text>
+    </view>
+    <button bindtap="gotoStorage">
+            去往storage
+    </button>    
+</view>
+
+
+<!-- <view>
+    <view>
+        <text>{{address}</text>
+    </view>
+    <view>
+        <button bindtap="">
+            去往storage
+        </button>
+    </view>
+</view> -->
