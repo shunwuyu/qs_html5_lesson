@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ecDO 是作者的lib名字
+        let ecDO = {
+            // 判断用何设备上网
+            // isAndroid
+            // isIphone
+            browserInfo (type){
+                // BOM 访问网页的设备信息
+                console.log(navigator.userAgent);
+                switch (type) {
+                    case 'android':
+                    // 正则
+                       return navigator.userAgent.toLowerCase().indexOf('android') !== -1;
+                    break;
+                    case 'iphone':
+                    // 正则
+                       return navigator.userAgent.toLowerCase().indexOf('iphone') !== -1;
+                    break;
+                    case 'ipad':
+                    // 正则
+                       return navigator.userAgent.toLowerCase().indexOf('ipad') !== -1;
+                    break;
+                    case 'weixin':
+                        return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1;
+                    break;
+                    default:
+                        return navigator.userAgent;
+                }
+            },
+            // 解析url为一个对象
+            // ?a=1&b=3
+            // {
+            //     a:1,
+            //     b:3
+            // } query string -> query obj
+            getUrlPrmt(url) {
+               
+            }
+        }
+        // if(ecDO.browserInfo('android')) {
+        //     // alert('您使用的是安卓手机');
+        // }else if(ecDO.browserInfo('iphone')){
+        //     // alert('您使用的是苹果手机');
+        // }else if(ecDO.browserInfo('ipad')){
+        //     // alert('您使用的是ipad');
+        // }
+        if(ecDO.browserInfo('weixin')){
+            alert('您在微信中打开');
+        }
+        // h5页面，在微信生态和微信环境下有较大的区别
+        // 微信中可以得到微信授权
+    </script>
+</body>
+</html>
