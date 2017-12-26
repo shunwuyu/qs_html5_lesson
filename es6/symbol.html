@@ -1,0 +1,103 @@
+<!-- js number string boolean undefinded null symbol
+object function array -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Symbol--js新增数据类型</title>
+</head>
+<body>
+    <script>
+        // let wxb = {
+        //     // trueLove: '双儿'
+        //     bestLove: '双儿',
+        //     bestLove: '曾柔',
+        //     bestLove: '建宁公主'
+        // };
+        // wxb.bestLove = '阿珂';
+        // wxb.soLove = '苏荃';
+        // 标识
+        let shuanger = Symbol('双儿');
+        let ake = Symbol('阿珂');
+        let sq = Symbol('苏荃');
+        let mjp = Symbol();
+        let jn = Symbol();
+        let zr = Symbol('曾柔');
+        let wxb = {
+            name: '韦小宝',
+            [shuanger]: '最爱',
+            [ake]: '最爱',
+            [sq]: '最爱',
+            [jn]: '最爱'
+        }
+        console.log(wxb[shuanger]);
+        console.log(wxb[ake]);
+        for(key in wxb) {
+            // Symbol 唯一key 要区别对待
+            console.log(`${key}: ${wxb[key]}`);
+        }
+        let name = Symbol('name');
+        let age = Symbol('age');
+        let obj = {
+            [name]:'小仙女',
+            [age]: 18
+        };
+        // 将json 里面正常的key(string)
+        // 今天新的symbol变量构成的key区分开，以便于处理
+        // Object.getOwnPropertySymbols() 方法返回一个给定对象自身的所有 Symbol 属性的数组
+        const symbols = Object.getOwnPropertySymbols(obj);
+        console.log(symbols);
+        for (symbol of symbols) {
+            console.log(obj[symbol]);
+        }
+        // js 动态性 无法得到保证
+        // obj[name] = '猪猪女孩';
+        // console.log(obj[name]);
+
+        let f = [1,2,3];
+        console.log(typeof f);
+        console.log(Object.prototype.toString.call(f));
+        // json
+        Array.prototype[Symbol.toStringTag] = 'array';
+        console.log(Object.prototype.toString.call(f));
+
+        var obj1 = {
+            a: 1,
+            b: 2
+        };
+        console.log(Object.getOwnPropertyNames(obj1));
+        var obj2 = Object.create(obj1, {
+            getFoo: {
+                value: function() {return this.foo + 'getter';}
+
+            }
+        });
+        obj2.foo = 1;
+        console.log(obj2);
+        console.log(Object.getOwnPropertyNames(obj2));
+
+        class Num {
+            constructor (num) {
+                // 变量名前加下划线 表现为私有
+                this._num = num;
+            }
+            get num() {
+                console.log('又一个用户来访问num');
+                return this._num;
+            }
+            set num(num) {
+                console.log('数字需要保存');
+                this._num = num;
+            }
+        }
+        const test = new Num(9);
+        console.log(test._num);
+        // _开头，语法习惯的约束，没有起到private的功能
+        // private提供给对象内部使用,暴露出API,让外界可以访问到
+        test.num = 99;
+        console.log(test);
+    </script>
+</body>
+</html>
