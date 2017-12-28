@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str = "_mkto_trk=id:335-VIN-535&token:_mch-qs.com-1511925175055-51355; _ga=GA1.2.1821934532.1511925175; username=ysw; uid=12345612";
+        var name = "username";
+
+        // ^;  尖括号匹配所有的值  只要不是尖括号      ;|$  |$表示遇到;就停止匹配
+        // 在字符串内匹配特写值的小范围正则表达式
+
+        var reg = new RegExp("(^|)" + name + "=([^;]*)(;|$)");
+        var arr = str.match(reg);
+        console.log(arr[2]);
+
+        // console.log(reg.test(str));
+        // console.log(str.match(reg));
+        // test mach     正则的方法
+
+
+
+        // 封装方法 查找用户名
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^|)" + name + "=([^;]*)(;|$)");
+            if( arr = document.cookie.match(reg)) {
+                return arr[2];
+            } else {
+                return null;
+            }
+        }
+        
+    </script>
+</body>
+</html>
