@@ -8,32 +8,51 @@
     <title>动画的实现2</title>
     <style>
         .container {
-            width: 200px;
+            width: 850px;
             margin: 0 auto;
+            box-sizing: border-box;
+         
         }
 
-        .aninode {
-            visibility: hidden;
+        img {
+            /* box-shadow: 10px 10px 5px #888888; */
         }
 
-        .animated .aninode {
-            visibility: visible;
+        .headleft {
+            width: 280px;
         }
 
-        .targets {
-            margin: 20px 0;
+        .headright {
+            width: 300px;
+            top: 10px;
+            position: absolute;
         }
 
-        .targets .item {
-            border: 1px solid #ccc;
-            margin: 10px 0;
-            line-height: 2;
-            padding: 2px 6px;
-            border-radius: 4px;
+        .middleleft {
+            width: 300px;
+            position: absolute;
+            top: 220px;
         }
 
-        .animated .topIn {
-            animation: topIn 1s ease;
+        .middleright {
+            width: 222px;
+            left: 900px;
+            position: absolute;
+            top: 140px;
+        }
+
+        .footleft {
+            width: 333px;
+            left: 400px;
+            position: absolute;
+            top: 400px;
+        }
+
+        .footright {
+            width: 331px;
+            left: 720px;
+            position: absolute;
+            top: 460px;
         }
 
         .animated .leftIn {
@@ -41,57 +60,43 @@
             animation-duration: 1s;
         }
 
-        .btn {
-            width: 100px;
-            height: 30px;
-            border: 1px solid #ccc;
-            outline: none;
-            transition: 0.1s;
-        }
-
-        .btn:active {
-            border: none;
-            background: orange;
-            color: #fff;
-        }
-
-        @keyframes topIn {
-            from {
-                transform: translateY(-50px)
-            }
-            to {
-                transform: translateY(0px)
-            }
-        }
-
         @keyframes leftIn {
             from {
-                transform: translateX(-50px);
+                transform: translateY(-10px);
                 opacity: 0;
+                transform: rotate(3deg);
+                -webkit-transform: rotate(3deg);
             }
             to {
                 transform: translateX(0px);
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
                 opacity: 1;
             }
         }
 
         .delay200 {
-            animation-delay: 200ms;
-            animation-fill-mode: backwards!important;
-        }
-
-        .delay400 {
             animation-delay: 400ms;
             animation-fill-mode: backwards!important;
         }
 
-        .delay600 {
+        .delay400 {
             animation-delay: 600ms;
             animation-fill-mode: backwards!important;
         }
 
-        .delay800 {
+        .delay600 {
             animation-delay: 800ms;
+            animation-fill-mode: backwards!important;
+        }
+
+        .delay800 {
+            animation-delay: 1000ms;
+            animation-fill-mode: backwards!important;
+        }
+
+        .delay1000 {
+            animation-delay: 1200ms;
             animation-fill-mode: backwards!important;
         }
     </style>
@@ -100,16 +105,13 @@
 <body>
     <div class="container">
         <div class="targets aninode">
-            <div class="item leftIn">春晓</div>
-            <div class="item leftIn delay200">春眠不觉晓</div>
-            <div class="item leftIn delay400">处处蚊子咬</div>
-            <div class="item leftIn delay600">夜来风雨声</div>
-            <div class="item leftIn delay800">
-                <此处请留下你们的才华>
-            </div>
+            <img class="leftIn headleft delay200" src="./imageyang/01.png">
+            <img class="leftIn headright delay1000" src="./imageyang/02.png">
+            <img class="leftIn middleleft delay800" src="./imageyang/03.png">
+            <img class="leftIn middleright delay400" src="./imageyang/04.png">
+            <img class="leftIn footleft" src="./imageyang/05.png">
+            <img class="leftIn footright delay600" src="./imageyang/06.png">
         </div>
-        <!-- <button class="btn show">show</button>
-        <button class="btn hide">hide</button> -->
     </div>
 
     <script>
@@ -119,15 +121,6 @@
             var container = document.querySelector('.container');
             container.classList.add('animated');
         }
-        // var show = document.querySelector('.show');
-        // var hide = document.querySelector('.hide');
-        // var container = document.querySelector('.container');
-        // show.addEventListener('click', function () {
-        //     container.classList.add('animated');
-        // }, !1);
-        // hide.addEventListener('click', function () {
-        //     container.classList.remove('animated');
-        // }, !1);
     </script>
 </body>
 
