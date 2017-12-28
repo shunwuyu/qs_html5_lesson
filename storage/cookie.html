@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cookie</title>
+</head>
+<body>
+    <script>
+        // document.cookie = "uuid=123aws=31231323";
+        // 获取cookie
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^|)" + name + "=([^;]*)(;|$)");
+            if( arr = document.cookie.match(reg)) {
+                // 前一步加密了 此处要解密
+                return unescape(arr[2]);
+            } else {
+                return null;
+            }
+        }
+
+        // 设置cookie
+        // 存时加密, 拿出解密, 保证不会变质  加密:escape
+        function setCookie(name, value, expiredays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + ((expiredays==null)?"":";expires="+ exdate.toGMTString());
+        }
+        setCookie("uuid", "==121?wwa", 30);
+        console.log(getCookie("uuid"));
+
+        // 删除cookie
+        function delCookie (name) {
+            // 设置过期时间
+            var exp = new Date();
+            // 设置过期时间为当前操作时间的上一秒  这样就能让cookie 立即过期
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval) {
+                document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+            }
+        }
+
+
+
+        // 前端可以主动发送http请求  fetch 可以替代  XMLHttpRequest
+        const xhr = new XMLHttpRequest();
+        // 手写如何向服务器发送一个json请求
+        // open 打开一个请求    谓词 POST|GET|PUT|DELETE
+        // 调用
+        // AJAX xhr对象在浏览器主动向服务器端的json资源发送请求,协议HTTP,等到服务器端响应  这就是异步的
+        xhr.onreadystatechange = function() {
+            // 如果请求已经到达了客户端,是一次成功的通信
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // 可以获取到 json 中的数据   此时获得的是一个文本
+                // console.log(xhr.responseText);
+                console.log(JSON.parse(xhr.responseText).a);
+            }
+        }
+        xhr.open("GET", "/a.json", true);
+        xhr.send(null);
+    </script>
+</body>
+</html>
