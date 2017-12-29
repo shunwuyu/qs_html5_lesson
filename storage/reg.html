@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cookie切割字符串问题</title>
+</head>
+<body>
+    <script>
+        function getCookie(name){
+            var arr , reg = new RegExp("(^|)" + name + "=([^;]*)(;|$)");
+            if(arr = document.cookie.match(reg)){
+                return arr[2];
+            }else {
+                return null;
+            }
+        }
+
+        var str = '_mkto_trk=id:335-VIN-535&token:_mch-qs.com-1511925175055-51355;_ga=GA1.2.1821934532.1511925175; username=ysw; uid=12345612';
+        // var reg = /^[0-9]{11}$/;
+        // var name = "username";
+        var name = "uid";
+        // 正则表达式实例化
+        // ^表示取否，即：只要不是
+        // 在字符串内匹配特定值的小范围正则方式
+        var reg = new RegExp("(^|)" + name + "=([^;]*)(;|$)");
+        var arr = str.match(reg);
+        console.log(arr);
+    </script>
+</body>
+</html>
