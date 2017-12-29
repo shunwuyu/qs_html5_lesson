@@ -1,0 +1,69 @@
+.tqb-date-picker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.tqb-date-picker.static {
+  position: relative;
+}
+.tqb-date-picker .tqb-dp-container {
+  flex: 1;
+}
+.tqb-date-picker .tqb-dp-header h3 {
+  text-align: center;
+  font-style: 1.2rem;
+  font-weight: normal;
+  margin: 0;
+  line-height: 69px;
+}
+.tqb-date-picker .tqb-dp-header button {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  border: none;
+  color: #808080;
+  padding: 0;
+  height: height-height -1px;
+  line-height: 69px;
+  width: 3rem;
+}
+.tqb-date-picker .tqb-dp-header button.tqb-dp-close-button {
+  left: 0;
+}
+.tqb-date-picker .tqb-dp-header button.tqb-dp-confirm-button {
+  right: 0;
+  font-style: 1rem;
+}
+.tqb-date-picker .tqb-dp-header h3 {
+  text-align: center;
+  font-style: 1.2rem;
+  font-weight: normal;
+  margin: 0;
+  line-height: 69px;
+}
+.tqb-date-picker .tqb-dp-header button {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  border: none;
+  color: #808080;
+  padding: 0;
+  height: height-height -1px;
+  line-height: 69px;
+  width: 3rem;
+}
+.tqb-date-picker .tqb-dp-header button.tqb-dp-close-button {
+  left: 0;
+}
+.tqb-date-picker .tqb-dp-header button.tqb-dp-confirm-button {
+  right: 0;
+  font-style: 1rem;
+}
+.calendar {
+  font-size: 28px;
+}
