@@ -1,5 +1,5 @@
 import should from 'should';
-import EasyDAte from '../src/EasyDate';
+import EasyDate from '../src/EasyDate';
 
 describe('EasyDate 运算',()=>{
     let date = new EasyDate('+1m');
