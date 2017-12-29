@@ -21,9 +21,27 @@
   margin: 0;
   line-height: 69px;
 }
+.tqb-date-picker .tqb-dp-header button {
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  border: none;
+  color: #aaa;
+  padding: 0;
+  height: 69px;
+  width: 3rem;
+}
+.tqb-date-picker .tqb-dp-header button.tqb-dp-close-button {
+  left: 0;
+}
+.tqb-date-picker .tqb-dp-header button.tqb-dp-confirm-button {
+  right: 0;
+  font-size: 1rem;
+}
 .labels {
   color: #0074d9;
 }
 .calendar {
   font-size: 28px;
 }
+/*# sourceMappingURL=tqb-date-picker.css.map */
