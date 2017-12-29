@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日历控件</title>
+</head>
+<body>
+    <script>
+        let date = new Date();
+        console.log(`今天是： ${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`);
+        // +1m -1m +1d -1d +1y -1y
+        // function resetDate(d, offset) {
+        //     const aor = offset.substring(0,1);
+        //     const num = parseInt(offset.substring(1, offset.length-1));
+        //     const l = offset.substring(offset.length-1);
+        //     console.log(aor + " " + num + " " + l);
+        //     if(aor === "+") {
+        //         if(l === "y") {
+        //             d.setFullYear(d.getFullYear() + num);
+        //             return d;
+        //         } else if (l == "m") {
+        //             d.setMonth(d.getMonth + num);
+        //             return d;
+        //         } else if (l === "d") {
+        //             d.setDate(d.getDate() + num);
+        //             return d;
+        //         }
+        //     } else if (aor === "-") {
+
+        //     }
+        // }
+        // resetDate(1, "+1m");
+
+
+
+
+        const METHODS = {
+            m: "Month",
+            d: "Date",
+            y: "FullYear"
+        }
+        function resetDate(d, offset) {
+            // 将字母全部转化成小写 就能规避判断大小写
+            offset = offset.toLowerCase();
+            let result = {};
+            // +- Y/M/D  有一定的规则
+            // 正则？  number、类型
+            // ?   `set${METHODS[?]}`
+            offset.replace(/([+-]\d+)([ymd])/, (match, number, unit) => {
+                result[unit] = Number(number);
+                date[`set${METHODS[unit]}`](
+                    date[`get${METHODS[unit]}`]() + result[unit]
+                );
+                console.log(`今天是： ${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`);
+            })
+        }
+        resetDate(date, "+3d");
+    </script>
+</body>
+</html>
