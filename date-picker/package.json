@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha --require"
+    "test": "mocha --require babel-core/register"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
