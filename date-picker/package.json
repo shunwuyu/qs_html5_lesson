@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "mocha --require"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "mocha": "^4.1.0",
+    "should": "^13.2.0"
+  }
+}
