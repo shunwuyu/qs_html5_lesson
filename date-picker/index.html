@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>日历控件</title>
+</head>
+<body>
+  <script>
+    // +-{n}m/d/y|M|D|Y
+    const METHODS ={
+      m: "Month",
+      d: "Date",
+      y: "FullYear"
+    }
+    let date = new Date();
+    // console.log(`今天是:${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()},星期${date.getDay()},`)
+    // +1m -1m +1day -10day +1year -1yearfunction resetDate(date1,offset) {
+    function resetDate(d, offset){
+      offset = offset.toLowerCase();
+      let result = {};
+      // +- Y/M/D   正则
+      // number 类型
+      // ? `set${METHODS[?]}`
+      offset.replace(/([+-]?\d+)([ymd])/,(match, number, unit) => {
+        console.log(match, number, unit)
+        result[unit] = Number(number)
+        date[`set${METHODS[unit]}`](date[`get${METHODS[unit]}`]() + result[unit])
+        console.log(`${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`)
+      })
+      
+      
+    }
+    resetDate(date,'+3y')
+  </script>
+</body>
+</html>
