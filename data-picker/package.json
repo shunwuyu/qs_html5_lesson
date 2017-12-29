@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "stylus:watch": "stylus -w -m styl/ -o css/",
     "test": "mocha --require babel-core/register"
   },
   "devDependencies": {
@@ -9,6 +10,8 @@
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "colors.css": "2.3.0",
+    "normalize.css": "^7.0.0"
   }
 }
