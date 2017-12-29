@@ -51,6 +51,7 @@
             offset.replace(/([+-]\d+)([ymd])/, (match, number, unit) => {
                 result[unit] = Number(number);
                 date[`set${METHODS[unit]}`](
+                    // date.setFullYear()  和  date[setFullYear]() 一个意思
                     date[`get${METHODS[unit]}`]() + result[unit]
                 );
                 console.log(`今天是： ${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`);
