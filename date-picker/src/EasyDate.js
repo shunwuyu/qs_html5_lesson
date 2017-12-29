@@ -1,4 +1,4 @@
-class EasyDate{
+export default class EasyDate{
     constructor(offset){
         this.base = new Date();
         this.base.setHours(0);
@@ -6,5 +6,4 @@ class EasyDate{
         this.base.setSeconds(0);
         this.base.setMilliseconds(0);
     }
-    
 }
