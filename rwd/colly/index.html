@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* PC First */
+    #page {
+      width: 946px;
+      margin: 20px auto;
+      padding: 30px 17px 10px 17px;
+    }
+    ul#subnav-a {
+      float: left;
+      list-style-type: none;
+      margin: 0 0 10px 0;
+      padding: 0;
+    }
+    ul#subnav-a li {
+      float: left;
+      text-align: center;
+      width: 207px;
+      padding: 10px;
+      font-size: 13px;
+      font-style: italic;
+      font-weight: normal;
+      color: #d24b21;
+      border: 1px solid #ddd;
+      box-shadow: 1px 1px 7px rgba(153,153,153,.2);
+      border-radius: 5px;
+      margin-right: 10px; 
+      height: 150px;
+  }
+  ul#subnav-a li:nth-child(4n) {
+    margin-right: 0px;
+  }
+
+  /* 媒体media 查询query 手机 plus 414*/
+  @media (max-width: 480px) and (orientation: portrait){
+    /* 适配手机就是适配设备的宽度 */
+    #page {
+      /* iphone 4 */
+      width: 306px;
+      padding: 30px 0 10px 0;
+    }
+    #subnav-a li {
+      width: 285px;
+      margin-bottom: 10px;
+    }
+  }
+
+  /* ipad 适配 */
+  @media (min-width: 481px) and (max-width: 769px) and (orientation: portrait){
+    body {
+      background: green;
+    }
+  }
+  </style>
+</head>
+<body>
+  <ul id="subnav-a">
+    <li id="delicious">
+      <a href="#">
+        <span class="strap">A Very proud member of those</span>
+        <span class="label">
+          <span>F</span>
+          ictive
+          <span>K</span>
+        </span>
+      </a>
+    </li>
+    <li><a href=""><span class="strap"></span><span class="label"><span></span><span></span></span></a></li>
+    <li><a href=""><span class="strap"></span><span class="label"><span></span><span></span></span></a></li>
+    <li><a href=""><span class="strap"></span><span class="label"><span></span><span></span></span></a></li>
+  </ul>
+</body>
+</html>
