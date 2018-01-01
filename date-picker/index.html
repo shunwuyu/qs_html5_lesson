@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日历控件</title>
+</head>
+<body>
+    <script>
+        // +-{n}m/d/y|M/D/Y
+        const METHODS = {
+            m: "Month",
+            d: "Date",
+            y: "FullYear"
+        }
+        let date = new Date();
+        console.log("今天是：" + date + date.getFullYear());
+        
+        function resetDate(d, offset) {
+            offset = offset.toLowerCase();
+            let result = {};
+            // 正则来进行选择判断
+            var tbm = /([+-]\d+)([mydMYD])/;
+            offset.replace(/([+-]?\d+)([mydMYD])/, (match, number, util) => {
+                console.log(match, number, util);
+                result[number] = Number(number);
+                date[`set${METHODS[util]}`](date[`get${METHODS[util]}`]() + result[number]);
+            });
+
+            // console.log(offset.match(tbm));
+            console.log(date);
+        }
+
+        resetDate(date, "+3d");
+    </script>
+</body>
+</html>
