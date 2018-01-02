@@ -3,7 +3,7 @@
 import DatePicker from './DatePicker';
 import RangeDatePicker from './RangeDatePicker'
 
-// 有些类式抽象的 提供生产类的功能,满足多情况使用的需求
+// 有些类是抽象的 提供生产类的功能,满足多情况使用的需求
 export default {
   createDatePicker (el, options) {
     if ('scattered' in options) {
