@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- normalize 不是一定要打包 整站开发 比较多 
+  模块式的开发 有很多个dist 
+  对于通用性的模块 不要乱打包 资源的重复加载 -->
+  <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css">
+  <link rel="stylesheet" href="./dist/css/style.css">
+   <!-- font-awesome  是一个技能点 解决特定问题(图标字体)
+  可能只有10%的页面用到 所以要按需加载 也不用打包进去 
+  减少 http数  单独打包 dist/bundle1.js.... -->
+  <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.css">
+</head>
+<body>
+ 
+  <div class="box"></div>
+  <div id="app" class="container">
+    <div class="todo-wrapper">
+      <div class="todo-header">
+        <div class="overlay"></div>
+        <time class="clearfix">
+          <span class="day">2</span>
+          <span class="dayofweek">周二</span>
+          <span class="month">1,2018</span>
+        </time>
+        <div class="add-circle">
+          <i class="fa fa-plus"></i>
+        </div>
+      </div>
+    </div>
+    <div class="todo-content">
+      <!-- <todo-report></todo-report> -->
+      <div class="todo-content-title">
+        <h2>Your tasks</h2>
+        <p class="report">
+          <span class="task-remain">0 完成</span> / 3 (任务)
+        </p>
+      </div>
+    </div>
+    <!-- mvvm 框架支持 vue react -->
+    <!-- <todo-header/> -->
+    
+    <!-- stylus webpack
+    .styl modules
+    /.styl/ loader css -->
+  </div>
+</body>
+</html>
