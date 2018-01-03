@@ -60,6 +60,12 @@
                         // $('.photo').attr('src',$(data).find('.photo').attr('src'));
                     });
                 })
+                // onpopstate 路由切换
+                window.onpopstate = (event) => {
+                    if (event.state){
+                        displayContent(event.state);
+                    }
+                }
             })
         })();
     </script>
