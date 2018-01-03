@@ -1,0 +1,15 @@
+// webpack 根据import的顺序
+// 将js文件组织起来的算法
+import DatePicker from './DatePicker';
+import RangDatePicker from './RangDatePicker';
+
+// 类 抽象类 提供生产类的功能，满足多情况使用的需求
+export default {
+  createDatePicker (el, options) {
+    if ('scattered' in options) {
+      return new DatePicker(el, options);
+    } else {
+      return new RangDatePicker(el, options);
+    }
+  }
+}
