@@ -1,0 +1,20 @@
+{
+  "name": "vue-todo",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "stylus:watch": "stylus -w -m styl/ -o dist/css/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "C1103 <1103384457@qq.com> (http://c1103.github.io)",
+  "license": "MIT",
+  "devDependencies": {
+    "stylus": "^0.54.5"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^7.0.0"
+  }
+}
