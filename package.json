@@ -21,6 +21,11 @@
     "browserify": "^14.5.0",
     "gulp": "^3.9.1",
     "gulp-livereload": "^3.8.1",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
   }
 }
