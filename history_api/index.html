@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kittens</title>
+    <link rel="stylesheet" href="/common.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="nav">
+           <li><a href="index.html">Home</a></li>
+           <li><a href="fluffy.html">Fluffy</a></li>
+           <li><a href="socks.html">Socks</a></li>
+           <li><a href="whiskers.html">Whiskers</a></li>
+        </ul>
+        <p class="content">
+            Welcome to Kittens! Home of Fluffy, Socks, and Whiskers. If you're not suffering from a cute overdose within the hour, then you really are a heartless bugger! Now lets look at some cats!
+        </p>
+        <div class="media">
+            <img src="http://image1.ohqly.com/2014/06/10/1402377291555D3529572small.jpg" alt="Home!" class="photo">
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+        (function(){
+            $(function(){
+                function dsplayContent(state){
+                    $('.content').text(state.content);
+                    $('.photo').attr('src',state.photo);
+                    }
+                function createState($content){
+                    let state = {
+                        content: $content.find('.content').text(),
+                        photo:$content.find('.photo').attr('src'),
+                        title:$content.find('title').text()
+                    }
+                    // url 在单页应用中，不在一一对应page，先有一个状态对象，
+                    // 根据状态不同，检索不同的状态
+                    return state;
+                }
+                $(document).on('click','a',(event)=>{
+                    // event.preventDefault(); //页面不能跳转
+                    //显示新页面
+                    const req = event.target.href;
+                    const url = $.ajax(url);
+                    // 异步就好了，等待请求完成
+                    req.done(date=>{
+                        // 只有一个界面了，但是我们有4个state
+                        // url不工作了，url => state
+                        let state = createState($(data));
+                        displayContent(state);
+                        // URL在浏览器实现里面，就是一个堆栈
+                        history.pushState(state,state.title,url);
+
+                        // 把字符串转换为dom.content
+                        // $('content').text($('data').find('.content').text());
+                        // $('.photo').attr('src',$(data).find('.photo').attr('src'));
+                    });
+                })
+            })
+        })();
+    </script>
+</body>
+</html>
