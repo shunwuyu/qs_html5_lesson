@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "webpack",
     "stylus:watch": "stylus -w -m styl/ -o css/",
     "test": "mocha --require babel-core/register"
   },
@@ -11,7 +12,12 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "bootstrap": "^3.3.7",
     "colors.css": "2.3.0",
-    "normalize.css": "^7.0.0"
+    "eslint": "^4.14.0",
+    "eslint-loader": "^1.9.0",
+    "jquery": "^3.2.1",
+    "normalize.css": "^7.0.0",
+    "webpack": "^3.10.0"
   }
 }
