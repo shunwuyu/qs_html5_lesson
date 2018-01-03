@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kittens</title>
+    <title>Home</title>
     <link rel="stylesheet" href="common.css">
 </head>
 <body>
@@ -28,19 +28,49 @@
     <script>
       (function() {
           $(function() {
+              function displayContent(state) {
+                $('.content').text(state.content);
+                $('.photo').attr('src',state.photo);
+              }
+              function createState($content) {
+                  let state = {
+                      content:$content.find('.content').text(),
+                      photo:$content.find('.photo').attr('src'),
+                      title:$content.find('title').text()
+                  }
+                  // url 在单页应用中不再一一对应page，状态对象，检索不同状态
+                  return state;
+              }
               $(document).on('click','a',(event) => {
                   // 阻止该事件的冒泡
                   event.preventDefault()
                   //显示新的页面 jquery ajax 模块
                   //异步加载界面，而且不用刷新当前页面
                   //发送请求
-                  const req = $.ajax(event.target.href);
+                  const url = event.target.href;
+                  const req = $.ajax(url);
                   //异步就好了，等待请求完成
                   req.done(data => {
-                      console.log(data);
+                    //   只有一个页面了,但是我们有4个state
+                    //   url 不工作了, url => state
+                      let state = createState($(data));
+                      displayContent(state);
+                      // url 在浏览器实现里面,就是一个栈
+                      // history.pushState() 方法向浏览器历史添加了一个状态。
+                      history.pushState(state,state.title,url)
+
+                    //   字符串 => dom.content
+                    //   $('content').text(($(data).find('.content').text()));
+                    //   $('.photo').attr('src',($(data).find('.photo').attr('src')));
                   })
               })
           })
+          //出栈 路由切换
+          window.onpopstate = (event) => {
+              if (event.state) {
+                  displayContent(event.state);
+              }
+          }
       })();
     </script>
 </body>
