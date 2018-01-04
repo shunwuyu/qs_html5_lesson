@@ -9,16 +9,14 @@
   模块式的开发 有很多个dist 
   对于通用性的模块 不要乱打包 资源的重复加载 -->
   <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css">
-  <link rel="stylesheet" href="./dist/css/style.css">
+  <link rel="stylesheet" href="./src/css/style.css">
    <!-- font-awesome  是一个技能点 解决特定问题(图标字体)
   可能只有10%的页面用到 所以要按需加载 也不用打包进去 
   减少 http数  单独打包 dist/bundle1.js.... -->
   <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.css">
 </head>
 <body>
- 
-  <div class="box"></div>
-  <div id="app" class="container">
+  <!-- <div id="app" class="container">
     <div class="todo-wrapper">
       <div class="todo-header">
         <div class="overlay"></div>
@@ -33,20 +31,25 @@
       </div>
     </div>
     <div class="todo-content">
-      <!-- <todo-report></todo-report> -->
       <div class="todo-content-title">
         <h2>Your tasks</h2>
         <p class="report">
           <span class="task-remain">0 完成</span> / 3 (任务)
         </p>
       </div>
-    </div>
+    </div> -->
     <!-- mvvm 框架支持 vue react -->
     <!-- <todo-header/> -->
     
     <!-- stylus webpack
     .styl modules
     /.styl/ loader css -->
+
+    <!-- mvvm 就是在root中加组件 再通过webpack 打包的js
+    向root挂载组件就好 -->
+
+    <div id="root"></div>
+    <script src="./dist/js/bundle.js"></script>
   </div>
 </body>
 </html>
