@@ -20,7 +20,12 @@ module.exports = {
       {
         test: /\.js/,
         exclude: /node_modules/,
-        loaders: ["babel-loader", "eslint-loader"]
+        loaders: ["babel-loader"]
+      },
+      {
+        test: /\.hbs$/,
+        exclude: /node_modules/,
+        loader: ["handlebars-loader"]
       }
     ]
   },
