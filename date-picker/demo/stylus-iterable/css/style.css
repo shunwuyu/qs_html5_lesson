@@ -1,0 +1,30 @@
+table tr:nth-child(0) td {
+  height: 0px;
+}
+table tr:nth-child(1) td {
+  height: 50px;
+}
+table tr:nth-child(2) td {
+  height: 100px;
+}
+table tr:nth-child(3) td {
+  height: 150px;
+}
+table tr:nth-child(4) td {
+  height: 200px;
+}
+table tr:nth-child(5) td {
+  height: 250px;
+}
+table tr:nth-child(6) td {
+  height: 300px;
+}
+table tr:nth-child(7) td {
+  height: 350px;
+}
+table tr:nth-child(8) td {
+  height: 400px;
+}
+table tr:nth-child(9) td {
+  height: 450px;
+}
