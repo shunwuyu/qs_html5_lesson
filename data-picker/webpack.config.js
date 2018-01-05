@@ -25,9 +25,14 @@ module.exports = {
         // test 匹配了所有以.js结束的文件
         loaders: [
             {
-                test: /\.js/,
+                test: /\.js$/,
                 exclude: /node_module/,
-                loaders: ["babel-loader", "eslint-loader"]
+                loaders: ["babel-loader"]
+            },
+            {
+                test: /\.hbs$/,
+                exclude: /node_module/,
+                loaders: ["handlebars-loader"]
             }
         ]
     },
