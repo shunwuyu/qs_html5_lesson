@@ -9,8 +9,11 @@ const user = {
 
 $(function(){
     console.log("ready");
+    // template 接受一个抽象的数据对象 将html模板进行编译，返回一个字符串
+    // $() 能接受一段html字符串，通过jQuery变成封装好的html节点
     let item = $(
         template(user)
     );
+    // 将元素挂载到挂载点上
     item.appendTo($('#root'))
 })
