@@ -4,17 +4,23 @@
             <todo-header></todo-header>
             <div class="todo-content">
                 <todo-report></todo-report>
-                <todo-list></todo-list>
+                <todo-list :collection = "ListState.items"></todo-list>
             </div>
         </div>
     </div>
 </template>
 <script>
+    import ListStore from "../data/store.js";
     import TodoHeader from "./components/TodoHeader.vue";
     import TodoReport from "./components/TodoReport.vue";
     import TodoList from "./components/TodoList.vue";
 
     export default {
+        data () {
+            return {
+                ListState: ListStore.state
+            }
+        },
 
         components: {
             // 组件注册后才能使用
@@ -30,6 +36,5 @@
     }
 </script>
 <style lang="stylus">
-body
-    font-size 24
+@import "../styl/style.styl"
 </style>
